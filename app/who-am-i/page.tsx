@@ -153,6 +153,7 @@ export default function WhoAmIPage() {
                     { title: "Come Over When You're Sober, Pt. 1", artist: "Lil Peep", cover: "/peeppt1.jpg" },
                     { title: "Come Over When You're Sober, Pt. 2", artist: "Lil Peep", cover: "/peeppt2.jpg" },
                     { title: "Hybrid Theory", artist: "Linkin Park", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/53/a7/7f/53a77fab-c54c-a57b-8130-248fc12d0c80/093624948995.jpg/500x500bb.jpg" },
+                    { title: "Faces", artist: "Mac Miller", cover: "/macfaces.jpg" },
                   ].map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
@@ -191,6 +192,50 @@ export default function WhoAmIPage() {
             <p>
               Later, I was sent to a game development academy by my school. That was a cool moment for me, and it's where I started to see how I could combine my interests with technology. I never saw myself going to university after school, but the path was chosen for me.
             </p>
+          </div>
+        </div>
+
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Where I'm From
+          </h3>
+          <div className="w-full h-96 rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 relative grayscale invert contrast-125 brightness-75">
+            <iframe
+              width="100%"
+              height="100%"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=Terrigal%20Beach%20Australia&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight={0}
+              marginWidth={0}
+              className="absolute inset-0"
+            ></iframe>
+          </div>
+        </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Reading List
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { title: "The Holy Bible", author: "New International Version", note: "Stories to introduce you to human nature.", cover: "/bible.jpg" },
+              { title: "Animal Farm", author: "George Orwell", note: "A story about the betrayal of the revolution.", cover: "/animalfarm.jpg" },
+              { title: "Dhammapada", author: "Buddha", note: "The Buddhist scripture that teaches you about the path to enlightenment.", cover: "/buddah.jpg" },
+              { title: "Maps of Meaning", author: "Jordan Peterson", note: "The architecture of meaning in human culture.", cover: "/mapsofmeaning.jpg" }
+            ].map((book, i) => (
+              <div key={i} className="group flex gap-4 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="shrink-0 w-16 h-24 bg-zinc-800 rounded overflow-hidden shadow-sm">
+                  {book.cover && <img src={book.cover} alt={book.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />}
+                </div>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors">{book.title}</h4>
+                  <div className="text-zinc-500 text-sm mb-2">{book.author}</div>
+                  <p className="text-zinc-400 text-sm leading-relaxed line-clamp-3">"{book.note}"</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
