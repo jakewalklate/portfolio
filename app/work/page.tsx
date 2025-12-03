@@ -58,6 +58,13 @@ export default function WorkPage() {
       link: "https://github.com/svnty/homosexuality-simulator",
       img: "/gene-simulator.png"
     },
+    {
+      title: "Hydroponic farm",
+      description: "Self managing hydroponic farm to grow plants in a controlled environment.",
+      tags: ["Arduino", "Hydroponics", "Alternating Current", "Direct Current"],
+      link: "#",
+      img: "/farm.png"
+    },
   ];
 
   return (
@@ -65,7 +72,7 @@ export default function WorkPage() {
       <section className="max-w-5xl w-full space-y-12">
         <div className="space-y-4">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
-            Selected Work
+            Engineering Projects
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl">
             A collection of projects exploring the intersection of humans and technology.
@@ -102,6 +109,56 @@ export default function WorkPage() {
               </div>
             </a>
           ))}
+        </div>
+        <div className="space-y-8 pt-12 border-t border-white/10">
+          <h2 className="text-3xl font-bold tracking-tight text-white">
+            Work Experience
+          </h2>
+          <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+            <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+              <div>
+                <h3 className="text-xl font-semibold text-white">Fast Food Crew Member</h3>
+                <div className="text-zinc-400">Fast Food Chain</div>
+              </div>
+              <div className="text-zinc-500 font-mono text-sm">
+                Sep 2024 — Present
+              </div>
+            </div>
+            <ul className="list-disc list-inside text-zinc-400 leading-relaxed">
+              <li>Voted most liked team member. Consistently delivering high-quality service in a fast-paced environment.</li>
+            </ul>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+            <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+              <div>
+                <h3 className="text-xl font-semibold text-white">Analyst Programmer</h3>
+                <div className="text-zinc-400">ClockOn Australia</div>
+              </div>
+              <div className="text-zinc-500 font-mono text-sm">
+                Jul 2019 — Feb 2020
+              </div>
+            </div>
+            <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+              <li>Converted a legacy windows application from Delphi into C# and JavaScript for modern day web browsers in an agile environment.</li>
+              <li>Trained management on new tools to create cross browser friendly web applications.</li>
+            </ul>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+            <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+              <div>
+                <h3 className="text-xl font-semibold text-white">Fiber Optic Technician</h3>
+                <div className="text-zinc-400">Schokman</div>
+              </div>
+              <div className="text-zinc-500 font-mono text-sm">
+                Feb 2015 — Dec 2015
+              </div>
+            </div>
+            <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+              <li>Connected houses to the national broadband network by splicing, stripping and testing fibre optic cables.</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
