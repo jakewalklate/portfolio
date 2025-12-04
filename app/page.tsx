@@ -59,7 +59,7 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-4 text-zinc-100">Biotech Engineering</h3>
             <p className="text-zinc-400 leading-relaxed">
               Specializing in synthetic biology and software engineering.
-              I design and optimize sustainable solutions for engineering and biological systems.
+              I design and optimize sustainable solutions for both engineering and biological systems.
             </p>
           </div>
 
