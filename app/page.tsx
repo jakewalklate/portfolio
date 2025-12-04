@@ -1,5 +1,6 @@
 "use client";
 import GeneticEditing from "@/components/GeneticEditing";
+import AgaroseGel from "@/components/AgaroseGel";
 import { Linkedin } from "lucide-react";
 
 import Link from "next/link";
@@ -103,6 +104,11 @@ export default function Home() {
             </svg>
           </span>
         </div>
+      </section>
+
+      {/* Agarose Gel Visualization */}
+      <section className="w-full pb-10 opacity-80 hover:opacity-100 transition-opacity duration-500">
+        <AgaroseGel />
       </section>
     </main >
   );

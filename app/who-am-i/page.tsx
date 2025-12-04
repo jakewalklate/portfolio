@@ -246,7 +246,7 @@ export default function WhoAmIPage() {
           <div className="flex flex-row">
             <div className="flex-col">
               <svg height="800px" width="800px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 512 512" xmlSpace="preserve" className="fill-zinc-400 size-52">
+                viewBox="0 0 512 512" xmlSpace="preserve" className="fill-zinc-500 size-52">
                 <g>
                   <path className="st0" d="M275.076,93.952c2.991-24.117-14.126-46.108-38.252-49.108c-24.126-3-46.107,14.117-49.107,38.252
 		c-3,24.126,14.126,46.108,38.256,49.107C250.085,135.195,272.076,118.078,275.076,93.952z"/>
@@ -266,8 +266,10 @@ export default function WhoAmIPage() {
                 </g>
               </svg>
             </div>
-            <div className="flex-col">
-
+            <div className="flex-col flex justify-center px-8">
+              <p className="text-zinc-400 leading-relaxed">
+                On weekends, you'll likely find me playing golf. Don't expect me to be any good at it though, I embarrass everyone with my swings.
+              </p>
             </div>
           </div>
         </div>

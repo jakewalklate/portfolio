@@ -132,8 +132,8 @@ export default function GeneticEditing() {
         <div className="flex items-center justify-between pt-2 border-t border-zinc-800">
           <div className="flex items-center gap-2">
             <div className={`w-2 h-2 rounded-full ${status === "SCANNING" ? "bg-blue-500 animate-pulse" :
-                status === "EDITING" ? "bg-yellow-500 animate-pulse" :
-                  "bg-green-500"
+              status === "EDITING" ? "bg-yellow-500 animate-pulse" :
+                "bg-green-500"
               }`} />
             <span className="text-xs text-zinc-400">
               {status === "SCANNING" && "SCANNING SEQUENCE..."}
