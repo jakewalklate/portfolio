@@ -160,6 +160,29 @@ export default function WorkPage() {
             </ul>
           </div>
         </div>
+
+        <div className="space-y-8 pt-12 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold text-white">
+                Resume
+              </h2>
+              <p className="text-zinc-400 max-w-md text-sm leading-relaxed">
+                Download my resume for a summary of my experience.
+              </p>
+            </div>
+            <a
+              href="/resume.pdf"
+              download
+              className="shrink-0 px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-zinc-200 transition-colors flex items-center gap-2 text-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M12 9.75V1.5m0 0l3 3m-3-3l-3 3M12 9.75V1.5" />
+              </svg>
+              Download PDF
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   );

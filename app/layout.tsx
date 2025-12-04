@@ -90,12 +90,11 @@ export default function RootLayout({
               <a href="/who-am-i" className="hover:text-white transition-colors mx-1">About</a>
               <a href="/work" className="hover:text-white transition-colors mx-1">Work</a>
               <a href="/book" className="hover:text-white transition-colors mx-1">Book</a>
-              <a href="/resume.pdf" className="hover:text-white transition-colors mx-1">Resume</a>
             </nav>
             <a
               id="contact"
               href="mailto:jake@svnty.is-a.dev"
-              className="hidden sm:block px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors"
+              className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors"
             >
               <span className="hidden md:block">Get in touch</span>
               <span className="block md:hidden"><Mail /></span>

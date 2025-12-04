@@ -29,7 +29,7 @@ export default function BookPage() {
           </div>
 
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="/the_pharmacology_of_silence_censored_compressed.pdf" className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all active:scale-95">
+            <a download href="/the_pharmacology_of_silence_censored_compressed.pdf" className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all active:scale-95">
               Download PDF
             </a>
             <a href="/excerpt.pdf" className="px-8 py-3 bg-transparent border border-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95">
