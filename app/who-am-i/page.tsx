@@ -111,7 +111,7 @@ export default function WhoAmIPage() {
                 </p>
               </div>
               <div className="text-zinc-500 font-mono text-sm text-right sm:text-left">
-                Trade school
+                Trade School
               </div>
             </div>
           </div>

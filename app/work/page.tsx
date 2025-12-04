@@ -19,7 +19,7 @@ export default function WorkPage() {
     {
       title: "Coreable",
       description: "Tools to expertly measure and map soft skills.",
-      tags: ["TypeScript", "GraphQL", "Google Cloud"],
+      tags: ["React", "GraphQL", "Google Cloud", "Bootstrap"],
       link: "https://github.com/coreable",
       img: "/coreable.png"
     },
@@ -65,6 +65,20 @@ export default function WorkPage() {
       link: "#",
       img: "/farm.png"
     },
+    {
+      title: "sa2.gg",
+      description: "A gaming community with a forum, chat, and server.",
+      tags: ["Gaming", "Node.js", "MongoDB"],
+      link: "#",
+      img: "/sa2gg.png"
+    },
+    {
+      title: "Telcor Telecommunications",
+      description: "An administration system for a fictional telecommunications company.",
+      tags: ["Java", "MySQL", "Class Assignment"],
+      link: "#",
+      img: "/telcor.png"
+    }
   ];
 
   return (
