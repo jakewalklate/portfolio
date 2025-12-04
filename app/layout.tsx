@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
+import { Code, Dna, Home, Mail } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,7 +84,8 @@ export default function RootLayout({
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" className="font-bold text-xl tracking-tighter">Hello</a>
+            <a href="/" className="hidden md:block font-bold text-xl tracking-tighter">Hello</a>
+            <a href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></a>
             <nav className="flex gap-6 text-sm font-medium text-zinc-400">
               <a href="/who-am-i" className="hover:text-white transition-colors mx-1">About</a>
               <a href="/work" className="hover:text-white transition-colors mx-1">Work</a>
@@ -93,9 +95,10 @@ export default function RootLayout({
             <a
               id="contact"
               href="mailto:jake@svnty.is-a.dev"
-              className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors"
+              className="hidden sm:block px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors"
             >
-              Get in touch
+              <span className="hidden md:block">Get in touch</span>
+              <span className="block md:hidden"><Mail /></span>
             </a>
           </div>
         </header>
