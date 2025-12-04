@@ -46,7 +46,7 @@ export default function AgaroseGel() {
                   {lane.bands.map((pos, i) => (
                     <div
                       key={i}
-                      className="absolute left-1/2 -translate-x-1/2 w-12 h-1.5 rounded-sm bg-purple-400/80 shadow-[0_0_15px_rgba(192,132,252,0.6)] mix-blend-screen opacity-80"
+                      className="absolute left-1/2 -translate-x-1/2 w-8 sm:w-12 h-1.5 rounded-sm bg-purple-400/80 shadow-[0_0_15px_rgba(192,132,252,0.6)] mix-blend-screen opacity-80"
                       style={{ top: `${pos}%` }}
                     >
                       {/* Band irregularity for realism */}
