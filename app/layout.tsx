@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "Biomedical Engineer",
     "Creative Developer",
     "Synthetic Biology",
+    "Computational Biology",
     "Portfolio",
   ],
   authors: [{ name: "Jake Spencer Walklate", url: "https://svnty.is-a.dev" }],
