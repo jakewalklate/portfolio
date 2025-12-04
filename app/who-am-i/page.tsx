@@ -245,8 +245,8 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             On Weekends
           </h3>
-          <div className="flex flex-row">
-            <div className="flex-col">
+          <div className="flex flex-col md:flex-row ">
+            <div className="flex-row md:flex-col flex justify-center md:justify-normal">
               <svg height="800px" width="800px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 512 512" xmlSpace="preserve" className="fill-zinc-500 size-48">
                 <g>
@@ -268,7 +268,7 @@ export default function WhoAmIPage() {
                 </g>
               </svg>
             </div>
-            <div className="flex-col flex justify-center px-8">
+            <div className="flex-row md:flex-col flex justify-center px-8 mt-4 md:mt-0">
               <p className="text-zinc-400 leading-relaxed text-center">
                 On weekends, you'll likely find me playing golf. Don't expect me to be any good at it though, I embarrass everyone with my swings.
               </p>

@@ -1,7 +1,6 @@
 "use client";
 import GeneticEditing from "@/components/GeneticEditing";
 import AgaroseGel from "@/components/AgaroseGel";
-import { Linkedin } from "lucide-react";
 
 import Link from "next/link";
 

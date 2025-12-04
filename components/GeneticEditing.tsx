@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-const ORIGINAL_SEQUENCE = "GATCGATCGATCGATCGATCGATCGATCGATC";
-const TARGET_INDEX = 15; // The base to change
+const ORIGINAL_SEQUENCE = "GATCGATCGATCGATCGAC";
+const TARGET_INDEX = 9; // The base to change
 const NEW_BASE = "T"; // The new base
 
 export default function GeneticEditing() {
@@ -50,7 +50,7 @@ export default function GeneticEditing() {
             timeout = setTimeout(runAnimation, 5000);
           }, 1500);
         }
-      }, 100);
+      }, 150);
     };
 
     runAnimation();
@@ -59,6 +59,27 @@ export default function GeneticEditing() {
       clearTimeout(timeout);
     };
   }, []);
+
+  const seqContainerRef = useRef<HTMLDivElement>(null);
+  const scannerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateScanner = () => {
+      if (status === "SCANNING" && seqContainerRef.current && scannerRef.current) {
+        const child = seqContainerRef.current.children[cursorPos] as HTMLElement;
+        if (child) {
+          scannerRef.current.style.left = `${child.offsetLeft - 5}px`;
+          scannerRef.current.style.top = `${child.offsetTop - 5}px`;
+          scannerRef.current.style.height = `${child.offsetHeight + 10}px`;
+          scannerRef.current.style.width = `${child.offsetWidth + 10}px`;
+        }
+      }
+    };
+
+    updateScanner();
+    window.addEventListener("resize", updateScanner);
+    return () => window.removeEventListener("resize", updateScanner);
+  }, [cursorPos, status]);
 
   return (
     <div className="w-full max-w-4xl mx-auto font-mono text-sm bg-black border border-zinc-800 rounded-xl overflow-hidden shadow-2xl shadow-green-900/10">
@@ -81,7 +102,7 @@ export default function GeneticEditing() {
       {/* Main Interface */}
       <div className="p-6 space-y-6">
         {/* Stats Grid */}
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-1 sm:gap-4">
           <div className="p-3 bg-zinc-900/30 rounded border border-zinc-800">
             <div className="text-xs text-zinc-500 mb-1">GC Content</div>
             <div className="text-lg font-bold text-zinc-300">{stats.gc}%</div>
@@ -101,18 +122,17 @@ export default function GeneticEditing() {
         {/* Sequence Display */}
         <div className="relative py-8 px-4 bg-zinc-900/20 rounded border border-zinc-800/50 overflow-hidden">
           {/* Scan Line */}
-          {status === "SCANNING" && (
-            <div
-              className="absolute top-0 bottom-0 w-0.5 bg-green-500/50 shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-100 ease-linear z-10"
-              style={{ left: `${(cursorPos / ORIGINAL_SEQUENCE.length) * 100}%` }}
-            />
-          )}
+          <div
+            ref={scannerRef}
+            className={`absolute bg-green-500/30 border border-green-500/50 shadow-[0_0_15px_rgba(34,197,94,0.5)] transition-all duration-100 ease-linear z-10 pointer-events-none rounded ${status === "SCANNING" ? "opacity-100" : "opacity-0"}`}
+            style={{ width: 0, height: 0 }} // Initial size, updated by ref
+          />
 
-          <div className="flex justify-between text-lg sm:text-xl tracking-[0.2em] font-bold break-all">
+          <div ref={seqContainerRef} className="flex justify-between w-full text-xs sm:text-sm md:text-lg lg:text-xl tracking-normal sm:tracking-normal md:tracking-[0.2em] font-bold">
             {sequence.map((base, i) => (
               <span
                 key={i}
-                className={`relative transition-all duration-300 ${i === cursorPos ? "text-white scale-110" : "text-zinc-600"
+                className={`relative inline-block transition-all duration-300 ${i === cursorPos ? "text-white scale-110" : "text-zinc-600"
                   } ${status === "COMPLETE" && i === TARGET_INDEX ? "text-green-400 scale-110" : ""
                   } ${status === "EDITING" && i === TARGET_INDEX ? "text-yellow-400 animate-pulse" : ""
                   }`}
