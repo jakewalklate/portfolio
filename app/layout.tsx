@@ -24,7 +24,9 @@ export const metadata: Metadata = {
     "Biotech Engineer & Creative. Merging biological systems with engineering principles. Building the future of biotech and digital experiences.",
   keywords: [
     "Jake Spencer Walklate",
+    "Jake Walklate",
     "svnty",
+    "svnty_dev",
     "Biotech Engineer",
     "Software Engineer",
     "Creative Developer",
@@ -84,7 +86,7 @@ export default function RootLayout({
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" className="hidden md:block font-bold text-xl tracking-tighter"><ChevronLeft className="inline -mt-1 -mr-1" />Hello&nbsp;/<ChevronRight className="inline -mt-1 -ml-1" /></a>
+            <a href="/" className="hidden md:block font-bold text-xl tracking-tighter"><ChevronLeft className="inline -mt-1 -mr-1" />svnty&nbsp;/<ChevronRight className="inline -mt-1 -ml-1" /></a>
             <a href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></a>
             <nav className="flex gap-6 text-sm font-medium text-zinc-400">
               <a href="/who-am-i" className="hover:text-white transition-colors mx-1">About</a>
