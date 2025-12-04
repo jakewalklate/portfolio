@@ -30,6 +30,8 @@ export const metadata: Metadata = {
     "svnty_dev",
     "Biotech Engineer",
     "Software Engineer",
+    "Bioinformatician",
+    "Biomedical Engineer",
     "Creative Developer",
     "Synthetic Biology",
     "Portfolio",
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Jake Spencer Walklate",
     images: [
       {
-        url: "/og-image.png", // We might need to generate this or use a placeholder
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Jake Spencer Walklate [svnty]",
