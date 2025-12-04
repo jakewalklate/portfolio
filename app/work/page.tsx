@@ -73,7 +73,7 @@ export default function WorkPage() {
       img: "/sa2gg.png"
     },
     {
-      title: "Telcor Telecommunications",
+      title: "Telcor telecommunications",
       description: "An administration system for a fictional telecommunications company.",
       tags: ["Java", "MySQL", "Class Assignment"],
       link: "#",
@@ -85,6 +85,13 @@ export default function WorkPage() {
       tags: ["HTML", "CSS", "Bootstrap"],
       link: "#",
       img: "/sister.png"
+    },
+    {
+      title: "Epithelial karotyping",
+      description: "Lysing and staining of epithelial cells to determine chromosomal abnormalities.",
+      tags: ["Genetics"],
+      link: "#",
+      img: "/karyotyping.JPG"
     }
   ];
 
@@ -93,7 +100,7 @@ export default function WorkPage() {
       <section className="max-w-5xl w-full space-y-12">
         <div className="space-y-4">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
-            Engineering Projects
+            Projects
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl">
             A collection of projects exploring the intersection of humans and technology.
@@ -146,7 +153,8 @@ export default function WorkPage() {
               </div>
             </div>
             <ul className="list-disc list-inside text-zinc-400 leading-relaxed">
-              <li>Voted most liked team member. Consistently delivering high-quality service in a fast-paced environment.</li>
+              <li>Voted most liked team member.</li>
+              <li>Consistently delivering high-quality service in a fast-paced environment.</li>
             </ul>
           </div>
 

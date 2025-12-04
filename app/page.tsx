@@ -43,7 +43,7 @@ export default function Home() {
             href="https://x.com/svnty_dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-zinc-900 text-white font-semibold rounded-full border border-zinc-800 hover:bg-zinc-800 transition-all active:scale-95 text-center"
+            className="px-8 py-3 bg-zinc-900 text-white font-semibold rounded-full border border-zinc-800 hover:bg-zinc-800 transition-all active:scale-95 text-center opacity-60 hover:opacity-70"
           >
             Follow on 𝕏
           </a>
