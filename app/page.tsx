@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Home() {
   return (
     <>
@@ -31,12 +33,12 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center sm:justify-start">
-            <a
+            <Link
               href="/work"
               className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all active:scale-95 text-center"
             >
               View Portfolio
-            </a>
+            </Link>
             <a
               href="https://x.com/svnty_dev"
               target="_blank"

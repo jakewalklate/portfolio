@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { ChevronLeft, ChevronRight, Code, Dna, Home, Mail } from "lucide-react";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,12 +87,12 @@ export default function RootLayout({
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" className="hidden md:block font-bold text-xl tracking-tighter"><ChevronLeft className="inline -mt-1 -mr-1" />svnty&nbsp;/<ChevronRight className="inline -mt-1 -ml-1" /></a>
-            <a href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></a>
+            <Link href="/" className="hidden md:block font-bold text-xl tracking-tighter"><ChevronLeft className="inline -mt-1 -mr-1" />svnty&nbsp;/<ChevronRight className="inline -mt-1 -ml-1" /></Link>
+            <Link href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></Link>
             <nav className="flex gap-6 text-sm font-medium text-zinc-400">
-              <a href="/who-am-i" className="hover:text-white transition-colors mx-1">About</a>
-              <a href="/work" className="hover:text-white transition-colors mx-1">Work</a>
-              <a href="/book" className="hover:text-white transition-colors mx-1">Book</a>
+              <Link href="/who-am-i" className="hover:text-white transition-colors mx-1">About</Link>
+              <Link href="/work" className="hover:text-white transition-colors mx-1">Work</Link>
+              <Link href="/book" className="hover:text-white transition-colors mx-1">Book</Link>
             </nav>
             <a
               id="contact"
