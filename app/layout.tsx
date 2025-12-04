@@ -88,6 +88,7 @@ export default function RootLayout({
               <a href="/who-am-i" className="hover:text-white transition-colors mx-1">About</a>
               <a href="/work" className="hover:text-white transition-colors mx-1">Work</a>
               <a href="/book" className="hover:text-white transition-colors mx-1">Book</a>
+              <a href="/resume.pdf" className="hover:text-white transition-colors mx-1">Resume</a>
             </nav>
             <a
               id="contact"
