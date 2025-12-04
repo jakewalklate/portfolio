@@ -52,7 +52,7 @@ export default function Home() {
       </section>
 
       {/* Bento Grid / About Section */}
-      <section id="about" className="max-w-5xl w-full py-16">
+      <section id="about" className="max-w-5xl w-full py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Card 1 */}
           <div className="md:col-span-2 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
@@ -88,11 +88,11 @@ export default function Home() {
       </section>
 
       {/* Engineering Section */}
-      <section className="max-w-5xl w-full py-16 space-y-12">
+      <section className="max-w-5xl w-full py-12 space-y-12">
         <GeneticEditing />
       </section>
 
-      <section className="max-w-5xl w-full py-16 space-y-8">
+      <section className="max-w-5xl w-full py-12 space-y-8">
         <div className="md:col-span-3 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors flex items-center justify-between">
           <div>
             <h3 className="text-xl font-semibold mb-2 text-zinc-100">Let's work together</h3>
@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Agarose Gel Visualization */}
-      <section className="w-full pb-10 opacity-80 hover:opacity-100 transition-opacity duration-500">
+      <section className="w-full py-12 opacity-80 hover:opacity-100 transition-opacity duration-500">
         <AgaroseGel />
       </section>
     </main >
