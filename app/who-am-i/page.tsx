@@ -10,7 +10,7 @@ export default function WhoAmIPage() {
             Who Am I?
           </h1>
           <h2 className="text-2xl text-zinc-400 font-medium">
-            Biotech Engineer & Creative Developer
+            Knowledge addict
           </h2>
           <p className="text-zinc-600"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia</p>
         </div>
@@ -270,7 +270,7 @@ export default function WhoAmIPage() {
             </div>
             <div className="flex-row md:flex-col flex justify-center px-8 mt-4 md:mt-0">
               <p className="text-zinc-400 leading-relaxed text-center">
-                On weekends, you'll likely find me playing golf. Don't expect me to be any good at it though, I embarrass everyone with my swings.
+                On weekends, you'll likely find me playing golf. Don't expect me to be any good at it though, I embarrass the sport with my swings.
               </p>
             </div>
           </div>

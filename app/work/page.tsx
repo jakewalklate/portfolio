@@ -5,14 +5,14 @@ export default function WorkPage() {
     {
       title: "Alternipedia",
       description: "An open, collaborative encyclopedia designed to emphasize exploring multiple viewpoints on complex topics.",
-      tags: ["React", "Next.js", "Wikipedia", "Vercel"],
+      tags: ["React", "Next.js", "Wikipedia", "Vercel", "Tailwind"],
       link: "https://github.com/alternipedia",
       img: "/alternipedia.png"
     },
     {
       title: "Medicamina",
       description: "A precision medicine platform for personalized treatment recommendations and disease prediction.",
-      tags: ["Flutter", "Precision Medicine", "Data Analytics", "Azure Cloud"],
+      tags: ["Flutter", "Precision Medicine", "Data Analytics", "Azure Cloud", "Material Design"],
       link: "https://github.com/medicamina",
       img: "/medicamina.png"
     },
@@ -26,7 +26,7 @@ export default function WorkPage() {
     {
       title: "Zesty",
       description: "A safe platform for adult industry workers to accept payments and report abusive clients.",
-      tags: ["Next.js", "Payment Processing", "Escrow", "Google Cloud"],
+      tags: ["Next.js", "Payment Processing", "Escrow", "Google Cloud", "Tailwind"],
       link: "https://github.com/zesty-hot",
       img: "/zesty.png"
     },
@@ -68,7 +68,7 @@ export default function WorkPage() {
     {
       title: "sa2.gg",
       description: "A gaming community with a forum, chat, and server.",
-      tags: ["Gaming", "Node.js", "MongoDB"],
+      tags: ["Gaming", "Node.js", "MongoDB", "Bootstrap"],
       link: "#",
       img: "/sa2gg.png"
     },

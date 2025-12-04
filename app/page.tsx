@@ -55,7 +55,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Card 1 */}
           <div className="md:col-span-2 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
-            <h3 className="text-xl font-semibold mb-4 text-zinc-100">Biotech Engineering</h3>
+            <h3 className="text-xl font-semibold mb-4 text-zinc-100">Synthetic Biology</h3>
             <p className="text-zinc-400 leading-relaxed">
               Specializing in synthetic biology and software engineering.
               I design and optimize sustainable solutions for both engineering and biological systems.
