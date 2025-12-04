@@ -241,7 +241,7 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            On weekends
+            On Weekends
           </h3>
           <div className="flex flex-row">
             <div className="flex-col">
