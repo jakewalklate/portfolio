@@ -78,6 +78,13 @@ export default function WorkPage() {
       tags: ["Java", "MySQL", "Class Assignment"],
       link: "#",
       img: "/telcor.png"
+    },
+    {
+      title: "Sister",
+      description: "A brand page for a local skateboarding company.",
+      tags: ["HTML", "CSS", "Bootstrap"],
+      link: "#",
+      img: "/sister.png"
     }
   ];
 

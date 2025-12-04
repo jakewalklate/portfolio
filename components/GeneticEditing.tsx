@@ -132,10 +132,12 @@ export default function GeneticEditing() {
             {sequence.map((base, i) => (
               <span
                 key={i}
-                className={`relative inline-block transition-all duration-300 ${i === cursorPos ? "text-white scale-110" : "text-zinc-600"
-                  } ${status === "COMPLETE" && i === TARGET_INDEX ? "text-green-400 scale-110" : ""
-                  } ${status === "EDITING" && i === TARGET_INDEX ? "text-yellow-400 animate-pulse" : ""
-                  }`}
+                className={`
+                  relative inline-block transition-all duration-300 
+                  ${i === cursorPos ? "text-white scale-110" : "text-zinc-600"} 
+                  ${status === "EDITING" && i === TARGET_INDEX ? "text-yellow-400! animate-pulse" : ""}
+                  ${status === "COMPLETE" && i === TARGET_INDEX ? "text-green-400! scale-110 animate-pulse" : ""} 
+                `}
               >
                 {base}
                 {i === TARGET_INDEX && status === "EDITING" && (
