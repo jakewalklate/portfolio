@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
-import { Code, Dna, Home, Mail } from "lucide-react";
+import { ChevronLeft, ChevronRight, Code, Dna, Home, Mail } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,7 +84,7 @@ export default function RootLayout({
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" className="hidden md:block font-bold text-xl tracking-tighter">Hello</a>
+            <a href="/" className="hidden md:block font-bold text-xl tracking-tighter"><ChevronLeft className="inline -mt-1 -mr-1" />Hello&nbsp;/<ChevronRight className="inline -mt-1 -ml-1" /></a>
             <a href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></a>
             <nav className="flex gap-6 text-sm font-medium text-zinc-400">
               <a href="/who-am-i" className="hover:text-white transition-colors mx-1">About</a>
