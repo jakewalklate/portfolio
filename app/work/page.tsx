@@ -154,7 +154,6 @@ export default function WorkPage() {
             </div>
             <ul className="list-disc list-inside text-zinc-400 leading-relaxed">
               <li>Voted most liked team member.</li>
-              <li>Consistently delivering high-quality service in a fast-paced environment.</li>
             </ul>
           </div>
 

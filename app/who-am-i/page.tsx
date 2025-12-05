@@ -10,7 +10,7 @@ export default function WhoAmIPage() {
             Who Am I?
           </h1>
           <h2 className="text-2xl text-zinc-400 font-medium">
-            Redbull enthusiast
+            Redbull Enthusiast
           </h2>
           <p className="text-zinc-600"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia</p>
         </div>
