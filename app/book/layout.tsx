@@ -99,10 +99,6 @@ export const metadata: Metadata = {
     "psychiatric system memoir",
     "true story psychiatric abuse",
     "first person psychiatric misdiagnosis",
-
-    // support networks
-    "Thomas Szasz",
-    "Citizens Commission on Human Rights",
   ],
   openGraph: {
     title: "The Pharmacology of Silence - Surviving Psychiatric Misdiagnosis",
