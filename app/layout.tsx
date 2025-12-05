@@ -72,16 +72,16 @@ export const metadata: Metadata = {
     "Database Design",
 
     // Data Science & ML
-    "Machine Learning",
-    "Data Science",
+    "Machine Learning Developer",
+    "Data Scientist",
     "Bioinformatics Tools",
     "Scientific Computing",
     "Data Visualization",
 
     // General
     "Portfolio",
-    "Innovation",
-    "Interdisciplinary",
+    "Biotechnology Innovation",
+    "Interdisciplinary Engineer",
     "STEM",
     "Biotechnology",
   ],

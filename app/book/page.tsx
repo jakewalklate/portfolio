@@ -22,13 +22,13 @@ export default function BookPage() {
 
           <div className="prose prose-invert prose-zinc">
             <p className="text-zinc-400 leading-relaxed">
-              Through my memoir, I delve into the harrowing experience of being diagnosed as mentally ill and confined within a maximum-security prison. This work critically examines the intersection of personal trauma and systemic indifference, inviting readers to question the true nature of institutional assumptions.
+              Through my memoir, I delve into the harrowing experience of being misdiagnosed as mentally ill and confined within a maximum-security prison. This work critically examines the intersection of personal trauma and systemic indifference, inviting readers to question the true nature of institutional assumptions.
             </p>
           </div>
 
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a download href="/the_pharmacology_of_silence_censored_compressed.pdf" className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all active:scale-95">
-              Free PDF
+              Free Download
             </a>
             <a href="/excerpt.pdf" className="px-8 py-3 bg-transparent border border-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95 opacity-50">
               Read Excerpt
