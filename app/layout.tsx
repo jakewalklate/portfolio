@@ -24,18 +24,66 @@ export const metadata: Metadata = {
   description:
     "Biotech Engineer & Creative. Merging biological systems with engineering principles. Building the future of biotech and digital experiences.",
   keywords: [
+    // Personal branding
     "Jake Spencer Walklate",
     "Jake Walklate",
     "svnty",
     "svnty_dev",
+
+    // Professional titles
     "Biotech Engineer",
     "Software Engineer",
     "Bioinformatician",
     "Biomedical Engineer",
     "Creative Developer",
+    "Full Stack Developer",
+    "Biotechnology Specialist",
+
+    // Biotech & Biology
     "Synthetic Biology",
     "Computational Biology",
+    "Genetic Engineering",
+    "CRISPR engineer",
+    "Gene Editing",
+    "Molecular Biology",
+    "Systems Biology",
+    "Protein Engineering",
+    "Biomanufacturing",
+    "Metabolic Engineering",
+
+    // Bioinformatics & Data
+    "Bioinformatics",
+    "Genomics",
+    "Proteomics",
+    "DNA Sequencing",
+    "Sequence Analysis",
+    "Biological Data Analysis",
+    "Computational Genomics",
+
+    // Programming & Tech
+    "TypeScript",
+    "JavaScript",
+    "Python",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Web Development",
+    "API Development",
+    "Database Design",
+
+    // Data Science & ML
+    "Machine Learning",
+    "Data Science",
+    "Bioinformatics Tools",
+    "Scientific Computing",
+    "Data Visualization",
+
+    // General
     "Portfolio",
+    "Innovation",
+    "Interdisciplinary",
+    "STEM",
+    "Biotechnology",
   ],
   authors: [{ name: "Jake Spencer Walklate", url: "https://svnty.is-a.dev" }, { name: "Jake Walklate", url: "https://svnty.is-a.dev" }],
   creator: "Jake Spencer Walklate",
