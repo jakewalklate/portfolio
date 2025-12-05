@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "Computational Biology",
     "Portfolio",
   ],
-  authors: [{ name: "Jake Spencer Walklate", url: "https://svnty.is-a.dev" }],
+  authors: [{ name: "Jake Spencer Walklate", url: "https://svnty.is-a.dev" }, { name: "Jake Walklate", url: "https://svnty.is-a.dev" }],
   creator: "Jake Spencer Walklate",
   openGraph: {
     type: "website",

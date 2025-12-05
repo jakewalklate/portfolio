@@ -100,7 +100,7 @@ export default function GeneticEditing() {
       </div>
 
       {/* Main Interface */}
-      <div className="p-6 space-y-6">
+      <div className="p-6 space-y-6 bg-zinc-900/30">
         {/* Stats Grid */}
         <div className="grid grid-cols-3 gap-1 sm:gap-4">
           <div className="p-3 bg-zinc-900/30 rounded border border-zinc-800">

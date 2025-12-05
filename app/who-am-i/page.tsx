@@ -9,10 +9,11 @@ export default function WhoAmIPage() {
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
             Who Am I?
           </h1>
-          <h2 className="text-2xl text-zinc-400 font-medium">
+          <h2 className="text-2xl text-zinc-400 font-medium mb-2">
             Redbull Enthusiast
           </h2>
-          <p className="text-zinc-600"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia</p>
+          <p className="text-zinc-500/90 mb-2 mt-1">Generation Z</p>
+          <p className="text-zinc-700"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia</p>
         </div>
 
         <div className="prose prose-invert prose-zinc max-w-none -mt-6">
@@ -229,7 +230,7 @@ export default function WhoAmIPage() {
             ].map((book, i) => (
               <div key={i} className="group flex gap-4 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="shrink-0 w-16 h-24 bg-zinc-800 rounded overflow-hidden shadow-sm">
-                  {book.cover && <img src={book.cover} alt={book.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />}
+                  {book.cover && <img src={book.cover} alt={book.title} className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity" />}
                 </div>
                 <div>
                   <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors">{book.title}</h4>
