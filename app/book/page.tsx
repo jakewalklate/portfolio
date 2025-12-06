@@ -1,3 +1,5 @@
+import { MousePointerClick } from "lucide-react";
+
 export default function BookPage() {
   return (
     <main className="flex flex-col items-center pt-32 pb-20 px-6 min-h-screen">
@@ -26,13 +28,23 @@ export default function BookPage() {
             </p>
           </div>
 
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a download href="/the_pharmacology_of_silence_censored_compressed.pdf" className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all active:scale-95">
-              Free Download
-            </a>
-            <a href="/excerpt.pdf" className="px-8 py-3 bg-transparent border border-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95 opacity-50">
-              Read Excerpt
-            </a>
+          <div className="pt-4 flex flex-col gap-4 justify-center md:justify-start">
+            <div className="flex flex-col lg:flex-row justify-center gap-4">
+              <a download href="/the_pharmacology_of_silence_censored_compressed.pdf"
+                className="w-full lg:w-auto text-center px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all hover:scale-105">
+                Free Download
+              </a>
+              <a href="/excerpt.pdf"
+                className="w-full lg:w-auto text-center px-8 py-3 bg-transparent border border-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95 opacity-50">
+                Read Excerpt
+              </a>
+            </div>
+            <div className="flex flex-col lg:mx-8 hidden">
+              <a download href="/help.pdf"
+                className="w-full! px-8 text-center py-3 bg-transparent border border-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95">
+                Where can victims find meaning?
+              </a>
+            </div>
           </div>
         </div>
       </section>
