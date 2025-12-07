@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Synthetic Biology",
     "Computational Biology",
     "Genetic Engineering",
-    "CRISPR engineer",
+    "CRISPR Engineer",
     "Gene Editing",
     "Molecular Biology",
     "Systems Biology",

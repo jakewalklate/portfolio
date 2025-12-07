@@ -89,9 +89,16 @@ export default function WorkPage() {
     {
       title: "Epithelial karotyping",
       description: "Lysing and staining of epithelial cells to determine chromosomal abnormalities.",
-      tags: ["Genetics"],
+      tags: ["Genetics", "Assignment"],
       link: "#",
       img: "/karyotyping.JPG"
+    },
+    {
+      title: "Anti-inflammatory product analysis",
+      description: "Analysis of effectiveness of common over the counter anti-inflammatory products sold at pharmacies.",
+      tags: ["Immunology", "Assignment", "Macrophage"],
+      link: "#",
+      img: "/inflammatory-analysis.png"
     }
   ];
 
