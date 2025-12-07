@@ -86,27 +86,27 @@ export default function WorkPage() {
       link: "#",
       img: "/sister.png"
     },
-    {
-      title: "Epithelial karotyping",
-      description: "Lysing and staining of epithelial cells to determine chromosomal abnormalities.",
-      tags: ["Genetics", "Assignment"],
-      link: "#",
-      img: "/karyotyping.JPG"
-    },
-    {
-      title: "Anti-inflammatory product analysis",
-      description: "Analysis of effectiveness of common over the counter anti-inflammatory products sold at pharmacies.",
-      tags: ["Immunology", "Assignment", "Macrophage"],
-      link: "#",
-      img: "/inflammatory-analysis.png"
-    },
-    {
-      title: "KNIME rainfall predictor",
-      description: "Predicting the probability of rain using discrete machine learning in KNIME.",
-      tags: ["Machine Learning", "KNIME", "Assignment"],
-      link: "#",
-      img: "/knime-rainfall.png"
-    }
+    // {
+    //   title: "Epithelial karotyping",
+    //   description: "Lysing and staining of epithelial cells to determine chromosomal abnormalities.",
+    //   tags: ["Genetics", "Assignment"],
+    //   link: "#",
+    //   img: "/karyotyping.JPG"
+    // },
+    // {
+    //   title: "Anti-inflammatory product analysis",
+    //   description: "Analysis of effectiveness of common over the counter anti-inflammatory products sold at pharmacies.",
+    //   tags: ["Immunology", "Assignment", "Macrophage"],
+    //   link: "#",
+    //   img: "/inflammatory-analysis.png"
+    // },
+    // {
+    //   title: "KNIME rainfall predictor",
+    //   description: "Predicting the probability of rain using discrete machine learning in KNIME.",
+    //   tags: ["Machine Learning", "KNIME", "Assignment"],
+    //   link: "#",
+    //   img: "/knime-rainfall.png"
+    // }
   ];
 
   return (
