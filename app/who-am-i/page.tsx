@@ -347,7 +347,7 @@ export default function WhoAmIPage() {
             Things I Don't Like
           </h3>
           <ul className="list-inside space-y-2">
-            <li><X className="text-red-400 inline me-1.5 shrink-0" />Expesive food</li>
+            <li><X className="text-red-400 inline me-1.5 shrink-0" />Expensive food</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Difficult English spelling</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Catching buses</li>
           </ul>
