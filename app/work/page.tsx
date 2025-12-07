@@ -99,6 +99,13 @@ export default function WorkPage() {
       tags: ["Immunology", "Assignment", "Macrophage"],
       link: "#",
       img: "/inflammatory-analysis.png"
+    },
+    {
+      title: "KNIME rainfall predictor",
+      description: "Predicting the probability of rain using discrete machine learning in KNIME.",
+      tags: ["Machine Learning", "KNIME", "Assignment"],
+      link: "#",
+      img: "/knime-rainfall.png"
     }
   ];
 
