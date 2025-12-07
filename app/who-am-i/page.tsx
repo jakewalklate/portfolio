@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { MapPin, X } from "lucide-react";
 import React from "react";
 
 export default function WhoAmIPage() {
@@ -275,6 +275,82 @@ export default function WhoAmIPage() {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Personal Interests
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Prototyping - Large Tile */}
+            <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+              <div className="z-10">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Workshop Prototyping</h4>
+                <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-lg">
+                  There is a satisfaction in bringing ideas into the physical world. Whether it's crafting with timber or fabricating with 3D additive manufacturing, I love the feedback loop of validation that comes from rapid prototyping.
+                </p>
+              </div>
+            </div>
+
+            {/* Psychology - Standard Tile */}
+            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+              <div className="z-10 h-full flex flex-col">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Human OS</h4>
+                <p className="text-zinc-400 leading-relaxed mb-4">
+                  I am fascinated by the source code of human behavior.
+                </p>
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-x-2 gap-y-1 text-[10px] md:text-xs text-purple-400 font-mono">
+                    <span>import </span>
+                    <span>EVOLUTIONARY_PSYCH</span>
+                    <span>//</span>
+                    <span>ANALYTICAL_PSYCH</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Open Source - Standard Tile */}
+            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+              <div className="z-10 relative">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Open Source</h4>
+                <p className="text-zinc-400 leading-relaxed">
+                  I believe software is at it's best when it is transparent, accessible, and community-driven.
+                </p>
+              </div>
+            </div>
+
+            {/* Cars - Standard Tile */}
+            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+              <div className="z-10 relative">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4">JDM Culture</h4>
+                <p className="text-zinc-400 leading-relaxed">
+                  Japanese engineering from the 90s represents a golden era of mechanical harmony and style.
+                </p>
+              </div>
+            </div>
+
+            {/* Defense - Standard Tile */}
+            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+              <div className="z-10 relative">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Military</h4>
+                <p className="text-zinc-400 leading-relaxed">
+                  I'm fascinated by the macro-scale systems and bravery that enables the evolution and protection of our culture.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Things I Don't Like
+          </h3>
+          <ul className="list-inside space-y-2">
+            <li><X className="text-red-400 inline me-1.5 shrink-0" />Expesive food</li>
+            <li><X className="text-red-400 inline me-1.5 shrink-0" />Difficult English spelling</li>
+            <li><X className="text-red-400 inline me-1.5 shrink-0" />Catching buses</li>
+          </ul>
         </div>
       </section>
     </main>
