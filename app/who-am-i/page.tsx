@@ -22,7 +22,7 @@ export default function WhoAmIPage() {
             My work focuses on leveraging software engineering principles to solve complex problems in synthetic biology and healthcare.
           </p>
           <p className="text-lg text-zinc-400 leading-relaxed mt-4">
-            With a background in both life sciences and computer science, I bridge the gap between wet lab experimentation and computational analysis.
+            With a background in both life sciences and computer science, I bridge the gap between laboratory experimentation and computational analysis.
             I build tools that accelerate research, optimize workflows, and visualize complex data.
           </p>
         </div>
