@@ -297,7 +297,7 @@ export default function WhoAmIPage() {
               <div className="z-10 h-full flex flex-col">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Human OS</h4>
                 <p className="text-zinc-400 leading-relaxed mb-4">
-                  I am fascinated by the source code of human behavior.
+                  I am captivated by the source code of human behavior.
                 </p>
                 <div className="mt-auto">
                   <div className="flex flex-wrap gap-x-2 gap-y-1 text-[10px] md:text-xs text-purple-400 font-mono">
@@ -350,6 +350,7 @@ export default function WhoAmIPage() {
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Expensive food</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Difficult English spelling</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Catching buses</li>
+            <li><X className="text-red-400 inline me-1.5 shrink-0" />Loans and compound interest</li>
           </ul>
         </div>
       </section>
