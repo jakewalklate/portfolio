@@ -138,17 +138,17 @@ export default function RootLayout({
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <Link href="/" className="hidden md:block font-bold text-xl tracking-tighter"><ChevronLeft className="inline -mt-0.5 -mr-1" />svnty&nbsp;/<ChevronRight className="inline -mt-0.5 -ml-1" /></Link>
+            <Link href="/" className="hidden md:flex items-center font-bold text-xl tracking-tighter px-3 py-1 -ml-3 rounded-full hover:bg-white/10 transition-all active:scale-[0.98]"><ChevronLeft className="w-5 h-5 -mr-1" />svnty&nbsp;/<ChevronRight className="w-5 h-5 -ml-1" /></Link>
             <Link href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></Link>
             <nav className="flex gap-6 text-sm font-medium text-zinc-400">
-              <Link href="/who-am-i" className="hover:text-white transition-colors mx-1">About</Link>
-              <Link href="/work" className="hover:text-white transition-colors mx-1">Work</Link>
-              <Link href="/book" className="hover:text-white transition-colors mx-1">Book</Link>
+              <Link href="/who-am-i" className="hover:text-white transition-colors mx-1 active:scale-[0.98]">About</Link>
+              <Link href="/work" className="hover:text-white transition-colors mx-1 active:scale-[0.98]">Work</Link>
+              <Link href="/book" className="hover:text-white transition-colors mx-1 active:scale-[0.98]">Book</Link>
             </nav>
             <a
               id="contact"
               href="mailto:jake@svnty.is-a.dev"
-              className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors"
+              className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors active:scale-95"
             >
               <span className="hidden md:block">Get in touch</span>
               <span className="block md:hidden"><Mail /></span>
