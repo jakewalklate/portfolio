@@ -349,9 +349,8 @@ export default function WhoAmIPage() {
           <ul className="list-inside space-y-2">
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Expensive food</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Difficult English spelling</li>
-            <li><X className="text-red-400 inline me-1.5 shrink-0" />Catching buses</li>
+            <li><X className="text-red-400 inline me-1.5 shrink-0" />Riding buses</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Loans and compound interest</li>
-            <li><X className="text-red-400 inline me-1.5 shrink-0" />Human suffering</li>
           </ul>
         </div>
       </section>
