@@ -203,28 +203,6 @@ export default function WorkPage() {
           </div>
         </div>
 
-        <div className="space-y-8">
-          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Favourite Tech Stack
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 container mx-auto">
-            {[
-              "Next.js",
-              "tRPC",
-              "Supabase",
-              "TailwindCSS",
-              "Apple Silicon",
-              "Prisma ORM",
-              "Neural Networks",
-              "Capacitor.js"
-            ].map((tech, i) => (
-              <div key={i} className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-white/20 transition-colors flex items-center justify-center text-center">
-                <span className="text-zinc-400 font-medium cursor-default">{tech}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div className="space-y-8 pt-12 border-t border-white/10">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-amber-400 transition-colors">
             <div className="space-y-2">
