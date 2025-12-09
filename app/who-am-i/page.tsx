@@ -342,28 +342,6 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-8">
-          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Favourite Tech Stack
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              "Next.js",
-              "tRPC",
-              "Supabase",
-              "TailwindCSS",
-              "Apple Silicon",
-              "Prisma ORM",
-              "Neural Networks",
-              "Capacitor.js"
-            ].map((tech, i) => (
-              <div key={i} className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-white/30 transition-colors flex items-center justify-center text-center">
-                <span className="text-zinc-400 font-medium cursor-default">{tech}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Don't Like
