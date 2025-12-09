@@ -342,6 +342,28 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Favourite Tech Stack
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              "Next.js",
+              "tRPC",
+              "Supabase",
+              "TailwindCSS",
+              "Apple Silicon",
+              "Prisma ORM",
+              "Neural Networks",
+              "Capacitor.js"
+            ].map((tech, i) => (
+              <div key={i} className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-white/30 transition-colors flex items-center justify-center text-center">
+                <span className="text-zinc-400 font-medium cursor-default">{tech}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Don't Like
@@ -353,6 +375,37 @@ export default function WhoAmIPage() {
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Loans and compound interest</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Crowded elevators</li>
           </ul>
+        </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Favourite TV Series
+          </h3>
+          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+            {[
+              { title: "Silicon Valley", network: "HBO", cover: "/silicon-valley.jpg" },
+              { title: "Mr. Robot", network: "USA Network", cover: "/mrrobot.jpg" },
+              { title: "Dopesick", network: "Hulu", cover: "/dopesick.jpg" },
+              { title: "Therapy or Torture", network: "CCHR", cover: "/therapyortorture.jpg" },
+              { title: "Trainspotting", network: "Channel Four Films", cover: "/trainspotting.jpg" },
+              { title: "Citizen Four", network: "Doc Society", cover: "/snowden.jpg" }
+            ].map((show, i) => (
+              <div key={i} className="group flex flex-col gap-3">
+                <div className="aspect-2/3 w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
+                  {show.cover ? (
+                    <img src={show.cover} alt={show.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                  ) : null}
+                  <div className={`absolute inset-0 flex items-center justify-center px-4 text-center ${show.cover ? 'hidden' : ''}`}>
+                    <span className="text-zinc-500 font-medium">{show.title}</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors">{show.title}</h4>
+                  <div className="text-zinc-500 text-sm">{show.network}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>
