@@ -1,5 +1,4 @@
-import { MapPin, X } from "lucide-react";
-import React from "react";
+import { MapPin, X, Brain, Activity, Hammer, Search } from "lucide-react";
 
 export default function WhoAmIPage() {
   return (
@@ -353,7 +352,7 @@ export default function WhoAmIPage() {
               "Supabase",
               "TailwindCSS",
               "Apple Silicon",
-              "Prisma ORM",
+              "Prisma.io",
               "Neural Networks",
               "Capacitor.js"
             ].map((tech, i) => (
@@ -403,6 +402,134 @@ export default function WhoAmIPage() {
                 <div>
                   <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors">{show.title}</h4>
                   <div className="text-zinc-500 text-sm">{show.network}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Core Values & Philosophy
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                  <Brain size={20} />
+                </div>
+                <h4 className="text-white font-medium">Intentionality</h4>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                Right thought precedes right action. Strategy is the precursor to execution.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-green-500/10 text-green-400">
+                  <Activity size={20} />
+                </div>
+                <h4 className="text-white font-medium">Pragmatism</h4>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                Perfection is only an idea, don't let it consume you. Ship, iterate, and improve.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+                  <Hammer size={20} />
+                </div>
+                <h4 className="text-white font-medium">Craftsmanship</h4>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                The tools we choose shape our output. Don't reinvent the wheel. Build on others expertise to produce quality.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400">
+                  <Search size={20} />
+                </div>
+                <h4 className="text-white font-medium">Precision</h4>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                Assumptions can often cause conflict. Prioritise precision in communication and code.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Photo Album
+          </h3>
+          <div className="space-y-4">
+            <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
+              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-36 md:-mt-48" />
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
+                <img src="/selfies/1.jpeg" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
+                <img src="/selfies/3.jpeg" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+              <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
+                <img src="/selfies/4.JPG" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Current Hardware
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              "Macbook Pro",
+              "Keychron K1 (Red Switches)",
+              "Anycubic Kobra S1",
+              "TS80P Soldering Iron",
+              "Uni-T UT210E Multimeter",
+              "VINCA DCLA-0805 Calipers",
+              "Ozito Power Tools"
+            ].map((item, i) => (
+              <div key={i} className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex items-center justify-between group">
+                <span className="text-zinc-400 font-medium group-hover:text-white transition-colors">{item}</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-green-500 transition-colors"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Gaming Hall of Fame
+          </h3>
+          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+            {[
+              { title: "GTA San Andreas", subtitle: "Rockstar", cover: "/gta-sa.jpg" },
+              { title: "Counter Strike Source", subtitle: "Valve", cover: "/css.jpg" },
+              { title: "Deus Ex: Human Revolution", subtitle: "Eidos-Montréal", cover: "/deusex.jpg" },
+              { title: "Saints Row The Third", subtitle: "Volition", cover: "/saintsrow.jpg" },
+              { title: "Portal", subtitle: "Valve", cover: "/portal.jpg" },
+              { title: "Half-Life 2", subtitle: "Valve", cover: "/halflife.jpg" },
+              { title: "Borderlands", subtitle: "Gearbox", cover: "/borderlands.png" },
+              { title: "Need for Speed: Most Wanted", subtitle: "EA", cover: "/nfsmw.png" },
+              { title: "Tony Hawk's Underground", subtitle: "Neversoft", cover: "/thug.jpg" }
+            ].map((game, i) => (
+              <div key={i} className="group flex flex-col gap-3">
+                <div className="aspect-2/3 w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
+                  <img src={game.cover} alt={game.title} className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors truncate">{game.title}</h4>
+                  <div className="text-zinc-500 text-sm truncate">{game.subtitle}</div>
                 </div>
               </div>
             ))}
