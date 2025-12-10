@@ -156,6 +156,7 @@ export default function WhoAmIPage() {
                     { title: "Come Over When You're Sober, Pt. 2", artist: "Lil Peep", cover: "/peeppt2.jpg" },
                     { title: "Hybrid Theory", artist: "Linkin Park", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/53/a7/7f/53a77fab-c54c-a57b-8130-248fc12d0c80/093624948995.jpg/500x500bb.jpg" },
                     { title: "Faces", artist: "Mac Miller", cover: "/macfaces.jpg" },
+                    { title: "Best Buds", artist: "Mom Jeans", cover: "/bestbuds.jpg" },
                   ].map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
@@ -286,7 +287,7 @@ export default function WhoAmIPage() {
               <div className="z-10">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Workshop Prototyping</h4>
                 <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-lg">
-                  There is a satisfaction in bringing ideas into the physical world. Whether it's crafting with timber or fabricating with 3D additive manufacturing, I love the feedback loop of validation that comes from rapid prototyping.
+                  There is a satisfaction in bringing ideas into the physical world. Whether it's crafting with timber or fabricating with 3D additive manufacturing, I love the feedback loop that comes from rapid prototyping.
                 </p>
               </div>
             </div>
@@ -433,7 +434,7 @@ export default function WhoAmIPage() {
                 <h4 className="text-white font-medium">Pragmatism</h4>
               </div>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                Perfection is only an idea, don't let it consume you. Ship, iterate, and improve.
+                Perfection is only an idea, don't let it consume you. Ship, iterate, test and improve.
               </p>
             </div>
 
@@ -473,7 +474,7 @@ export default function WhoAmIPage() {
             </div>
             <div className="grid grid-cols-3 gap-4">
               <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-                <img src="/selfies/1.jpeg" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                <img src="/selfies/a.png" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
                 <img src="/selfies/3.jpeg" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
@@ -491,7 +492,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              "Macbook Pro",
+              "Macbook Pro (2020) [M1]",
               "Keychron K1 (Red Switches)",
               "Anycubic Kobra S1",
               "TS80P Soldering Iron",
