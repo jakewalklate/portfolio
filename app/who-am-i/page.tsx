@@ -469,7 +469,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="space-y-4">
             <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-36 md:-mt-48" />
+              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-24 sm:-mt-36 md:-mt-48" />
             </div>
             <div className="grid grid-cols-3 gap-4">
               <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
@@ -497,7 +497,6 @@ export default function WhoAmIPage() {
               "TS80P Soldering Iron",
               "Uni-T UT210E Multimeter",
               "VINCA DCLA-0805 Calipers",
-              "Ozito Power Tools"
             ].map((item, i) => (
               <div key={i} className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex items-center justify-between group">
                 <span className="text-zinc-400 font-medium group-hover:text-white transition-colors">{item}</span>
