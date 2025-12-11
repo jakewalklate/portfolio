@@ -193,7 +193,7 @@ export default function WhoAmIPage() {
             </p>
             <br />
             <p>
-              Later, I was sent to a game development academy by my school. That was a cool moment for me, and it's where I started to see how I could combine my interests with technology.
+              Later, I was sent to a game development academy by my school. That was a cool moment for me, and it's where I started to see how I could combine my interests with education.
             </p>
           </div>
         </div>
