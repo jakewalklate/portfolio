@@ -471,17 +471,23 @@ export default function WhoAmIPage() {
           <div className="space-y-4">
             <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
               <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-24 sm:-mt-36 md:-mt-48" />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white text-sm font-mono">2023</span>
+              </div>
             </div>
             <div className="grid grid-cols-3 gap-4">
-              <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-                <img src="/selfies/a.png" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-                <img src="/selfies/3.jpeg" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-                <img src="/selfies/4.JPG" alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+              {[
+                { src: "/selfies/a.png", year: "2024" },
+                { src: "/selfies/3.jpeg", year: "2024" },
+                { src: "/selfies/4.JPG", year: "2023" },
+              ].map((photo, i) => (
+                <div key={i} className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
+                  <img src={photo.src} alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white text-xs font-mono">{photo.year}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
