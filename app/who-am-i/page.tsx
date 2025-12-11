@@ -544,6 +544,22 @@ export default function WhoAmIPage() {
             ))}
           </div>
         </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Worldview
+          </h3>
+          <div className="space-y-4">
+            <div className="relative rounded-lg border border-white/20 hover:border-white/25 overflow-hidden group">
+              <img src="/banner.png" alt="Banner" className="w-full h-auto group-hover:blur-[1px] transition-all duration-500" />
+              <div className="absolute inset-0 flex items-center justify-center p-4">
+                <span className="text-white/90 text-lg md:text-xl font-medium text-center bg-black/20 px-6 py-3 rounded-md backdrop-blur-[3px]">
+                  Technological and moral progress — owing to tradition.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
