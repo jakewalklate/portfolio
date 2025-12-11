@@ -547,7 +547,7 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Worldview
+            Worldview & Goals
           </h3>
           <div className="space-y-4">
             <div className="relative rounded-lg border border-white/20 hover:border-white/25 overflow-hidden group">
