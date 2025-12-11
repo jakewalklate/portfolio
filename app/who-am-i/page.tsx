@@ -553,7 +553,7 @@ export default function WhoAmIPage() {
             <div className="relative rounded-lg border border-white/20 hover:border-white/25 overflow-hidden group">
               <img src="/banner.png" alt="Banner" className="w-full h-auto group-hover:blur-[1px] transition-all duration-500" />
               <div className="absolute inset-0 flex items-center justify-center p-4">
-                <span className="text-white max-sm:text-sm text-xl font-medium text-center bg-black/20 px-6 py-3 rounded-md backdrop-blur-[3px]">
+                <span className="text-white max-sm:text-sm text-xl font-medium text-center bg-black/20 px-6 py-3 rounded-md backdrop-blur-[3px] group-hover:backdrop-blur-[5px] transition-all duration-500">
                   Technological and moral progress — owing to tradition.
                 </span>
               </div>
