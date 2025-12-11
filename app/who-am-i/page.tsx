@@ -8,10 +8,10 @@ export default function WhoAmIPage() {
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
             Who Am I?
           </h1>
-          <h2 className="text-2xl text-zinc-400 font-medium mb-2">
+          {/* <h2 className="text-2xl text-zinc-400 font-medium mb-2">
             Redbull Enthusiast
           </h2>
-          <p className="text-zinc-500/90 mb-2 mt-1">Generation Z</p>
+          <p className="text-zinc-500/90 mb-2 mt-1">Generation Z</p> */}
           <p className="text-zinc-700"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia</p>
         </div>
 
