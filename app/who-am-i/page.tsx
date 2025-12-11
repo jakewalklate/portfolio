@@ -527,7 +527,10 @@ export default function WhoAmIPage() {
               { title: "Half-Life 2", subtitle: "Valve", cover: "/halflife.jpg" },
               { title: "Borderlands", subtitle: "Gearbox", cover: "/borderlands.png" },
               { title: "Need for Speed: Most Wanted", subtitle: "EA", cover: "/nfsmw.png" },
-              { title: "Tony Hawk's Underground", subtitle: "Neversoft", cover: "/thug.jpg" }
+              { title: "Tony Hawk's Underground", subtitle: "Neversoft", cover: "/thug.jpg" },
+              { title: "Assassin's Creed Revelations", subtitle: "Ubisoft", cover: "/acr.jpg" },
+              { title: "Guild Wars 2", subtitle: "NCSoft", cover: "/gw2.png" },
+              { title: "Pokemon Emerald Version", subtitle: "Nintendo", cover: "/emerald.jpg" },
             ].map((game, i) => (
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-2/3 w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
