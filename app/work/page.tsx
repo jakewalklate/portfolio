@@ -85,28 +85,7 @@ export default function WorkPage() {
       tags: ["HTML", "CSS", "Bootstrap"],
       link: "#",
       img: "/sister.png"
-    },
-    // {
-    //   title: "Epithelial karotyping",
-    //   description: "Lysing and staining of epithelial cells to determine chromosomal abnormalities.",
-    //   tags: ["Genetics", "Assignment"],
-    //   link: "#",
-    //   img: "/karyotyping.JPG"
-    // },
-    // {
-    //   title: "Anti-inflammatory product analysis",
-    //   description: "Analysis of effectiveness of common over the counter anti-inflammatory products sold at pharmacies.",
-    //   tags: ["Immunology", "Assignment", "Macrophage"],
-    //   link: "#",
-    //   img: "/inflammatory-analysis.png"
-    // },
-    // {
-    //   title: "KNIME rainfall predictor",
-    //   description: "Predicting the probability of rain using discrete machine learning in KNIME.",
-    //   tags: ["Machine Learning", "KNIME", "Assignment"],
-    //   link: "#",
-    //   img: "/knime-rainfall.png"
-    // }
+    }
   ];
 
   return (
@@ -204,7 +183,7 @@ export default function WorkPage() {
         </div>
 
         <div className="space-y-8 pt-12 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-amber-400 transition-colors">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-amber-400 transition-colors duration-200">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold text-white">
                 Resume
