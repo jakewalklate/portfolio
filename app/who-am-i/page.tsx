@@ -913,6 +913,7 @@ export default function WhoAmIPage() {
                   { label: "Creative Freedom", width: "95%" },
                   { label: "Relaxing Beach Days", width: "70%" },
                   { label: "Talented Mentorship", width: "85%" },
+                  { label: "Upgrading Systems", width: "100%" },
                 ].map((item, i) => (
                   <div key={i} className="group">
                     <div className="flex justify-between text-xs mb-1">
@@ -941,6 +942,7 @@ export default function WhoAmIPage() {
                   { label: "Inauthenticity", width: "90%" },
                   { label: "Rigid Bureaucracy", width: "85%" },
                   { label: "Undervalued Contributions", width: "95%" },
+                  { label: "Early Mornings", width: "98%" },
                 ].map((item, i) => (
                   <div key={i} className="group">
                     <div className="flex justify-between text-xs mb-1">
