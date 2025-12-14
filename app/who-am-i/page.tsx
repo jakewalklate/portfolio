@@ -1162,8 +1162,31 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-
-
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Go-To Style
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-800 rounded-lg overflow-hidden">
+            {[
+              { name: "Tommy Hilfiger", tagline: "American Heritage" },
+              { name: "Polo Sport", tagline: "Since 1967" },
+              { name: "Nike", tagline: "Just Do It" },
+              { name: "New Balance", tagline: "Endorsed by No One" }
+            ].map((brand, i) => (
+              <div
+                key={i}
+                className="bg-zinc-900 px-6 py-3 flex flex-col items-center justify-center text-center group hover:bg-zinc-800/80 transition-colors cursor-default"
+              >
+                <span className="text-white font-medium text-sm tracking-wide group-hover:text-zinc-300 transition-colors">
+                  {brand.name}
+                </span>
+                <span className="text-zinc-600 text-[10px] mt-1.5 tracking-wider uppercase">
+                  {brand.tagline}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
 
       </section>
     </main>
