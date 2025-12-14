@@ -864,7 +864,7 @@ export default function WhoAmIPage() {
               <div className="text-blue-400">
                 <span className="text-purple-400">function</span> <span className="text-yellow-200">createExcellence</span>(<span className="text-blue-300">isReady</span><span className="text-white">:</span>&nbsp;<span className="text-emerald-400">boolean</span>) <span className="text-white relative group cursor-default">
                   {'{'}
-                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden opacity-60 transition-opacity whitespace-nowrap pointer-events-none z-10">
                     Same-line brace (K&R)
                   </div>
                 </span>
@@ -872,7 +872,7 @@ export default function WhoAmIPage() {
               <div className="relative group cursor-default w-fit">
                 {/* <div className="absolute left-0 top-0 bottom-0 w-4 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
                 <span className="text-purple-400 pl-4">if</span> (<span className="text-blue-300">isReady</span>) {'{'}
-                <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
+                <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden opacity-60 transition-opacity whitespace-nowrap pointer-events-none z-10">
                   2 Spaces Indentation
                 </div>
               </div>
@@ -1016,10 +1016,62 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Favourite Problems
+          </h3>
+          <p className="text-zinc-500 text-sm -mt-4">
+            The open questions that I carry around in my head.
+          </p>
+          <div className="space-y-4">
+            <div className="p-6 rounded-xl bg-zinc-900/50 border border-white/5 hover:border-rose-500/30 transition-colors group">
+              <div className="flex items-start gap-4">
+                <span className="text-2xl pt-1">⚖️</span>
+                <div>
+                  <h4 className="text-lg font-serif text-white/90 italic leading-relaxed mb-3">
+                    "What sort of constitutional checks and balances should a people have that balances freedom with responsibility, and creativity with preservation?"
+                  </h4>
+                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-600 uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-500/50"></span>
+                    Governance & Society
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-xl bg-zinc-900/50 border border-white/5 hover:border-sky-500/30 transition-colors group">
+              <div className="flex items-start gap-4">
+                <span className="text-2xl pt-1">🏡</span>
+                <div>
+                  <h4 className="text-lg font-serif text-white/90 italic leading-relaxed mb-3">
+                    "How do we build physical environments that respect human physiology, rather than exploiting for profits?"
+                  </h4>
+                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-600 uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-sky-500/50"></span>
+                    Sustainability
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-xl bg-zinc-900/50 border border-white/5 hover:border-teal-500/30 transition-colors group">
+              <div className="flex items-start gap-4">
+                <span className="text-2xl pt-1">💭</span>
+                <div>
+                  <h4 className="text-lg font-serif text-white/90 italic leading-relaxed mb-3">
+                    "Are people predisposed to mistake predicting troubles (or responding to troubles) with causing troubles?"
+                  </h4>
+                  <div className="flex items-center gap-2 text-xs font-mono text-zinc-600 uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500/50"></span>
+                    Psychology
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-
-
-
     </main>
   );
 }
