@@ -1,4 +1,5 @@
 import { MapPin, X, Brain, Activity, Hammer, Search } from "lucide-react";
+import Time from "./time";
 
 export default function WhoAmIPage() {
   return (
@@ -12,7 +13,7 @@ export default function WhoAmIPage() {
             Redbull Enthusiast
           </h2>
           {/* <p className="text-zinc-500/90 mb-2 mt-1">Generation Z</p> */}
-          <p className="text-zinc-700"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia</p>
+          <p className="text-zinc-700"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia (Current Time: <Time />)</p>
         </div>
 
         <div className="prose prose-invert prose-zinc max-w-none -mt-6">
