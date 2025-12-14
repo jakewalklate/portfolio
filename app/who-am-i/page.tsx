@@ -678,6 +678,41 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
+
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            My Development Loop
+          </h3>
+          <div className="relative">
+            {/* Loop container */}
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-6 rounded-2xl bg-zinc-900/30 border border-white/5">
+              {[
+                { emoji: "🥤", label: "Redbull", color: "text-red-400" },
+                { emoji: "🧠", label: "Hyperfocus", color: "text-purple-400" },
+                { emoji: "🧑‍💻", label: "Code", color: "text-blue-400" },
+                { emoji: "😤", label: "Debug", color: "text-orange-400" },
+                { emoji: "🚀", label: "Deploy", color: "text-green-400" },
+                { emoji: "💤", label: "Rest @ 3am", color: "text-zinc-400" },
+              ].map((step, i, arr) => (
+                <div key={i} className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex flex-col items-center group">
+                    <span className="text-2xl sm:text-3xl group-hover:scale-125 transition-transform cursor-default">{step.emoji}</span>
+                    <span className={`text-[10px] sm:text-xs font-mono mt-1 ${step.color}`}>{step.label}</span>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <span className="text-zinc-600 text-lg">→</span>
+                  )}
+                </div>
+              ))}
+              {/* Loop back arrow */}
+              <span className="text-zinc-600 text-2xl">↺</span>
+            </div>
+            {/* Subtitle */}
+            <p className="text-center text-zinc-500 text-sm mt-4 italic">
+              "I'll just make one small change.." — Me, every night
+            </p>
+          </div>
+        </div>
       </section>
     </main>
   );
