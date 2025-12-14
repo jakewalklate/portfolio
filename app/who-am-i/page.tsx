@@ -728,7 +728,7 @@ export default function WhoAmIPage() {
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]" />
               <div className="relative p-6 space-y-4">
                 <div className="flex items-start justify-between">
-                  <div className="text-3xl">🏛️</div>
+                  <div className="text-3xl">💡</div>
                   <span className="text-[10px] font-mono text-amber-400/60 px-2 py-1 rounded-full border border-amber-400/20 bg-amber-400/5">
                     VISION
                   </span>
@@ -738,7 +738,7 @@ export default function WhoAmIPage() {
                     Cultural Youth Center
                   </h4>
                   <p className="text-zinc-400 text-sm leading-relaxed">
-                    An all-ages venue and weekend sanctuary for young people on the Central Coast. A place for live shows, creativity, and community — the space I wish existed when I was growing up.
+                    An all-ages non-profit venue and weekend sanctuary for young people on the Central Coast. A place for live shows, creativity, and community — the space I wish existed when I was growing up.
                   </p>
                 </div>
                 <div className="pt-2 border-t border-white/5">
@@ -757,7 +757,7 @@ export default function WhoAmIPage() {
               <a href="https://stanleyuni.github.io" target="_blank">
                 <div className="relative p-6 space-y-4">
                   <div className="flex items-start justify-between">
-                    <img src="/Shield-S.png" alt="Stanley University" className="w-10 h-10" />
+                    <img src="/Shield-S.png" alt="Stanley University" className="w-8 h-10" />
                     <span className="text-[10px] font-mono text-blue-400/60 px-2 py-1 rounded-full border border-blue-400/20 bg-blue-400/5">
                       VISION
                     </span>
@@ -778,6 +778,45 @@ export default function WhoAmIPage() {
                   </div>
                 </div>
               </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Honest Admissions
+          </h3>
+
+          <div className="space-y-6">
+            {/* Unpopular Opinions */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-mono text-zinc-500 uppercase tracking-wider flex items-center gap-2">
+                <span>🔥</span> Unpopular Opinions
+              </h4>
+              <div className="p-4 rounded-xl bg-zinc-900/50 border border-red-500/20 hover:border-red-500/30 transition-colors">
+                <p className="text-zinc-300 text-sm leading-relaxed">
+                  I think crypto is useless.
+                </p>
+              </div>
+            </div>
+
+            {/* Things I've Accepted */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-mono text-zinc-500 uppercase tracking-wider flex items-center gap-2">
+                <span>🪞</span> Things I've Accepted About Myself
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-zinc-500/30 transition-colors">
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    I'm emotionally neutral in my expression — this sometimes upsets people who want more visible enthusiasm.
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-zinc-500/30 transition-colors">
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    I'd rather do something myself than ask others. Delegation isn't my strong suit — I just don't like bothering people.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
