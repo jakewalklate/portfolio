@@ -685,7 +685,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="relative">
             {/* Loop container */}
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-6 rounded-2xl bg-zinc-900/30 border border-white/5">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-6 rounded-2xl bg-zinc-900/50 border border-white/5 ">
               {[
                 { emoji: "🥤", label: "Redbull", color: "text-red-400" },
                 { emoji: "🧠", label: "Hyperfocus", color: "text-purple-400" },
