@@ -157,6 +157,7 @@ export default function WhoAmIPage() {
                     { title: "Hybrid Theory", artist: "Linkin Park", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/53/a7/7f/53a77fab-c54c-a57b-8130-248fc12d0c80/093624948995.jpg/500x500bb.jpg" },
                     { title: "Faces", artist: "Mac Miller", cover: "/macfaces.jpg" },
                     { title: "Best Buds", artist: "Mom Jeans", cover: "/bestbuds.jpg" },
+                    { title: "Grown Man Biz", artist: "Scotty Hinds", cover: "/scottyhinds.jpg" },
                   ].map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
@@ -556,6 +557,123 @@ export default function WhoAmIPage() {
                 <span className="text-white max-sm:text-sm text-xl font-medium text-center bg-black/20 px-6 py-3 rounded-md backdrop-blur-[3px] group-hover:backdrop-blur-[5px] transition-all duration-500">
                   Technological and moral progress — owing to tradition.
                 </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Long-Term Roadmap
+          </h3>
+          <div className="relative">
+            <div className="space-y-0">
+              {/* Step 1: Undergraduate */}
+              <div className="relative flex gap-6 group">
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-blue-500/20 border-2 border-blue-500">
+                    <span className="text-blue-400 font-bold text-sm">1</span>
+                  </div>
+                  {/* Line to next step */}
+                  <div className="w-px flex-1 bg-gradient-to-b from-blue-500 to-green-500 opacity-50" />
+                </div>
+                <div className="flex-1 p-4 rounded-xl bg-zinc-900/50 border border-blue-500/30 hover:border-blue-500/50 transition-colors mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-mono text-blue-400 px-2 py-0.5 rounded-full bg-blue-500/10">NOW</span>
+                  </div>
+                  <h4 className="text-lg font-medium text-white mb-1">Undergraduate Studies</h4>
+                  <p className="text-sm text-zinc-400">Completing dual degrees in Engineering (Honours) and Medical Science at UTS.</p>
+                </div>
+              </div>
+
+              {/* Step 2: Engineering Employment */}
+              <div className="relative flex gap-6 group">
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-green-500/20 border-2 border-green-500/50">
+                    <span className="text-green-400/70 font-bold text-sm">2</span>
+                  </div>
+                  {/* Line to next step */}
+                  <div className="w-px flex-1 bg-gradient-to-b from-green-500 to-purple-500 opacity-50" />
+                </div>
+                <div className="flex-1 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-green-500/30 transition-colors mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-mono text-green-400/70 px-2 py-0.5 rounded-full bg-green-500/10">NEXT</span>
+                  </div>
+                  <h4 className="text-lg font-medium text-white mb-1">Part Time Engineering Employment</h4>
+                  <p className="text-sm text-zinc-400">Seeking a software engineering role while completing my undergraduate studies — building systems that accelerate technological progress or have value to consumers.</p>
+                </div>
+              </div>
+
+              {/* Step 3: Part-time PhD */}
+              <div className="relative flex gap-6 group">
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/20 border-2 border-purple-500/30">
+                    <span className="text-purple-400/70 font-bold text-sm">3</span>
+                  </div>
+                  {/* Line with arrow */}
+                  <div className="w-px flex-1 bg-purple-500 opacity-50" />
+                  <div className="text-purple-500 opacity-50 -mt-0.5 leading-none">▼</div>
+                </div>
+                <div className="flex-1 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-purple-500/30 transition-colors">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-mono text-purple-400/70 px-2 py-0.5 rounded-full bg-purple-500/10">FUTURE</span>
+                  </div>
+                  <h4 className="text-lg font-medium text-white mb-1">Part-Time PhD</h4>
+                  <p className="text-sm text-zinc-400">Post-graduation, pursuing advanced research in biotech, neuroscience, computational neurobiology, or neuropsychology while continuing industry work.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Growth Board
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Future Investigations Column */}
+            <div className="rounded-xl bg-zinc-900/30 border border-white/5 overflow-hidden">
+              <div className="px-4 py-3 bg-amber-500/10 border-b border-amber-500/20">
+                <h4 className="text-amber-400 font-semibold text-sm flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-400" />
+                  Future Investigations
+                </h4>
+              </div>
+              <div className="p-3 space-y-2">
+                {[
+                  { title: "Rust for embedded systems programming", tag: "Language" },
+                  { title: "Computational neuropsychology", tag: "Research" },
+                  { title: "WebAssembly", tag: "Web" },
+                  { title: "Go for asynchronous scripting", tag: "Language" },
+                ].map((card, i) => (
+                  <div key={i} className="p-3 rounded-lg bg-zinc-800/50 border border-white/5 hover:border-amber-500/30 transition-colors group cursor-default">
+                    <div className="text-white text-sm font-medium group-hover:text-amber-400 transition-colors">{card.title}</div>
+                    <div className="text-xs text-zinc-500 mt-1">{card.tag}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Lessons Learnt Column */}
+            <div className="rounded-xl bg-zinc-900/30 border border-white/5 overflow-hidden">
+              <div className="px-4 py-3 bg-emerald-500/10 border-b border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold text-sm flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  Lessons Learnt
+                </h4>
+              </div>
+              <div className="p-3 space-y-2">
+                {[
+                  { title: "Focus on MVP before features", tag: "Practice" },
+                  { title: "Simple solutions outlast clever ones", tag: "Philosophy" },
+                  { title: "Plan for the UX before coding", tag: "Practice" },
+                  { title: "Listen to developer market feedback", tag: "Practice" },
+                ].map((card, i) => (
+                  <div key={i} className="p-3 rounded-lg bg-zinc-800/50 border border-white/5 hover:border-emerald-500/30 transition-colors group cursor-default">
+                    <div className="text-white text-sm font-medium group-hover:text-emerald-400 transition-colors">{card.title}</div>
+                    <div className="text-xs text-zinc-500 mt-1">{card.tag}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
