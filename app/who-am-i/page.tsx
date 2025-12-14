@@ -849,6 +849,50 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Editor Preferences
+          </h3>
+          <div className="relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-white/10 shadow-2xl">
+            <div className="flex items-center gap-1.5 px-4 py-3 bg-[#252526] border-b border-white/5">
+              <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+              <span className="ml-2 text-xs font-mono text-zinc-500">Visual Studio Code — excellence.ts (Dark Mode)</span>
+            </div>
+            <div className="p-4 sm:p-6 font-mono text-xs md:text-sm sm:text-base leading-relaxed overflow-x-auto">
+              <div className="text-blue-400">
+                <span className="text-purple-400">function</span> <span className="text-yellow-200">createExcellence</span>(<span className="text-blue-300">isReady</span><span className="text-white">:</span>&nbsp;<span className="text-emerald-400">boolean</span>) <span className="text-white relative group cursor-default">
+                  {'{'}
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                    Same-line brace (K&R)
+                  </div>
+                </span>
+              </div>
+              <div className="relative group cursor-default w-fit">
+                {/* <div className="absolute left-0 top-0 bottom-0 w-4 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
+                <span className="text-purple-400 pl-4">if</span> (<span className="text-blue-300">isReady</span>) {'{'}
+                <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
+                  2 Spaces Indentation
+                </div>
+              </div>
+              <div>
+                <span className="text-purple-400 pl-8">return</span> <span className="text-yellow-200">shipIt</span>();
+              </div>
+              <div className="text-white">&nbsp;&nbsp;{'}'}</div>
+              <div className="text-white">{'}'}</div>
+            </div>
+          </div>
+
+          <div className="mx-3 bg-zinc-800 -mt-2 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Same-line brace (K&R)
+          </div>
+
+          <div className="mx-3 bg-zinc-800 -mt-6 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
+            Two space indentation
+          </div>
+        </div>
+
         <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Enjoyment vs Stressors
@@ -912,50 +956,6 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-8">
-          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Style Preferences
-          </h3>
-          <div className="relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-white/10 shadow-2xl">
-            <div className="flex items-center gap-1.5 px-4 py-3 bg-[#252526] border-b border-white/5">
-              <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-              <span className="ml-2 text-xs font-mono text-zinc-500">excellence.ts</span>
-            </div>
-            <div className="p-4 sm:p-6 font-mono text-xs md:text-sm sm:text-base leading-relaxed overflow-x-auto">
-              <div className="text-blue-400">
-                <span className="text-purple-400">function</span> <span className="text-yellow-200">createExcellence</span>(<span className="text-blue-300">isReady</span><span className="text-white">:</span>&nbsp;<span className="text-emerald-400">boolean</span>) <span className="text-white relative group cursor-default">
-                  {'{'}
-                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
-                    Same-line brace (K&R)
-                  </div>
-                </span>
-              </div>
-              <div className="relative group cursor-default w-fit">
-                {/* <div className="absolute left-0 top-0 bottom-0 w-4 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
-                <span className="text-purple-400 pl-4">if</span> (<span className="text-blue-300">isReady</span>) {'{'}
-                <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
-                  2 Spaces Indentation
-                </div>
-              </div>
-              <div>
-                <span className="text-purple-400 pl-8">return</span> <span className="text-yellow-200">shipIt</span>();
-              </div>
-              <div className="text-white">&nbsp;&nbsp;{'}'}</div>
-              <div className="text-white">{'}'}</div>
-            </div>
-          </div>
-
-          <div className="mx-3 bg-zinc-800 -mt-2 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            Same-line brace (K&R)
-          </div>
-
-          <div className="mx-3 bg-zinc-800 -mt-6 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
-            Two space indentation
-          </div>
-        </div>
-
         <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             User Manual
@@ -976,6 +976,8 @@ export default function WhoAmIPage() {
 
             {/* Content */}
             <div className="p-6 md:p-8 space-y-8">
+              <div className="text-sm text-zinc-400 mb-3 -mt-2">Software revision: v{(new Date().getFullYear() - 1997).toString()}.0.0</div>
+
               {/* Section 1 */}
               <div className="space-y-3">
                 <h4 className="text-xl font-bold text-[#c9d1d9] border-b border-[#30363d] pb-2">
