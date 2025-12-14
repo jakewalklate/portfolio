@@ -865,7 +865,7 @@ export default function WhoAmIPage() {
                 <span className="text-purple-400">function</span> <span className="text-yellow-200">createExcellence</span>(<span className="text-blue-300">isReady</span><span className="text-white">:</span>&nbsp;<span className="text-emerald-400">boolean</span>) <span className="text-white relative group cursor-default">
                   {'{'}
                   <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden opacity-60 transition-opacity whitespace-nowrap pointer-events-none z-10">
-                    Same-line brace (K&R)
+                    Same-line brace (1TBS)
                   </div>
                 </span>
               </div>
