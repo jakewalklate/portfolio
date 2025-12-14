@@ -619,7 +619,7 @@ export default function WhoAmIPage() {
                     <span className="text-xs font-mono text-purple-400/70 px-2 py-0.5 rounded-full bg-purple-500/10">FUTURE</span>
                   </div>
                   <h4 className="text-lg font-medium text-white mb-1">Part-Time PhD</h4>
-                  <p className="text-sm text-zinc-400">Post-graduation, pursuing advanced research in biotech, neuroscience, computational neurobiology, or neuropsychology while continuing industry work.</p>
+                  <p className="text-sm text-zinc-400">Post-graduation, pursuing advanced research in biotech, neuroscience, computational neurobiology, or psychology while continuing industry work.</p>
                 </div>
               </div>
             </div>
