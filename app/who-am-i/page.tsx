@@ -632,7 +632,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Future Investigations Column */}
-            <div className="rounded-xl bg-zinc-900/30 border border-white/5 overflow-hidden">
+            <div className="rounded-xl bg-zinc-900/30 border border-white/15 overflow-hidden">
               <div className="px-4 py-3 bg-amber-500/10 border-b border-amber-500/20">
                 <h4 className="text-amber-400 font-semibold text-sm flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-400" />
@@ -655,7 +655,7 @@ export default function WhoAmIPage() {
             </div>
 
             {/* Lessons Learnt Column */}
-            <div className="rounded-xl bg-zinc-900/30 border border-white/5 overflow-hidden">
+            <div className="rounded-xl bg-zinc-900/30 border border-white/15 overflow-hidden">
               <div className="px-4 py-3 bg-emerald-500/10 border-b border-emerald-500/20">
                 <h4 className="text-emerald-400 font-semibold text-sm flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
