@@ -1106,10 +1106,10 @@ export default function WhoAmIPage() {
             {/* TV Static Header */}
             <div className="px-5 py-3 bg-zinc-800/50 border-b border-white/5 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="text-red-500 text-xs font-mono animate-pulse">● REC</span>
+                <span className="text-red-500 text-xs font-mono animate-pulse"><span>►</span>&nbsp;<span className="absolute -mt-[1px]">PLAY</span></span>
                 {/* <span className="text-zinc-500 text-xs font-mono">02:47 AM</span> */}
               </div>
-              <span className="text-zinc-600 text-xs font-mono">DOCUMENTARY</span>
+              <span className="text-zinc-600 text-xs font-mono">VHS</span>
             </div>
 
             <div className="p-6 space-y-4">
@@ -1131,6 +1131,30 @@ export default function WhoAmIPage() {
                   <h4 className="text-white font-medium mb-1 group-hover:text-orange-400 transition-colors">Prison Documentaries</h4>
                   <p className="text-zinc-400 text-sm leading-relaxed">
                     The sociology of incarceration, life inside maximum security, reform programs. It's a window into a world most hopefully never see — and I can't look away.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-white/5" />
+
+              <div className="flex items-start gap-4 group">
+                <span className="text-3xl">🪖</span>
+                <div>
+                  <h4 className="text-white font-medium mb-1 group-hover:text-cyan-400 transition-colors">World War History</h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The geopolitics, strategies, and human stories from WWII. The scale of these conflicts and how they shaped the post-modern world never stops being fascinating.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-white/5" />
+
+              <div className="flex items-start gap-4 group">
+                <span className="text-3xl">🏛️</span>
+                <div>
+                  <h4 className="text-white font-medium mb-1 group-hover:text-emerald-400 transition-colors">Renaissance & Roman History</h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The rise and fall of Rome, the rebirth of classical ideas — there's something timeless about understanding how civilizations build, peak, and transform.
                   </p>
                 </div>
               </div>
