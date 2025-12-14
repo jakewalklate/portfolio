@@ -840,8 +840,11 @@ export default function WhoAmIPage() {
                   Hardcore / Punk Subculture
                 </span>
               </div>
-              <p className="text-zinc-400 text-sm leading-relaxed max-w-xl">
+              <p className="text-zinc-300 text-sm leading-relaxed max-w-xl">
                 Straight edge is a subculture of hardcore punk that celebrates sobriety from drugs and alcohol. I made the decision to join the straight edge community in 2019 and very rarely — practically never — drink alcohol.
+              </p>
+              <p className="text-zinc-400 text-sm leading-relaxed max-w-xl">
+                This decision was influenced by one of my favourite skateboarders <a href="https://www.instagram.com/dale_do/" className="text-blue-400 hover:underline" target="_blank">Dale Decker</a>.
               </p>
             </div>
           </div>
