@@ -719,7 +719,7 @@ export default function WhoAmIPage() {
             Endgame
           </h3>
           <p className="text-zinc-500 text-sm -mt-4">
-            Goals that live in the back of my mind — things I'd love to build before I'm done.
+            Goals that live in the back of my mind — things I'd love to build before I'm gone.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Youth Center Card */}
