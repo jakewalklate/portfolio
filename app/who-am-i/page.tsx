@@ -808,7 +808,7 @@ export default function WhoAmIPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-zinc-500/30 transition-colors">
                   <p className="text-zinc-300 text-sm leading-relaxed">
-                    I'm emotionally neutral in my expression — this sometimes upsets people who want more visible enthusiasm.
+                    I'm emotionally neutral in a lot of my expression — this sometimes upsets people who want more visible enthusiasm. It's nothing personal.
                   </p>
                 </div>
                 <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-zinc-500/30 transition-colors">
@@ -849,6 +849,71 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
+
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Enjoyment vs Stressors
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Dopamine */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                  <Activity size={20} />
+                </div>
+                <h4 className="text-white font-medium">Dopamine Sources<sup className="text-blue-500">&nbsp;++</sup></h4>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { label: "Novelty & Big Ideas", width: "95%" },
+                  { label: "Shopping", width: "90%" },
+                  { label: "Creative Freedom", width: "95%" },
+                  { label: "Relaxing Beach Days", width: "70%" },
+                  { label: "Talented Mentorship", width: "85%" },
+                ].map((item, i) => (
+                  <div key={i} className="group">
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-zinc-400 group-hover:text-blue-400 transition-colors">{item.label}</span>
+                    </div>
+                    <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-500/50 group-hover:bg-blue-400 transition-colors rounded-full" style={{ width: item.width }}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Cortisol */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-red-500/10 text-red-400">
+                  <Activity size={20} />
+                </div>
+                <h4 className="text-white font-medium">Cortisol Triggers<sup className="text-red-500">&nbsp;--</sup></h4>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { label: "Micromanagement", width: "100%" },
+                  { label: "Repetitive Routine", width: "95%" },
+                  { label: "Inauthenticity", width: "90%" },
+                  { label: "Rigid Bureaucracy", width: "85%" },
+                  { label: "Undervalued Contributions", width: "95%" },
+                ].map((item, i) => (
+                  <div key={i} className="group">
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-zinc-400 group-hover:text-red-400 transition-colors">{item.label}</span>
+                    </div>
+                    <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-red-500/50 group-hover:bg-red-400 transition-colors rounded-full" style={{ width: item.width }}></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </section>
     </main>
   );
