@@ -642,7 +642,7 @@ export default function WhoAmIPage() {
               <div className="p-3 space-y-2">
                 {[
                   { title: "Rust for embedded systems programming", tag: "Language" },
-                  { title: "Computational neuropsychology", tag: "Research" },
+                  { title: "Computational neurobiology", tag: "Research" },
                   { title: "WebAssembly", tag: "Web" },
                   { title: "Go for asynchronous scripting", tag: "Language" },
                 ].map((card, i) => (
@@ -817,6 +817,32 @@ export default function WhoAmIPage() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Straight Edge
+          </h3>
+          <div className="flex flex-col sm:flex-row gap-6 items-start">
+            {/* X Symbol */}
+            <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-zinc-900/50 border border-white/10 shrink-0 my-auto">
+              <span className="text-4xl font-black text-white">X</span>
+            </div>
+            {/* Content */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 flex-wrap">
+                <span className="text-xs font-mono text-zinc-500 px-2 py-1 rounded-full border border-zinc-700 bg-zinc-800/50">
+                  Since August 2019
+                </span>
+                <span className="text-xs font-mono text-zinc-500 px-2 py-1 rounded-full border border-zinc-700 bg-zinc-800/50">
+                  Hardcore / Punk Subculture
+                </span>
+              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed max-w-xl">
+                Straight edge is a subculture of hardcore punk that celebrates sobriety from drugs and alcohol. I made the decision to join the straight edge community in 2019 and very rarely — practically never — drink alcohol.
+              </p>
             </div>
           </div>
         </div>
