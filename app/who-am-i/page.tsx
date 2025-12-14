@@ -873,7 +873,7 @@ export default function WhoAmIPage() {
                 {/* <div className="absolute left-0 top-0 bottom-0 w-4 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
                 <span className="text-purple-400 pl-4">if</span> (<span className="text-blue-300">isReady</span>) {'{'}
                 <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden opacity-60 transition-opacity whitespace-nowrap pointer-events-none z-10">
-                  2 Spaces Indentation
+                  Two space indentation
                 </div>
               </div>
               <div>
