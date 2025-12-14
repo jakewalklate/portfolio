@@ -885,7 +885,7 @@ export default function WhoAmIPage() {
           </div>
 
           <div className="mx-3 bg-zinc-800 -mt-2 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            Same-line brace (K&R)
+            Same-line brace (1TBS)
           </div>
 
           <div className="mx-3 bg-zinc-800 -mt-6 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
