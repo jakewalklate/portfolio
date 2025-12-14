@@ -1095,6 +1095,52 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            How I Waste Time
+          </h3>
+          <p className="text-zinc-500 text-sm -mt-4">
+            Things I watch when I should be sleeping.
+          </p>
+          <div className="rounded-2xl bg-zinc-900/50 border border-white/10 overflow-hidden">
+            {/* TV Static Header */}
+            <div className="px-5 py-3 bg-zinc-800/50 border-b border-white/5 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-red-500 text-xs font-mono animate-pulse">● REC</span>
+                {/* <span className="text-zinc-500 text-xs font-mono">02:47 AM</span> */}
+              </div>
+              <span className="text-zinc-600 text-xs font-mono">DOCUMENTARY</span>
+            </div>
+
+            <div className="p-6 space-y-4">
+              <div className="flex items-start gap-4 group">
+                <span className="text-3xl">🔍</span>
+                <div>
+                  <h4 className="text-white font-medium mb-1 group-hover:text-red-400 transition-colors">Forensic Investigations</h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Cold cases, DNA breakthroughs, interrogation techniques — I find the investigative process fascinating. Nothing like learning about detectives investigations at 3am.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-white/5" />
+
+              <div className="flex items-start gap-4 group">
+                <span className="text-3xl">🔒</span>
+                <div>
+                  <h4 className="text-white font-medium mb-1 group-hover:text-orange-400 transition-colors">Prison Documentaries</h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    The sociology of incarceration, life inside maximum security, reform programs. It's a window into a world most hopefully never see — and I can't look away.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
       </section>
     </main>
   );
