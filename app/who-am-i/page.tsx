@@ -365,7 +365,6 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Don't Like
@@ -471,7 +470,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="space-y-4">
             <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-24 sm:-mt-36 md:-mt-48" />
+              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-28 sm:-mt-36 md:-mt-44" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-white text-sm font-mono">2023</span>
               </div>
@@ -827,12 +826,12 @@ export default function WhoAmIPage() {
           </h3>
           <div className="flex flex-col sm:flex-row gap-6 items-start">
             {/* X Symbol */}
-            <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-zinc-900/50 border border-white/10 shrink-0 my-auto">
+            <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-zinc-900/50 border border-white/10 shrink-0 my-auto max-sm:mx-auto">
               <span className="text-4xl font-black text-white">X</span>
             </div>
             {/* Content */}
             <div className="space-y-3">
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-3 flex-wrap max-sm:justify-center">
                 <span className="text-xs font-mono text-zinc-500 px-2 py-1 rounded-full border border-zinc-700 bg-zinc-800/50">
                   Since August 2019
                 </span>
@@ -840,10 +839,10 @@ export default function WhoAmIPage() {
                   Hardcore / Punk Subculture
                 </span>
               </div>
-              <p className="text-zinc-300 text-sm leading-relaxed max-w-xl">
+              <p className="text-zinc-300 text-sm leading-relaxed">
                 Straight edge is a subculture of hardcore punk that celebrates sobriety from drugs and alcohol. I made the decision to join the straight edge community in 2019 and very rarely — practically never — drink alcohol.
               </p>
-              <p className="text-zinc-400 text-sm leading-relaxed max-w-xl">
+              <p className="text-zinc-400 text-sm leading-relaxed">
                 This decision was influenced by one of my favourite skateboarders <a href="https://www.instagram.com/dale_do/" className="text-blue-400 hover:underline" target="_blank">Dale Decker</a>.
               </p>
             </div>
@@ -913,8 +912,112 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Style Preferences
+          </h3>
+          <div className="relative rounded-xl overflow-hidden bg-[#1e1e1e] border border-white/10 shadow-2xl">
+            <div className="flex items-center gap-1.5 px-4 py-3 bg-[#252526] border-b border-white/5">
+              <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+              <span className="ml-2 text-xs font-mono text-zinc-500">excellence.ts</span>
+            </div>
+            <div className="p-4 sm:p-6 font-mono text-xs md:text-sm sm:text-base leading-relaxed overflow-x-auto">
+              <div className="text-blue-400">
+                <span className="text-purple-400">function</span> <span className="text-yellow-200">createExcellence</span>(<span className="text-blue-300">isReady</span><span className="text-white">:</span>&nbsp;<span className="text-emerald-400">boolean</span>) <span className="text-white relative group cursor-default">
+                  {'{'}
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                    Same-line brace (K&R)
+                  </div>
+                </span>
+              </div>
+              <div className="relative group cursor-default w-fit">
+                {/* <div className="absolute left-0 top-0 bottom-0 w-4 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
+                <span className="text-purple-400 pl-4">if</span> (<span className="text-blue-300">isReady</span>) {'{'}
+                <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
+                  2 Spaces Indentation
+                </div>
+              </div>
+              <div>
+                <span className="text-purple-400 pl-8">return</span> <span className="text-yellow-200">shipIt</span>();
+              </div>
+              <div className="text-white">&nbsp;&nbsp;{'}'}</div>
+              <div className="text-white">{'}'}</div>
+            </div>
+          </div>
 
+          <div className="mx-3 bg-zinc-800 -mt-2 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Same-line brace (K&R)
+          </div>
+
+          <div className="mx-3 bg-zinc-800 -mt-6 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
+            Two space indentation
+          </div>
+        </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            User Manual
+          </h3>
+          <div className="rounded-xl overflow-hidden bg-zinc-900/80 border border-[#30363d] shadow-xl">
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 bg-zinc-900 border-b border-[#30363d]">
+              <div className="flex items-center gap-2">
+                <div className="text-[#8b949e]">
+                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" fill="currentColor" className="octicon octicon-book">
+                    <path d="M0 0h16v16H0z" fill="none"></path>
+                    <path d="M0 4.25v7.25a.75.75 0 00.75.75h2.5a.75.75 0 00.75-.75V2.75l-4-1V4.25zm.75 8v-.039l3.25-.813V2.41L.75 3.22V12.25zM12 2.75v8.75a.75.75 0 00.75.75h2.5a.75.75 0 00.75-.75V4.25l-4-1V2.75zm3.25 9.5h-2.5V3.387l3.25.813V12.25zM5.5 2.5l5 1.25v9.5l-5-1.25V2.5z"></path>
+                  </svg>
+                </div>
+                <span className="text-sm font-semibold text-[#c9d1d9] font-mono">README.md</span>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 md:p-8 space-y-8">
+              {/* Section 1 */}
+              <div className="space-y-3">
+                <h4 className="text-xl font-bold text-[#c9d1d9] border-b border-[#30363d] pb-2">
+                  Strong Opinions, Loosely Held
+                </h4>
+                <div className="pl-4 border-l-4 border-[#30363d] text-[#8b949e] py-1 italic">
+                  I value new information above my own ego.
+                </div>
+                <p className="text-[#c9d1d9] text-sm leading-relaxed">
+                  I view ideas as hypotheses to be tested, not identities to be defended. If evidence proves me wrong, I try to pivot immediately.
+                </p>
+              </div>
+
+              {/* Section 2 */}
+              <div className="space-y-3">
+                <h4 className="text-xl font-bold text-[#c9d1d9] border-b border-[#30363d] pb-2">
+                  Learning: First Principles
+                </h4>
+                <p className="text-[#c9d1d9] text-sm leading-relaxed">
+                  I hate memorizing; I want to understand the <em>why</em>. Whether it's a new framework or a biological pathway, I want to be able to tear it down to its fundamental truths and be able to build it back up.
+                  <br /><br />
+                  <code className="bg-[#161b22] px-1.5 py-0.5 rounded text-[#a5d6ff] text-xs">Why? &gt; How?</code>
+                </p>
+              </div>
+
+              {/* Section 3 */}
+              <div className="space-y-3">
+                <h4 className="text-xl font-bold text-[#c9d1d9] border-b border-[#30363d] pb-2">
+                  Psychological Safety
+                </h4>
+                <p className="text-[#c9d1d9] text-sm leading-relaxed">
+                  I believe the best insights begin when it is safe to say "I don't know". I am patient with questions and flexible with mistakes, provided we learn from them. I optimize for team trust, not just individual code velocity.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </section>
+
+
+
     </main>
   );
 }
