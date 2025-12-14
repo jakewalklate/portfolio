@@ -713,6 +713,74 @@ export default function WhoAmIPage() {
             </p>
           </div>
         </div>
+
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Endgame
+          </h3>
+          <p className="text-zinc-500 text-sm -mt-4">
+            Goals that live in the back of my mind — things I'd love to build before I'm done.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Youth Center Card */}
+            <div className="group relative rounded-2xl bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-amber-500/30 transition-all overflow-hidden">
+              {/* Blueprint grid pattern overlay */}
+              <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]" />
+              <div className="relative p-6 space-y-4">
+                <div className="flex items-start justify-between">
+                  <div className="text-3xl">🏛️</div>
+                  <span className="text-[10px] font-mono text-amber-400/60 px-2 py-1 rounded-full border border-amber-400/20 bg-amber-400/5">
+                    VISION
+                  </span>
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-amber-400 transition-colors">
+                    Cultural Youth Center
+                  </h4>
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    An all-ages venue and weekend sanctuary for young people on the Central Coast. A place for live shows, creativity, and community — the space I wish existed when I was growing up.
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-white/5">
+                  <span className="text-xs text-zinc-500 font-mono flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500/50" />
+                    Central Coast, NSW
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Stanley University Card */}
+            <div className="group relative rounded-2xl bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-blue-500/30 transition-all overflow-hidden">
+              {/* Blueprint grid pattern overlay */}
+              <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]" />
+              <a href="https://stanleyuni.github.io" target="_blank">
+                <div className="relative p-6 space-y-4">
+                  <div className="flex items-start justify-between">
+                    <img src="/Shield-S.png" alt="Stanley University" className="w-10 h-10" />
+                    <span className="text-[10px] font-mono text-blue-400/60 px-2 py-1 rounded-full border border-blue-400/20 bg-blue-400/5">
+                      VISION
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                      Stanley University
+                    </h4>
+                    <p className="text-zinc-400 text-sm leading-relaxed">
+                      A contribution to higher education access on the Central Coast — named after my university maths professor. Bridging the gap for a region underserved by tertiary opportunities.
+                    </p>
+                  </div>
+                  <div className="pt-2 border-t border-white/5">
+                    <span className="text-xs text-zinc-500 font-mono flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50" />
+                      Central Coast, NSW
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
