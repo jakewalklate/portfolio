@@ -405,7 +405,7 @@ export default function WhoAmIPage() {
                 <div className="mt-4 pt-3 border-t border-zinc-800 flex items-center gap-2">
                   <span className="text-green-500">❯</span>
                   <span className="text-zinc-400">sudo rm -rf /bin/java/</span>
-                  <span className="w-2 h-4 bg-zinc-400 animate-[blink 1s infinite]" />
+                  <span className="w-2 h-4 bg-zinc-400 motion-safe:animate-[blink_1.5s_step-start_infinite]" />
                 </div>
               </div>
             </div>
@@ -422,6 +422,7 @@ export default function WhoAmIPage() {
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Riding buses</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Loans and compound interest</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Crowded elevators</li>
+            <li><X className="text-red-400 inline me-1.5 shrink-0" />Writing raw SQL migrations</li>
           </ul>
         </div>
 
