@@ -715,7 +715,7 @@ export default function WhoAmIPage() {
               <div className="px-4 py-3 bg-amber-500/10 border-b border-amber-500/20">
                 <h4 className="text-amber-400 font-semibold text-sm flex items-center gap-2">
                   {/* <span className="w-2 h-2 rounded-full bg-amber-400" /> */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-amber-400"><path d="" stroke="none" fill-rule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fill-rule="evenodd" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-amber-400"><path d="" stroke="none" fillRule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fillRule="evenodd" /></svg>
                   Future Investigations
                 </h4>
               </div>
@@ -739,7 +739,7 @@ export default function WhoAmIPage() {
               <div className="px-4 py-3 bg-emerald-500/10 border-b border-emerald-500/20">
                 <h4 className="text-emerald-400 font-semibold text-sm flex items-center gap-2">
                   {/* <span className="w-2 h-2 rounded-full bg-emerald-400" /> */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-emerald-400"><path d="" stroke="none" fill-rule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fill-rule="evenodd" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-emerald-400"><path d="" stroke="none" fillRule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fillRule="evenodd" /></svg>
                   Lessons Learnt
                 </h4>
               </div>
@@ -1266,6 +1266,37 @@ export default function WhoAmIPage() {
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Peaceful Sanctuary
+          </h3>
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            {/* Plant Illustration */}
+            <div className="flex gap-4 justify-center">
+              {["🌱", "🪴", "🌿", "🌵"].map((plant, i) => (
+                <div
+                  key={i}
+                  className="w-16 h-16 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center text-2xl hover:scale-110 hover:border-green-500/30 transition-all cursor-default"
+                >
+                  {plant}
+                </div>
+              ))}
+            </div>
+            {/* Description */}
+            <div className="flex-1 text-center md:text-left gap-4">
+              <p className="text-zinc-400 leading-relaxed">
+                At home, I love growing plants. I enjoy growing indoor house plants and vegetables because they bring life and calm into my home while giving me a hands-on connection to nature year-round.
+              </p>
+              <p className="text-zinc-400 leading-relaxed">
+                Caring for them is relaxing and rewarding and I share this with my family. It's satisfying to watch something thrive because of my attention and effort.
+              </p>
+              <p className="text-zinc-600 text-sm italic">
+                "Patience is bitter, but its fruit is sweet."
+              </p>
+            </div>
           </div>
         </div>
 
