@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, Truck, Ship } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap } from "lucide-react";
 import Time from "./time";
 
 export default function WhoAmIPage() {
@@ -430,7 +430,7 @@ export default function WhoAmIPage() {
             <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-green-500/10 text-green-400">
-                  <Ship size={20} />
+                  <GraduationCap size={20} />
                 </div>
                 <h4 className="text-white font-medium">Pragmatism</h4>
               </div>
