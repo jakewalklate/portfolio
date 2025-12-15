@@ -91,7 +91,7 @@ export default function GeneticEditing() {
             <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
             <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50" />
           </div>
-          <span className="text-zinc-500 text-xs">CRISPR-Cas9.exe — v2.4.0</span>
+          <span className="text-zinc-500 text-xs">CRISPR-Cas9.exe</span>
         </div>
         <div className="flex gap-4 text-[10px] text-zinc-500">
           <span>MEM: 64MB</span>
