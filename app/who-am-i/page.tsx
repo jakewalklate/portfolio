@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, Truck, Ship } from "lucide-react";
 import Time from "./time";
 
 export default function WhoAmIPage() {
@@ -430,7 +430,7 @@ export default function WhoAmIPage() {
             <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-green-500/10 text-green-400">
-                  <Activity size={20} />
+                  <Ship size={20} />
                 </div>
                 <h4 className="text-white font-medium">Pragmatism</h4>
               </div>
@@ -471,7 +471,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="space-y-4">
             <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-28 sm:-mt-36 md:-mt-44" />
+              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-24 sm:-mt-36 md:-mt-44" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-white text-sm font-mono">2023</span>
               </div>
@@ -863,7 +863,7 @@ export default function WhoAmIPage() {
             </div>
             <div className="p-4 sm:p-6 font-mono text-xs md:text-sm sm:text-base leading-relaxed overflow-x-auto">
               <div className="text-blue-400">
-                <span className="text-purple-400">function</span> <span className="text-yellow-200">createExcellence</span>(<span className="text-blue-300">isReady</span><span className="text-white">:</span>&nbsp;<span className="text-emerald-400">boolean</span>) <span className="text-white relative group cursor-default">
+                <span className="text-purple-400">function</span> <span className="text-yellow-200">buildExcellence</span>(<span className="text-blue-300">isReady</span><span className="text-white">:</span>&nbsp;<span className="text-emerald-400">boolean</span>) <span className="text-white relative group cursor-default">
                   {'{'}
                   <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden opacity-60 transition-opacity whitespace-nowrap pointer-events-none z-10">
                     Same-line brace (1TBS)
