@@ -379,7 +379,7 @@ export default function WhoAmIPage() {
                   {[
                     { name: "next.js", pid: "3000", mem: "128M" },
                     { name: "tRPC", pid: "4000", mem: "64M" },
-                    { name: "supabase", pid: "5432", mem: "256M" },
+                    { name: "supabase (postgresql)", pid: "5432", mem: "256M" },
                     { name: "tailwindcss", pid: "8080", mem: "32M" },
                     { name: "apple-silicon", pid: "0001", mem: "∞" },
                     { name: "prisma.io", pid: "5555", mem: "48M" },
