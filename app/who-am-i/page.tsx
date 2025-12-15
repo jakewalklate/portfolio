@@ -348,22 +348,87 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Tech Stack
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 container mx-auto">
-            {[
-              "Next.js",
-              "tRPC",
-              "Supabase",
-              "TailwindCSS",
-              "Apple Silicon",
-              "Prisma.io",
-              "Neural Networks",
-              "Capacitor.js"
-            ].map((tech, i) => (
-              <div key={i} className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-white/20 transition-colors flex items-center justify-center text-center">
-                <span className="text-zinc-400 font-medium cursor-default">{tech}</span>
+          {/* Server Rack Container */}
+          <div className="relative mx-auto max-w-2xl">
+            {/* Rack Frame */}
+            <div className="relative rounded-lg bg-gradient-to-b from-zinc-800 to-zinc-900 border-2 border-zinc-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] overflow-hidden">
+              {/* Rack mounting rails - left */}
+              <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-zinc-700 to-zinc-800 border-r border-zinc-600 flex flex-col justify-around py-4">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-2 h-2 mx-auto rounded-full bg-zinc-900 border border-zinc-600" />
+                ))}
               </div>
-            ))}
+              {/* Rack mounting rails - right */}
+              <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-zinc-700 to-zinc-800 border-l border-zinc-600 flex flex-col justify-around py-4">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="w-2 h-2 mx-auto rounded-full bg-zinc-900 border border-zinc-600" />
+                ))}
+              </div>
+
+              {/* Server Blades Container */}
+              <div className="mx-6 py-3 space-y-2">
+                {[
+                  { name: "Next.js", status: "active", port: "3000" },
+                  { name: "tRPC", status: "active", port: "4000" },
+                  { name: "Supabase", status: "active", port: "5432" },
+                  { name: "TailwindCSS", status: "active", port: "---" },
+                  { name: "Apple Silicon", status: "active", port: "M1" },
+                  { name: "Prisma.io", status: "active", port: "ORM" },
+                  { name: "Neural Networks", status: "active", port: "GPU" },
+                  { name: "Capacitor.js", status: "active", port: "iOS" },
+                ].map((tech, i) => (
+                  <div
+                    key={i}
+                    className="group relative flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-zinc-900 via-zinc-900 to-zinc-800 border border-zinc-700 rounded-sm hover:border-zinc-500 transition-all cursor-default"
+                  >
+                    {/* LED Status Indicators */}
+                    <div className="flex flex-col gap-1">
+                      <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_6px_rgba(34,197,94,0.6)] animate-pulse" />
+                      <div className="w-2 h-2 rounded-full bg-amber-500/80 shadow-[0_0_4px_rgba(245,158,11,0.4)] animate-pulse" />
+                    </div>
+
+                    {/* Ventilation Pattern */}
+                    <div className="hidden sm:flex gap-[2px] opacity-30">
+                      {[...Array(6)].map((_, j) => (
+                        <div key={j} className="w-[3px] h-6 bg-zinc-600 rounded-full" />
+                      ))}
+                    </div>
+
+                    {/* Tech Label */}
+                    <div className="flex-1 flex items-center justify-between">
+                      <span className="text-zinc-300 font-mono text-sm sm:text-base group-hover:text-white transition-colors">
+                        {tech.name}
+                      </span>
+                      <span className="text-zinc-600 font-mono text-xs hidden sm:block">
+                        :{tech.port}
+                      </span>
+                    </div>
+
+                    {/* Slot Handle */}
+                    <div className="w-1 h-8 bg-zinc-700 rounded-full group-hover:bg-zinc-500 transition-colors" />
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Panel */}
+              <div className="mx-6 mb-3 px-4 py-2 bg-zinc-950 border border-zinc-800 rounded-sm flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                  <span className="text-zinc-500 font-mono text-xs">PWR</span>
+                </div>
+                <span className="text-zinc-600 font-mono text-xs">RACK-01 • 8U</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-zinc-500 font-mono text-xs">NET</span>
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                </div>
+              </div>
+            </div>
+
+            {/* Rack shadow/base */}
+            <div className="h-2 mx-4 bg-gradient-to-b from-zinc-900 to-transparent rounded-b-lg" />
           </div>
+
+
         </div>
 
         <div className="space-y-6">
