@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote } from "lucide-react";
 import Time from "./time";
 
 export default function WhoAmIPage() {
@@ -45,11 +45,11 @@ export default function WhoAmIPage() {
             <div>
               <div className="text-white font-medium mb-3 text-lg">Software & AI</div>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Full Stack & Mobile (Flutter, Next.js, TypeScript)</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Web & Mobile (Flutter, Next.js, TypeScript)</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Machine Learning (KNIME, Python)</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Cloud (AWS, Azure, GCP)</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Cybersecurity & Privacy</li>
-                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Rust & C# Programming</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Object Oriented Programming</li>
               </ul>
             </div>
           </div>
@@ -221,14 +221,16 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Reading List
+            Bookshelf
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "The Holy Bible", author: "New International Version", note: "Stories to introduce you to human nature.", cover: "/bible.jpg" },
               { title: "Animal Farm", author: "George Orwell", note: "A story about the betrayal of the revolution.", cover: "/animalfarm.jpg" },
               { title: "Dhammapada", author: "Buddha", note: "The Buddhist scripture that teaches you about the path to enlightenment.", cover: "/buddah.jpg" },
-              { title: "Maps of Meaning", author: "Jordan Peterson", note: "The architecture of meaning in human culture.", cover: "/mapsofmeaning.jpg" }
+              { title: "Maps of Meaning", author: "Jordan Peterson", note: "The architecture of belief in human culture.", cover: "/mapsofmeaning.jpg" },
+              { title: "Notes From Underground", author: "Fyodor Dostoevsky", note: "A dark portrait of a man who clings to misery and contradiction as proof of his freedom.", cover: "/notes.jpg" },
+              { title: 'Civilisation and Its Discontents', author: 'Sigmund Freud', note: 'The fundamental tensions between civilization and the individual.', cover: '/civilisation.jpg' }
             ].map((book, i) => (
               <div key={i} className="group flex gap-4 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="shrink-0 w-16 h-24 bg-zinc-800 rounded overflow-hidden shadow-sm">
@@ -302,7 +304,7 @@ export default function WhoAmIPage() {
                   I am captivated by the source code of human behavior.
                 </p>
                 <div className="mt-auto">
-                  <div className="flex flex-wrap gap-x-2 gap-y-1 text-[10px] md:text-xs text-purple-400 font-mono">
+                  <div className="flex flex-wrap gap-x-2 gap-y-1 max-sm:text-[10px] text-xs text-purple-400 font-mono">
                     <span>import </span>
                     <span>EVOLUTIONARY_PSYCH</span>
                     <span>//</span>
@@ -348,87 +350,66 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Tech Stack
           </h3>
-          {/* Server Rack Container */}
+          {/* Terminal Window */}
           <div className="relative mx-auto max-w-2xl">
-            {/* Rack Frame */}
-            <div className="relative rounded-lg bg-gradient-to-b from-zinc-800 to-zinc-900 border-2 border-zinc-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] overflow-hidden">
-              {/* Rack mounting rails - left */}
-              <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-zinc-700 to-zinc-800 border-r border-zinc-600 flex flex-col justify-around py-4">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="w-2 h-2 mx-auto rounded-full bg-zinc-900 border border-zinc-600" />
-                ))}
-              </div>
-              {/* Rack mounting rails - right */}
-              <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-zinc-700 to-zinc-800 border-l border-zinc-600 flex flex-col justify-around py-4">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="w-2 h-2 mx-auto rounded-full bg-zinc-900 border border-zinc-600" />
-                ))}
-              </div>
-
-              {/* Server Blades Container */}
-              <div className="mx-6 py-3 space-y-2">
-                {[
-                  { name: "Next.js", status: "active", port: "3000" },
-                  { name: "tRPC", status: "active", port: "4000" },
-                  { name: "Supabase", status: "active", port: "5432" },
-                  { name: "TailwindCSS", status: "active", port: "---" },
-                  { name: "Apple Silicon", status: "active", port: "M1" },
-                  { name: "Prisma.io", status: "active", port: "ORM" },
-                  { name: "Neural Networks", status: "active", port: "GPU" },
-                  { name: "Capacitor.js", status: "active", port: "iOS" },
-                ].map((tech, i) => (
-                  <div
-                    key={i}
-                    className="group relative flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-zinc-900 via-zinc-900 to-zinc-800 border border-zinc-700 rounded-sm hover:border-zinc-500 transition-all cursor-default"
-                  >
-                    {/* LED Status Indicators */}
-                    <div className="flex flex-col gap-1">
-                      <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_6px_rgba(34,197,94,0.6)] animate-pulse" />
-                      <div className="w-2 h-2 rounded-full bg-amber-500/80 shadow-[0_0_4px_rgba(245,158,11,0.4)] animate-pulse" />
-                    </div>
-
-                    {/* Ventilation Pattern */}
-                    <div className="hidden sm:flex gap-[2px] opacity-30">
-                      {[...Array(6)].map((_, j) => (
-                        <div key={j} className="w-[3px] h-6 bg-zinc-600 rounded-full" />
-                      ))}
-                    </div>
-
-                    {/* Tech Label */}
-                    <div className="flex-1 flex items-center justify-between">
-                      <span className="text-zinc-300 font-mono text-sm sm:text-base group-hover:text-white transition-colors">
-                        {tech.name}
-                      </span>
-                      <span className="text-zinc-600 font-mono text-xs hidden sm:block">
-                        :{tech.port}
-                      </span>
-                    </div>
-
-                    {/* Slot Handle */}
-                    <div className="w-1 h-8 bg-zinc-700 rounded-full group-hover:bg-zinc-500 transition-colors" />
-                  </div>
-                ))}
-              </div>
-
-              {/* Bottom Panel */}
-              <div className="mx-6 mb-3 px-4 py-2 bg-zinc-950 border border-zinc-800 rounded-sm flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                  <span className="text-zinc-500 font-mono text-xs">PWR</span>
+            <div className="rounded-xl overflow-hidden border border-zinc-700 shadow-2xl">
+              {/* Terminal Title Bar */}
+              <div className="bg-zinc-800 px-4 py-3 flex items-center gap-3">
+                {/* Traffic Lights */}
+                <div className="flex gap-2">
+                  {/* <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" /> */}
                 </div>
-                <span className="text-zinc-600 font-mono text-xs">RACK-01 • 8U</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-zinc-500 font-mono text-xs">NET</span>
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="flex-1 text-center text-zinc-500 text-sm font-mono">stack@portfolio ~ ps aux</span>
+              </div>
+
+              {/* Terminal Body */}
+              <div className="bg-zinc-950 p-4 font-mono text-sm">
+                {/* Header Row */}
+                <div className="hidden sm:grid grid-cols-[auto_1fr_auto_auto] gap-4 text-zinc-600 text-xs border-b border-zinc-800 pb-2 mb-2">
+                  <span>PID</span>
+                  <span>PROCESS</span>
+                  <span>STATUS</span>
+                  <span>MEM</span>
+                </div>
+
+                {/* Process Rows */}
+                <div className="space-y-1">
+                  {[
+                    { name: "next.js", pid: "3000", mem: "128M" },
+                    { name: "tRPC", pid: "4000", mem: "64M" },
+                    { name: "supabase", pid: "5432", mem: "256M" },
+                    { name: "tailwindcss", pid: "8080", mem: "32M" },
+                    { name: "apple-silicon", pid: "0001", mem: "∞" },
+                    { name: "prisma.io", pid: "5555", mem: "48M" },
+                    { name: "neural-net", pid: "9000", mem: "4G" },
+                    { name: "capacitor", pid: "8100", mem: "96M" },
+                  ].map((proc, i) => (
+                    <div
+                      key={i}
+                      className="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] gap-4 items-center py-1.5 px-2 -mx-2 rounded hover:bg-zinc-900 transition-colors cursor-default"
+                    >
+                      <span className="text-zinc-600 text-xs w-10">{proc.pid}</span>
+                      <span className="text-green-400 group-hover:text-green-300 transition-colors">{proc.name}</span>
+                      <span className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
+                        <span className="text-zinc-500 text-xs hidden sm:inline">running</span>
+                      </span>
+                      <span className="text-zinc-600 text-xs hidden sm:block">{proc.mem}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Prompt */}
+                <div className="mt-4 pt-3 border-t border-zinc-800 flex items-center gap-2">
+                  <span className="text-green-500">❯</span>
+                  <span className="text-zinc-400">sudo rm -rf /bin/java/</span>
+                  <span className="w-2 h-4 bg-zinc-400 animate-[blink 1s infinite]" />
                 </div>
               </div>
             </div>
-
-            {/* Rack shadow/base */}
-            <div className="h-2 mx-4 bg-gradient-to-b from-zinc-900 to-transparent rounded-b-lg" />
           </div>
-
-
         </div>
 
         <div className="space-y-6">
@@ -560,22 +541,55 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Current Hardware
+            Current Tools
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              "Macbook Pro (2020) [M1]",
-              "Keychron K1 (Red Switches)",
-              "Anycubic Kobra S1",
-              "TS80P Soldering Iron",
-              "Uni-T UT210E Multimeter",
-              "VINCA DCLA-0805 Calipers",
-            ].map((item, i) => (
-              <div key={i} className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex items-center justify-between group">
-                <span className="text-zinc-400 font-medium group-hover:text-white transition-colors">{item}</span>
-                <div className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-green-500 transition-colors"></div>
+          {/* Workstation Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Dev Setup */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-zinc-500 text-xs font-mono uppercase tracking-wider">
+                <span>💻</span> Dev Setup
               </div>
-            ))}
+              <div className="space-y-2">
+                {[
+                  { name: "MacBook Pro M1", detail: "2020 • 16GB", icon: "⌨️" },
+                  { name: "Keychron K1", detail: "Red Switches", icon: "🔴" },
+                  { name: 'Google Antigravity', detail: 'Vibe Code Assistant', icon: '🤖' },
+                  { name: 'Fusion 360', detail: 'CAD', icon: '✏️' }
+                ].map((item, i) => (
+                  <div key={i} className="group flex items-center gap-3 p-3 rounded-lg bg-zinc-900/50 border border-white/5 hover:border-white/15 transition-all cursor-default">
+                    <span className="text-lg">{item.icon}</span>
+                    <div className="flex-1">
+                      <div className="text-white text-sm font-medium group-hover:text-blue-400 transition-colors">{item.name}</div>
+                      <div className="text-zinc-600 text-xs">{item.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Lab Equipment */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 text-zinc-500 text-xs font-mono uppercase tracking-wider">
+                <span>🔧</span> Lab Equipment
+              </div>
+              <div className="space-y-2">
+                {[
+                  { name: "Anycubic Kobra S1", detail: "3D Printer", icon: "🖨️" },
+                  { name: "TS80P", detail: "Soldering Iron", icon: "🔥" },
+                  { name: "Uni-T UT210E", detail: "Digital Multimeter", icon: "⚡" },
+                  { name: "VINCA DCLA-0605", detail: "Calipers", icon: "📏" },
+                ].map((item, i) => (
+                  <div key={i} className="group flex items-center gap-3 p-3 rounded-lg bg-zinc-900/50 border border-white/5 hover:border-white/15 transition-all cursor-default">
+                    <span className="text-lg">{item.icon}</span>
+                    <div className="flex-1">
+                      <div className="text-white text-sm font-medium group-hover:text-amber-400 transition-colors">{item.name}</div>
+                      <div className="text-zinc-600 text-xs">{item.detail}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -700,7 +714,8 @@ export default function WhoAmIPage() {
             <div className="rounded-xl bg-zinc-900/30 border border-white/15 overflow-hidden">
               <div className="px-4 py-3 bg-amber-500/10 border-b border-amber-500/20">
                 <h4 className="text-amber-400 font-semibold text-sm flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-amber-400" />
+                  {/* <span className="w-2 h-2 rounded-full bg-amber-400" /> */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-amber-400"><path d="" stroke="none" fill-rule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fill-rule="evenodd" /></svg>
                   Future Investigations
                 </h4>
               </div>
@@ -723,7 +738,8 @@ export default function WhoAmIPage() {
             <div className="rounded-xl bg-zinc-900/30 border border-white/15 overflow-hidden">
               <div className="px-4 py-3 bg-emerald-500/10 border-b border-emerald-500/20">
                 <h4 className="text-emerald-400 font-semibold text-sm flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  {/* <span className="w-2 h-2 rounded-full bg-emerald-400" /> */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-emerald-400"><path d="" stroke="none" fill-rule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fill-rule="evenodd" /></svg>
                   Lessons Learnt
                 </h4>
               </div>
@@ -924,7 +940,7 @@ export default function WhoAmIPage() {
               <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
               <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
               <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-              <span className="ml-2 text-xs font-mono text-zinc-500">Visual Studio Code — excellence.ts (Dark Mode)</span>
+              <span className="ml-2 text-xs font-mono text-zinc-500">excellence.ts (Dark Mode)</span>
             </div>
             <div className="p-4 sm:p-6 font-mono text-xs md:text-sm sm:text-base leading-relaxed overflow-x-auto">
               <div className="text-blue-400">
