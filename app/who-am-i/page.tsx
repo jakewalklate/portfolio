@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint } from "lucide-react";
 import Time from "./time";
 
 export default function WhoAmIPage() {
@@ -1304,6 +1304,78 @@ export default function WhoAmIPage() {
               </p>
               <p className="text-zinc-600 text-sm italic">
                 "Patience is bitter, but its fruit is sweet."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Sporting Idols
+          </h3>
+          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+            {[
+              { title: "Baker 3", subtitle: "Baker Skateboards", cover: "/baker3.jpg" },
+              { title: "Love Story", subtitle: "Torstein Horgmo", cover: "/horgasm1.jpg" },
+              { title: "Video Days", subtitle: "Blind Skateboards", cover: "/videodays.png" },
+            ].map((film, i) => (
+              <div key={i} className="group flex flex-col gap-3">
+                <div className="aspect-2/3 w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
+                  {film.cover ? (
+                    <img src={film.cover} alt={film.title} className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                  ) : (
+                    <div className="text-center p-2">
+                      <span className="text-zinc-500 font-medium text-sm">{film.title}</span>
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors truncate">{film.title}</h4>
+                  <div className="text-zinc-500 text-sm truncate">{film.subtitle}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-8 max-w-3xl">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Personal Quirks
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-orange-500/10 text-orange-400">
+                  <Utensils size={20} />
+                </div>
+                <h4 className="text-white font-medium">Favourite Food</h4>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                I love Tacos. Taco Bell, Guzmen & Gomez, Madmex ... it's all great.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-pink-500/10 text-pink-400">
+                  <Fingerprint size={20} />
+                </div>
+                <h4 className="text-white font-medium">Anti-Stereotype</h4>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                I don't enjoy being easily categorised into a stereotype. I try to avoid becoming stale by exploring new topics.
+              </p>
+            </div>
+
+            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3 sm:col-span-2">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-yellow-500/10 text-yellow-400">
+                  <Zap size={20} />
+                </div>
+                <h4 className="text-white font-medium">Fast Walker</h4>
+              </div>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                I walk with purpose. If you're walking slow in front of me, I will violently swear in my head.<br /><em>Yes, I know the joke about my lastname.</em>
               </p>
             </div>
           </div>
