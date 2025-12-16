@@ -230,7 +230,9 @@ export default function WhoAmIPage() {
               { title: "Dhammapada", author: "Buddha", note: "The Buddhist scripture that teaches you about the path to enlightenment.", cover: "/buddah.jpg" },
               { title: "Maps of Meaning", author: "Jordan Peterson", note: "The architecture of belief in human culture.", cover: "/mapsofmeaning.jpg" },
               { title: "Notes From Underground", author: "Fyodor Dostoevsky", note: "A dark portrait of a man who clings to misery and contradiction as proof of his freedom.", cover: "/notes.jpg" },
-              { title: 'Civilisation and Its Discontents', author: 'Sigmund Freud', note: 'The fundamental tensions between civilization and the individual.', cover: '/civilisation.jpg' }
+              { title: 'Civilisation and Its Discontents', author: 'Sigmund Freud', note: 'The fundamental tensions between civilization and the individual.', cover: '/civilisation.jpg' },
+              { title: 'The Concise Human Body Book', author: 'DK', note: 'An illustrated guide to the human body\'s structure, function and disorders.', cover: '/body.jpg' },
+              { title: 'The Design of the Unix Operating System', author: 'Maurice Bach', note: 'The primary guide to the design of the Unix operating system.', cover: '/unix.jpeg' },
             ].map((book, i) => (
               <div key={i} className="group flex gap-4 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="shrink-0 w-16 h-24 bg-zinc-800 rounded overflow-hidden shadow-sm">
