@@ -1381,6 +1381,35 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Intellectual Influences
+          </h3>
+          <div className="grid grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { title: "Dennis Ritchie", subtitle: "Co-Founder of Unix & C", cover: "/dennis_ritchie6.jpg" },
+              { title: "Steve Wozniak", subtitle: "Co-Founder of Apple", cover: "/woz.jpg" },
+              { title: "Terry Davis", subtitle: "God's chosen programmer", cover: "/davis.jpg" },
+              { title: "Elon Musk", subtitle: "Tech entrepreneur", cover: "/elon.jpg" },
+            ].map((item, i) => (
+              <div key={i} className="group flex flex-col gap-3">
+                <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
+                  {item.cover ? (
+                    <img src={item.cover} alt={item.title} className="w-full grayscale h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                  ) : (
+                    <div className="text-center p-2">
+                      <span className="text-zinc-500 font-medium text-sm">{item.title}</span>
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-amber-400 transition-colors truncate">{item.title}</h4>
+                  <div className="text-zinc-500 text-sm truncate">{item.subtitle}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </main>
   );
