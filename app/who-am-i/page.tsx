@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown } from "lucide-react";
 import Time from "./time";
 import Process from "./process";
 
@@ -1516,6 +1516,29 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        {/* Biggest Regret */}
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Biggest Regret
+          </h3>
+          <div className="p-6 rounded-2xl bg-zinc-900/30 border border-red-500/20 hover:border-red-500/30 transition-colors">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-xl bg-red-500/10 text-red-400 shrink-0">
+                <Frown />
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-white mb-2">Dropping Sociology at Newcastle</h4>
+                <p className="text-zinc-400 leading-relaxed">
+                  My biggest blunder was dropping out of my sociology classes at the University of Newcastle.
+                  In hindsight, I wish I had stuck it out and learned more about the social sciences.
+                </p>
+                <p className="text-zinc-500 text-sm mt-3 italic">
+                  Sometimes the classes you skip become the knowledge you crave later.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </section>
     </main>
