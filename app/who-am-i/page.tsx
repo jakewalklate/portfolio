@@ -1,5 +1,6 @@
 import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint } from "lucide-react";
 import Time from "./time";
+import Process from "./process";
 
 export default function WhoAmIPage() {
   return (
@@ -379,26 +380,33 @@ export default function WhoAmIPage() {
                 {/* Process Rows */}
                 <div className="space-y-1">
                   {[
-                    { name: "next.js", pid: "3000", mem: "128M" },
-                    { name: "tRPC", pid: "4000", mem: "64M" },
-                    { name: "supabase (postgresql)", pid: "5432", mem: "256M" },
-                    { name: "tailwindcss", pid: "8080", mem: "32M" },
-                    { name: "apple-silicon", pid: "0001", mem: "∞" },
-                    { name: "prisma.io", pid: "5555", mem: "48M" },
-                    { name: "neural-net", pid: "9000", mem: "4G" },
-                    { name: "capacitor", pid: "8100", mem: "96M" },
+                    { name: "next.js", pid: "3000", mem: "128M", sleeping: false },
+                    { name: "tRPC", pid: "4000", mem: "64M", sleeping: false },
+                    { name: "supabase (postgresql)", pid: "5432", mem: "256M", sleeping: false },
+                    { name: "tailwindcss", pid: "8080", mem: "32M", sleeping: false },
+                    { name: "apple-silicon", pid: "0001", mem: "∞", sleeping: false },
+                    { name: "prisma.io", pid: "5555", mem: "48M", sleeping: false },
+                    { name: "neural-net", pid: "9000", mem: "4G", sleeping: true },
+                    { name: "capacitor", pid: "8100", mem: "96M", sleeping: false },
                   ].map((proc, i) => (
                     <div
                       key={i}
                       className="group grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto_auto] gap-4 items-center py-1.5 px-2 -mx-2 rounded hover:bg-zinc-900 transition-colors cursor-default"
                     >
-                      <span className="text-zinc-600 text-xs w-10">{proc.pid}</span>
-                      <span className="text-green-400 group-hover:text-green-300 transition-colors">{proc.name}</span>
-                      <span className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
-                        <span className="text-zinc-500 text-xs hidden sm:inline">running</span>
-                      </span>
-                      <span className="text-zinc-600 text-xs hidden sm:block">{proc.mem}</span>
+                      {proc.sleeping === false && (
+                        <>
+                          <span className="text-zinc-600 text-xs w-10">{proc.pid}</span>
+                          <span className="text-green-400 group-hover:text-green-300 transition-colors">{proc.name}</span>
+                          <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
+                            <span className="text-zinc-500 text-xs hidden sm:inline">running</span>
+                          </span>
+                          <span className="text-zinc-600 text-xs hidden sm:block">{proc.mem}</span>
+                        </>
+                      )}
+                      {proc.sleeping === true && (
+                        <Process proc={proc} />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -406,7 +414,7 @@ export default function WhoAmIPage() {
                 {/* Prompt */}
                 <div className="mt-4 pt-3 border-t border-zinc-800 flex items-center gap-2">
                   <span className="text-green-500">❯</span>
-                  <span className="text-zinc-400">sudo rm -rf /bin/java/</span>
+                  <span className="text-zinc-400">sudo rm -rf /usr/bin/java/</span>
                   <span className="w-2 h-4 bg-zinc-400 motion-safe:animate-[blink_1.5s_step-start_infinite]" />
                 </div>
               </div>
