@@ -1391,6 +1391,101 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        {/* Time Split Pie Chart Section */}
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            How I Split My Attention
+          </h3>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+            {/* Donut Chart */}
+            <div className="relative w-48 h-48 md:w-56 md:h-56">
+              <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+                {/* Technology - 70% (0 to 252 degrees) */}
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke="url(#techGradient)"
+                  strokeWidth="16"
+                  strokeDasharray="175.93 251.33"
+                  strokeDashoffset="0"
+                  className="drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+                />
+                {/* Genetics/Neurology - 15% (252 to 306 degrees) */}
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke="url(#bioGradient)"
+                  strokeWidth="16"
+                  strokeDasharray="37.7 251.33"
+                  strokeDashoffset="-175.93"
+                  className="drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]"
+                />
+                {/* Psychology/Philosophy/History - 15% (306 to 360 degrees) */}
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="40"
+                  fill="none"
+                  stroke="url(#psychGradient)"
+                  strokeWidth="16"
+                  strokeDasharray="37.7 251.33"
+                  strokeDashoffset="-213.63"
+                  className="drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+                />
+                {/* Gradient definitions */}
+                <defs>
+                  <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#3b82f6" />
+                    <stop offset="100%" stopColor="#06b6d4" />
+                  </linearGradient>
+                  <linearGradient id="bioGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#22c55e" />
+                    <stop offset="100%" stopColor="#10b981" />
+                  </linearGradient>
+                  <linearGradient id="psychGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#a855f7" />
+                    <stop offset="100%" stopColor="#8b5cf6" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              {/* Center text */}
+              {/* <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <span className="text-3xl md:text-4xl font-bold text-white">70%</span>
+                <span className="text-xs text-zinc-500 font-mono">primary</span>
+              </div> */}
+            </div>
+
+            {/* Legend */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 group">
+                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+                <div>
+                  <div className="text-white font-medium group-hover:text-blue-400 transition-colors">Technology</div>
+                  <div className="text-zinc-500 text-sm">70% — Software Systems</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 group">
+                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
+                <div>
+                  <div className="text-white font-medium group-hover:text-green-400 transition-colors">Genetics & Neurology</div>
+                  <div className="text-zinc-500 text-sm">15% — Biology, Biotech, Physiology</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 group">
+                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-violet-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+                <div>
+                  <div className="text-white font-medium group-hover:text-purple-400 transition-colors">Psychology, Philosophy & History</div>
+                  <div className="text-zinc-500 text-sm">15% — Mind, Culture, Ideas, Evolution</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Intellectual Influences
@@ -1420,6 +1515,8 @@ export default function WhoAmIPage() {
             ))}
           </div>
         </div>
+
+
       </section>
     </main>
   );
