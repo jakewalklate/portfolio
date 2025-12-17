@@ -1385,7 +1385,7 @@ export default function WhoAmIPage() {
                 <h4 className="text-white font-medium">Fast Walker</h4>
               </div>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                I walk with purpose. If you're walking slow in front of me, I will violently swear in my head.<br /><em>Yes, I know the joke about my lastname.</em>
+                I walk with purpose. If you're walking slow in front of me, I will violently swear in my head.<br /><em className="text-zinc-500">Yes, I know the joke about my lastname.</em>
               </p>
             </div>
           </div>
