@@ -1845,6 +1845,15 @@ export default function WhoAmIPage() {
                     <span className="text-emerald-400">"Campfire_Smoke.png"</span>
                   </div>
                 </div>
+
+                <div>
+                  <span className="block text-zinc-500 italic mb-1"># The productivity of the city</span>
+                  <div className="flex gap-4">
+                    <span className="text-pink-500">ENERGY</span>
+                    <span className="text-zinc-600">=</span>
+                    <span className="text-emerald-400">"City_CBD.zip"</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
