@@ -1677,7 +1677,7 @@ export default function WhoAmIPage() {
               <div className="mt-4 space-y-2 relative z-10">
                 <h4 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Snowboarding</h4>
                 <p className="text-zinc-400 text-sm leading-relaxed">
-                  Carving down a mountain is extreme fun. I dream of visiting Canada, New Zealand and Japan's mountains.
+                  Carving down a mountain is extreme fun. I've always dreamt of visiting Canada, New Zealand and Japan's mountains.
                 </p>
               </div>
 
