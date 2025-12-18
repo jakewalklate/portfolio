@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music } from "lucide-react";
 import Time from "./time";
 import Process from "./process";
 
@@ -1537,6 +1537,106 @@ export default function WhoAmIPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            What Brings Me Happiness
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Shoe Box Label Style */}
+            <div className="group relative overflow-hidden rounded-xl bg-[#e35d34] p-0.5 transition-transform hover:-rotate-1 hover:scale-[1.01]">
+              <div className="relative h-full bg-[#1a1a1a] rounded-[10px] p-6 flex flex-col justify-between">
+                {/* Decorative Box Elements */}
+                <div className="absolute top-4 right-4 flex gap-2">
+                  <div className="w-24 h-8 border-2 border-[#e35d34] rounded flex items-center justify-center">
+                    <span className="text-xs font-mono text-[#e35d34] uppercase tracking-wider block mr-1">Size:</span>
+                    <span className="text-[#e35d34] font-bold font-mono text-xl">6.5</span>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-xs font-mono text-[#e35d34] uppercase tracking-wider mb-1 block">25% OFF</span>
+                    <h4 className="text-3xl font-black text-white uppercase italic tracking-tighter">
+                      FRESH KICKS
+                    </h4>
+                    <p className="text-[#e35d34] text-xs font-mono mt-1">COLOR: BLACK & WHITE</p>
+                  </div>
+
+                  <div className="border-t border-dashed border-[#e35d34]/30 my-4" />
+
+                  <p className="text-zinc-400 text-sm leading-relaxed max-w-[90%]">
+                    A well designed sneaker is art. Comfort meets engineering, pure style and independence.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-end justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-zinc-500 font-mono uppercase">Certified Authentic</span>
+                    <div className="h-8 w-32 bg-white mt-1 px-1 flex items-center overflow-hidden">
+                      <div className="h-full w-full bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/EAN-13-ISO-10939-10-44.svg/1200px-EAN-13-ISO-10939-10-44.svg.png')] bg-cover bg-center grayscale opacity-60"></div>
+                    </div>
+                  </div>
+                  <Heart className="text-[#e35d34] group-hover:fill-[#e35d34] transition-all" size={24} />
+                </div>
+              </div>
+            </div>
+
+            {/* Concert Ticket Style */}
+            <div className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-1 hover:scale-[1.01]">
+              <div className="relative h-full bg-zinc-900 rounded-[10px] flex">
+
+                {/* Main Ticket Stub */}
+                <div className="flex-1 p-6 flex flex-col justify-between border-r-2 border-dashed border-zinc-800 relative">
+                  {/* Cutout circles for perforations */}
+                  <div className="absolute -top-3 -right-3 w-6 h-6 bg-black rounded-full z-10"></div>
+                  <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-black rounded-full z-10"></div>
+
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-start">
+                      <span className="inline-block px-2 py-1 bg-white/10 rounded text-[10px] font-mono text-white/70 uppercase tracking-widest border border-white/10">Admit One</span>
+                      <Music className="text-pink-500 group-hover:animate-bounce" size={20} />
+                    </div>
+
+                    <div>
+                      <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                        LIVE CONCERTS
+                      </h4>
+                      <div className="text-white/60 text-xs font-mono mt-1 flex gap-3">
+                        <span>LOCAL</span>
+                        <span>•</span>
+                        <span>AUSTRALIA</span>
+                      </div>
+                    </div>
+
+                    <p className="text-zinc-400 text-sm leading-relaxed">
+                      Nothing beats the raw energy of live music. The bass in your chest and the crowd in the air.
+                    </p>
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-white/5 flex justify-between items-center">
+                    <div className="text-[10px] font-mono text-zinc-500">SECTION: MOSH</div>
+                    <div className="text-[10px] font-mono text-zinc-500">ROW: FRONT</div>
+                  </div>
+                </div>
+
+                {/* Ticket Side Strip (Barcode) */}
+                <div className="w-12 bg-white/5 flex flex-col items-center justify-center p-2 gap-1 overflow-hidden relative">
+                  <span className="text-[10px] font-mono text-zinc-600 -rotate-90 whitespace-nowrap">NO REFUNDS</span>
+                  <div className="flex-1 w-full flex flex-col gap-1 my-2 opacity-30">
+                    {[...Array(12)].map((_, i) => (
+                      <div key={i} className={`w-full bg-white h-[${Math.floor(Math.random() * 4) + 1}px] shrink-0`}></div>
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-mono text-zinc-600 -rotate-90">2024</span>
+                </div>
+
+              </div>
+            </div>
+
           </div>
         </div>
 
