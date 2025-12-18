@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake } from "lucide-react";
 import Time from "./time";
 import Process from "./process";
 
@@ -1368,7 +1368,7 @@ export default function WhoAmIPage() {
             <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-pink-500/10 text-pink-400">
-                  <Fingerprint size={20} />
+                  <SquareDashed size={20} />
                 </div>
                 <h4 className="text-white font-medium">Anti-Stereotype</h4>
               </div>
@@ -1634,6 +1634,56 @@ export default function WhoAmIPage() {
                   <span className="text-[10px] font-mono text-zinc-600 -rotate-90">2024</span>
                 </div>
 
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            What I Wish I Would Do More Of
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Motorbike Card */}
+            <div className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/10 p-6 flex flex-col hover:border-blue-500/50 transition-all min-h-[220px]">
+              <div className="flex justify-between items-start">
+                <div className="p-3 bg-blue-500/10 rounded-lg text-blue-400">
+                  <Bike size={24} />
+                </div>
+                {/* <span className="bg-blue-500/20 text-blue-400 text-[10px] font-mono uppercase px-2 py-1 rounded">Freedom</span> */}
+              </div>
+
+              <div className="mt-4 space-y-2 relative z-10">
+                <h4 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Riding Motorbikes</h4>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Motorbikes are my prefered mode of transport... until it rains. My first bike was from my dad when I was 3 years old.
+                </p>
+              </div>
+            </div>
+
+            {/* Snowboarding Card */}
+            <div className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/10 p-6 flex flex-col hover:border-cyan-500/50 transition-all min-h-[220px]">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+              <div className="flex justify-between items-start relative z-10">
+                <div className="p-3 bg-cyan-500/10 rounded-lg text-cyan-400">
+                  <Snowflake size={24} />
+                </div>
+                {/* <span className="bg-cyan-500/20 text-cyan-400 text-[10px] font-mono uppercase px-2 py-1 rounded">Adrenaline</span> */}
+              </div>
+
+              <div className="mt-4 space-y-2 relative z-10">
+                <h4 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Snowboarding</h4>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Carving down a mountain is extreme fun. I dream of visiting Canada, New Zealand and Japan's mountains.
+                </p>
+              </div>
+
+              {/* Decorative snow particles */}
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <Snowflake size={64} className="text-white transform rotate-12" />
               </div>
             </div>
 
