@@ -1547,7 +1547,7 @@ export default function WhoAmIPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
             {/* Shoe Box Label Style */}
-            <div className="group relative overflow-hidden rounded-xl bg-[#e35d34] p-0.5 transition-transform hover:-rotate-1 hover:scale-[1.01]">
+            <div className="group relative overflow-hidden rounded-xl bg-[#e35d34] p-0.5 transition-transform hover:rotate-[-0.2deg] hover:scale-[1.005]">
               <div className="relative h-full bg-[#1a1a1a] rounded-[10px] p-6 flex flex-col justify-between">
                 {/* Decorative Box Elements */}
                 <div className="absolute top-4 right-4 flex gap-2">
@@ -1586,7 +1586,7 @@ export default function WhoAmIPage() {
             </div>
 
             {/* Concert Ticket Style */}
-            <div className="group relative overflow-hidden rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-1 hover:scale-[1.01]">
+            <div className="group relative overflow-hidden rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-[0.2deg] hover:scale-[1.01]">
               <div className="relative h-full bg-zinc-900 rounded-[10px] flex">
 
                 {/* Main Ticket Stub */}
