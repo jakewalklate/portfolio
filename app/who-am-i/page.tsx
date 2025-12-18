@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake, SprayCan, Caravan, Mountain, Trees, Target, Waves, Flame } from "lucide-react";
 import Time from "./time";
 import Process from "./process";
 
@@ -552,7 +552,7 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Current Tools
+            Current Toolbox
           </h3>
           {/* Workstation Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -665,7 +665,7 @@ export default function WhoAmIPage() {
                     <span className="text-blue-400 font-bold text-sm">1</span>
                   </div>
                   {/* Line to next step */}
-                  <div className="w-px flex-1 bg-gradient-to-b from-blue-500 to-green-500 opacity-50" />
+                  <div className="w-px flex-1 bg-linear-to-b from-blue-500 to-green-500 opacity-50" />
                 </div>
                 <div className="flex-1 p-4 rounded-xl bg-zinc-900/50 border border-blue-500/30 hover:border-blue-500/50 transition-colors mb-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -683,7 +683,7 @@ export default function WhoAmIPage() {
                     <span className="text-green-400/70 font-bold text-sm">2</span>
                   </div>
                   {/* Line to next step */}
-                  <div className="w-px flex-1 bg-gradient-to-b from-green-500 to-purple-500 opacity-50" />
+                  <div className="w-px flex-1 bg-linear-to-b from-green-500 to-purple-500 opacity-50" />
                 </div>
                 <div className="flex-1 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-green-500/30 transition-colors mb-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -815,7 +815,7 @@ export default function WhoAmIPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Youth Center Card */}
-            <div className="group relative rounded-2xl bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-amber-500/30 transition-all overflow-hidden">
+            <div className="group relative rounded-2xl bg-linear-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-amber-500/30 transition-all overflow-hidden">
               {/* Blueprint grid pattern overlay */}
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]" />
               <div className="relative p-6 space-y-4">
@@ -843,7 +843,7 @@ export default function WhoAmIPage() {
             </div>
 
             {/* Stanley University Card */}
-            <div className="group relative rounded-2xl bg-gradient-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-blue-500/30 transition-all overflow-hidden">
+            <div className="group relative rounded-2xl bg-linear-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-blue-500/30 transition-all overflow-hidden">
               {/* Blueprint grid pattern overlay */}
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]" />
               <a href="https://stanleyuni.github.io" target="_blank">
@@ -1462,21 +1462,21 @@ export default function WhoAmIPage() {
             {/* Legend */}
             <div className="space-y-4">
               <div className="flex items-center gap-3 group">
-                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+                <div className="w-4 h-4 rounded-full bg-linear-to-r from-blue-500 to-cyan-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
                 <div>
                   <div className="text-white font-medium group-hover:text-blue-400 transition-colors">Technology</div>
                   <div className="text-zinc-500 text-sm">70% — Software Systems</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 group">
-                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
+                <div className="w-4 h-4 rounded-full bg-linear-to-r from-green-500 to-emerald-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
                 <div>
                   <div className="text-white font-medium group-hover:text-green-400 transition-colors">Genetics & Neurology</div>
                   <div className="text-zinc-500 text-sm">15% — Biology, Biotech, Physiology</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 group">
-                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-violet-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+                <div className="w-4 h-4 rounded-full bg-linear-to-r from-purple-500 to-violet-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
                 <div>
                   <div className="text-white font-medium group-hover:text-purple-400 transition-colors">Psychology, Philosophy & History</div>
                   <div className="text-zinc-500 text-sm">15% — Mind, Culture, Ideas, Evolution</div>
@@ -1521,7 +1521,7 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Biggest Regret
           </h3>
-          <div className="p-6 rounded-2xl bg-zinc-900/30 border border-red-500/20 hover:border-red-500/30 transition-colors">
+          <div className="p-6 rounded-2xl bg-zinc-900/30 border border-red-500/40 hover:border-red-500/90 transition-colors">
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-xl bg-red-500/10 text-red-400 shrink-0">
                 <Frown />
@@ -1586,7 +1586,7 @@ export default function WhoAmIPage() {
             </div>
 
             {/* Concert Ticket Style */}
-            <div className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-1 hover:scale-[1.01]">
+            <div className="group relative overflow-hidden rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-1 hover:scale-[1.01]">
               <div className="relative h-full bg-zinc-900 rounded-[10px] flex">
 
                 {/* Main Ticket Stub */}
@@ -1602,7 +1602,7 @@ export default function WhoAmIPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                      <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-pink-400">
                         LIVE CONCERTS
                       </h4>
                       <div className="text-white/60 text-xs font-mono mt-1 flex gap-3">
@@ -1627,16 +1627,49 @@ export default function WhoAmIPage() {
                 <div className="w-12 bg-white/5 flex flex-col items-center justify-center p-2 gap-1 overflow-hidden relative">
                   <span className="text-[10px] font-mono text-zinc-600 -rotate-90 whitespace-nowrap">NO REFUNDS</span>
                   <div className="flex-1 w-full flex flex-col gap-1 my-2 opacity-30">
-                    {[...Array(12)].map((_, i) => (
+                    {/* {[...Array(12)].map((_, i) => (
                       <div key={i} className={`w-full bg-white h-[${Math.floor(Math.random() * 4) + 1}px] shrink-0`}></div>
-                    ))}
+                    ))} */}
                   </div>
                   <span className="text-[10px] font-mono text-zinc-600 -rotate-90">2024</span>
                 </div>
 
               </div>
             </div>
+          </div>
+        </div>
 
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Things I Love That Others Hate
+          </h3>
+          {/* Graffiti - CSS Stencil Style */}
+          <div className="relative group overflow-hidden rounded-xl bg-[#2a2a2a] p-8 border-l-8 border-pink-500 shadow-lg transition-transform">
+            {/* CSS Texture Background */}
+            <div className="absolute inset-0 opacity-10 bg-radial-gradient(circle_at_50%_50%,#000_20%,transparent_20%),radial-gradient(circle_at_50%_50%,#fff_20%,transparent_20%)] bg-[size:8px_8px]"></div>
+
+            {/* Spray Paint Glow Effect */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/20 blur-[80px] rounded-full transition-colors"></div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="text-center md:text-left">
+                <div className="inline-block line-through bg-black text-pink-500 font-black text-xs px-2 py-1 transform -rotate-3 mb-2 uppercase tracking-widest border border-pink-500/50">
+                  VANDALISM
+                </div>
+                <h4 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-linear-to-br from-white to-zinc-500 uppercase tracking-tighter" style={{ fontFamily: 'Impact, sans-serif' }}>
+                  GRAFFITI
+                </h4>
+                <p className="text-zinc-400 font-mono text-sm mt-3 max-w-md bg-black/50 p-2 border-l border-pink-500">
+                  "Turning grey cities into living galleries. If you don't like street art, then don't make buildings big blank white canvases."
+                </p>
+              </div>
+
+              <div className="relative">
+                <div className="bg-pink-500 text-black font-bold p-4 rounded-full w-24 h-24 flex items-center justify-center transform transition-transform shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
+                  <SprayCan size={32} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1646,47 +1679,174 @@ export default function WhoAmIPage() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            {/* Motorbike Card */}
-            <div className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/10 p-6 flex flex-col hover:border-blue-500/50 transition-all min-h-[220px]">
-              <div className="flex justify-between items-start">
-                <div className="p-3 bg-blue-500/10 rounded-lg text-blue-400">
-                  <Bike size={24} />
-                </div>
-                {/* <span className="bg-blue-500/20 text-blue-400 text-[10px] font-mono uppercase px-2 py-1 rounded">Freedom</span> */}
-              </div>
+            {/* Simple Standard Cards for 'Wish I Did More' */}
 
-              <div className="mt-4 space-y-2 relative z-10">
-                <h4 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">Riding Motorbikes</h4>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  Motorbikes are my prefered mode of transport... until it rains. My first bike was from my dad when I was 3 years old.
+            {/* Motorbikes */}
+            <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="text-xl font-bold text-white">Motorbikes</h4>
+                  <div className="p-2 bg-orange-500/10 rounded-lg text-orange-400">
+                    <Bike size={20} />
+                  </div>
+                </div>
+                <p className="text-zinc-400 leading-relaxed text-sm">
+                  My dad bought my first bike when I was 3 years old. It remains my favourite way to risk my life.
                 </p>
+              </div>
+              <div className="flex gap-2 mt-4">
+                <span className="flex rounded bg-black/20 border border-zinc-700">
+                  <X className="text-orange-400" />
+                  <span className="text-[10px] font-mono text-zinc-500 px-2 py-1">Inactive License</span>
+                </span>
               </div>
             </div>
 
-            {/* Snowboarding Card */}
-            <div className="group relative overflow-hidden rounded-xl bg-zinc-900 border border-white/10 p-6 flex flex-col hover:border-cyan-500/50 transition-all min-h-[220px]">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-              <div className="flex justify-between items-start relative z-10">
-                <div className="p-3 bg-cyan-500/10 rounded-lg text-cyan-400">
-                  <Snowflake size={24} />
+            {/* Snowboarding */}
+            <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="text-xl font-bold text-white">Snowboarding</h4>
+                  <div className="p-2 bg-cyan-500/10 rounded-lg text-cyan-400">
+                    <Snowflake size={20} />
+                  </div>
                 </div>
-                {/* <span className="bg-cyan-500/20 text-cyan-400 text-[10px] font-mono uppercase px-2 py-1 rounded">Adrenaline</span> */}
-              </div>
-
-              <div className="mt-4 space-y-2 relative z-10">
-                <h4 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Snowboarding</h4>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  Carving down a mountain is extreme fun. I've always dreamt of visiting Canada, New Zealand and Japan's mountains.
+                <p className="text-zinc-400 leading-relaxed text-sm">
+                  Carving fresh powder. Always dreaming of Niseko and Whistler.
                 </p>
               </div>
-
-              {/* Decorative snow particles */}
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <Snowflake size={64} className="text-white transform rotate-12" />
+              <div className="flex gap-2 mt-4">
+                <span className="text-[10px] font-mono border border-zinc-700 text-zinc-500 px-2 py-1 rounded bg-black/20">Alpine</span>
+                <span className="text-[10px] font-mono border border-zinc-700 text-zinc-500 px-2 py-1 rounded bg-black/20">Adrenaline</span>
               </div>
             </div>
 
+            {/* Bushwalking */}
+            <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="text-xl font-bold text-white">Bushwalking</h4>
+                  <div className="p-2 bg-lime-500/10 rounded-lg text-lime-400">
+                    <Trees size={20} />
+                  </div>
+                </div>
+                <p className="text-zinc-400 leading-relaxed text-sm">
+                  Running up and down mountains. Finding peace in the pulse and the silence of the bush.
+                </p>
+              </div>
+              <div className="flex gap-2 mt-4">
+                <span className="text-[10px] font-mono border border-zinc-700 text-zinc-500 px-2 py-1 rounded bg-black/20">National Parks</span>
+              </div>
+            </div>
+
+            {/* Billiards */}
+            <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="text-xl font-bold text-white">Pub Billiards</h4>
+                  <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
+                    <Target size={20} />
+                  </div>
+                </div>
+                <p className="text-zinc-400 leading-relaxed text-sm">
+                  I never win, but I don't care. It's about the company and bar atmosphere.
+                </p>
+              </div>
+              <div className="flex gap-2 mt-4">
+                <span className="text-[10px] font-mono border border-zinc-700 text-zinc-500 px-2 py-1 rounded bg-black/20">8 Ball</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Alternate Universe
+          </h3>
+          <div className="max-w-3xl mx-auto">
+            {/* Abstract Ticket / Route Style */}
+            <div className="max-w-3xl mx-auto">
+              {/* Dream Manifesto Style */}
+              <div className="group relative bg-[#18181b] rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-all shadow-2xl">
+
+                {/* Subtle texture */}
+                <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+
+                {/* Mobile-only Top Right Icon */}
+                <div className="absolute top-6 right-6 md:hidden z-20">
+                  <div className="p-3 bg-zinc-900/80 backdrop-blur-md rounded-lg border border-zinc-800 text-zinc-600 group-hover:text-emerald-500 transition-colors">
+                    <Caravan size={24} />
+                  </div>
+                </div>
+
+                <div className="p-8 md:p-10 flex flex-col md:flex-row md:gap-10 items-start">
+                  {/* Left: Manifesto Header & Icons */}
+                  <div className="md:w-1/3 flex flex-col justify-between h-full space-y-6">
+                    <div>
+                      <h4 className="text-xs font-mono text-emerald-500 uppercase tracking-[0.2em] mb-3">Goal_001</h4>
+                      <h3 className="text-3xl font-black text-white leading-none uppercase">The<br />Dream<br />Plan</h3>
+                    </div>
+
+                    <div className="hidden md:flex items-center gap-4 text-zinc-600">
+                      <div className="p-3 bg-zinc-900 rounded-lg border border-zinc-800 group-hover:border-emerald-900/50 group-hover:text-emerald-500 transition-all">
+                        <Caravan size={24} />
+                      </div>
+                      <div className="h-px flex-1 bg-zinc-800"></div>
+                    </div>
+                  </div>
+
+                  {/* Right: The Text Content */}
+                  <div className="flex-1 relative">
+                    <p className="text-lg text-zinc-300 leading-relaxed font-serif italic border-l-4 border-emerald-900/50 pl-6 group-hover:border-emerald-500 transition-colors">
+                      "If I never had to work again, I'd buy a campervan and circle Australia. An indefinite road trip visiting every <span className="text-emerald-400 not-italic font-bold">skatepark</span> and beach along the coast. Just riding, meeting the locals, and mentoring the grommies."
+                    </p>
+
+                    <div className="mt-6 flex gap-4 text-[10px] font-mono uppercase tracking-widest text-zinc-500">
+                      <span>Campervan,&nbsp;</span>
+                      <span>Skateparks&nbsp;</span>
+                      <span>& Freedom</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10">
+            Preferred Environment
+          </h3>
+          <div className="max-w-3xl mx-auto">
+            {/* Atmosphere .env Config */}
+            <div className="rounded-lg bg-zinc-950 border border-zinc-800 p-6 font-mono text-sm shadow-xl relative overflow-hidden group hover:border-zinc-700 transition-colors">
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-emerald-500 via-sky-500 to-indigo-500 opacity-20 group-hover:opacity-50 transition-opacity"></div>
+
+              <div className="flex items-center gap-2 mb-4 text-zinc-500 text-xs border-b border-zinc-900 pb-2">
+                <span className="text-zinc-600">.config/</span>
+                <span className="text-zinc-300">best_vibes.env</span>
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <span className="block text-zinc-500 italic mb-1"># The sound of the ocean on a summers night</span>
+                  <div className="flex gap-4">
+                    <span className="text-pink-500">AMBIENCE</span>
+                    <span className="text-zinc-600">=</span>
+                    <span className="text-emerald-400">"Ocean_Swell.wav"</span>
+                  </div>
+                </div>
+
+                <div>
+                  <span className="block text-zinc-500 italic mb-1"># The smell of burning dry timber</span>
+                  <div className="flex gap-4">
+                    <span className="text-pink-500">SCENT</span>
+                    <span className="text-zinc-600">=</span>
+                    <span className="text-emerald-400">"Campfire_Smoke.png"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
