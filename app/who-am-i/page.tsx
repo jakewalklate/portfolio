@@ -1642,7 +1642,7 @@ export default function WhoAmIPage() {
 
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            What I Wish I Would Do More Of
+            What I Wish I Would Do More
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
