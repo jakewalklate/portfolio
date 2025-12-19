@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake, SprayCan, Caravan, Mountain, Trees, Target, Waves, Flame } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake, SprayCan, Caravan, Mountain, Trees, Target, Waves, Flame, Circle } from "lucide-react";
 import Time from "./time";
 import Process from "./process";
 
@@ -1745,7 +1745,7 @@ export default function WhoAmIPage() {
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-xl font-bold text-white">Pub Billiards</h4>
                   <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400">
-                    <Target size={20} />
+                    <Circle size={20} />
                   </div>
                 </div>
                 <p className="text-zinc-400 leading-relaxed text-sm">
