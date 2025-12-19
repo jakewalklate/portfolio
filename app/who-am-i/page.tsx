@@ -1783,7 +1783,7 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
             Aims and Methods
           </h3>
@@ -1859,7 +1859,7 @@ export default function WhoAmIPage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
     </main>
