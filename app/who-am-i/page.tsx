@@ -1117,7 +1117,7 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            The Alternative
+            The Motivation
           </h3>
           <div className="prose prose-invert prose-zinc max-w-none">
             <p className="text-zinc-400 leading-relaxed italic border-l-4 border-zinc-700 pl-4 py-2 my-6">
@@ -1130,7 +1130,7 @@ export default function WhoAmIPage() {
               You see, I have a problem: <span className="text-amber-600 font-medium">I can't enjoy the apocalypse</span> <em>(or at least, I feel like I have responsibility to build after the apocalypse)</em>. While my friends saw a fulfilling friday night, I saw the slow, entropic decay of the world demanding action. I was filled with a conspiratorial anxiety that if I didn't move — if I didn't take action — our impending doom would be upon us.
             </p>
             <p className="text-zinc-300 leading-relaxed mt-4">
-              So I chose this path. Out of fear and sympathy. Because for me, the anxiety of standing still is the only thing scarier than the work itself.
+              So I chose this path. Out of fear and sympathy. Because for me, the anxiety of not helping other people is the only thing scarier than the work itself.
             </p>
           </div>
         </div>
