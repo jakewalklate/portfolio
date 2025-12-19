@@ -10,8 +10,7 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center pt-32 pb-20 px-6 relative max-w-5xl mx-auto w-full">
       {/* 1. ABSTRACT */}
       <section className="w-full space-y-8 text-center sm:text-left py-12 border-b border-zinc-800/50">
-        <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">1. Abstract</h2>
-
+        <h2 className="text-left! text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">1. Abstract</h2>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-medium text-zinc-400 mx-auto sm:mx-0">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -87,7 +86,6 @@ export default function Home() {
           </div>
 
           <div className="w-full flex-1">
-            <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4 md:hidden">Visualization</h2>
             <div className="opacity-80 hover:opacity-100 transition-opacity duration-500">
               <GeneticEditing />
             </div>
@@ -110,7 +108,6 @@ export default function Home() {
           </div>
 
           <div className="w-full flex-1">
-            <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4 md:hidden">Visualization</h2>
             <div className="opacity-80 hover:opacity-100 transition-opacity duration-500">
               <AgaroseGel />
             </div>
