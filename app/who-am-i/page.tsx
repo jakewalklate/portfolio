@@ -13,7 +13,6 @@ export default function WhoAmIPage() {
           <h2 className="text-2xl text-zinc-400/80 font-medium mb-2">
             Redbull Enthusiast
           </h2>
-          {/* <p className="text-zinc-500/90 mb-2 mt-1">Generation Z</p> */}
           <p className="text-zinc-700"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia (Current Time: <Time />)</p>
         </div>
 
@@ -125,7 +124,6 @@ export default function WhoAmIPage() {
           </h3>
           <div className="relative w-full flex overflow-hidden mask-linear-fade">
             <div className="flex animate-scroll gap-6 w-max">
-              {/* Duplicated list for infinite scroll */}
               {[...Array(2)].map((_, i) => (
                 <div key={i} className="flex gap-6 shrink-0">
                   {[
@@ -289,7 +287,6 @@ export default function WhoAmIPage() {
             Personal Interests
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Prototyping - Large Tile */}
             <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Workshop Prototyping</h4>
@@ -299,7 +296,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Psychology - Standard Tile */}
             <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 h-full flex flex-col">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Human OS</h4>
@@ -317,7 +313,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Open Source - Standard Tile */}
             <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 relative">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Open Source</h4>
@@ -327,7 +322,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Cars - Standard Tile */}
             <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 relative">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">JDM Culture</h4>
@@ -337,7 +331,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Defense - Standard Tile */}
             <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 relative">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Military</h4>
@@ -353,23 +346,13 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Tech Stack
           </h3>
-          {/* Terminal Window */}
           <div className="relative mx-auto max-w-2xl">
             <div className="rounded-xl overflow-hidden border border-zinc-700 shadow-2xl">
-              {/* Terminal Title Bar */}
               <div className="bg-zinc-800 px-4 py-3 flex items-center gap-3">
-                {/* Traffic Lights */}
-                <div className="flex gap-2">
-                  {/* <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" /> */}
-                </div>
                 <span className="flex-1 text-center text-zinc-500 text-sm font-mono">stack@portfolio ~ ps aux</span>
               </div>
 
-              {/* Terminal Body */}
               <div className="bg-zinc-950 p-4 font-mono text-sm">
-                {/* Header Row */}
                 <div className="hidden sm:grid grid-cols-[auto_1fr_auto_auto] gap-4 text-zinc-600 text-xs border-b border-zinc-800 pb-2 mb-2">
                   <span>PID</span>
                   <span>PROCESS</span>
@@ -377,7 +360,6 @@ export default function WhoAmIPage() {
                   <span>MEM</span>
                 </div>
 
-                {/* Process Rows */}
                 <div className="space-y-1">
                   {[
                     { name: "next.js", pid: "3000", mem: "128M", sleeping: false },
@@ -411,7 +393,6 @@ export default function WhoAmIPage() {
                   ))}
                 </div>
 
-                {/* Prompt */}
                 <div className="mt-4 pt-3 border-t border-zinc-800 flex items-center gap-2">
                   <span className="text-green-500">❯</span>
                   <span className="text-zinc-400">sudo rm -rf /usr/bin/java/</span>
@@ -554,9 +535,7 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Current Toolbox
           </h3>
-          {/* Workstation Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Dev Setup */}
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-zinc-500 text-xs font-mono uppercase tracking-wider">
                 <span>💻</span> Dev Setup
@@ -579,7 +558,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Lab Equipment */}
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-zinc-500 text-xs font-mono uppercase tracking-wider">
                 <span>🔧</span> Lab Equipment
@@ -658,13 +636,11 @@ export default function WhoAmIPage() {
           </h3>
           <div className="relative">
             <div className="space-y-0">
-              {/* Step 1: Undergraduate */}
               <div className="relative flex gap-6 group">
                 <div className="flex flex-col items-center shrink-0">
                   <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-blue-500/20 border-2 border-blue-500">
                     <span className="text-blue-400 font-bold text-sm">1</span>
                   </div>
-                  {/* Line to next step */}
                   <div className="w-px flex-1 bg-linear-to-b from-blue-500 to-green-500 opacity-50" />
                 </div>
                 <div className="flex-1 p-4 rounded-xl bg-zinc-900/50 border border-blue-500/30 hover:border-blue-500/50 transition-colors mb-4">
@@ -676,13 +652,11 @@ export default function WhoAmIPage() {
                 </div>
               </div>
 
-              {/* Step 2: Engineering Employment */}
               <div className="relative flex gap-6 group">
                 <div className="flex flex-col items-center shrink-0">
                   <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-green-500/20 border-2 border-green-500/50">
                     <span className="text-green-400/70 font-bold text-sm">2</span>
                   </div>
-                  {/* Line to next step */}
                   <div className="w-px flex-1 bg-linear-to-b from-green-500 to-purple-500 opacity-50" />
                 </div>
                 <div className="flex-1 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-green-500/30 transition-colors mb-4">
@@ -694,13 +668,11 @@ export default function WhoAmIPage() {
                 </div>
               </div>
 
-              {/* Step 3: Part-time PhD */}
               <div className="relative flex gap-6 group">
                 <div className="flex flex-col items-center shrink-0">
                   <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/20 border-2 border-purple-500/30">
                     <span className="text-purple-400/70 font-bold text-sm">3</span>
                   </div>
-                  {/* Line with arrow */}
                   <div className="w-px flex-1 bg-purple-500 opacity-50" />
                   <div className="text-purple-500 opacity-50 -mt-0.5 leading-none">▼</div>
                 </div>
@@ -718,14 +690,12 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Growth Board
+            Growth Kanban
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Future Investigations Column */}
             <div className="rounded-xl bg-zinc-900/30 border border-white/15 overflow-hidden">
               <div className="px-4 py-3 bg-amber-500/10 border-b border-amber-500/20">
                 <h4 className="text-amber-400 font-semibold text-sm flex items-center gap-2">
-                  {/* <span className="w-2 h-2 rounded-full bg-amber-400" /> */}
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-amber-400"><path d="" stroke="none" fillRule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fillRule="evenodd" /></svg>
                   Future Investigations
                 </h4>
