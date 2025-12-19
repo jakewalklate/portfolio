@@ -715,11 +715,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Lessons Learnt Column */}
             <div className="rounded-xl bg-zinc-900/30 border border-white/15 overflow-hidden">
               <div className="px-4 py-3 bg-emerald-500/10 border-b border-emerald-500/20">
                 <h4 className="text-emerald-400 font-semibold text-sm flex items-center gap-2">
-                  {/* <span className="w-2 h-2 rounded-full bg-emerald-400" /> */}
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" version="1.1" className="fill-emerald-400"><path d="" stroke="none" fillRule="evenodd" /><path d="M 3.425 3.334 C 3.144 4.067, 3.046 8.455, 3.207 13.084 L 3.500 21.500 12 21.500 L 20.500 21.500 20.792 14.330 C 21.067 7.595, 20.915 7.002, 18.302 4.580 C 15.978 2.424, 14.569 2, 9.729 2 C 5.824 2, 3.770 2.435, 3.425 3.334 M 5.417 5.355 C 5.131 6.101, 5.033 9.588, 5.199 13.105 L 5.500 19.500 12 19.500 L 18.500 19.500 18.805 14.750 C 19.106 10.053, 19.075 10, 16.055 10 C 13.327 10, 13 9.679, 13 7 C 13 4.233, 12.726 4, 9.469 4 C 7.420 4, 5.719 4.569, 5.417 5.355 M 15 6.500 C 15 7.325, 15.730 8, 16.622 8 C 17.951 8, 18.020 7.729, 17 6.500 C 16.315 5.675, 15.585 5, 15.378 5 C 15.170 5, 15 5.675, 15 6.500" stroke="none" fillRule="evenodd" /></svg>
                   Lessons Learnt
                 </h4>
@@ -746,7 +744,6 @@ export default function WhoAmIPage() {
             My Development Loop
           </h3>
           <div className="relative">
-            {/* Loop container */}
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 p-6 rounded-2xl bg-zinc-900/50 border border-white/5 ">
               {[
                 { emoji: "🥤", label: "Redbull", color: "text-red-400" },
@@ -766,10 +763,8 @@ export default function WhoAmIPage() {
                   )}
                 </div>
               ))}
-              {/* Loop back arrow */}
               <span className="text-zinc-600 text-2xl">↺</span>
             </div>
-            {/* Subtitle */}
             <p className="text-center text-zinc-500 text-sm mt-4 italic">
               "I'll just make one small change.." — Me, every night
             </p>
@@ -784,9 +779,7 @@ export default function WhoAmIPage() {
             Goals that live in the back of my mind — things I'd love to build before I'm gone.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Youth Center Card */}
             <div className="group relative rounded-2xl bg-linear-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-amber-500/30 transition-all overflow-hidden">
-              {/* Blueprint grid pattern overlay */}
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]" />
               <div className="relative p-6 space-y-4">
                 <div className="flex items-start justify-between">
@@ -812,9 +805,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Stanley University Card */}
             <div className="group relative rounded-2xl bg-linear-to-br from-zinc-900/80 to-zinc-900/40 border border-white/10 hover:border-blue-500/30 transition-all overflow-hidden">
-              {/* Blueprint grid pattern overlay */}
               <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:20px_20px]" />
               <a href="https://stanleyuni.github.io" target="_blank">
                 <div className="relative p-6 space-y-4">
@@ -850,7 +841,6 @@ export default function WhoAmIPage() {
           </h3>
 
           <div className="space-y-6">
-            {/* Unpopular Opinions */}
             <div className="space-y-3">
               <h4 className="text-sm font-mono text-zinc-500 uppercase tracking-wider flex items-center gap-2">
                 <span>🔥</span> Unpopular Opinions
@@ -862,7 +852,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Things I've Accepted */}
             <div className="space-y-3">
               <h4 className="text-sm font-mono text-zinc-500 uppercase tracking-wider flex items-center gap-2">
                 <span>🪞</span> Things I've Accepted About Myself
@@ -888,11 +877,9 @@ export default function WhoAmIPage() {
             Straight Edge
           </h3>
           <div className="flex flex-col sm:flex-row gap-6 items-start">
-            {/* X Symbol */}
             <div className="flex items-center justify-center w-20 h-20 rounded-2xl bg-zinc-900/50 border border-white/10 shrink-0 my-auto max-sm:mx-auto">
               <span className="text-4xl font-black text-white">X</span>
             </div>
-            {/* Content */}
             <div className="space-y-3">
               <div className="flex items-center gap-3 flex-wrap max-sm:justify-center">
                 <span className="text-xs font-mono text-zinc-500 px-2 py-1 rounded-full border border-zinc-700 bg-zinc-800/50">
@@ -933,7 +920,6 @@ export default function WhoAmIPage() {
                 </span>
               </div>
               <div className="relative group cursor-default w-fit">
-                {/* <div className="absolute left-0 top-0 bottom-0 w-4 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div> */}
                 <span className="text-purple-400 pl-4">if</span> (<span className="text-blue-300">isReady</span>) {'{'}
                 <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 bg-zinc-800 text-zinc-300 text-xs px-2 py-0.5 rounded border border-white/10 max-md:hidden opacity-60 transition-opacity whitespace-nowrap pointer-events-none z-10">
                   Two space indentation
@@ -961,7 +947,6 @@ export default function WhoAmIPage() {
             Enjoyment vs Stressors
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Dopamine */}
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-2">
                 <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
@@ -990,7 +975,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Cortisol */}
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-2">
                 <div className="p-2 rounded-lg bg-red-500/10 text-red-400">
@@ -1026,7 +1010,6 @@ export default function WhoAmIPage() {
             User Manual
           </h3>
           <div className="rounded-xl overflow-hidden bg-zinc-900/80 border border-[#30363d] shadow-xl">
-            {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-zinc-900 border-b border-[#30363d]">
               <div className="flex items-center gap-2">
                 <div className="text-[#8b949e]">
@@ -1039,11 +1022,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Content */}
             <div className="p-6 md:p-8 space-y-8">
               <div className="text-sm text-zinc-400 mb-3 -mt-2">Software revision: v{(new Date().getFullYear() - 1997).toString()}.0.0</div>
 
-              {/* Section 1 */}
               <div className="space-y-3">
                 <h4 className="text-xl font-bold text-[#c9d1d9] border-b border-[#30363d] pb-2">
                   Strong Opinions, Loosely Held
@@ -1056,7 +1037,6 @@ export default function WhoAmIPage() {
                 </p>
               </div>
 
-              {/* Section 2 */}
               <div className="space-y-3">
                 <h4 className="text-xl font-bold text-[#c9d1d9] border-b border-[#30363d] pb-2">
                   Learning: First Principles
@@ -1068,7 +1048,6 @@ export default function WhoAmIPage() {
                 </p>
               </div>
 
-              {/* Section 3 */}
               <div className="space-y-3">
                 <h4 className="text-xl font-bold text-[#c9d1d9] border-b border-[#30363d] pb-2">
                   Psychological Safety
@@ -1077,7 +1056,6 @@ export default function WhoAmIPage() {
                   I believe the best insights begin when it is safe to say "I don't know". I am patient with questions and flexible with mistakes, provided we learn from them. I optimize for team trust, not just individual code velocity.
                 </p>
               </div>
-
             </div>
           </div>
         </div>
@@ -1165,11 +1143,9 @@ export default function WhoAmIPage() {
             Things I watch when I should be sleeping.
           </p>
           <div className="rounded-2xl bg-zinc-900/50 border border-white/10 overflow-hidden">
-            {/* TV Static Header */}
             <div className="px-5 py-3 bg-zinc-800/50 border-b border-white/5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="text-red-500 text-xs font-mono animate-pulse"><span>►</span>&nbsp;<span className="absolute -mt-[1px]">PLAY</span></span>
-                {/* <span className="text-zinc-500 text-xs font-mono">02:47 AM</span> */}
               </div>
               <span className="text-zinc-600 text-xs font-mono">VHS</span>
             </div>
@@ -1247,9 +1223,6 @@ export default function WhoAmIPage() {
                 className="bg-zinc-900 px-6 py-3 flex flex-col items-center justify-center text-center group hover:bg-zinc-800/80 transition-colors cursor-default"
               >
                 <div dangerouslySetInnerHTML={{ __html: brand.icon }}></div>
-                {/* <span className="text-white font-medium text-sm tracking-wide group-hover:text-zinc-300 transition-colors">
-                  {brand.name}
-                </span> */}
                 <span className="text-zinc-600 text-[10px] mt-1.5 tracking-wider uppercase">
                   {brand.tagline}
                 </span>
@@ -1263,7 +1236,6 @@ export default function WhoAmIPage() {
             Peaceful Sanctuary
           </h3>
           <div className="flex flex-col md:flex-row gap-6 items-center">
-            {/* Plant Illustration */}
             <div className="flex gap-4 justify-center">
               {["🌱", "🪴", "🌿", "🌵"].map((plant, i) => (
                 <div
@@ -1274,7 +1246,6 @@ export default function WhoAmIPage() {
                 </div>
               ))}
             </div>
-            {/* Description */}
             <div className="flex-1 text-center md:text-left gap-4">
               <p className="text-zinc-400 leading-relaxed">
                 At home, I love growing plants. I enjoy growing indoor house plants and vegetables because they bring life and calm into my home while giving me a hands-on connection to nature year-round.
@@ -1361,16 +1332,13 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        {/* Time Split Pie Chart Section */}
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             How I Split My Attention
           </h3>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-            {/* Donut Chart */}
             <div className="relative w-48 h-48 md:w-56 md:h-56">
               <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
-                {/* Technology - 70% (0 to 252 degrees) */}
                 <circle
                   cx="50"
                   cy="50"
@@ -1382,7 +1350,6 @@ export default function WhoAmIPage() {
                   strokeDashoffset="0"
                   className="drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"
                 />
-                {/* Genetics/Neurology - 15% (252 to 306 degrees) */}
                 <circle
                   cx="50"
                   cy="50"
@@ -1394,7 +1361,6 @@ export default function WhoAmIPage() {
                   strokeDashoffset="-175.93"
                   className="drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]"
                 />
-                {/* Psychology/Philosophy/History - 15% (306 to 360 degrees) */}
                 <circle
                   cx="50"
                   cy="50"
@@ -1406,7 +1372,6 @@ export default function WhoAmIPage() {
                   strokeDashoffset="-213.63"
                   className="drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
                 />
-                {/* Gradient definitions */}
                 <defs>
                   <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="#3b82f6" />
@@ -1422,14 +1387,8 @@ export default function WhoAmIPage() {
                   </linearGradient>
                 </defs>
               </svg>
-              {/* Center text */}
-              {/* <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-3xl md:text-4xl font-bold text-white">70%</span>
-                <span className="text-xs text-zinc-500 font-mono">primary</span>
-              </div> */}
             </div>
 
-            {/* Legend */}
             <div className="space-y-4">
               <div className="flex items-center gap-3 group">
                 <div className="w-4 h-4 rounded-full bg-linear-to-r from-blue-500 to-cyan-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
@@ -1486,7 +1445,6 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        {/* Biggest Regret */}
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Biggest Regret
@@ -1515,11 +1473,8 @@ export default function WhoAmIPage() {
             What Brings Me Happiness
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            {/* Shoe Box Label Style */}
             <div className="group relative overflow-hidden rounded-xl bg-[#e35d34] p-0.5 transition-transform hover:rotate-[-0.2deg] hover:scale-[1.005]">
               <div className="relative h-full bg-[#1a1a1a] rounded-[10px] p-6 flex flex-col justify-between">
-                {/* Decorative Box Elements */}
                 <div className="absolute top-4 right-4 flex gap-2">
                   <div className="w-24 h-8 border-2 border-[#e35d34] rounded flex items-center justify-center">
                     <span className="text-xs font-mono text-[#e35d34] uppercase tracking-wider block mr-1">Size:</span>
@@ -1555,13 +1510,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Concert Ticket Style */}
             <div className="group relative overflow-hidden rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-[0.2deg] hover:scale-[1.01]">
               <div className="relative h-full bg-zinc-900 rounded-[10px] flex">
-
-                {/* Main Ticket Stub */}
                 <div className="flex-1 p-6 flex flex-col justify-between border-r-2 border-dashed border-zinc-800 relative">
-                  {/* Cutout circles for perforations */}
                   <div className="absolute -top-3 -right-3 w-6 h-6 bg-black rounded-full z-10"></div>
                   <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-black rounded-full z-10"></div>
 
@@ -1593,14 +1544,9 @@ export default function WhoAmIPage() {
                   </div>
                 </div>
 
-                {/* Ticket Side Strip (Barcode) */}
                 <div className="w-12 bg-white/5 flex flex-col items-center justify-center p-2 gap-1 overflow-hidden relative">
                   <span className="text-[10px] font-mono text-zinc-600 -rotate-90 whitespace-nowrap">NO REFUNDS</span>
-                  <div className="flex-1 w-full flex flex-col gap-1 my-2 opacity-30">
-                    {/* {[...Array(12)].map((_, i) => (
-                      <div key={i} className={`w-full bg-white h-[${Math.floor(Math.random() * 4) + 1}px] shrink-0`}></div>
-                    ))} */}
-                  </div>
+                  <div className="flex-1 w-full flex flex-col gap-1 my-2 opacity-30"></div>
                   <span className="text-[10px] font-mono text-zinc-600 -rotate-90">2024</span>
                 </div>
 
@@ -1613,12 +1559,9 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Love That Others Hate
           </h3>
-          {/* Graffiti - CSS Stencil Style */}
           <div className="relative group overflow-hidden rounded-xl bg-[#2a2a2a] p-8 border-l-8 border-pink-500 shadow-lg transition-transform">
-            {/* CSS Texture Background */}
             <div className="absolute inset-0 opacity-10 bg-radial-gradient(circle_at_50%_50%,#000_20%,transparent_20%),radial-gradient(circle_at_50%_50%,#fff_20%,transparent_20%)] bg-[size:8px_8px]"></div>
 
-            {/* Spray Paint Glow Effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/20 blur-[80px] rounded-full transition-colors"></div>
 
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -1648,10 +1591,6 @@ export default function WhoAmIPage() {
             What I Wish I Would Do More
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            {/* Simple Standard Cards for 'Wish I Did More' */}
-
-            {/* Motorbikes */}
             <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -1672,7 +1611,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Snowboarding */}
             <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -1691,7 +1629,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Bushwalking */}
             <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -1709,7 +1646,6 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            {/* Billiards */}
             <div className="p-6 rounded-xl bg-zinc-900/70 border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between h-[180px]">
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -1734,15 +1670,11 @@ export default function WhoAmIPage() {
             Alternate Universe
           </h3>
           <div className="max-w-3xl mx-auto">
-            {/* Abstract Ticket / Route Style */}
             <div className="max-w-3xl mx-auto">
-              {/* Dream Manifesto Style */}
               <div className="group relative bg-[#18181b] rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-all shadow-2xl">
 
-                {/* Subtle texture */}
                 <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
 
-                {/* Mobile-only Top Right Icon */}
                 <div className="absolute top-6 right-6 md:hidden z-20">
                   <div className="p-3 bg-zinc-900/80 backdrop-blur-md rounded-lg border border-zinc-800 text-zinc-600 group-hover:text-emerald-500 transition-colors">
                     <Caravan size={24} />
@@ -1750,7 +1682,6 @@ export default function WhoAmIPage() {
                 </div>
 
                 <div className="p-8 md:p-10 flex flex-col md:flex-row md:gap-10 items-start">
-                  {/* Left: Manifesto Header & Icons */}
                   <div className="md:w-1/3 flex flex-col justify-between h-full space-y-6">
                     <div>
                       <h4 className="text-xs font-mono text-emerald-500 uppercase tracking-[0.2em] mb-3">Goal_001</h4>
@@ -1765,7 +1696,6 @@ export default function WhoAmIPage() {
                     </div>
                   </div>
 
-                  {/* Right: The Text Content */}
                   <div className="flex-1 relative">
                     <p className="text-lg text-zinc-300 leading-relaxed font-serif italic border-l-4 border-emerald-900/50 pl-6 group-hover:border-emerald-500 transition-colors">
                       "If I never had to work again, I'd buy a campervan and circle Australia. An indefinite road trip visiting every <span className="text-emerald-400 not-italic font-bold">skatepark</span> and beach along the coast. Just riding, meeting the locals, and mentoring the grommies."
@@ -1831,7 +1761,7 @@ export default function WhoAmIPage() {
         <div className="space-y-6">
           <div>
             <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
-              Thought Logs
+              Thought Log
             </h3>
           </div>
           <div className="rounded-lg bg-[#0c0c0c] border border-white/5 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
@@ -1851,15 +1781,9 @@ export default function WhoAmIPage() {
                 <span className="text-red-500 font-bold shrink-0">[ERROR]</span>
                 <span className="text-zinc-300">"God is dead, god remains dead. And we have killed him." — Friedrich Nietzsche</span>
               </div>
-              {/* <div className="flex gap-3 animate-pulse mt-2">
-                <span className="text-zinc-600 shrink-0">[{new Date().toISOString().split("T")[0]}]</span>
-                <span className="text-emerald-500 font-bold shrink-0">[SYSTEM]</span>
-                <span className="text-emerald-400">Awaiting input_</span>
-              </div> */}
             </div>
           </div>
         </div>
-
       </section>
     </main>
   );
