@@ -1800,7 +1800,7 @@ export default function WhoAmIPage() {
               </div>
               <h4 className="text-white font-medium mb-2">Engineering Complexity</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                I am passionate about solving complex problems. I build robust, scalable systems that handle high-stakes requirements for the right partners.
+                I am passionate about solving complex problems. I build robust, scalable systems that handle high-stakes requirements.
               </p>
             </div>
 
@@ -1810,7 +1810,7 @@ export default function WhoAmIPage() {
               </div>
               <h4 className="text-white font-medium mb-2">Accelerating Discovery</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                Leveraging a unique dual-background to build the tools researchers need. Bridging the gap between software and science to increase the velocity of innovation.
+                Leveraging a unique background to build the tools researchers need. Bridging the gap between software and science to increase the velocity of innovation.
               </p>
             </div>
 
