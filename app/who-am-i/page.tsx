@@ -1815,12 +1815,12 @@ export default function WhoAmIPage() {
 
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10">
-            Preferred Environment
+            Preferred Config
           </h3>
           <div className="max-w-3xl mx-auto">
             {/* Atmosphere .env Config */}
-            <div className="rounded-lg bg-zinc-950 border border-zinc-800 p-6 font-mono text-sm shadow-xl relative overflow-hidden group hover:border-zinc-700 transition-colors">
-              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-emerald-500 via-sky-500 to-indigo-500 opacity-20 group-hover:opacity-50 transition-opacity"></div>
+            <div className="rounded-lg bg-zinc-950 border border-zinc-800 p-6 font-mono text-sm shadow-xl relative overflow-hidden group transition-colors">
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-emerald-500 via-sky-500 to-indigo-500 opacity-20 transition-opacity"></div>
 
               <div className="flex items-center gap-2 mb-4 text-zinc-500 text-xs border-b border-zinc-900 pb-2">
                 <span className="text-zinc-600">.config/</span>
@@ -1855,6 +1855,38 @@ export default function WhoAmIPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
+              Core Dumps
+            </h3>
+          </div>
+          <div className="rounded-lg bg-[#0c0c0c] border border-white/5 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
+            <div className="flex flex-col gap-3">
+              <div className="flex gap-3">
+                <span className="text-zinc-600 shrink-0">[1654]</span>
+                <span className="text-blue-500 font-bold shrink-0">[INFO]</span>
+                <span className="text-zinc-300">"Better to be a warrior in a garden than a gardener in a war" — Miyamoto Musashi</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-zinc-600 shrink-0">[1986]</span>
+                <span className="text-yellow-500 font-bold shrink-0">[WARN]</span>
+                <span className="text-zinc-300">"A man without hope is a man without fear" — Frank Miller</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-zinc-600 shrink-0">[1882]</span>
+                <span className="text-red-500 font-bold shrink-0">[ERROR]</span>
+                <span className="text-zinc-300">"God is dead, god remains dead. And we have killed him." — Friedrich Nietzsche</span>
+              </div>
+              {/* <div className="flex gap-3 animate-pulse mt-2">
+                <span className="text-zinc-600 shrink-0">[{new Date().toISOString().split("T")[0]}]</span>
+                <span className="text-emerald-500 font-bold shrink-0">[SYSTEM]</span>
+                <span className="text-emerald-400">Awaiting input_</span>
+              </div> */}
             </div>
           </div>
         </div>
