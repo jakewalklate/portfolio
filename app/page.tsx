@@ -3,6 +3,7 @@ import GeneticEditing from "@/components/GeneticEditing";
 import AgaroseGel from "@/components/AgaroseGel";
 
 import Link from "next/link";
+import { Info, Leaf, Microscope, Telescope, Users } from "lucide-react";
 
 export default function Home() {
   return (
@@ -95,7 +96,7 @@ export default function Home() {
         <div className="md:col-span-3 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors flex items-center justify-between">
           <div>
             <h3 className="text-xl font-semibold mb-2 text-zinc-100">Let's work together</h3>
-            <p className="text-zinc-400">Open for consulting and collaborations.</p>
+            <p className="text-zinc-400">Open for consulting.</p>
           </div>
           <span onClick={() => document.getElementById("contact")?.click()} className="cursor-pointer h-12 w-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-black">
@@ -108,6 +109,88 @@ export default function Home() {
       {/* Agarose Gel Visualization */}
       <section className="w-full py-12 opacity-80 hover:opacity-100 transition-opacity duration-500">
         <AgaroseGel />
+      </section>
+
+      <section className="max-w-5xl w-full py-12 space-y-12 ">
+        <div className="py-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+          <div className="space-y-6 mx-8">
+            <h3 className="text-2xl font-semibold text-white pb-2">
+              Aims and Methods
+            </h3>
+            <div className="space-y-4 text-center max-w-2xl mx-auto">
+              <p className="text-xl text-zinc-400 font-light leading-relaxed">
+                "I operate at the intersection of rigour, purpose and solution."
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-blue-500/30 transition-colors group">
+                <div className="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Microscope size={20} />
+                </div>
+                <h4 className="text-white font-medium mb-2">Engineering Complexity</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  I am passionate about solving complex problems. I build robust, scalable systems that handle high-stakes requirements.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-purple-500/30 transition-colors group">
+                <div className="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Users size={20} />
+                </div>
+                <h4 className="text-white font-medium mb-2">Accelerating Discovery</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Leveraging a unique background to build the tools researchers need. Bridging the gap between software and science to increase the velocity of innovation.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-green-500/30 transition-colors group">
+                <div className="w-10 h-10 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Leaf size={20} />
+                </div>
+                <h4 className="text-white font-medium mb-2">Advancing Human Health</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Communities need help. I am driven to build systems that support resilience, reduce suffering, and extend healthy human lifespans.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative p-6 md:p-8 rounded-2xl bg-zinc-900 overflow-hidden border border-white/5">
+              <div className="absolute top-0 right-0 p-4 opacity-20">
+                <Telescope size={120} className="text-zinc-700 -rotate-12" />
+              </div>
+              <div className="relative z-10 space-y-5">
+                <div>
+                  <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">My Offer</h4>
+                  <h3 className="text-xl text-white font-medium">Collaboration</h3>
+                </div>
+
+                <p className="text-zinc-400 leading-relaxed">
+                  I am open to invitations to help solve any problem that fits these three criteria:
+                </p>
+
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-4 group">
+                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-blue-400 transition-colors" />
+                    <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The problem is intellectually rigorous.</span>
+                  </li>
+                  <li className="flex items-start gap-4 group">
+                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-green-400 transition-colors" />
+                    <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The solution is technologically challenging.</span>
+                  </li>
+                  <li className="flex items-start gap-4 group">
+                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-purple-400 transition-colors" />
+                    <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The outcome is impactful to the community.</span>
+                  </li>
+                </ul>
+
+                <p className="text-zinc-500 lreading-relaxed italic text-sm">
+                  <Info size={12} className="inline mr-2 align-middle" /> No person is too small to help.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main >
   );
