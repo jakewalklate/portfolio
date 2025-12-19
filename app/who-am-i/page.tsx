@@ -1812,13 +1812,12 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
-
+        {/* 
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10">
             Preferred Config
           </h3>
           <div className="max-w-3xl mx-auto">
-            {/* Atmosphere .env Config */}
             <div className="rounded-lg bg-zinc-950 border border-zinc-800 p-6 font-mono text-sm shadow-xl relative overflow-hidden group transition-colors">
               <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-emerald-500 via-sky-500 to-indigo-500 opacity-20 transition-opacity"></div>
 
@@ -1857,7 +1856,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="space-y-6">
           <div>
