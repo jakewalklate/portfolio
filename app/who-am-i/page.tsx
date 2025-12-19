@@ -1862,7 +1862,7 @@ export default function WhoAmIPage() {
         <div className="space-y-6">
           <div>
             <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
-              Core Dumps
+              Thought Logs
             </h3>
           </div>
           <div className="rounded-lg bg-[#0c0c0c] border border-white/5 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
