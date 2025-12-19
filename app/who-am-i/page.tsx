@@ -1,4 +1,4 @@
-import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake, SprayCan, Caravan, Mountain, Trees, Target, Waves, Flame, Circle } from "lucide-react";
+import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake, SprayCan, Caravan, Mountain, Trees, Target, Waves, Flame, Circle, Microscope, Users, Leaf, Telescope, Info } from "lucide-react";
 import Time from "./time";
 import Process from "./process";
 
@@ -1759,11 +1759,9 @@ export default function WhoAmIPage() {
         </div> */}
 
         <div className="space-y-6">
-          <div>
-            <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
-              Thought Log
-            </h3>
-          </div>
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
+            Thought Log
+          </h3>
           <div className="rounded-lg bg-[#0c0c0c] border border-white/5 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
             <div className="flex flex-col gap-3">
               <div className="flex gap-3">
@@ -1784,7 +1782,86 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
+
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
+            Aims and Methods
+          </h3>
+          <div className="space-y-4 text-center max-w-2xl mx-auto">
+            <p className="text-xl text-zinc-400 font-light leading-relaxed">
+              "I operate at the intersection of rigour and purpose."
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-blue-500/30 transition-colors group">
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Microscope size={20} />
+              </div>
+              <h4 className="text-white font-medium mb-2">Engineering Complexity</h4>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                I am passionate about solving complex problems. I build robust, scalable systems that handle high-stakes requirements for the right partners.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-purple-500/30 transition-colors group">
+              <div className="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Users size={20} />
+              </div>
+              <h4 className="text-white font-medium mb-2">Accelerating Discovery</h4>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                Leveraging a unique dual-background to build the tools researchers need. Bridging the gap between software and science to increase the velocity of innovation.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-zinc-900/30 border border-white/5 hover:border-green-500/30 transition-colors group">
+              <div className="w-10 h-10 rounded-lg bg-green-500/10 text-green-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Leaf size={20} />
+              </div>
+              <h4 className="text-white font-medium mb-2">Advancing Human Health</h4>
+              <p className="text-sm text-zinc-400 leading-relaxed">
+                Communities need help. I am driven to build systems that support resilience, reduce suffering, and extend healthy human lifespans.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative p-6 md:p-8 rounded-2xl bg-zinc-900 overflow-hidden border border-white/5">
+            <div className="absolute top-0 right-0 p-4 opacity-20">
+              <Telescope size={120} className="text-zinc-700 -rotate-12" />
+            </div>
+            <div className="relative z-10 space-y-5">
+              <div>
+                <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">My Offer</h4>
+                <h3 className="text-xl text-white font-medium">Collaboration</h3>
+              </div>
+
+              <p className="text-zinc-400 leading-relaxed">
+                I am open to invitations to help solve any problem that fits these three criteria:
+              </p>
+
+              <ul className="space-y-2">
+                <li className="flex items-start gap-4 group">
+                  <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-blue-400 transition-colors" />
+                  <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The problem is intellectually rigorous.</span>
+                </li>
+                <li className="flex items-start gap-4 group">
+                  <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-green-400 transition-colors" />
+                  <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The solution is technologically challenging.</span>
+                </li>
+                <li className="flex items-start gap-4 group">
+                  <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-purple-400 transition-colors" />
+                  <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The outcome is impactful to the community.</span>
+                </li>
+              </ul>
+
+              <p className="text-zinc-500 lreading-relaxed italic text-sm">
+                <Info size={12} className="inline mr-2 align-middle" /> No person is too small to help.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
+
     </main>
   );
 }
