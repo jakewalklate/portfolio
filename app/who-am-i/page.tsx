@@ -1803,7 +1803,7 @@ export default function WhoAmIPage() {
 
                     <div className="mt-6 flex gap-4 text-[10px] font-mono uppercase tracking-widest text-zinc-500">
                       <span>Campervan,&nbsp;</span>
-                      <span>Skateparks&nbsp;</span>
+                      <span>Skateparks,&nbsp;</span>
                       <span>& Freedom</span>
                     </div>
                   </div>
