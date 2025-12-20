@@ -12,7 +12,7 @@ export default function AgaroseGel() {
   ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
+    <div className="w-full md:max-w-4xl mx-auto md:p-4">
       <div className="relative bg-zinc-900/80 rounded-lg border-4 border-zinc-800 shadow-[0_0_50px_rgba(168,85,247,0.1)] overflow-hidden">
         {/* UV Light Glow Effect */}
         <div className="absolute inset-0 bg-purple-900/10 pointer-events-none mix-blend-overlay" />
