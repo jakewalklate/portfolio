@@ -1584,7 +1584,7 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Love That Others Hate
           </h3>
-          <div className="relative group overflow-hidden rounded-xl bg-[#2a2a2a] p-8 border-l-8 border-pink-500 shadow-lg transition-transform">
+          <div className="relative group overflow-hidden rounded-xl bg-[#2a2a2a]/75 p-8 border-l-8 border-pink-500 shadow-lg transition-transform">
             <div className="absolute inset-0 opacity-10 bg-radial-gradient(circle_at_50%_50%,#000_20%,transparent_20%),radial-gradient(circle_at_50%_50%,#fff_20%,transparent_20%)] bg-[size:8px_8px]"></div>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/20 blur-[80px] rounded-full transition-colors"></div>
