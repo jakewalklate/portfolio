@@ -96,9 +96,16 @@ export default function WhoAmIPage() {
               <div>
                 <h4 className="text-lg font-medium text-white">University of Technology Sydney</h4>
                 <div className="text-zinc-400">Bachelor of Engineering (Honours)</div>
+                <ul className="list-disc ml-6 mb-2">
+                  <li className="text-zinc-500 text-sm">Majoring in Biomedical & Mechatronic Engineering</li>
+                  <li className="text-zinc-500 text-sm">Sub-major in Data Analytics & Machine Learning</li>
+                </ul>
                 <div className="text-zinc-400">Bachelor of Medical Science</div>
+                <ul className="list-disc ml-6">
+                  <li className="text-zinc-500 text-sm">Majoring in Molecular Medicine</li>
+                </ul>
               </div>
-              <div className="text-zinc-500 font-mono text-sm text-right sm:text-left">
+              <div className="text-zinc-500 flex min-w-[120px] font-mono text-sm text-right sm:text-left">
                 Double Degree
               </div>
             </div>
@@ -107,11 +114,13 @@ export default function WhoAmIPage() {
               <div>
                 <h4 className="text-lg font-medium text-white">TAFE NSW</h4>
                 <div className="text-zinc-400">4x Certificates in Information Technology</div>
-                <p className="text-sm text-zinc-500 mt-1">
-                  Specializing in Web Development, Database Design, and Network Security.
-                </p>
+                <ul className="list-disc ml-6">
+                  <li className="text-sm text-zinc-500">
+                    Specializing in Web Development, Database Design, and Network Security.
+                  </li>
+                </ul>
               </div>
-              <div className="text-zinc-500 font-mono text-sm text-right sm:text-left">
+              <div className="text-zinc-500 flex min-w-[120px] font-mono text-sm text-right sm:text-left">
                 Trade School
               </div>
             </div>
@@ -620,7 +629,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="space-y-4">
             <div className="relative rounded-lg border border-white/20 hover:border-white/25 overflow-hidden group">
-              <img src="/banner.png" alt="Banner" className="w-full h-auto group-hover:blur-[1px] transition-all duration-500" />
+              <img src="/banner.png" alt="Banner" className="w-full h-auto group-hover:blur-[2px] transition-all duration-500" />
               <div className="absolute inset-0 flex items-center justify-center p-4">
                 <span className="text-white max-sm:text-sm text-xl font-medium text-center bg-black/20 px-6 py-3 rounded-md backdrop-blur-[3px] group-hover:backdrop-blur-[5px] transition-all duration-500">
                   Technological and moral progress — owing to tradition.
@@ -1849,6 +1858,6 @@ export default function WhoAmIPage() {
         </div> */}
       </section>
 
-    </main>
+    </main >
   );
 }
