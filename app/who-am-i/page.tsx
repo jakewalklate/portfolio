@@ -19,7 +19,7 @@ export default function WhoAmIPage() {
         <div className="prose prose-invert prose-zinc max-w-none -mt-6">
           <p className="text-lg text-zinc-400 leading-relaxed">
             I am a multidisciplinary engineer operating at the intersection of biological systems and digital technology.
-            My work focuses on leveraging software engineering principles to solve complex problems in synthetic biology and healthcare.
+            My work focuses on leveraging engineering principles to solve complex problems in synthetic biology and healthcare.
           </p>
           <p className="text-lg text-zinc-400 leading-relaxed mt-4">
             With a background in both life sciences and computer science, I bridge the gap between laboratory experimentation and computational analysis.
@@ -664,7 +664,7 @@ export default function WhoAmIPage() {
                     <span className="text-xs font-mono text-green-400/70 px-2 py-0.5 rounded-full bg-green-500/10">NEXT</span>
                   </div>
                   <h4 className="text-lg font-medium text-white mb-1">Part Time Engineering Employment</h4>
-                  <p className="text-sm text-zinc-400">Seeking a software engineering role while completing my undergraduate studies — building systems that accelerate technological progress or have value to consumers.</p>
+                  <p className="text-sm text-zinc-400">Seeking an engineering role while completing my undergraduate studies — building systems that accelerate technological progress or have value to consumers.</p>
                 </div>
               </div>
 
@@ -1798,6 +1798,55 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
+        {/* 
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            System Scan
+          </h3>
+          <div className="rounded-lg bg-[#0c0c0c] border border-white/5 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
+            <div className="space-y-1 min-w-[500px]">
+              <p><span className="text-emerald-500">admin@portfolio</span>:<span className="text-blue-500">~</span>$ nmap -sV localhost</p>
+              <br />
+              <p>Starting Nmap 7.94 at {new Date().toISOString().split('T')[0]} 15:30 AEST</p>
+              <p>Nmap scan report for localhost (127.0.0.1)</p>
+              <p>Host is up (0.00042s latency).</p>
+              <br />
+              <div className="grid grid-cols-[80px_60px_100px_1fr] gap-x-4">
+                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">PORT</div>
+                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">STATE</div>
+                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">SERVICE</div>
+                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">VERSION</div>
+
+                <div className="text-zinc-400">22/tcp</div>
+                <div className="text-emerald-500">open</div>
+                <div className="text-zinc-300">ssh</div>
+                <div className="text-zinc-500">OpenSSH 9.0 (Collaboration: READY)</div>
+
+                <div className="text-zinc-400">80/tcp</div>
+                <div className="text-emerald-500">open</div>
+                <div className="text-zinc-300">http</div>
+                <div className="text-zinc-500">Life v28.0 (Bio-Digital Interface)</div>
+
+                <div className="text-zinc-400">443/tcp</div>
+                <div className="text-emerald-500">open</div>
+                <div className="text-zinc-300">ssl/https</div>
+                <div className="text-zinc-500">Mentorship Protocol (Secure)</div>
+
+                <div className="text-zinc-400">3000/tcp</div>
+                <div className="text-emerald-500">open</div>
+                <div className="text-zinc-300">http-alt</div>
+                <div className="text-zinc-500">Development Server (Hacking in Progress)</div>
+
+                <div className="text-zinc-400">5432/tcp</div>
+                <div className="text-emerald-500">open</div>
+                <div className="text-zinc-300">postgresql</div>
+                <div className="text-zinc-500">Knowledge Base (Shared Access)</div>
+              </div>
+              <br />
+              <p>Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds</p>
+            </div>
+          </div>
+        </div> */}
       </section>
 
     </main>
