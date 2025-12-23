@@ -141,7 +141,7 @@ export default function WorkPage() {
               <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
                 <div>
                   <h3 className="text-xl font-semibold text-white">Fast Food Crew Member</h3>
-                  <div className="text-zinc-400">Fast Food Chain</div>
+                  <div className="text-zinc-400">Pattysmiths</div>
                 </div>
                 <div className="text-zinc-500 font-mono text-sm">
                   Sep 2024 — Present
@@ -174,7 +174,7 @@ export default function WorkPage() {
           <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
             <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
               <div>
-                <h3 className="text-xl font-semibold text-white">2x Jobs Simultaenously (Labourer + Delivery Driver)</h3>
+                <h3 className="text-xl font-semibold text-white">2x Jobs Simultaneously (Labourer + Delivery Driver)</h3>
                 <div className="text-zinc-400">Misc</div>
               </div>
               <div className="text-zinc-500 font-mono text-sm">
