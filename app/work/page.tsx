@@ -135,52 +135,128 @@ export default function WorkPage() {
           <h2 className="text-3xl font-bold tracking-tight text-white">
             Work Experience
           </h2>
-          <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
-            <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
-              <div>
-                <h3 className="text-xl font-semibold text-white">Fast Food Crew Member</h3>
-                <div className="text-zinc-400">Fast Food Chain</div>
+
+          <a href="https://pattysmiths.com.au/" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Fast Food Crew Member</h3>
+                  <div className="text-zinc-400">Fast Food Chain</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  Sep 2024 — Present
+                </div>
               </div>
-              <div className="text-zinc-500 font-mono text-sm">
-                Sep 2024 — Present
-              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed">
+                <li>Voted most liked team member.</li>
+              </ul>
             </div>
-            <ul className="list-disc list-inside text-zinc-400 leading-relaxed">
-              <li>Voted most liked team member.</li>
-            </ul>
-          </div>
+          </a>
+
+          <a href="https://clockon.com.au" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Analyst Programmer</h3>
+                  <div className="text-zinc-400">ClockOn</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  Jul 2019 — Feb 2020
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Converted a legacy windows application from Delphi into C# and JavaScript for modern day web browsers in an agile environment.</li>
+                <li>Trained management on new tools to create cross browser friendly web applications.</li>
+              </ul>
+            </div>
+          </a>
 
           <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
             <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
               <div>
-                <h3 className="text-xl font-semibold text-white">Analyst Programmer</h3>
-                <div className="text-zinc-400">ClockOn Australia</div>
+                <h3 className="text-xl font-semibold text-white">2x Jobs Simultaenously (Labourer + Delivery Driver)</h3>
+                <div className="text-zinc-400">Misc</div>
               </div>
               <div className="text-zinc-500 font-mono text-sm">
-                Jul 2019 — Feb 2020
+                2018
               </div>
             </div>
             <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
-              <li>Converted a legacy windows application from Delphi into C# and JavaScript for modern day web browsers in an agile environment.</li>
-              <li>Trained management on new tools to create cross browser friendly web applications.</li>
+              <li>Worked as a construction labourer on residential sites while simultaneously managing a delivery route.</li>
+              <li>Maintained a high level of physical fitness and time management to balance two demanding roles.</li>
             </ul>
           </div>
 
-          <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
-            <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
-              <div>
-                <h3 className="text-xl font-semibold text-white">Fiber Optic Technician</h3>
-                <div className="text-zinc-400">Schokman</div>
+          <a href="https://erinaleagues.com.au" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Kitchen Assistant</h3>
+                  <div className="text-zinc-400">Erina Leagues Club</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  2017
+                </div>
               </div>
-              <div className="text-zinc-500 font-mono text-sm">
-                Feb 2015 — Dec 2015
-              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Assisted in the day to day running of the kitchen by washing dishes and cleaning up after events.</li>
+              </ul>
             </div>
-            <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
-              <li>Connected houses to the national broadband network by splicing, stripping and testing fibre optic cables.</li>
-            </ul>
-          </div>
+          </a>
+
+          <a href="https://goodwillbuilding.com.au" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Constructon Labourer</h3>
+                  <div className="text-zinc-400">Goodwill Building</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  2016
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Worked as a construction labourer on a range of projects including house renovations and new builds.</li>
+              </ul>
+            </div>
+          </a>
+
+          <a href="https://schokman.co" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Fiber Optic Technician</h3>
+                  <div className="text-zinc-400">Schokman</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  2015
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Connected houses to the national broadband network by splicing, stripping and testing fibre optic cables.</li>
+              </ul>
+            </div>
+          </a>
+
+
+          <a href="https://mcdonalds.com.au" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Crew Member</h3>
+                  <div className="text-zinc-400">McDonalds</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  2014
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Worked as a crew member at McDonalds.</li>
+              </ul>
+            </div>
+          </a>
         </div>
+
 
         <div className="space-y-8 pt-12 border-t border-white/10">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-amber-400 transition-colors duration-200">
@@ -205,6 +281,6 @@ export default function WorkPage() {
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }
