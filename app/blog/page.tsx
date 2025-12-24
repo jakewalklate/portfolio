@@ -49,9 +49,9 @@ export default function Blog() {
       <div className="border-b border-white/10 pb-10">
         <Link
           href="/book"
-          className="group relative flex items-center gap-6 rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/80 border border-white/5 hover:border-white/10 p-5 transition-all"
+          className="group relative flex gap-6 rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/80 border border-white/5 hover:border-white/10 p-5 transition-all"
         >
-          <div className="relative shrink-0 h-28 w-20 -rotate-1 group-hover:rotate-0 transition-transform duration-500 overflow-hidden rounded-lg shadow-lg border border-white/10">
+          <div className="relative shrink-0 h-28 w-20 my-auto -rotate-1 group-hover:rotate-0 transition-transform duration-500 overflow-hidden rounded-lg shadow-lg border border-white/10">
             <img
               src="/5x8.png"
               alt="The Pharmacology of Silence"
@@ -66,7 +66,7 @@ export default function Blog() {
             <h3 className="font-serif text-xl text-white group-hover:text-zinc-200 transition-colors">
               The Pharmacology of Silence
             </h3>
-            <p className="text-sm text-zinc-500 line-clamp-2">
+            <p className="text-sm text-zinc-500 line-clamp-4">
               A memoir of my experience of being diagnosed as mentally ill and locked inside a maximum security prison on the outskirts of Sydney's west.
             </p>
           </div>
