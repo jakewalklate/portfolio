@@ -88,7 +88,7 @@ export default function Blog() {
               <Link
                 key={article.slug}
                 href={`/blog/${article.slug}`}
-                className="group block p-5 -mx-5 rounded-xl bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors"
+                className="group block p-5 md:-mx-5 rounded-xl bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors"
               >
                 <article className="space-y-2">
                   <h3 className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors">
