@@ -998,7 +998,7 @@ export default function WhoAmIPage() {
                   { label: "Inauthenticity", width: "90%" },
                   { label: "Rigid Bureaucracy", width: "85%" },
                   { label: "Undervalued Contributions", width: "95%" },
-                  { label: "Early Mornings", width: "98%" },
+                  { label: "Waking up at dawn", width: "98%" },
                 ].map((item, i) => (
                   <div key={i} className="group">
                     <div className="flex justify-between text-xs mb-1">
