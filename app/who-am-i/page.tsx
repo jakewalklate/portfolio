@@ -519,7 +519,7 @@ export default function WhoAmIPage() {
           <div className="space-y-4">
             <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
               <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-24 sm:-mt-36 md:-mt-44" />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-white text-sm font-mono">2023</span>
               </div>
             </div>
@@ -531,7 +531,7 @@ export default function WhoAmIPage() {
               ].map((photo, i) => (
                 <div key={i} className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
                   <img src={photo.src} alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-white text-xs font-mono">{photo.year}</span>
                   </div>
                 </div>
@@ -1698,10 +1698,8 @@ export default function WhoAmIPage() {
             <div className="max-w-3xl mx-auto">
               <div className="group relative bg-[#18181b] rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-all shadow-2xl">
 
-                <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
-
                 <div className="absolute top-6 right-6 md:hidden z-20">
-                  <div className="p-3 bg-zinc-900/80 backdrop-blur-md rounded-lg border border-zinc-800 text-zinc-600 group-hover:text-emerald-500 transition-colors">
+                  <div className="p-3 bg-zinc-900/80 backdrop-blur-md rounded-lg border border-emerald-900/20 transition-colors">
                     <Caravan size={24} />
                   </div>
                 </div>
@@ -1714,7 +1712,7 @@ export default function WhoAmIPage() {
                     </div>
 
                     <div className="hidden md:flex items-center gap-4 text-zinc-600">
-                      <div className="p-3 bg-zinc-900 rounded-lg border border-zinc-800 group-hover:border-emerald-900/50 group-hover:text-emerald-500 transition-all">
+                      <div className="p-3 bg-zinc-900 rounded-lg border border-emerald-900/20 text-emerald-700 transition-all">
                         <Caravan size={24} />
                       </div>
                       <div className="h-px flex-1 bg-zinc-800"></div>
@@ -1722,7 +1720,7 @@ export default function WhoAmIPage() {
                   </div>
 
                   <div className="flex-1 relative">
-                    <p className="text-lg text-zinc-300 leading-relaxed font-serif italic border-l-4 border-emerald-900/50 pl-6 group-hover:border-emerald-500 transition-colors">
+                    <p className="text-lg text-zinc-300 leading-relaxed font-serif italic border-l-4 pl-6 border-emerald-800 transition-colors">
                       "If I never had to work again, I'd buy a campervan and circle Australia. An indefinite road trip visiting every <span className="text-emerald-400 not-italic font-bold">skatepark</span> and beach along the coast. Just riding, meeting the locals, and mentoring the grommies."
                     </p>
 
@@ -1737,6 +1735,7 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
+
         {/* 
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10">
@@ -1787,7 +1786,7 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
             Thought Log
           </h3>
-          <div className="rounded-lg bg-[#0c0c0c] border border-white/5 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
+          <div className="rounded-lg bg-[#0c0c0c] border border-white/5 hover:border-white/10 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
             <div className="flex flex-col gap-3">
               <div className="flex gap-3">
                 <span className="text-zinc-600 shrink-0">[1654]</span>
