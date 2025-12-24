@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { ChevronLeft, ChevronRight, Code, Dna, Home, Mail } from "lucide-react";
 import Link from "next/link";
+import DynamicNav from "./nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -125,7 +126,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -133,18 +134,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased! min-h-screen! bg-black! text-white! selection:bg-zinc-800!`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased! min-h-screen! bg-black! text-white! selection:bg-zinc-800`}
       >
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <Link href="/" className="hidden md:flex items-center font-bold text-xl tracking-tighter px-3 py-1 -ml-3 rounded-full hover:bg-white/10 transition-all active:scale-[0.98]"><ChevronLeft className="inline -mr-1" /><span className="-mt-0.5">svnty</span>&nbsp;/<ChevronRight className="inline -ml-1" /></Link>
             <Link href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></Link>
-            <nav className="flex gap-6 text-sm font-medium text-zinc-400">
-              <Link href="/who-am-i" className="hover:text-white transition-colors mx-1 active:scale-[0.98]">About</Link>
-              <Link href="/work" className="hover:text-white transition-colors mx-1 active:scale-[0.98]">Work</Link>
-              <Link href="/book" className="hover:text-white transition-colors mx-1 active:scale-[0.98]">Book</Link>
-            </nav>
+            <DynamicNav />
             <a
               id="contact"
               href="mailto:jake@svnty.is-a.dev"
