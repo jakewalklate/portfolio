@@ -199,7 +199,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="prose prose-invert prose-zinc leading-relaxed text-zinc-400">
             <p>
-              I've always been into video games and skateboarding. As an adolescent, that was my world.
+              I've always been into video games and skateboarding. As an adolescent, that was my world, but my first dream was to be a brain-surgeon.
             </p>
             <br />
             <p>
