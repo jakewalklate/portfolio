@@ -199,11 +199,23 @@ export default function WhoAmIPage() {
           </h3>
           <div className="prose prose-invert prose-zinc leading-relaxed text-zinc-400">
             <p>
-              I've always been into video games and skateboarding. As a teenager, that was my world. I also studied Art and Modern History in high school because I've always been interested in that sort of art and culture.
+              I've always been into video games and skateboarding. As an adolescent, that was my world.
             </p>
             <br />
             <p>
-              Later, I was sent to a game development academy by my school. That was a cool moment for me, and it's where I started to see how I could combine my interests with education.
+              I started building software before I understood what I was doing. At 11, I was running a self-hosted Runescape private server in Java, I learnt from a textbook provided to me by my aunt's friend Clint who was a C# programmer. By 13, I was writing IRC bots. At 14, I hardware jailbroke a PS3 and created one of the most downloaded multiplayer patches for Modern Warfare 2, receiving 12 pages of forum feedback from players around the world.
+            </p>
+            <br />
+            <p>
+              By 16, I had rack-mounted Xeon servers running virtualized Linux clusters in my bedroom, hand-configured firewalls, and was hosting community game servers.
+            </p>
+            <br />
+            <p>
+              The skatepark and the server rack were my two worlds. I studied Art, Modern History and Entertainment in high school because I've always been interested in that sort of art and culture.
+            </p>
+            <br />
+            <p>
+              Later, I was sent to AIE — an art and game design school in Ultimo — by my art teacher and headmaster who wanted to encourage me to study game development. That was a cool moment for me, and it's where I started to see how I could combine my interests with education.
             </p>
           </div>
         </div>
