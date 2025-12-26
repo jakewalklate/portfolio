@@ -124,6 +124,21 @@ export default function WhoAmIPage() {
                 Trade School
               </div>
             </div>
+
+            <div className="flex flex-col sm:flex-row justify-between gap-2">
+              <div>
+                <h4 className="text-lg font-medium text-white">Lachlan Macquarie Institute</h4>
+                <div className="text-zinc-400">Residential Intensive</div>
+                <ul className="list-disc ml-6">
+                  <li className="text-sm text-zinc-500">
+                    Curriculum focused on European history, political theology, and the sociology of counter-cultural movements.
+                  </li>
+                </ul>
+              </div>
+              <div className="text-zinc-500 flex min-w-[120px] font-mono text-sm text-right sm:text-left">
+                Short Course
+              </div>
+            </div>
           </div>
         </div>
 
