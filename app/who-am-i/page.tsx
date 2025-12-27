@@ -1829,7 +1829,7 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Idolized Archetype
           </h3>
@@ -1851,7 +1851,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </section>
     </main>
