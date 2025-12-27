@@ -1558,7 +1558,7 @@ export default function WhoAmIPage() {
               { title: "Steve Wozniak", subtitle: "Co-Founder of Apple", cover: "/woz.jpg" },
               { title: "Terry Davis", subtitle: "God's chosen programmer", cover: "/davis.jpg" },
               { title: "Elon Musk", subtitle: "Tech entrepreneur", cover: "/elon.jpg" },
-              { title: 'Leonard Da Vinci', subtitle: 'Renaissance polymath', cover: '/leonardo-da-vinci.jpg' },
+              { title: 'Leonardo Da Vinci', subtitle: 'Renaissance polymath', cover: '/leonardo-da-vinci.jpg' },
               { title: 'Victor Davis Hanson', subtitle: 'Historian', cover: '/VictorDavisHanson.jpg' },
             ].map((item, i) => (
               <div key={i} className="group flex flex-col gap-3">
