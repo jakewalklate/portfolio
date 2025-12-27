@@ -166,14 +166,14 @@ export default function WhoAmIPage() {
                     { title: "Nonstop Feeling", artist: "Turnstile", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e7/f9/2b/e7f92b2e-02e6-12b3-ff09-846edb758563/016861748005.jpg/500x500bb.jpg" },
                     { title: "36 Chambers", artist: "Wu-Tang Clan", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8c/20/1f/8c201f03-7617-2d8b-3d8d-e0ba2d55041b/196872123784.jpg/500x500bb.jpg" },
                     { title: "I Wish I Could Stay Here", artist: "Basement", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/55/43/26/554326c2-4ffc-de4b-2390-b6f93305bcf6/cover.jpg/500x500bb.jpg" },
-                    { title: "The Things We Think We're Missing", artist: "Balance and Composure", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/fd/c4/e1fdc4ae-8eb8-b2dc-b88a-33c29a65bea4/2049.jpg/500x500bb.jpg" },
                     { title: "Light We Made", artist: "Balance and Composure", cover: "/lightwemade.jpg" },
-                    { title: "Separation", artist: "Balance and Composure", cover: "/separation.jpg" },
                     { title: "Dear G-D...", artist: "Being As An Ocean", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/06/d5/88/06d5884e-9336-8847-8d52-f4786a36065b/cover.jpg/500x500bb.jpg" },
                     { title: "Wildlife", artist: "La Dispute", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2f/17/b9/2f17b94d-78d1-a388-5a4e-03b9266dbc23/603111932125.png/500x500bb.jpg" },
                     { title: "Songs to Scream at the Sun", artist: "Have Heart", cover: "/songstoscream.jpg" },
+                    { title: "Separation", artist: "Balance and Composure", cover: "/separation.jpg" },
                     { title: "Floral Green", artist: "Title Fight", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/a3/53/24/a3532431-4b69-580b-3e75-aefd9db39ae6/451.jpg/500x500bb.jpg" },
                     { title: "amo", artist: "Bring Me The Horizon", cover: "/bmthamo.jpeg" },
+                    { title: "The Things We Think We're Missing", artist: "Balance and Composure", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/fd/c4/e1fdc4ae-8eb8-b2dc-b88a-33c29a65bea4/2049.jpg/500x500bb.jpg" },
                     { title: "Parachutes", artist: "Coldplay", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f5/93/8c/f5938c49-964c-31d1-4b33-78b634f71fb7/190295978075.jpg/500x500bb.jpg" },
                     { title: "How We Both Wondrously Perish", artist: "Being As An Ocean", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/6a/7c/83/6a7c83b4-8881-93f1-913b-c594ceabb821/856658003814.jpg/500x500bb.jpg" },
                     { title: "Come Over When You're Sober, Pt. 1", artist: "Lil Peep", cover: "/peeppt1.jpg" },
@@ -183,7 +183,10 @@ export default function WhoAmIPage() {
                     { title: "Best Buds", artist: "Mom Jeans", cover: "/bestbuds.jpg" },
                     { title: "Grown Man Biz", artist: "Scotty Hinds", cover: "/scottyhinds.jpg" },
                     { title: "Divination", artist: "In Hearts Wake", cover: "/inheartswake.jpg" },
-                    { title: 'Singularity', artist: 'Northlane', cover: '/singularities.jpeg' }
+                    { title: 'Singularity', artist: 'Northlane', cover: '/singularity.jpeg' },
+                    { title: 'Love Is Not Enough', artist: 'Casey', cover: '/love.jpg' },
+                    { title: 'Yeezus', artist: 'Kaney West', cover: '/269-Kanye-West-Yeezus.jpg' },
+                    { title: 'The Calling', artist: 'Hilltop Hoods', cover: '/HH_The_Calling.jpg' }
                   ].map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
