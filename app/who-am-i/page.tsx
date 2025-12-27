@@ -184,9 +184,11 @@ export default function WhoAmIPage() {
                     { title: "Grown Man Biz", artist: "Scotty Hinds", cover: "/scottyhinds.jpg" },
                     { title: "Divination", artist: "In Hearts Wake", cover: "/inheartswake.jpg" },
                     { title: 'Singularity', artist: 'Northlane', cover: '/singularity.jpeg' },
+                    { title: 'Between the Richness ', artist: 'Fiddlehead', cover: '/Betweentherichness.jpg' },
                     { title: 'Love Is Not Enough', artist: 'Casey', cover: '/love.jpg' },
                     { title: 'Yeezus', artist: 'Kaney West', cover: '/269-Kanye-West-Yeezus.jpg' },
-                    { title: 'The Calling', artist: 'Hilltop Hoods', cover: '/HH_The_Calling.jpg' }
+                    { title: 'The Calling', artist: 'Hilltop Hoods', cover: '/HH_The_Calling.jpg' },
+                    { title: 'Springtime and Blind ', artist: 'Fiddlehead', cover: '/springtime.jpg' },
                   ].map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
