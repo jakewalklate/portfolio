@@ -157,6 +157,7 @@ export default function WhoAmIPage() {
                     { title: "Illmatic", artist: "Nas", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b9/eb/cc/b9ebccbc-5ba4-2cdb-5332-b065739abd9a/886444567619.jpg/500x500bb.jpg" },
                     { title: "Shed", artist: "Title Fight", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/15/6a/07/156a071f-fa4d-8b2f-f9c0-455ca3f45be2/550.jpg/500x500bb.jpg" },
                     { title: "Beside Myself", artist: "Basement", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/48/4c/8f/484c8f94-7a50-cf86-8579-97a88ebb731e/075679868466.jpg/500x500bb.jpg" },
+                    { title: 'XXYYXX', artist: 'XXYYXX', cover: '/xxyyxx.jpg' },
                     { title: "Feel Something", artist: "Movements", cover: "/feelsomething.jpeg" },
                     { title: "Youth", artist: "Citizen", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8a/f1/cf/8af1cfd9-b305-facd-b0e0-859b8c1a4a2b/cover.jpg/500x500bb.jpg" },
                     { title: "As You Please", artist: "Citizen", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/bd/76/21/bd76213c-c50c-2a2e-6589-9edf7af5c7cd/cover.jpg/500x500bb.jpg" },
@@ -174,6 +175,7 @@ export default function WhoAmIPage() {
                     { title: "Floral Green", artist: "Title Fight", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/a3/53/24/a3532431-4b69-580b-3e75-aefd9db39ae6/451.jpg/500x500bb.jpg" },
                     { title: "amo", artist: "Bring Me The Horizon", cover: "/bmthamo.jpeg" },
                     { title: "The Things We Think We're Missing", artist: "Balance and Composure", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/fd/c4/e1fdc4ae-8eb8-b2dc-b88a-33c29a65bea4/2049.jpg/500x500bb.jpg" },
+                    { title: 'Untrue', artist: 'Burial', cover: '/BurialUntrue.jpg' },
                     { title: "Parachutes", artist: "Coldplay", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f5/93/8c/f5938c49-964c-31d1-4b33-78b634f71fb7/190295978075.jpg/500x500bb.jpg" },
                     { title: "How We Both Wondrously Perish", artist: "Being As An Ocean", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/6a/7c/83/6a7c83b4-8881-93f1-913b-c594ceabb821/856658003814.jpg/500x500bb.jpg" },
                     { title: "Come Over When You're Sober, Pt. 1", artist: "Lil Peep", cover: "/peeppt1.jpg" },
@@ -189,6 +191,7 @@ export default function WhoAmIPage() {
                     { title: 'Yeezus', artist: 'Kaney West', cover: '/269-Kanye-West-Yeezus.jpg' },
                     { title: 'The Calling', artist: 'Hilltop Hoods', cover: '/HH_The_Calling.jpg' },
                     { title: 'Springtime and Blind ', artist: 'Fiddlehead', cover: '/springtime.jpg' },
+                    { title: 'III', artist: 'Crystal Castles', cover: '/Crystal_Castles_-_III_album_cover.png' },
                   ].map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
