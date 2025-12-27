@@ -1552,12 +1552,14 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Intellectual Influences
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {[
               { title: "Dennis Ritchie", subtitle: "Co-Founder of Unix & C", cover: "/dennis_ritchie6.jpg" },
               { title: "Steve Wozniak", subtitle: "Co-Founder of Apple", cover: "/woz.jpg" },
               { title: "Terry Davis", subtitle: "God's chosen programmer", cover: "/davis.jpg" },
               { title: "Elon Musk", subtitle: "Tech entrepreneur", cover: "/elon.jpg" },
+              { title: 'Leonard Da Vinci', subtitle: 'Renaissance polymath', cover: '/leonardo-da-vinci.jpg' },
+              { title: 'Victor Davis Hanson', subtitle: 'Historian', cover: '/VictorDavisHanson.jpg' },
             ].map((item, i) => (
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
@@ -1773,52 +1775,6 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        {/* 
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-white border-b border-white/10">
-            Preferred Config
-          </h3>
-          <div className="max-w-3xl mx-auto">
-            <div className="rounded-lg bg-zinc-950 border border-zinc-800 p-6 font-mono text-sm shadow-xl relative overflow-hidden group transition-colors">
-              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-emerald-500 via-sky-500 to-indigo-500 opacity-20 transition-opacity"></div>
-
-              <div className="flex items-center gap-2 mb-4 text-zinc-500 text-xs border-b border-zinc-900 pb-2">
-                <span className="text-zinc-600">.config/</span>
-                <span className="text-zinc-300">best_vibes.env</span>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <span className="block text-zinc-500 italic mb-1"># The sound of the ocean on a summers night</span>
-                  <div className="flex gap-4">
-                    <span className="text-pink-500">AMBIENCE</span>
-                    <span className="text-zinc-600">=</span>
-                    <span className="text-emerald-400">"Ocean_Swell.wav"</span>
-                  </div>
-                </div>
-
-                <div>
-                  <span className="block text-zinc-500 italic mb-1"># The smell of burning dry timber</span>
-                  <div className="flex gap-4">
-                    <span className="text-pink-500">SCENT</span>
-                    <span className="text-zinc-600">=</span>
-                    <span className="text-emerald-400">"Campfire_Smoke.png"</span>
-                  </div>
-                </div>
-
-                <div>
-                  <span className="block text-zinc-500 italic mb-1"># The productivity of the city</span>
-                  <div className="flex gap-4">
-                    <span className="text-pink-500">ENERGY</span>
-                    <span className="text-zinc-600">=</span>
-                    <span className="text-emerald-400">"City_CBD.zip"</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
             Thought Log
@@ -1843,57 +1799,38 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div>
-        {/* 
-        <div className="space-y-6">
+
+        <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            System Scan
+            Favourite Actors
           </h3>
-          <div className="rounded-lg bg-[#0c0c0c] border border-white/5 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
-            <div className="space-y-1 min-w-[500px]">
-              <p><span className="text-emerald-500">admin@portfolio</span>:<span className="text-blue-500">~</span>$ nmap -sV localhost</p>
-              <br />
-              <p>Starting Nmap 7.94 at {new Date().toISOString().split('T')[0]} 15:30 AEST</p>
-              <p>Nmap scan report for localhost (127.0.0.1)</p>
-              <p>Host is up (0.00042s latency).</p>
-              <br />
-              <div className="grid grid-cols-[80px_60px_100px_1fr] gap-x-4">
-                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">PORT</div>
-                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">STATE</div>
-                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">SERVICE</div>
-                <div className="font-bold text-zinc-300 border-b border-zinc-800 pb-1 mb-1">VERSION</div>
-
-                <div className="text-zinc-400">22/tcp</div>
-                <div className="text-emerald-500">open</div>
-                <div className="text-zinc-300">ssh</div>
-                <div className="text-zinc-500">OpenSSH 9.0 (Collaboration: READY)</div>
-
-                <div className="text-zinc-400">80/tcp</div>
-                <div className="text-emerald-500">open</div>
-                <div className="text-zinc-300">http</div>
-                <div className="text-zinc-500">Life v28.0 (Bio-Digital Interface)</div>
-
-                <div className="text-zinc-400">443/tcp</div>
-                <div className="text-emerald-500">open</div>
-                <div className="text-zinc-300">ssl/https</div>
-                <div className="text-zinc-500">Mentorship Protocol (Secure)</div>
-
-                <div className="text-zinc-400">3000/tcp</div>
-                <div className="text-emerald-500">open</div>
-                <div className="text-zinc-300">http-alt</div>
-                <div className="text-zinc-500">Development Server (Hacking in Progress)</div>
-
-                <div className="text-zinc-400">5432/tcp</div>
-                <div className="text-emerald-500">open</div>
-                <div className="text-zinc-300">postgresql</div>
-                <div className="text-zinc-500">Knowledge Base (Shared Access)</div>
+          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+            {[
+              { title: "Brad Pitt", subtitle: "", cover: "/brad_pitt.png" },
+              { title: "Ryan Gosling", subtitle: "", cover: "/gosling.png" },
+              { title: "Quentin Tarantino", subtitle: "", cover: "/tarantino.jpg" },
+            ].map((item, i) => (
+              <div key={i} className="group flex flex-col gap-3">
+                <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
+                  {item.cover ? (
+                    <img src={item.cover} alt={item.title} className="w-full grayscale h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                  ) : (
+                    <div className="text-center p-2">
+                      <span className="text-zinc-500 font-medium text-sm">{item.title}</span>
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-rose-400 transition-colors truncate">{item.title}</h4>
+                  <div className="text-zinc-500 text-sm truncate">{item.subtitle}</div>
+                </div>
               </div>
-              <br />
-              <p>Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds</p>
-            </div>
+            ))}
           </div>
-        </div> */}
-      </section>
+        </div>
 
-    </main >
+
+      </section>
+    </main>
   );
 }
