@@ -29,7 +29,7 @@ export default function Home() {
           </h2>
           <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed mx-auto sm:mx-0">
             Merging biological systems with engineering principles.
-            Also known as <span className="text-white font-semibold">svnty</span>.
+            Also known online as <span className="text-white font-semibold">svnty</span>.
             Building the future of biotech and digital experiences.
           </p>
         </div>
