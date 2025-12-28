@@ -192,6 +192,12 @@ export default function WhoAmIPage() {
                     { title: 'The Calling', artist: 'Hilltop Hoods', cover: '/HH_The_Calling.jpg' },
                     { title: 'Springtime and Blind ', artist: 'Fiddlehead', cover: '/springtime.jpg' },
                     { title: 'III', artist: 'Crystal Castles', cover: '/Crystal_Castles_-_III_album_cover.png' },
+                    { title: 'Errorzone', artist: 'Vein.fm', cover: '/erorrzone.jpg' },
+                    { title: 'Fear Network', artist: 'Ghostmane', cover: '/fearnetwork.jpg' },
+                    { title: 'MMXIV', artist: 'Mindshank', cover: '/mindshank.png' },
+                    { title: 'That\'s The Spirit', artist: 'Bring Me The Horizon', cover: '/spirit.jpeg' },
+                    { title: 'Moving Away', artist: 'Gleemer', cover: '/movingaway.jpg' },
+                    { title: 'Suicide Season', artist: 'Bring Me The Horizon', cover: '/suicide.jpg' },
                   ].sort(() => Math.random() - 0.5).map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
