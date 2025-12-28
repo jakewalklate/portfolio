@@ -1788,19 +1788,19 @@ export default function WhoAmIPage() {
           <div className="rounded-lg bg-[#0c0c0c] border border-white/5 hover:border-white/10 p-6 font-mono text-xs md:text-sm leading-relaxed text-zinc-400 shadow-2xl overflow-x-auto">
             <div className="flex flex-col gap-3">
               <div className="flex gap-3">
-                <span className="text-zinc-600 shrink-0">[1654]</span>
+                <span className="text-zinc-600 shrink-0 text-xs my-0.5">[1654]</span>
                 <span className="text-blue-500 font-bold shrink-0">[INFO]</span>
                 <span className="text-zinc-300">"Better to be a warrior in a garden than a gardener in a war" — Miyamoto Musashi</span>
               </div>
               <div className="flex gap-3">
-                <span className="text-zinc-600 shrink-0">[1986]</span>
-                <span className="text-yellow-500 font-bold shrink-0">[WARN]</span>
-                <span className="text-zinc-300">"A man without hope is a man without fear" — Frank Miller</span>
+                <span className="text-zinc-600 shrink-0 text-xs my-0.5">[1882]</span>
+                <span className="text-red-500 font-bold shrink-0">[ERROR]</span>
+                <span className="text-zinc-300">"God is dead, god remains dead. And we have killed him" — Friedrich Nietzsche</span>
               </div>
               <div className="flex gap-3">
-                <span className="text-zinc-600 shrink-0">[1882]</span>
-                <span className="text-red-500 font-bold shrink-0">[ERROR]</span>
-                <span className="text-zinc-300">"God is dead, god remains dead. And we have killed him." — Friedrich Nietzsche</span>
+                <span className="text-zinc-600 shrink-0 text-xs my-0.5">[1986]</span>
+                <span className="text-yellow-500 font-bold shrink-0">[WARN]</span>
+                <span className="text-zinc-300">"A man without hope is a man without fear" — Frank Miller</span>
               </div>
             </div>
           </div>
