@@ -75,10 +75,12 @@ export default function Blog() {
 
       {/* Articles Section */}
       <section className="space-y-8">
-        {/* <div className="space-y-2">
-          <h2 className="text-2xl font-semibold text-white">Articles</h2>
-          <p className="text-zinc-500 text-sm">Thoughts, explorations, and perspectives.</p>
-        </div> */}
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+          Blog
+        </h1>
+        <p className="text-lg text-zinc-400 max-w-2xl -mt-4">
+          A series of random articles exploring my thoughts on humans and technology.
+        </p>
 
         <div className="space-y-4">
           {articles.length === 0 ? (
