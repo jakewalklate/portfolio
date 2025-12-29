@@ -1,6 +1,8 @@
 import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake, SprayCan, Caravan, Mountain, Trees, Target, Waves, Flame, Circle, Microscope, Users, Leaf, Telescope, Info, HeartCrack } from "lucide-react";
 import Time from "./time";
 import Process from "./process";
+import CompletedClasses from "./completed-classes";
+import Certifications from "./certifications";
 
 const albums = [
   { title: "Frogstomp", artist: "Silverchair", cover: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d5/4b/07/d54b073a-6422-3486-7545-557c5282a5ec/886445059557.jpg/500x500bb.jpg" },
@@ -106,37 +108,6 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Certifications
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
-              <h4 className="text-white font-medium">Associate Member</h4>
-              <p className="text-xs text-zinc-500 mt-1">Engineers Australia</p>
-            </div>
-            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
-              <h4 className="text-white font-medium">Machine Learning & AI Foundations</h4>
-              <p className="text-xs text-zinc-500 mt-1">LinkedIn / KNIME</p>
-            </div>
-            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
-              <h4 className="text-white font-medium">Python Data Analysis</h4>
-              <p className="text-xs text-zinc-500 mt-1">LinkedIn</p>
-            </div>
-            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
-              <h4 className="text-white font-medium">Cloud Platform for Developers</h4>
-              <p className="text-xs text-zinc-500 mt-1">AWS, Azure, GCP</p>
-            </div>
-            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
-              <h4 className="text-white font-medium">CompTIA A+ (Physical Networking)</h4>
-              <p className="text-xs text-zinc-500 mt-1">LinkedIn</p>
-            </div>
-            <div className="p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
-              <h4 className="text-white font-medium">Rapid Prototyping for Product Design</h4>
-              <p className="text-xs text-zinc-500 mt-1">LinkedIn</p>
-            </div>
-          </div>
-        </div>
 
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
@@ -1838,29 +1809,25 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        {/* <div className="space-y-8">
+        <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Idolized Archetype
+            Completed Classes
           </h3>
-          <div className="group relative rounded-2xl bg-zinc-900 border border-red-900/30 overflow-hidden">
-            <div className="absolute inset-0 bg-red-900/5 group-hover:bg-red-900/10 transition-colors"></div>
-            <div className="relative p-8 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-32 h-32 flex items-center justify-center rounded-full bg-zinc-950 border border-red-500/20 shadow-[0_0_30px_rgba(220,38,38,0.2)]">
-                <span className="text-7xl text-red-500 font-serif">♂</span>
-              </div>
-              <div className="text-center md:text-left space-y-4">
-                <div>
-                  <span className="text-xs font-mono text-red-500 uppercase tracking-widest">Roman Mythology</span>
-                  <h4 className="text-3xl font-bold text-white mt-1">Mars</h4>
-                  <p className="text-zinc-500 text-sm font-medium">The God of War & Agricultural Guardian</p>
-                </div>
-                <p className="text-zinc-400 leading-relaxed max-w-xl">
-                  Not mindless rage, but the virtuous, disciplined application of force which represents the protection of peace and the necessity of strength to preserve what is valued.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> */}
+          <p className="text-zinc-400 text-sm -mt-4">
+            A list of units I have completed as part of my studies.
+          </p>
+          <CompletedClasses />
+        </div>
+
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Certifications
+          </h3>
+          <p className="text-zinc-400 text-sm -mt-4">
+            Professional certifications and online courses I have completed.
+          </p>
+          <Certifications />
+        </div>
 
       </section>
     </main>
