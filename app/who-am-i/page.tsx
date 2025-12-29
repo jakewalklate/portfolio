@@ -198,6 +198,7 @@ export default function WhoAmIPage() {
                     { title: 'That\'s The Spirit', artist: 'Bring Me The Horizon', cover: '/spirit.jpeg' },
                     { title: 'Moving Away', artist: 'Gleemer', cover: '/movingaway.jpg' },
                     { title: 'Suicide Season', artist: 'Bring Me The Horizon', cover: '/suicide.jpg' },
+                    { title: 'When the World Falls', artist: 'Hope County Choir', cover: '/hope.jpg' }
                   ].sort(() => Math.random() - 0.5).map((album, j) => (
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
