@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h2>Pavlov's Brain Output</h2>
+  <p>Open the Console (F12) to see the brain activity!</p>
+
+  <script type="module">
+    // Import the init function and the Brain class from the pkg folder
+    import init, { Brain, init_logging } from './pkg/pavlov_brain.js';
+
+    async function run() {
+      // 1. Initialize WASM
+      await init();
+
+      // TURN ON LOGGING
+      init_logging();
+
+      // 2. Create the Brain
+      const brain = new Brain();
+      console.log("🧠 Brain Created!");
+
+      // 3. Simulation Loop
+      console.log("--- Starting Simulation ---");
+
+      // PHASE 1: PRE-TRAINING
+      // Ring the bell 5 times. Expected result: Salivate Voltage stays low (~0.0).
+      console.log("🔔 Ringing Bell (Before Training)...");
+      for (let i = 0; i < 5; i++) {
+        brain.tick(true, false);
+
+        // CHECK BOTH: Voltage AND Spike Status
+        const voltage = brain.get_salivate_voltage();
+        const spiked = brain.is_salivate_spiking();
+
+        if (spiked) {
+          console.log(`Tick ${i}: ⚡ SPIKE! ⚡ (Voltage reset to ${voltage})`);
+        } else {
+          console.log(`Tick ${i}: ... Voltage is ${voltage.toFixed(2)}`);
+        }
+      }
+
+      // PHASE 2: TRAINING (The Hebbian Learning)
+      // Ring Bell + Give Food together.
+      console.log("🎓 Training (Bell + Food)...");
+      for (let i = 0; i < 20; i++) {
+        brain.tick(true, true); // Bell=True, Food=True
+      }
+      console.log(`Training Complete. New Bell Weight: ${brain.get_bell_weight().toFixed(2)}`);
+
+      // PHASE 3: TESTING
+      // Ring Bell alone again. Expected result: Salivate Voltage spikes (>1.0)!
+      console.log("🔔 Ringing Bell (After Training)...");
+      // We run a few ticks to give the neuron time to charge up
+      for (let i = 0; i < 30; i++) {
+        // Ring bell every tick without food to test EXTINCTION
+        brain.tick(true, false);
+
+        const voltage = brain.get_salivate_voltage();
+        const spiked = brain.is_salivate_spiking();
+        const weight = brain.get_bell_weight();
+
+        if (spiked) {
+          console.log(`Tick ${i}: ⚡ SPIKE! ⚡ Salivating! (weight=${weight.toFixed(2)})`);
+        } else {
+          console.log(`Tick ${i}: No spike. V=${voltage.toFixed(2)}, weight=${weight.toFixed(2)}`);
+        }
+      }
+    }
+
+    run();
+  </script>
+</body>
+
+</html>
