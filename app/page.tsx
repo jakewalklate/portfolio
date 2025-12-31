@@ -76,7 +76,7 @@ export default function Home() {
         <div className="flex flex-col gap-8 justify-between items-start">
           <div className="space-y-4">
             <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest">3. Methods</h2>
-            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">Engineering Principles</h3>
               <p className="text-zinc-400 leading-relaxed">
                 Applying rigorous software design patterns and engineering principles to solve complex problems across domains.
@@ -98,7 +98,7 @@ export default function Home() {
         <div className="flex flex-col gap-8 justify-between items-start">
           <div className="space-y-4">
             <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest">4. Results</h2>
-            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">Applied Synthetic Biotech</h3>
               <p className="text-zinc-400 leading-relaxed">
                 Demonstrating the efficacy of these engineering methods in the field of synthetic biology.
@@ -157,7 +157,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-6">
-            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">References & Contact</h3>
               <ul className="space-y-2 text-zinc-400">
                 <li><a target="_blank" href="https://linkedin.com/in/svnty" className="hover:text-white transition-colors fill-zinc-400 hover:fill-white">
@@ -179,7 +179,7 @@ export default function Home() {
             </div>
           </div>
           <div className="space-y-6">
-            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">Further Invesitgations</h3>
               <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
                 <Link
