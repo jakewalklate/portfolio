@@ -52,7 +52,8 @@ const albums = [
   { title: 'That\'s The Spirit', artist: 'Bring Me The Horizon', cover: '/spirit.jpeg' },
   { title: 'Moving Away', artist: 'Gleemer', cover: '/movingaway.jpg' },
   { title: 'Suicide Season', artist: 'Bring Me The Horizon', cover: '/suicide.jpg' },
-  { title: 'When the World Falls', artist: 'Hope County Choir', cover: '/hope.jpg' }
+  { title: 'When the World Falls', artist: 'Hope County Choir', cover: '/hope.jpg' },
+  { title: 'The Hard Road', artist: 'Hilltop Hoods', cover: '/HTH-The-Hard-Road-1280.jpg' }
 ].sort(() => Math.random() - 0.5);
 
 export default function WhoAmIPage() {
