@@ -4,6 +4,9 @@ import matter from "gray-matter";
 import Link from "next/link";
 import { Calendar, Clock } from "lucide-react";
 import BookText from "./book-text";
+import { unstable_cache } from "next/cache";
+
+export const dynamic = 'force-dynamic';
 
 interface Article {
   slug: string;
@@ -19,30 +22,34 @@ function getReadingTime(content: string): number {
   return Math.ceil(words / wordsPerMinute);
 }
 
-function getArticles(): Article[] {
-  const postsDir = path.join(process.cwd(), "app/blog/(articles)");
-  const files = fs.readdirSync(postsDir).filter((file) => file.endsWith(".mdx"));
+const getArticles = unstable_cache(
+  async () => {
+    const postsDir = path.join(process.cwd(), "app/blog/(articles)");
+    const files = fs.readdirSync(postsDir).filter((file) => file.endsWith(".mdx"));
 
-  const articles = files.map((file) => {
-    const filePath = path.join(postsDir, file);
-    const source = fs.readFileSync(filePath, "utf8");
-    const { content, data } = matter(source);
+    const articles = files.map((file) => {
+      const filePath = path.join(postsDir, file);
+      const source = fs.readFileSync(filePath, "utf8");
+      const { content, data } = matter(source);
 
-    return {
-      slug: file.replace(/\.mdx$/, ""),
-      title: data.title || "Untitled",
-      date: data.date || "",
-      summary: data.summary,
-      readingTime: getReadingTime(content),
-    };
-  });
+      return {
+        slug: file.replace(/\.mdx$/, ""),
+        title: data.title || "Untitled",
+        date: data.date || "",
+        summary: data.summary,
+        readingTime: getReadingTime(content),
+      };
+    });
 
-  // Sort by date, newest first
-  return articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-}
+    // Sort by date, newest first
+    return articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  },
+  ['articles-list'],
+  { revalidate: 3600 }
+);
 
-export default function Blog() {
-  const articles = getArticles();
+export default async function Blog() {
+  const articles = await getArticles();
 
   return (
     <div className="space-y-12">

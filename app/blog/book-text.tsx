@@ -1,10 +1,7 @@
-export const dynamic = 'force-dynamic';
-
 export default function BookText() {
 
   const getColor = () => {
     const number = Math.random();
-    console.log(number);
     if (number > 0.75) {
       return 'text-emerald-400';
     } else if (number > 0.5) {
