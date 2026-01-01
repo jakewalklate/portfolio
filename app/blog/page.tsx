@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import { Calendar, Clock } from "lucide-react";
+import BookText from "./book-text";
 
 interface Article {
   slug: string;
@@ -61,7 +62,7 @@ export default function Blog() {
 
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono text-blue-400 uppercase tracking-wider">Downloadable book</span>
+              <BookText />
             </div>
             <h3 className="font-serif text-xl text-white group-hover:text-zinc-200 transition-colors">
               The Pharmacology of Silence
