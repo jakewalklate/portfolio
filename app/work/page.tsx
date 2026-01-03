@@ -1,91 +1,114 @@
 import { IdCard } from "lucide-react";
 import React from "react";
+import Link from "next/link";
 
 export default function WorkPage() {
+  const interactive_projects = [
+    {
+      title: "Pavlov's Dog",
+      description: "An interactive spiking neural network demonstrating classical conditioning with Hebbian learning.",
+      tags: ["Rust", "WebAssembly", "Neuroscience", "Interactive"],
+      link: "/work/pavlovs-dog",
+      img: '/pdog.png'
+    }
+  ];
+
   const projects = [
     {
       title: "Alternipedia",
       description: "An open, collaborative encyclopedia designed to emphasize exploring multiple viewpoints on complex topics.",
       tags: ["React", "Next.js", "Wikipedia", "Vercel", "Tailwind"],
-      link: "https://github.com/alternipedia",
-      img: "/alternipedia.png"
+      link: "/work/alternipedia",
+      img: "/alternipedia.png",
+      linkType: "internal"
     },
     {
       title: "Medicamina",
       description: "A precision medicine platform for personalized treatment recommendations and disease prediction.",
       tags: ["Flutter", "Precision Medicine", "Data Analytics", "Azure Cloud", "Material Design"],
-      link: "https://github.com/medicamina",
-      img: "/medicamina.png"
+      link: "/work/medicamina",
+      img: "/medicamina.png",
+      linkType: "internal"
     },
     {
       title: "Coreable",
       description: "Tools to expertly measure and map soft skills.",
       tags: ["React", "GraphQL", "Google Cloud", "Bootstrap"],
-      link: "https://github.com/coreable",
-      img: "/coreable.png"
+      link: "/work/coreable",
+      img: "/coreable.png",
+      linkType: "internal"
     },
     {
       title: "Zesty",
       description: "A safe platform for adult industry workers to accept payments and report abusive clients.",
       tags: ["Next.js", "Payment Processing", "Escrow", "Google Cloud", "Tailwind"],
-      link: "https://github.com/zesty-hot",
-      img: "/zesty.png"
+      link: "/work/zesty",
+      img: "/zesty.png",
+      linkType: "internal"
     },
     {
       title: "Blood cell classifier",
       description: "A machine learning model to identify blood cell categories.",
       tags: ["Python", "Machine Learning", "TensorFlow"],
       link: "https://github.com/svnty/blood-cell-classification/blob/main/notebook.ipynb",
-      img: "/bloodcell.png"
+      img: "/bloodcell.png",
+      linkType: "external"
     },
     {
       title: "Arduino Community IntelliSense fix",
       description: "A Visual Studio Code extension to fix IntelliSense for Arduino.",
       tags: ["Visual Studio Code", "Arduino", "IntelliSense"],
       link: "https://marketplace.visualstudio.com/items?itemName=svnty.vscode-arduino-intellisense",
-      img: "/arduino.png"
+      img: "/arduino.png",
+      linkType: "external"
     },
     {
       title: "Low earth orbit satellite tracker",
       description: "A 3D printed calculator to track low earth orbit satellites.",
       tags: ["C++", "Arduino", "3D FDM Printing", "Computer Aided Design"],
       link: "https://github.com/svnty/ISS-arduino-tracker",
-      img: "/isstracker.jpeg"
+      img: "/isstracker.jpeg",
+      linkType: "external"
     },
     {
       title: "Mendelian genetics simulator",
       description: "A simple rust engine to to simulate genetic inheritence of same-sex attraction.",
       tags: ["Rust", "Genetics", "Bioinformatics"],
       link: "https://github.com/svnty/homosexuality-simulator",
-      img: "/gene-simulator.png"
+      img: "/gene-simulator.png",
+      linkType: "external"
     },
     {
       title: "Hydroponic farm",
       description: "Self managing hydroponic farm to grow plants in a controlled environment.",
       tags: ["Arduino", "Hydroponics", "Alternating Current", "Direct Current"],
       link: "#",
-      img: "/farm.png"
+      img: "/farm.png",
+      linkType: "external"
     },
     {
       title: "sa2.gg",
       description: "A gaming community with a forum, chat, and server.",
       tags: ["Gaming", "Node.js", "MongoDB", "Bootstrap"],
       link: "#",
-      img: "/sa2gg.png"
+      img: "/sa2gg.png",
+      linkType: "external"
     },
     {
       title: "Telcor telecommunications",
       description: "An administration system for a fictional telecommunications company.",
       tags: ["Java", "MySQL", "Class Assignment"],
       link: "#",
-      img: "/telcor.png"
+      img: "/telcor.png",
+      linkType: "external"
     },
     {
       title: "Sister",
       description: "A brand page for a local skateboarding company.",
       tags: ["HTML", "CSS", "Bootstrap"],
       link: "#",
-      img: "/sister.png"
+      img: "/sister.png",
+      linkType: "external"
     }
   ];
 
@@ -101,36 +124,77 @@ export default function WorkPage() {
           </p>
         </div>
 
+        {/* Interactive Projects Section */}
+        <div className="space-y-4 -mt-4 mb-6">
+          <div className="grid grid-cols-1 gap-4">
+            {interactive_projects.map((project, index) => (
+              <Link
+                key={index}
+                href={project.link}
+                className="group flex flex-col h-full p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 hover:bg-zinc-900 transition-all"
+              >
+                <div className="w-full max-h-32 md:max-h-66 bg-zinc-800/50 rounded-xl mb-4 overflow-hidden">
+                  <img src={project.img} className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-white transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-zinc-400 mb-4 text-sm grow">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className={`px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs text-zinc-400`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <a
-              target="_blank"
-              key={index}
-              href={project.link}
-              className="group block p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 hover:bg-zinc-900 transition-all"
-            >
-              <div className="aspect-video w-full bg-zinc-800/50 rounded-xl mb-6 overflow-hidden relative">
-                {/* Placeholder for project image */}
-                <img src={project.img} className="absolute inset-0 flex items-center justify-center text-zinc-600 font-medium" />
-              </div>
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-2 group-hover:text-white transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-zinc-400 mb-4 line-clamp-2">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs text-zinc-400"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </a>
-          ))}
+          {projects.map((project, index) => {
+            const cardContent = (
+              <>
+                <div className="aspect-video w-full bg-zinc-800/50 rounded-xl mb-6 overflow-hidden relative">
+                  <img src={project.img} className="absolute inset-0 flex items-center justify-center text-zinc-600 font-medium" />
+                </div>
+                <h3 className="text-2xl font-semibold text-zinc-100 mb-2 group-hover:text-white transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-zinc-400 mb-4 line-clamp-2 grow">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs text-zinc-400"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </>
+            );
+
+            const className = "group flex flex-col h-full p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 hover:bg-zinc-900 transition-all";
+
+            return project.linkType === "internal" ? (
+              <Link key={index} href={project.link} className={className}>
+                {cardContent}
+              </Link>
+            ) : (
+              <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className={className}>
+                {cardContent}
+              </a>
+            );
+          })}
         </div>
         <div className="space-y-8 pt-12 border-t border-white/10">
           <h2 className="text-3xl font-bold tracking-tight text-white">
