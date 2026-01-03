@@ -241,7 +241,7 @@ export default function PavlovCanvas() {
         <button
           onClick={handleBell}
           disabled={isTraining}
-          className="flex flex-col items-center justify-center gap-2 p-4 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500/20 hover:border-amber-500/40 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex cursor-pointer flex-col items-center justify-center gap-2 p-4 sm:p-6 rounded-2xl bg-amber-500/10 border border-amber-500/20 hover:bg-amber-500/20 hover:border-amber-500/40 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span className="text-2xl sm:text-3xl">🔔</span>
           <span className="text-xs sm:text-sm font-medium text-amber-400">Bell</span>
@@ -250,7 +250,7 @@ export default function PavlovCanvas() {
         <button
           onClick={handleFood}
           disabled={isTraining}
-          className="flex flex-col items-center justify-center gap-2 p-4 sm:p-6 rounded-2xl bg-green-500/10 border border-green-500/20 hover:bg-green-500/20 hover:border-green-500/40 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex cursor-pointer flex-col items-center justify-center gap-2 p-4 sm:p-6 rounded-2xl bg-green-500/10 border border-green-500/20 hover:bg-green-500/20 hover:border-green-500/40 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span className="text-2xl sm:text-3xl">🍖</span>
           <span className="text-xs sm:text-sm font-medium text-green-400">Food</span>
@@ -259,7 +259,7 @@ export default function PavlovCanvas() {
         <button
           onClick={handleTrain}
           disabled={isTraining}
-          className="flex flex-col items-center justify-center gap-2 p-4 sm:p-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 hover:bg-purple-500/20 hover:border-purple-500/40 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex cursor-pointer flex-col items-center justify-center gap-2 p-4 sm:p-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 hover:bg-purple-500/20 hover:border-purple-500/40 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span className="text-2xl sm:text-3xl">{isTraining ? "⏳" : "🎓"}</span>
           <span className="text-xs sm:text-sm font-medium text-purple-400">
