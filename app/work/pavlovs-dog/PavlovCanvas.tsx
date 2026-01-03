@@ -158,8 +158,8 @@ export default function PavlovCanvas() {
   return (
     <div className="w-full space-y-6">
       {/* Neural Network Visualization */}
-      <div className="relative w-full aspect-video sm:aspect-2/1 bg-zinc-900/50 border border-white/5 rounded-2xl overflow-hidden p-4 sm:p-8">
-        <svg viewBox="0 0 400 200" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+      <div className="relative w-full aspect-video sm:aspect-2/1 bg-zinc-900/50 border border-white/5 rounded-2xl overflow-hidden p-4 sm:p-8 flex items-center justify-center">
+        <svg viewBox="0 0 400 200" className="w-full h-full max-w-2xl" preserveAspectRatio="xMidYMid meet">
           {/* Connection: Bell -> Salivate */}
           <line
             x1="80" y1="50"
