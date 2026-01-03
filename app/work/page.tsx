@@ -84,7 +84,7 @@ export default function WorkPage() {
       tags: ["Arduino", "Hydroponics", "Alternating Current", "Direct Current"],
       link: "#",
       img: "/farm.png",
-      linkType: "external"
+      linkType: "internal"
     },
     {
       title: "sa2.gg",
@@ -92,7 +92,7 @@ export default function WorkPage() {
       tags: ["Gaming", "Node.js", "MongoDB", "Bootstrap"],
       link: "#",
       img: "/sa2gg.png",
-      linkType: "external"
+      linkType: "internal"
     },
     {
       title: "Telcor telecommunications",
@@ -100,7 +100,7 @@ export default function WorkPage() {
       tags: ["Java", "MySQL", "Class Assignment"],
       link: "#",
       img: "/telcor.png",
-      linkType: "external"
+      linkType: "internal"
     },
     {
       title: "Sister",
@@ -108,7 +108,7 @@ export default function WorkPage() {
       tags: ["HTML", "CSS", "Bootstrap"],
       link: "#",
       img: "/sister.png",
-      linkType: "external"
+      linkType: "internal"
     }
   ];
 
