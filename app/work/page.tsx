@@ -50,7 +50,7 @@ export default function WorkPage() {
       title: "Blood cell classifier",
       description: "A machine learning model to identify blood cell categories.",
       tags: ["Python", "Machine Learning", "TensorFlow"],
-      link: "https://github.com/svnty/blood-cell-classification/blob/main/notebook.ipynb",
+      link: "https://github.com/svnty/blood-cell-classification",
       img: "/bloodcell.png",
       linkType: "external"
     },
@@ -66,9 +66,9 @@ export default function WorkPage() {
       title: "Low earth orbit satellite tracker",
       description: "A 3D printed calculator to track low earth orbit satellites.",
       tags: ["C++", "Arduino", "3D FDM Printing", "Computer Aided Design"],
-      link: "https://github.com/svnty/ISS-arduino-tracker",
+      link: "/work/satellite-tracker",
       img: "/isstracker.jpeg",
-      linkType: "external"
+      linkType: "internal"
     },
     {
       title: "Mendelian genetics simulator",
