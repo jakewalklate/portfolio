@@ -109,7 +109,6 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Education
@@ -118,7 +117,7 @@ export default function WhoAmIPage() {
             <div className="flex flex-col sm:flex-row justify-between gap-2">
               <div>
                 <h4 className="text-lg font-medium text-white">University of Technology Sydney</h4>
-                <div className="text-zinc-400">Bachelor of Engineering (Honours)</div>
+                <div className="text-zinc-400 inline">Bachelor of Engineering (Honours)</div>
                 <ul className="list-disc ml-6 mb-2">
                   <li className="text-zinc-500 text-sm">Majoring in Biomedical & Mechatronic Engineering</li>
                   <li className="text-zinc-500 text-sm">Sub-major in Data Analytics & Machine Learning</li>
@@ -128,7 +127,7 @@ export default function WhoAmIPage() {
                   <li className="text-zinc-500 text-sm">Majoring in Molecular Medicine</li>
                 </ul>
               </div>
-              <div className="text-zinc-500 flex min-w-[120px] font-mono text-sm text-right sm:text-left">
+              <div className="text-zinc-500 font-mono text-xs w-fit px-2 py-1 border rounded-full border-white/20 sm:border-0 sm:p-0 sm:w-auto sm:min-w-[120px] sm:text-left sm:text-sm">
                 Double Degree
               </div>
             </div>
@@ -143,7 +142,7 @@ export default function WhoAmIPage() {
                   </li>
                 </ul>
               </div>
-              <div className="text-zinc-500 flex min-w-[120px] font-mono text-sm text-right sm:text-left">
+              <div className="text-zinc-500 font-mono text-xs w-fit px-2 py-1 border rounded-full border-white/20 sm:border-0 sm:p-0 sm:w-auto sm:min-w-[120px] sm:text-left sm:text-sm">
                 Trade School
               </div>
             </div>
@@ -158,7 +157,7 @@ export default function WhoAmIPage() {
                   </li>
                 </ul>
               </div>
-              <div className="text-zinc-500 flex min-w-[120px] font-mono text-sm text-right sm:text-left">
+              <div className="text-zinc-500 font-mono text-xs w-fit px-2 py-1 border rounded-full border-white/20 sm:border-0 sm:p-0 sm:w-auto sm:min-w-[120px] sm:text-left sm:text-sm">
                 Short Course
               </div>
             </div>
