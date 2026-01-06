@@ -21,11 +21,11 @@ export default function CoreablePage() {
         {/* Header */}
         <header className="space-y-4">
           <div className="flex items-center gap-2 text-sm text-zinc-500">
-            <span className="px-2 py-0.5 bg-violet-500/10 text-violet-400 rounded-full border border-violet-500/20">
+            <span className="px-2 py-0.5 bg-violet-500/10 text-violet-400 rounded-full border border-violet-500/20 text-center md:text-left mr-2 md:mr-0">
               Open Source
             </span>
             <span>•</span>
-            <span>EdTech / Workforce Development</span>
+            <span className="ml-2 md:ml-0">EdTech / Workforce Development</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
             Coreable
@@ -133,13 +133,13 @@ export default function CoreablePage() {
         {/* Status Badge */}
         <div className="flex flex-col gap-4 pt-4 border-t border-white/10">
           <div className="flex items-center gap-3">
-            <span className="px-3 py-1 bg-sky-500/10 text-sky-400 text-sm rounded-full border border-sky-500/20">
+            <span className="px-3 py-1 bg-sky-500/10 text-sky-400 text-sm rounded-full border border-sky-500/20 text-center md:text-left">
               ✓ MVP Shipped
             </span>
-            <span className="px-3 py-1 bg-zinc-500/10 text-zinc-400 text-sm rounded-full border border-zinc-500/20">
+            <span className="px-3 py-1 bg-zinc-500/10 text-zinc-400 text-sm rounded-full border border-zinc-500/20 text-center md:text-left">
               Project Archived
             </span>
-            <span className="px-3 py-1 bg-amber-500/10 text-amber-400 text-sm rounded-full border border-amber-500/20">
+            <span className="px-3 py-1 bg-amber-500/10 text-amber-400 text-sm rounded-full border border-amber-500/20 text-center md:text-left">
               🏆 Hatchable Award Winner
             </span>
           </div>
