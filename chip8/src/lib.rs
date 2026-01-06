@@ -98,7 +98,7 @@ impl Chip8 {
     self.sp += 1;
   }
 
-    // Helper: Pop PC from Stack (Return from Subroutine)
+  // Helper: Pop PC from Stack (Return from Subroutine)
   fn pop(&mut self) {
     if self.sp == 0 {
       panic!("Stack Underflow!");
