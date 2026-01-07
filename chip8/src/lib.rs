@@ -358,6 +358,10 @@ impl Chip8 {
         self.i_reg = nnn;
       }
 
+      (0xB, _, _, _) => {
+        self.pc = (self.v_reg[0] as u16) + nnn;
+      }
+
       // CXNN: Set VX to Random Number AND NN
       (0xC, _, _, _) => {
         let random_byte = (random() * 255.0) as u8;
