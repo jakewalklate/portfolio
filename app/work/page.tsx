@@ -5,6 +5,14 @@ import Link from "next/link";
 export default function WorkPage() {
   const interactive_projects = [
     {
+      title: 'CHIP-8 emulator',
+      description: 'An interactive CHIP-8 emulator with visible machine state and playable games.',
+      tags: ["Rust", "WebAssembly", "Interactive"],
+      link: '/work/chip8-emulator',
+      img: '/chip8.png',
+      linkType: 'internal'
+    },
+    {
       title: "Pavlov's Dog",
       description: "An interactive spiking neural network demonstrating classical conditioning with Hebbian learning.",
       tags: ["Rust", "WebAssembly", "Neuroscience", "Interactive"],
@@ -50,9 +58,9 @@ export default function WorkPage() {
       title: "Blood cell classifier",
       description: "A machine learning model to identify blood cell categories.",
       tags: ["Python", "Machine Learning", "TensorFlow"],
-      link: "https://github.com/svnty/blood-cell-classification",
+      link: "/work/blood-cell-mlp",
       img: "/bloodcell.png",
-      linkType: "external"
+      linkType: "internal"
     },
     {
       title: "Arduino Community IntelliSense fix",
@@ -126,6 +134,7 @@ export default function WorkPage() {
 
         {/* Interactive Projects Section */}
         <div className="space-y-4 -mt-4 mb-6">
+          <h3 className="text-2xl font-bold text-stone-300">Interactive Experiments</h3>
           <div className="grid grid-cols-1 gap-4">
             {interactive_projects.map((project, index) => (
               <Link
@@ -157,44 +166,47 @@ export default function WorkPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, index) => {
-            const cardContent = (
-              <>
-                <div className="aspect-video w-full bg-zinc-800/50 rounded-xl mb-6 overflow-hidden relative">
-                  <img src={project.img} className="absolute inset-0 flex items-center justify-center text-zinc-600 font-medium" />
-                </div>
-                <h3 className="text-2xl font-semibold text-zinc-100 mb-2 group-hover:text-white transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-zinc-400 mb-4 line-clamp-2 grow">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs text-zinc-400"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </>
-            );
+        <div className="space-y-4 mb-6">
+          <h3 className="text-2xl font-bold text-stone-300">Showcase</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project, index) => {
+              const cardContent = (
+                <>
+                  <div className="aspect-video w-full bg-zinc-800/50 rounded-xl mb-6 overflow-hidden relative">
+                    <img src={project.img} className="absolute inset-0 flex items-center justify-center text-zinc-600 font-medium" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-zinc-100 mb-2 group-hover:text-white transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-zinc-400 mb-4 line-clamp-2 grow">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs text-zinc-400"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </>
+              );
 
-            const className = "group flex flex-col h-full p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 hover:bg-zinc-900 transition-all";
+              const className = "group flex flex-col h-full p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 hover:bg-zinc-900 transition-all";
 
-            return project.linkType === "internal" ? (
-              <Link key={index} href={project.link} className={className}>
-                {cardContent}
-              </Link>
-            ) : (
-              <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className={className}>
-                {cardContent}
-              </a>
-            );
-          })}
+              return project.linkType === "internal" ? (
+                <Link key={index} href={project.link} className={className}>
+                  {cardContent}
+                </Link>
+              ) : (
+                <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className={className}>
+                  {cardContent}
+                </a>
+              );
+            })}
+          </div>
         </div>
         <div className="space-y-8 pt-12 border-t border-white/10">
           <h2 className="text-3xl font-bold tracking-tight text-white">
