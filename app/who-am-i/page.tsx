@@ -873,7 +873,7 @@ export default function WhoAmIPage() {
               </h4>
               <div className="p-4 rounded-xl bg-zinc-900/50 border border-red-500/20 hover:border-red-500/30 transition-colors">
                 <p className="text-zinc-300 text-sm leading-relaxed">
-                  I think crypto is useless.
+                  I think crypto currencies are useless.
                 </p>
               </div>
             </div>
