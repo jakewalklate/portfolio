@@ -222,6 +222,10 @@ export default function WhoAmIPage() {
             <p>
               Later, I was sent to AIE — an art and game design school in Ultimo — by my art teacher and headmaster who wanted to encourage me to study game development. That was a cool moment for me, and it's where I started to see how I could combine my interests with education.
             </p>
+            <br />
+            <p>
+              I didn't always have support. There was pressure to send me to manual labour discipline camps—but I held onto the belief that I belonged in engineering.
+            </p>
           </div>
         </div>
 
