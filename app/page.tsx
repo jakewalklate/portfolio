@@ -131,7 +131,7 @@ export default function Home() {
                 <h3 className="text-xl text-white font-medium">Collaboration</h3>
               </div>
               <p className="text-zinc-400 leading-relaxed">
-                I am open to invitations to help solve any problem that fits these three criteria:
+                I am open to invitations to help solve <strong className="text-zinc-300/90">any</strong> problem that fits these three criteria:
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-4 group">
