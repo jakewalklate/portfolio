@@ -710,8 +710,8 @@ export default function WhoAmIPage() {
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-xs font-mono text-purple-400/70 px-2 py-0.5 rounded-full bg-purple-500/10">FUTURE</span>
                   </div>
-                  <h4 className="text-lg font-medium text-white mb-1">Part-Time PhD</h4>
-                  <p className="text-sm text-zinc-400">Post-graduation, pursuing advanced research in biotech, neuroscience, computational neurobiology, or psychology while continuing industry work.</p>
+                  <h4 className="text-lg font-medium text-white mb-1">Part-Time PhD or MD</h4>
+                  <p className="text-sm text-zinc-400">Post-graduation, pursuing advanced research in biotech, neuroscience, computational neurobiology, or psychology while continuing industry work <strong>OR</strong> a medical degree with a PhD later.</p>
                 </div>
               </div>
             </div>
@@ -894,7 +894,7 @@ export default function WhoAmIPage() {
                 </div>
                 <div className="p-4 rounded-xl bg-zinc-900/50 border border-white/10 hover:border-zinc-500/30 transition-colors">
                   <p className="text-zinc-300 text-sm leading-relaxed">
-                    I'd rather do something myself than ask others. Delegation isn't my strong suit — I just don't like bothering people.
+                    I'd rather do something myself than ask others. Delegation isn't my strong suit — I just don't like bothering people. I believe that the best way I can lead is by example, if the right people are motivated they'll ask me to teach them how to help.
                   </p>
                 </div>
               </div>
