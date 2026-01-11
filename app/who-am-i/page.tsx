@@ -1546,7 +1546,7 @@ export default function WhoAmIPage() {
               { title: 'Victor Davis Hanson', subtitle: 'Professor of History', cover: '/VictorDavisHanson.jpg' },
               { title: 'Kevin MacDonald', subtitle: 'Professor of Psychology', cover: '/kevinmacdonald.jpg' },
               { title: 'Jarred Taylor', subtitle: 'Author', cover: '/Jared_Taylor.jpg' },
-              { title: 'Frank Salter', subtitle: 'Biosocial Scientist', cover: '/frank-salter.png' },
+              { title: 'Frank Salter', subtitle: 'Biosocial scientist', cover: '/frank-salter.png' },
               { title: 'Andrew Fraser', subtitle: 'Professor of Law', cover: '/andrewfraser.jpeg' },
               { title: 'Edward Dutton', subtitle: 'Professor of Evolutionary Psychology', cover: '/edwarddutton.jpg' },
               { title: 'Spencer Walklate', subtitle: 'My Grandfather (Constable, soldier, footballer)', cover: '/spencerwalklate.jpg' }
