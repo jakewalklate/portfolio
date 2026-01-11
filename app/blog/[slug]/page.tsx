@@ -47,16 +47,13 @@ const mdxComponents = {
     <pre className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 overflow-x-auto my-6 shadow-lg" {...props} />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="text-zinc-300 mb-6 space-y-2 ml-1" {...props} />
+    <ul className="list-disc text-zinc-300 mb-6 space-y-2 pl-6 marker:text-blue-400" {...props} />
   ),
   ol: (props: React.OlHTMLAttributes<HTMLOListElement>) => (
-    <ol className="list-decimal text-zinc-300 mb-6 space-y-2 pl-6" {...props} />
+    <ol className="list-decimal text-zinc-300 mb-6 space-y-2 pl-6 marker:text-blue-400" {...props} />
   ),
   li: (props: React.LiHTMLAttributes<HTMLLIElement>) => (
-    <li className="text-zinc-300 text-lg leading-relaxed flex items-start gap-3">
-      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-[0.65rem] shrink-0" />
-      <span {...props} />
-    </li>
+    <li className="text-zinc-300 text-lg leading-relaxed pl-2" {...props} />
   ),
   blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
