@@ -1543,7 +1543,13 @@ export default function WhoAmIPage() {
               { title: "Terry Davis", subtitle: "God's chosen programmer", cover: "/davis.jpg" },
               { title: "Elon Musk", subtitle: "Tech entrepreneur", cover: "/elon.jpg" },
               { title: 'Leonardo Da Vinci', subtitle: 'Renaissance polymath', cover: '/leonardo-da-vinci.jpg' },
-              { title: 'Victor Davis Hanson', subtitle: 'Historian', cover: '/VictorDavisHanson.jpg' },
+              { title: 'Victor Davis Hanson', subtitle: 'Professor of History', cover: '/VictorDavisHanson.jpg' },
+              { title: 'Kevin MacDonald', subtitle: 'Professor of Psychology', cover: '/kevinmacdonald.jpg' },
+              { title: 'Jarred Taylor', subtitle: 'Author', cover: '/Jared_Taylor.jpg' },
+              { title: 'Frank Salter', subtitle: 'Biosocial Scientist', cover: '/frank-salter.png' },
+              { title: 'Andrew Fraser', subtitle: 'Professor of Law', cover: '/andrewfraser.jpeg' },
+              { title: 'Edward Dutton', subtitle: 'Professor of Evolutionary Psychology', cover: '/edwarddutton.jpg' },
+              { title: 'Spencer Walklate', subtitle: 'My Grandfather (Police officer, soldier, footballer)', cover: '/spencerwalklate.jpg' }
             ].map((item, i) => (
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
@@ -1557,7 +1563,7 @@ export default function WhoAmIPage() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium group-hover:text-amber-400 transition-colors truncate">{item.title}</h4>
-                  <div className="text-zinc-500 text-sm truncate">{item.subtitle}</div>
+                  <div className="text-zinc-500 text-sm">{item.subtitle}</div>
                 </div>
               </div>
             ))}
