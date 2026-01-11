@@ -1549,7 +1549,7 @@ export default function WhoAmIPage() {
               { title: 'Frank Salter', subtitle: 'Biosocial Scientist', cover: '/frank-salter.png' },
               { title: 'Andrew Fraser', subtitle: 'Professor of Law', cover: '/andrewfraser.jpeg' },
               { title: 'Edward Dutton', subtitle: 'Professor of Evolutionary Psychology', cover: '/edwarddutton.jpg' },
-              { title: 'Spencer Walklate', subtitle: 'My Grandfather (Police officer, soldier, footballer)', cover: '/spencerwalklate.jpg' }
+              { title: 'Spencer Walklate', subtitle: 'My Grandfather (Constable, soldier, footballer)', cover: '/spencerwalklate.jpg' }
             ].map((item, i) => (
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
