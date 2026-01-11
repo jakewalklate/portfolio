@@ -425,7 +425,7 @@ export default function WhoAmIPage() {
 
                 <div className="mt-4 pt-3 border-t border-zinc-800 flex items-center gap-2">
                   <span className="text-green-500">❯</span>
-                  <span className="text-zinc-400">sudo rm -rf /usr/bin/java/</span>
+                  <span className="text-zinc-400">sudo rm -rf /usr/bin/java</span>
                   <span className="w-2 h-4 bg-zinc-400 motion-safe:animate-[blink_1.5s_step-start_infinite]" />
                 </div>
               </div>
