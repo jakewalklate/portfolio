@@ -1333,7 +1333,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-[0.2deg] hover:scale-[1.01]">
+            <div className="group relative overflow-hidden rounded-xl bg-linear-to-r from-purple-600 via-pink-600 to-blue-600 p-[1px] transition-transform hover:rotate-[-0.1deg] hover:scale-[1.005]">
               <div className="relative h-full bg-zinc-900 rounded-[10px] flex">
                 <div className="flex-1 p-6 flex flex-col justify-between border-r-2 border-dashed border-zinc-800 relative">
                   <div className="absolute -top-3 -right-3 w-6 h-6 bg-black rounded-full z-10"></div>
