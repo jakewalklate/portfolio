@@ -1,4 +1,5 @@
 import { MapPin, X, Brain, Activity, Hammer, Search, GraduationCap, StickyNote, Zap, Utensils, Fingerprint, Frown, Heart, Music, SquareDashed, Bike, Snowflake, SprayCan, Caravan, Mountain, Trees, Target, Waves, Flame, Circle, Microscope, Users, Leaf, Telescope, Info, HeartCrack } from "lucide-react";
+import Image from "next/image";
 import Time from "./time";
 import Process from "./process";
 import CompletedClasses from "./completed-classes";
@@ -176,7 +177,7 @@ export default function WhoAmIPage() {
                     <div key={j} className="w-48 space-y-3 group shrink-0">
                       <div className={`aspect-square w-full rounded-lg bg-zinc-900 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-colors`}>
                         {album.cover ? (
-                          <img src={album.cover} alt={album.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                          <Image src={album.cover} alt={album.title} fill sizes="192px" className="object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
                         ) : (
                           <div className="text-center p-4">
                             <div className="text-xs text-zinc-600 font-bold uppercase tracking-widest">{album.artist}</div>
@@ -264,8 +265,8 @@ export default function WhoAmIPage() {
               { title: 'The Design of the Unix Operating System', author: 'Maurice Bach', note: 'The primary guide to the design of the Unix operating system.', cover: '/unix.jpeg' },
             ].map((book, i) => (
               <div key={i} className="group flex gap-4 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
-                <div className="shrink-0 w-16 h-24 bg-zinc-800 rounded overflow-hidden shadow-sm">
-                  {book.cover && <img src={book.cover} alt={book.title} className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity" />}
+                <div className="shrink-0 w-16 h-24 bg-zinc-800 rounded overflow-hidden shadow-sm relative">
+                  {book.cover && <Image src={book.cover} alt={book.title} fill sizes="64px" className="object-fill opacity-80 group-hover:opacity-100 transition-opacity" />}
                 </div>
                 <div>
                   <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors">{book.title}</h4>
@@ -463,7 +464,7 @@ export default function WhoAmIPage() {
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-2/3 w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
                   {show.cover ? (
-                    <img src={show.cover} alt={show.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                    <Image src={show.cover} alt={show.title} fill sizes="(max-width: 640px) 33vw, 200px" className="object-cover opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
                   ) : null}
                   <div className={`absolute inset-0 flex items-center justify-center px-4 text-center ${show.cover ? 'hidden' : ''}`}>
                     <span className="text-zinc-500 font-medium">{show.title}</span>
@@ -539,7 +540,7 @@ export default function WhoAmIPage() {
           </h3>
           <div className="space-y-4">
             <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-              <img src="/selfies/2.JPG" alt="Life moment" className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 -mt-24 sm:-mt-36 md:-mt-44" />
+              <Image src="/selfies/2.JPG" alt="Life moment" fill sizes="(max-width: 768px) 100vw, 768px" priority className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 object-[center_25%]" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-white text-sm font-mono">2023</span>
               </div>
@@ -551,7 +552,7 @@ export default function WhoAmIPage() {
                 { src: "/selfies/4.JPG", year: "2023" },
               ].map((photo, i) => (
                 <div key={i} className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
-                  <img src={photo.src} alt="Life moment" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                  <Image src={photo.src} alt="Life moment" fill sizes="33vw" className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-white text-xs font-mono">{photo.year}</span>
                   </div>
@@ -633,7 +634,7 @@ export default function WhoAmIPage() {
             ].map((game, i) => (
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-2/3 w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
-                  <img src={game.cover} alt={game.title} className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                  <Image src={game.cover} alt={game.title} fill sizes="(max-width: 640px) 33vw, 200px" className="object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
                 </div>
                 <div>
                   <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors truncate">{game.title}</h4>
@@ -649,8 +650,8 @@ export default function WhoAmIPage() {
             Worldview & Goals
           </h3>
           <div className="space-y-4">
-            <div className="relative rounded-lg border border-white/20 hover:border-white/25 overflow-hidden group">
-              <img src="/banner.png" alt="Banner" className="w-full h-auto group-hover:blur-[2px] transition-all duration-500" />
+            <div className="relative rounded-lg border border-white/20 hover:border-white/25 overflow-hidden group aspect-[16/7]">
+              <Image src="/banner.png" alt="Banner" fill sizes="768px" className="object-cover group-hover:blur-[2px] transition-all duration-500" />
               <div className="absolute inset-0 flex items-center justify-center p-4">
                 <span className="text-white max-sm:text-sm text-xl font-medium text-center bg-black/20 px-6 py-3 rounded-md backdrop-blur-[3px] group-hover:backdrop-blur-[5px] transition-all duration-500">
                   Technological and moral progress — owing to tradition.
@@ -840,7 +841,7 @@ export default function WhoAmIPage() {
               <a href="https://stanleyuni.github.io" target="_blank">
                 <div className="relative p-6 space-y-4">
                   <div className="flex items-start justify-between">
-                    <img src="/Shield-S.png" alt="Stanley University" className="w-8 h-10" />
+                    <Image src="/Shield-S.png" alt="Stanley University" width={32} height={40} className="w-8 h-10" />
                     <span className="text-[10px] font-mono text-blue-400/60 px-2 py-1 rounded-full border border-blue-400/20 bg-blue-400/5">
                       VISION
                     </span>
@@ -1390,7 +1391,7 @@ export default function WhoAmIPage() {
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-2/3 w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
                   {film.cover ? (
-                    <img src={film.cover} alt={film.title} className="w-full h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                    <Image src={film.cover} alt={film.title} fill sizes="(max-width: 640px) 33vw, 200px" className="object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
                   ) : (
                     <div className="text-center p-2">
                       <span className="text-zinc-500 font-medium text-sm">{film.title}</span>
@@ -1554,7 +1555,7 @@ export default function WhoAmIPage() {
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
                   {item.cover ? (
-                    <img src={item.cover} alt={item.title} className="w-full grayscale h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                    <Image src={item.cover} alt={item.title} fill sizes="(max-width: 640px) 50vw, 160px" className="grayscale object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
                   ) : (
                     <div className="text-center p-2">
                       <span className="text-zinc-500 font-medium text-sm">{item.title}</span>
@@ -1803,7 +1804,7 @@ export default function WhoAmIPage() {
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
                   {item.cover ? (
-                    <img src={item.cover} alt={item.title} className="w-full grayscale h-full object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                    <Image src={item.cover} alt={item.title} fill sizes="33vw" className="grayscale object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
                   ) : (
                     <div className="text-center p-2">
                       <span className="text-zinc-500 font-medium text-sm">{item.title}</span>
