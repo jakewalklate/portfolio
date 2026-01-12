@@ -573,7 +573,7 @@ export default function WhoAmIPage() {
               </div>
               <div className="space-y-2">
                 {[
-                  { name: "MacBook Pro M1", detail: "2020 • 16GB", icon: "⌨️" },
+                  { name: "MacBook Pro M5", detail: "2025 • 24GB", icon: "⌨️" },
                   { name: "Keychron K1", detail: "Red Switches", icon: "🔴" },
                   { name: 'Google Antigravity', detail: 'Vibe Code Assistant', icon: '🤖' },
                   { name: 'Fusion 360', detail: 'CAD', icon: '✏️' }
