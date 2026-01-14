@@ -41,7 +41,7 @@ const mdxComponents = {
     />
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => (
-    <code className="bg-zinc-800/80 text-zinc-200 px-2 py-1 rounded-md text-sm font-mono border border-white/5" {...props} />
+    <code className="bg-zinc-800/80 text-zinc-200 py-1 rounded-md text-sm font-mono border border-white/5" {...props} />
   ),
   pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
     <pre className="bg-zinc-900/80 border border-white/10 rounded-xl p-5 overflow-x-auto my-6 shadow-lg" {...props} />
