@@ -28,7 +28,7 @@ export default function SatelliteTrackerPage() {
             <span>Embedded Systems / Space</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
-            ISS Satellite Tracker
+            International Space Station (ISS) Tracker
           </h1>
           <p className="text-lg text-zinc-400 leading-relaxed">
             A 3D printed Arduino device that physically points at the International Space Station in real-time,

@@ -90,7 +90,7 @@ export default function WorkPage() {
       title: "Hydroponic farm",
       description: "Self managing hydroponic farm to grow plants in a controlled environment.",
       tags: ["Arduino", "Hydroponics", "Alternating Current", "Direct Current"],
-      link: "#",
+      link: "/work/hydroponic-farm",
       img: "/farm.png",
       linkType: "internal"
     },
@@ -98,7 +98,7 @@ export default function WorkPage() {
       title: "sa2.gg",
       description: "A gaming community with a forum, chat, and server.",
       tags: ["Gaming", "Node.js", "MongoDB", "Bootstrap"],
-      link: "#",
+      link: "/work/sa2gg",
       img: "/sa2gg.png",
       linkType: "internal"
     },
@@ -293,6 +293,59 @@ export default function WorkPage() {
             </div>
           </a>
 
+          <Link href="/work/medicamina" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Software Developer</h3>
+                  <div className="text-zinc-400">Medicamina</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  Feb 2022 - Oct 2023
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Developed a web application for medical clinical data.</li>
+              </ul>
+            </div>
+          </Link>
+
+          <a href="https://www.frangos.com.au" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Waiter</h3>
+                  <div className="text-zinc-400">Frangos Charcoal Chicken</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  Jun 2021 - Aug 2021
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Took orders, served customers, and handled payments.</li>
+              </ul>
+            </div>
+          </a>
+
+          <Link href="/work/coreable" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Founding Backend Engineer</h3>
+                  <div className="text-zinc-400">Coreable</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  Aug 2020 — Jun 2021
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Developed a GraphQL API to serve as the single source of truth for employee data.</li>
+                <li>Built a real-time analytics dashboard to visualize employee performance metrics.</li>
+                <li>Implemented a role-based access control system to ensure data privacy and security.</li>
+              </ul>
+            </div>
+          </Link>
+
           <a href="https://clockon.com.au" target="_blank" className="block">
             <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
               <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
@@ -310,6 +363,24 @@ export default function WorkPage() {
               </ul>
             </div>
           </a>
+
+          <Link href="/work/sa2gg" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Software Developer</h3>
+                  <div className="text-zinc-400">Sa2.gg</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  Feb 2019 - Jul 2019
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Developed a web application for a local esports organisation.</li>
+              </ul>
+            </div>
+          </Link>
+
 
           <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
             <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
@@ -344,15 +415,32 @@ export default function WorkPage() {
             </div>
           </a>
 
+          <a href="https://www.facebook.com/photo.php?fbid=862572302578504&set=a.627904512711952&id=100064772256189" target="_blank" className="block">
+            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">Kitchen Hand</h3>
+                  <div className="text-zinc-400">Sit & Chats Café</div>
+                </div>
+                <div className="text-zinc-500 font-mono text-sm">
+                  Late 2016
+                </div>
+              </div>
+              <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
+                <li>Assisted in the day to day running of the kitchen by washing dishes and cleaning up after events.</li>
+              </ul>
+            </div>
+          </a>
+
           <a href="https://goodwillbuilding.com.au" target="_blank" className="block">
             <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
               <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-white">Constructon Labourer</h3>
+                  <h3 className="text-xl font-semibold text-white">Construction Labourer</h3>
                   <div className="text-zinc-400">Goodwill Building</div>
                 </div>
                 <div className="text-zinc-500 font-mono text-sm">
-                  2016
+                  Early 2016
                 </div>
               </div>
               <ul className="list-disc list-inside text-zinc-400 leading-relaxed space-y-2">
