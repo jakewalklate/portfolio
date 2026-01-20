@@ -55,7 +55,8 @@ const albums = [
   { title: 'Suicide Season', artist: 'Bring Me The Horizon', cover: '/suicide.jpg' },
   { title: 'When the World Falls', artist: 'Hope County Choir', cover: '/hope.jpg' },
   { title: 'The Hard Road', artist: 'Hilltop Hoods', cover: '/HTH-The-Hard-Road-1280.jpg' },
-  { title: 'Live at the Opera House (2012)', artist: 'Florence and the Machine', cover: '/florence.JPG' }
+  { title: 'Live at the Opera House (2012)', artist: 'Florence and the Machine', cover: '/florence.JPG' },
+  { title: 'Look at Me: The Album', artist: 'XXXTentaction', cover: '/xxxtentaction.jpg' }
 ].sort(() => Math.random() - 0.5);
 
 export default function WhoAmIPage() {
