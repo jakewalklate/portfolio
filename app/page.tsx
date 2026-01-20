@@ -158,7 +158,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-6">
             <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
-              <h3 className="text-xl font-semibold mb-4 text-zinc-100">References & Contact</h3>
+              <h3 className="text-xl font-semibold mb-4 text-zinc-100">References</h3>
               <ul className="space-y-2 text-zinc-400">
                 <li><a target="_blank" href="https://linkedin.com/in/svnty" className="hover:text-white transition-colors fill-zinc-400 hover:fill-white">
                   <svg height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
