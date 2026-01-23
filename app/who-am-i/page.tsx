@@ -1555,7 +1555,7 @@ export default function WhoAmIPage() {
               { title: 'Edward Dutton', subtitle: 'Professor of Evolutionary Psychology', cover: '/edwarddutton.jpg' },
               { title: 'Spencer Walklate', subtitle: 'My Grandfather (Constable, soldier, footballer)', cover: '/spencerwalklate.jpg' },
               { title: 'Jiang Xueqin', subtitle: 'Professor of Psychohistory', cover: '/jianxueqin.jpg' },
-              { title: 'Alan Watts', subtitle: 'Professor of Philosopher', cover: '/Alan_Watts.png' },
+              { title: 'Alan Watts', subtitle: 'Professor of Philosophy', cover: '/Alan_Watts.png' },
               { title: 'Ken Thompson', subtitle: 'Co-Founder of Unix & C', cover: '/thompson.jpg' }
             ].map((item, i) => (
               <div key={i} className="group flex flex-col gap-3">
