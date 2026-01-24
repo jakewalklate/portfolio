@@ -122,9 +122,9 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-6">
           {/* Collaboration Offer */}
           <div className="relative p-6 md:p-8 rounded-2xl bg-zinc-900/50 overflow-hidden border border-white/5 hover:border-white/10">
-            <div className="absolute top-0 right-0 p-4 opacity-20">
+            {/* <div className="absolute top-0 right-0 p-4 opacity-20">
               <Telescope size={120} className="text-zinc-700 -rotate-12" />
-            </div>
+            </div> */}
             <div className="relative z-10 space-y-5">
               <div>
                 <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Future Directions</h4>
