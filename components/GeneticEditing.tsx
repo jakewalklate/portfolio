@@ -82,7 +82,7 @@ export default function GeneticEditing() {
   }, [cursorPos, status]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto font-mono text-sm bg-black border border-zinc-800 rounded-xl overflow-hidden shadow-2xl shadow-green-900/10">
+    <div className="w-full max-w-4xl mx-auto font-mono text-sm bg-black border-2 border-zinc-800 rounded-xl overflow-hidden shadow-2xl shadow-green-900/10">
       {/* Header / Toolbar */}
       <div className="flex items-center justify-between px-4 py-2 bg-zinc-900/50 border-b border-zinc-800">
         <div className="flex items-center gap-4">

@@ -13,9 +13,9 @@ export default function AgaroseGel() {
 
   return (
     <div className="w-full md:max-w-4xl mx-auto md:p-4">
-      <div className="relative bg-zinc-900/80 rounded-lg border-4 border-zinc-800 shadow-[0_0_50px_rgba(168,85,247,0.1)] overflow-hidden">
+      <div className="relative bg-zinc-900/10 rounded-lg border-2 border-zinc-800 shadow-[0_0_50px_rgba(168,85,247,0.1)] overflow-hidden">
         {/* UV Light Glow Effect */}
-        <div className="absolute inset-0 bg-purple-900/10 pointer-events-none mix-blend-overlay" />
+        {/* <div className="absolute inset-0 bg-purple-900/10 pointer-events-none mix-blend-overlay" /> */}
 
         {/* Gel Tank Header */}
         <div className="flex justify-center items-center px-4 py-2 bg-zinc-950/50 border-b border-zinc-800/50 text-[10px] text-zinc-500 font-mono uppercase tracking-widest relative z-10">
