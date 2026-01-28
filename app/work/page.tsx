@@ -3,6 +3,17 @@ import React from "react";
 import Link from "next/link";
 
 export default function WorkPage() {
+  const work_in_progress = [
+    {
+      title: 'OpenBio Operating System (OBOS)',
+      description: 'An open-source software ecosystem for biological research and development.',
+      tags: ["Rust", "WebAssembly", "React", "PostgresQL"],
+      link: '/work/obos',
+      img: '/openbio-os.png',
+      linkType: 'internal'
+    },
+  ];
+
   const interactive_projects = [
     {
       title: 'CHIP-8 emulator',
@@ -153,8 +164,41 @@ export default function WorkPage() {
 
         {/* Interactive Projects Section */}
         <div className="space-y-4 -mt-4 mb-6">
-          <h3 className="text-2xl font-bold text-stone-300">Interactive Experiments</h3>
+          <h3 className="text-2xl font-bold text-stone-300">Work In Progress</h3>
           <div className="grid grid-cols-1 gap-4">
+            {work_in_progress.map((project, index) => (
+              <Link
+                key={index}
+                href={project.link}
+                className="group flex flex-col h-full p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 hover:bg-zinc-900 transition-all"
+              >
+                <div className="w-full max-h-32 md:max-h-66 bg-zinc-800/50 rounded-xl mb-4 overflow-hidden">
+                  <img src={project.img} className="w-full h-full object-cover" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-white transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-zinc-400 mb-4 text-sm grow">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className={`px-3 py-1 rounded-full bg-white/5 border border-white/5 text-xs text-zinc-400`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-4 mb-6">
+          <h3 className="text-2xl font-bold text-stone-300">Interactive Experiments</h3>
+          <div className="grid grid-cols-2 gap-4">
             {interactive_projects.map((project, index) => (
               <Link
                 key={index}
