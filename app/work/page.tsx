@@ -165,7 +165,7 @@ export default function WorkPage() {
         {/* Interactive Projects Section */}
         <div className="space-y-4 -mt-4 mb-6">
           <h3 className="text-2xl font-bold text-stone-300">Work In Progress</h3>
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-6">
             {work_in_progress.map((project, index) => (
               <Link
                 key={index}
@@ -198,7 +198,7 @@ export default function WorkPage() {
 
         <div className="space-y-4 mb-6">
           <h3 className="text-2xl font-bold text-stone-300">Interactive Experiments</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {interactive_projects.map((project, index) => (
               <Link
                 key={index}
