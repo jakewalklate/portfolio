@@ -8,9 +8,9 @@ export default function WorkPage() {
       title: 'OpenBio Operating System (OBOS)',
       description: 'An open-source software ecosystem for biological research and development.',
       tags: ["Rust", "WebAssembly", "React", "PostgresQL"],
-      link: 'https://github.com/openbio-os',
+      link: '/work/obos',
       img: '/openbio-os.png',
-      linkType: 'external'
+      linkType: 'internal'
     },
   ];
 
