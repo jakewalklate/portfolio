@@ -209,19 +209,23 @@ export default function WhoAmIPage() {
           </h3>
           <div className="prose prose-invert prose-zinc leading-relaxed text-zinc-400">
             <p>
-              I've always been into video games and skateboarding. As an adolescent, that was my world, but my first dream was to be a brain-surgeon.
+              I've always been into video games and skateboarding. As an adolescent, that was my world, but my first childhood dream was to be a brain-surgeon.
             </p>
             <br />
             <p>
-              I started building software before I understood what I was doing. At 11, I was running a self-hosted Runescape private server in Java, I learnt from a textbook provided to me by my aunt's friend Clint who was a C# programmer. By 13, I was writing IRC bots. At 14, I hardware jailbroke a PS3 and created one of the most downloaded multiplayer patches for Modern Warfare 2, receiving 12 pages of forum feedback from players around the world.
+              I started building software before I understood what I was doing. It started with writing batch scripts for Windows Vista, then evolved to using Notepad++.
             </p>
             <br />
             <p>
-              By 16, I had rack-mounted Xeon servers running virtualized Linux clusters in my bedroom, hand-configured firewalls, and was hosting community game servers.
+              At 11, I was running a self-hosted Runescape private server in Java, I learnt from a textbook provided to me by my aunt's friend Clint who was a C# programmer. By 13, I was writing IRC bots. At 14, I hardware jailbroke a PS3 and created one of the most downloaded multiplayer patches for Modern Warfare 2, receiving 12 pages of forum feedback from players around the world.
             </p>
             <br />
             <p>
-              The skatepark and the server rack were my two worlds. I studied Art, Modern History and Entertainment in high school because I've always been interested in that sort of art and culture.
+              By 16, I had rack-mounted Xeon servers running virtualized Linux clusters in my bedroom, hand-configured firewalls, and was hosting community game servers for the Source Engine, Minecraft and Grand Theft Auto.
+            </p>
+            <br />
+            <p>
+              The skatepark and the server rack were my two worlds. I studied Art, Modern History and Entertainment in high school because I've always been interested in that sort of art and culture. I didn't even know what an engineer was at this age, I just knew I liked gaming.
             </p>
             <br />
             <p>
