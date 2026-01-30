@@ -569,8 +569,8 @@ export default function WhoAmIPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { src: "/selfies/IMG_4588.jpg", year: "2025" },
                 { src: "/selfies/IMG_3889.jpg", year: "2025" },
+                { src: "/selfies/IMG_4588.jpg", year: "2026" },
               ].map((photo, i) => (
                 <div key={i} className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
                   <Image src={photo.src} alt="Life moment" fill sizes="33vw" className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
