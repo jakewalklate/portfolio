@@ -555,9 +555,22 @@ export default function WhoAmIPage() {
             </div>
             <div className="grid grid-cols-3 gap-4">
               {[
+                { src: "/selfies/4.JPG", year: "2023" },
                 { src: "/selfies/a.png", year: "2024" },
                 { src: "/selfies/3.jpeg", year: "2024" },
-                { src: "/selfies/4.JPG", year: "2023" },
+              ].map((photo, i) => (
+                <div key={i} className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
+                  <Image src={photo.src} alt="Life moment" fill sizes="33vw" className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white text-xs font-mono">{photo.year}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { src: "/selfies/IMG_4588.jpg", year: "2025" },
+                { src: "/selfies/IMG_3889.jpg", year: "2025" },
               ].map((photo, i) => (
                 <div key={i} className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
                   <Image src={photo.src} alt="Life moment" fill sizes="33vw" className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />

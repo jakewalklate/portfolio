@@ -4,7 +4,6 @@ export default function BookPage() {
   return (
     <main className="flex flex-col items-center pt-32 pb-20 px-6 min-h-screen">
       <section className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Book Cover Placeholder */}
         <div className="relative aspect-[2/3] w-full max-w-sm mx-auto bg-zinc-900 rounded-r-2xl rounded-l-sm border-r-4 border-zinc-800 shadow-2xl flex items-center justify-center group overflow-hidden">
           <img src="/5x8-compressed.jpg" alt="Book Cover" className="absolute object-contain ml-4 rounded-tr-2xl rounded-br-2xl h-[99%]" />
           {/* Spine effect */}
