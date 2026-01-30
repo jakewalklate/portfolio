@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { ChevronLeft, ChevronRight, Code, Dna, Home, Mail } from "lucide-react";
 import Link from "next/link";
 import DynamicNav from "./nav";
+import DigitalTwin from "@/components/digital-twin";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -164,6 +165,7 @@ export default async function RootLayout({
             </p>
           </div>
         </footer>
+        {/*<DigitalTwin />*/}
       </body>
     </html>
   );
