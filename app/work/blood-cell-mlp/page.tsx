@@ -21,7 +21,7 @@ export default function BloodCellMLPPage() {
         {/* Header */}
         <header className="space-y-4">
           <div className="flex items-center gap-2 text-sm text-zinc-500">
-            <span className="px-2 py-0.5 bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20">
+            <span className="px-2 py-0.5 text-center bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20">
               Machine Learning
             </span>
             <span>•</span>
