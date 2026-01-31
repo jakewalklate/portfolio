@@ -569,7 +569,7 @@ export default function WhoAmIPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { src: "/selfies/IMG_3889.jpg", year: "2025" },
+                { src: "/selfies/IMG_3693.jpg", year: "2025" },
                 { src: "/selfies/IMG_4588.jpg", year: "2026" },
               ].map((photo, i) => (
                 <div key={i} className="aspect-3/4 rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
@@ -1864,6 +1864,107 @@ export default function WhoAmIPage() {
           <Certifications />
         </div>
 
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Personality Profile
+          </h3>
+          <p className="text-zinc-400 text-sm -mt-4">
+            Psychometric Profiling & Archetype Analysis
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            {/* Primary Stats Column */}
+            <div className="md:col-span-7 space-y-6">
+              <div className="bg-zinc-900/40 border border-white/5 rounded-2xl p-6 backdrop-blur-sm">
+                <div className="space-y-5">
+                  <div>
+                    <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                      ENFP-A
+                    </div>
+                    <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">The Campaigner</div>
+                  </div>
+                  {[
+                    { label: "Energy", type: "Extraverted", percent: 60, desc: "Socially selective, high-bandwidth communication.", color: "from-blue-500 to-indigo-500" },
+                    { label: "Mind", type: "Intuitive", percent: 81, desc: "Abstract systems, pattern recognition, future-focused.", color: "from-purple-500 to-pink-500" },
+                    { label: "Nature", type: "Feeling", percent: 63, desc: "Values-driven decision making, moral continuity.", color: "from-emerald-500 to-teal-500" },
+                    { label: "Tactics", type: "Prospecting", percent: 85, desc: "Flexible, adaptable, high-agency improviser.", color: "from-amber-500 to-orange-500" },
+                    { label: "Identity", type: "Assertive", percent: 60, desc: "Self-confident, moderate neuroticism, antifragile.", color: "from-red-500 to-rose-500" },
+                  ].map((trait, i) => (
+                    <div key={i} className="group">
+                      <div className="flex justify-between text-sm mb-2">
+                        <span className="text-zinc-400 font-medium">{trait.label}</span>
+                        <span className="text-white group-hover:text-cyan-400 transition-colors duration-300">{trait.type} <span className="text-zinc-600">/</span> <span className="text-zinc-400">{trait.percent}%</span></span>
+                      </div>
+                      <div className="h-1.5 w-full bg-zinc-800/80 rounded-full overflow-hidden">
+                        <div
+                          className={`h-full bg-gradient-to-r ${trait.color} shadow-[0_0_10px_rgba(255,255,255,0.2)] transition-all duration-1000 ease-out`}
+                          style={{ width: `${trait.percent}%` }}
+                        />
+                      </div>
+                      <p className="text-[10px] text-zinc-500 mt-1.5 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 md:transform md:translate-y-1 group-hover:translate-y-0">
+                        {trait.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Archetypes Column */}
+            <div className="md:col-span-5 space-y-6 my-auto">
+              {/* Role Card */}
+              <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-emerald-500/20 rounded-2xl p-6 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-emerald-500/20" />
+                <div className="relative z-10">
+                  <div className="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-2">Role</div>
+                  <h4 className="text-xl font-bold text-white mb-2">Diplomat</h4>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    Focus on empathy and cooperation. Shining in diplomacy and counselling. Imaginative, warm, and influential harmonizers.
+                  </p>
+                </div>
+              </div>
+
+              {/* Strategy Card */}
+              <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-purple-500/20 rounded-2xl p-6 relative overflow-hidden group">
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl -ml-16 -mb-16 transition-all duration-500 group-hover:bg-purple-500/20" />
+                <div className="relative z-10">
+                  <div className="text-purple-500 text-xs font-bold uppercase tracking-widest mb-2">Strategy</div>
+                  <h4 className="text-xl font-bold text-white mb-2">People Mastery</h4>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    Socially confident communicators. At ease in social events and helping others. Readily expressing opinions with high agency.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Motivational Drivers (AskMarlee) */}
+        {/* <div className="space-y-8 mt-16">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Cognitive Drivers
+          </h3>
+          <p className="text-zinc-400 text-sm -mt-4">
+            Motivational Value Systems (AskMarlee Analysis)
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: "Neutral Communication", val: 99.08, color: "text-emerald-400", border: "border-emerald-500/20", bg: "bg-emerald-500/10" },
+              { label: "Money", val: 99.02, color: "text-amber-400", border: "border-amber-500/20", bg: "bg-amber-500/10" },
+              { label: "Solo Environment", val: 98, color: "text-cyan-400", border: "border-cyan-500/20", bg: "bg-cyan-500/10" },
+              { label: "Indifference", val: 97, color: "text-zinc-400", border: "border-zinc-500/20", bg: "bg-zinc-500/10" },
+            ].map((item, i) => (
+              <div key={i} className={`p-4 rounded-xl border ${item.border} ${item.bg} backdrop-blur-sm group hover:border-opacity-50 transition-all duration-300`}>
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">Top Driver</span>
+                  <span className={`text-xl font-bold ${item.color}`}>{item.val}<span className="text-xs opacity-50">%</span></span>
+                </div>
+                <div className="text-white font-medium group-hover:translate-x-1 transition-transform duration-300">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div> */}
       </section>
     </main>
   );
