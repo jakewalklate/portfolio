@@ -1943,58 +1943,34 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Comedian
           </h3>
-          <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 group">
+          <div className="relative w-full rounded-xl overflow-hidden border border-white/10 group">
             <div className="absolute inset-0">
               <Image
                 src="/sam_hyde_stylized.png"
                 alt="Sam Hyde"
                 fill
-                className="object-cover opacity-60 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                className="object-cover opacity-50 group-hover:opacity-60 group-hover:scale-[1.005] transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
             </div>
 
-            <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-end">
-              <div className="flex-1 space-y-6">
+            <div className="relative z-10 p-8 flex flex-col justify-end min-h-[320px]">
+              <div className="space-y-4">
                 <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-pink-500/10 text-pink-400 border border-pink-500/20 uppercase tracking-widest">
-                      Entertainer
-                    </span>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 uppercase tracking-widest">
-                      Provocateur
-                    </span>
-                  </div>
-                  <h3 className="text-4xl md:text-5xl font-black text-white italic tracking-tighter uppercase mb-2">
-                    Sam <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">Hyde</span>
+                  <h3 className="text-3xl font-bold text-white mb-1">
+                    Sam Hyde
                   </h3>
-                  <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">
-                    Million Dollar Extreme // World Peace
-                  </p>
                 </div>
 
-                <p className="text-zinc-300 text-sm leading-loose max-w-xl border-l-2 border-pink-500/50 pl-4">
-                  Known for his transgressive, surreal, and often controversial comedic style. Hyde's work blurs the lines between performance art, irony, and genuine provocation. His aesthetic defines a generation of internet subculture—glitchy, raw, and unapologetically distinct.
+                <p className="text-zinc-300 text-sm leading-relaxed border-l-2 border-pink-500/50 pl-4">
+                  "2070 predictions. The next 50 years are gonna be some serious stuff.
+                  <br />
+                  State enforced homosexuality. I don’t have a problem with that, it’s equal."
                 </p>
 
-                <div className="flex items-center gap-4 pt-2">
-                  <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-950 flex items-center justify-center text-[10px] text-zinc-400">📺</div>
-                    <div className="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-950 flex items-center justify-center text-[10px] text-zinc-400">🎤</div>
-                    <div className="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-950 flex items-center justify-center text-[10px] text-zinc-400">🥊</div>
-                  </div>
-                  <span className="text-xs text-zinc-500 font-medium group-hover:text-zinc-300 transition-colors">
-                    "He can't keep getting away with it."
-                  </span>
-                </div>
-              </div>
-
-              <div className="hidden md:block">
-                <div className="w-24 h-24 border border-white/10 bg-black/20 backdrop-blur-md rounded-lg p-2 flex flex-col items-center justify-center gap-1">
-                  <span className="text-2xl">🍬</span>
-                  <span className="text-[9px] font-mono text-zinc-500 text-center uppercase leading-tight">
-                    The<br />Candyman
+                <div className="pt-2 text-right">
+                  <span className="text-xs text-zinc-500 font-medium italic group-hover:text-zinc-400/80 transition-colors">
+                    He can't keep getting away with it.
                   </span>
                 </div>
               </div>
