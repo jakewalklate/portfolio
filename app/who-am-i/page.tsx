@@ -1946,12 +1946,12 @@ export default function WhoAmIPage() {
           <div className="relative w-full rounded-xl overflow-hidden border border-white/10 group">
             <div className="absolute inset-0">
               <Image
-                src="/sam_hyde_stylized.png"
+                src="/sam_hyde.jpg"
                 alt="Sam Hyde"
                 fill
                 className="object-cover opacity-50 group-hover:opacity-60 group-hover:scale-[1.005] transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/5 to-transparent" />
             </div>
 
             <div className="relative z-10 p-8 flex flex-col justify-end min-h-[320px]">
@@ -1970,7 +1970,7 @@ export default function WhoAmIPage() {
 
                 <div className="pt-2 text-right">
                   <span className="text-xs text-zinc-500 font-medium italic group-hover:text-zinc-400/80 transition-colors">
-                    He can't keep getting away with it.
+                    He can't keep getting away with it...
                   </span>
                 </div>
               </div>
