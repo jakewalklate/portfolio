@@ -1866,6 +1866,45 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Favourite Comedian
+          </h3>
+          <div className="relative w-full rounded-xl overflow-hidden border border-white/10 group">
+            <div className="absolute inset-0">
+              <Image
+                src="/sam_hyde.jpg"
+                alt="Sam Hyde"
+                fill
+                className="object-cover opacity-50 group-hover:opacity-60 group-hover:scale-[1.005] transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/5 to-transparent" />
+            </div>
+
+            <div className="relative z-10 p-8 flex flex-col justify-end min-h-[320px]">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-3xl font-bold text-white mb-1">
+                    Sam Hyde
+                  </h3>
+                </div>
+
+                <p className="text-zinc-300 text-sm leading-relaxed border-l-2 border-pink-500/50 pl-4">
+                  "2070 predictions. The next 50 years are gonna be some serious stuff.
+                  <br />
+                  State enforced homosexuality. I don’t have a problem with that, it’s equal."
+                </p>
+
+                <div className="pt-2 text-right">
+                  <span className="text-xs text-zinc-500 font-medium italic group-hover:text-zinc-400/80 transition-colors">
+                    He can't keep getting away with it...
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Personality Profile
           </h3>
           <p className="text-zinc-400 text-sm -mt-4">
@@ -1909,6 +1948,7 @@ export default function WhoAmIPage() {
                 </div>
               </div>
             </div>
+            
 
             {/* Archetypes Column */}
             <div className="md:col-span-5 space-y-6 my-auto">
@@ -1941,42 +1981,32 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Favourite Comedian
+            Favourite Politicians
           </h3>
-          <div className="relative w-full rounded-xl overflow-hidden border border-white/10 group">
-            <div className="absolute inset-0">
-              <Image
-                src="/sam_hyde.jpg"
-                alt="Sam Hyde"
-                fill
-                className="object-cover opacity-50 group-hover:opacity-60 group-hover:scale-[1.005] transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/5 to-transparent" />
-            </div>
-
-            <div className="relative z-10 p-8 flex flex-col justify-end min-h-[320px]">
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-3xl font-bold text-white mb-1">
-                    Sam Hyde
-                  </h3>
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            {[
+              { title: "Ron Paul", subtitle: "\"It's no coincidence that the century of total war coincided with the century of central banking.\"", cover: "/Ron-Paul.jpg" },
+              { title: "Bob Katter", subtitle: "\"I’m not here to be politically correct — I'm here to be correct.\"", cover: "/bob_katter.jpeg" },
+            ].map((item, i) => (
+              <div key={i} className="group flex flex-col gap-3">
+                <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
+                  {item.cover ? (
+                    <Image src={item.cover} alt={item.title} fill sizes="33vw" className="grayscale object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                  ) : (
+                    <div className="text-center p-2">
+                      <span className="text-zinc-500 font-medium text-sm">{item.title}</span>
+                    </div>
+                  )}
                 </div>
-
-                <p className="text-zinc-300 text-sm leading-relaxed border-l-2 border-pink-500/50 pl-4">
-                  "2070 predictions. The next 50 years are gonna be some serious stuff.
-                  <br />
-                  State enforced homosexuality. I don’t have a problem with that, it’s equal."
-                </p>
-
-                <div className="pt-2 text-right">
-                  <span className="text-xs text-zinc-500 font-medium italic group-hover:text-zinc-400/80 transition-colors">
-                    He can't keep getting away with it...
-                  </span>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-rose-400 transition-colors truncate">{item.title}</h4>
+                  <div className="text-zinc-500 text-sm line-clamp-2">{item.subtitle}</div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
+
 
         {/* Motivational Drivers (AskMarlee) */}
         {/* <div className="space-y-8 mt-16">
