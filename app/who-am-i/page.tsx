@@ -1574,7 +1574,10 @@ export default function WhoAmIPage() {
               { title: 'Spencer Walklate', subtitle: 'My Grandfather (Constable, soldier, footballer)', cover: '/spencerwalklate.jpg' },
               { title: 'Jiang Xueqin', subtitle: 'Professor of Psychohistory', cover: '/jianxueqin.jpg' },
               { title: 'Alan Watts', subtitle: 'Professor of Philosophy', cover: '/Alan_Watts.png' },
-              { title: 'Ken Thompson', subtitle: 'Co-Founder of Unix & C', cover: '/thompson.jpg' }
+              { title: 'Ken Thompson', subtitle: 'Co-Founder of Unix & C', cover: '/thompson.jpg' },
+              { title: 'J. Phillippe Rushton', subtitle: 'Professor of Psychology', cover: '/jphillipperushton.jpeg' },
+              { title: 'Julian Assange', subtitle: 'Journalist', cover: '/julianassange.png' },
+              { title: 'Plato', subtitle: 'Philosopher', cover: '/plato.jpg' }
             ].map((item, i) => (
               <div key={i} className="group flex flex-col gap-3">
                 <div className="aspect-square w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
@@ -1948,7 +1951,7 @@ export default function WhoAmIPage() {
                 </div>
               </div>
             </div>
-            
+
 
             {/* Archetypes Column */}
             <div className="md:col-span-5 space-y-6 my-auto">
