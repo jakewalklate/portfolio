@@ -2003,7 +2003,7 @@ export default function WhoAmIPage() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium group-hover:text-rose-400 transition-colors truncate">{item.title}</h4>
-                  <div className="text-zinc-500 text-sm line-clamp-3">{item.subtitle}</div>
+                  <div className="text-zinc-500 text-sm line-clamp-4">{item.subtitle}</div>
                 </div>
               </div>
             ))}
