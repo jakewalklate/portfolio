@@ -1923,7 +1923,7 @@ export default function WhoAmIPage() {
                     <div className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                       ENFP-A
                     </div>
-                    <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">The Campaigner</div>
+                    <div className="text-xs text-zinc-500 uppercase tracking-wider font-medium">"The Campaigner"</div>
                   </div>
                   {[
                     { label: "Energy", type: "Extraverted", percent: 60, desc: "Socially selective, high-bandwidth communication.", color: "from-blue-500 to-indigo-500" },
