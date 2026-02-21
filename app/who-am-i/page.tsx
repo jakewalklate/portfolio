@@ -1943,7 +1943,7 @@ export default function WhoAmIPage() {
                           style={{ width: `${trait.percent}%` }}
                         />
                       </div>
-                      <p className="text-[10px] text-zinc-500 mt-1.5 opacity-100">
+                      <p className="text-[11.5px] text-zinc-500 mt-1.5 opacity-100">
                         {trait.desc}
                       </p>
                     </div>
