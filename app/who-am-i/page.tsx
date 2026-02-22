@@ -58,7 +58,8 @@ const albums = [
   { title: 'Live at the Opera House (2012)', artist: 'Florence and the Machine', cover: '/florence.JPG' },
   { title: 'Look at Me: The Album', artist: 'XXXTentaction', cover: '/xxxtentaction.jpg' },
   { title: 'LONG.LIVE.A$AP', artist: 'A$AP Rocky', cover: '/longliveasap.JPG' },
-  { title: 'Good Kid, M.A.A.D City', artist: 'Kendrick Lamar', cover: '/KendrickGKMC.jpg' }
+  { title: 'Good Kid, M.A.A.D City', artist: 'Kendrick Lamar', cover: '/KendrickGKMC.jpg' },
+  { title: 'Never mind the Bollocks, Here\'s the Sex Pistols', artist: 'Sex Pistols', cover: '/sex-pistols.png' }
 ].sort(() => Math.random() - 0.5);
 
 export default function WhoAmIPage() {
