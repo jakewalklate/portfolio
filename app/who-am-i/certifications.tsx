@@ -19,6 +19,7 @@ const providers: CertificationProvider[] = [
     name: "LinkedIn Learning",
     icon: "linkedin",
     certifications: [
+      { name: 'Artificial Intelligence Foundations: Linear Algebra', date: '2026' },
       { name: "Artificial Intelligence Foundations: Neural Network", date: "2025" },
       { name: "Machine Learning Foundations: Calculus", date: "2025" },
       { name: "The Data Science of Healthcare, Medicine, and Public Health", date: "2025" },
