@@ -326,34 +326,40 @@ export default function WhoAmIPage() {
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Personal Interests
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+            <div className="md:col-span-3 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Workshop Prototyping</h4>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-lg">
+                <p className="text-zinc-400 text-base leading-relaxed max-w-lg">
                   There is a satisfaction in bringing ideas into the physical world. Whether it's crafting with timber or fabricating with 3D additive manufacturing, I love the feedback loop that comes from rapid prototyping.
                 </p>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+            <div className="md:col-span-3 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 h-full flex flex-col">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Human OS</h4>
-                <p className="text-zinc-400 leading-relaxed mb-4">
+                <p className="text-zinc-400 leading-relaxed mb-6">
                   I am captivated by the source code of human behavior.
                 </p>
                 <div className="mt-auto">
-                  <div className="flex flex-wrap gap-x-2 gap-y-1 max-sm:text-[10px] text-xs text-purple-400 font-mono">
-                    <span>import </span>
-                    <span>EVOLUTIONARY_PSYCH</span>
-                    <span>//</span>
-                    <span>ANALYTICAL_PSYCH</span>
+                  <div className="flex gap-x-2 gap-y-1 text-xs text-purple-400 font-mono mb-2">
+                    <span>from</span>
+                    <span>HUMANS</span>
+                    <span>import</span>
+                    <span>EVOLUTIONARY_PSYCHOLOGY</span>
+                  </div>
+                  <div className="flex gap-x-2 gap-y-1 text-xs text-purple-400 font-mono">
+                    <span>from</span>
+                    <span>CARL_JUNG</span>
+                    <span>import</span>
+                    <span>ANALYTICAL_PSYCHOLOGY</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+            <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 relative">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Open Source</h4>
                 <p className="text-zinc-400 leading-relaxed">
@@ -362,7 +368,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+            <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 relative">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">JDM Culture</h4>
                 <p className="text-zinc-400 leading-relaxed">
@@ -371,7 +377,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
+            <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-zinc-900 border border-white/10 p-6 md:p-8 flex flex-col justify-between hover:border-white/20 transition-all min-h-[220px]">
               <div className="z-10 relative">
                 <h4 className="text-xl md:text-2xl font-bold text-white mb-4">Military</h4>
                 <p className="text-zinc-400 leading-relaxed">
