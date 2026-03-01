@@ -1554,7 +1554,7 @@ export default function WhoAmIPage() {
                 <div className="w-4 h-4 rounded-full bg-linear-to-r from-purple-500 to-violet-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
                 <div>
                   <div className="text-white font-medium group-hover:text-purple-400 transition-colors">Sociology, Philosophy & History</div>
-                  <div className="text-zinc-500 text-sm">15% — Culture, Ideas, Religion</div>
+                  <div className="text-zinc-500 text-sm">15% — Culture, Ideas, Religion, Politics</div>
                 </div>
               </div>
             </div>
@@ -1963,8 +1963,8 @@ export default function WhoAmIPage() {
             {/* Archetypes Column */}
             <div className="md:col-span-5 space-y-6 my-auto">
               {/* Role Card */}
-              <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-emerald-500/20 rounded-2xl p-6 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-emerald-500/20" />
+              <div className="bg-zinc-900/40 border border-emerald-500/20 rounded-2xl p-6 relative overflow-hidden group">
+                {/* <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-emerald-500/20" /> */}
                 <div className="relative z-10">
                   <div className="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-2">Role</div>
                   <h4 className="text-xl font-bold text-white mb-2">Diplomat</h4>
@@ -1975,8 +1975,8 @@ export default function WhoAmIPage() {
               </div>
 
               {/* Strategy Card */}
-              <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-purple-500/20 rounded-2xl p-6 relative overflow-hidden group">
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl -ml-16 -mb-16 transition-all duration-500 group-hover:bg-purple-500/20" />
+              <div className="bg-zinc-900/40 border border-purple-500/20 rounded-2xl p-6 relative overflow-hidden group">
+                {/* <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl -ml-16 -mb-16 transition-all duration-500 group-hover:bg-purple-500/20" /> */}
                 <div className="relative z-10">
                   <div className="text-purple-500 text-xs font-bold uppercase tracking-widest mb-2">Strategy</div>
                   <h4 className="text-xl font-bold text-white mb-2">People Mastery</h4>
