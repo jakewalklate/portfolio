@@ -345,7 +345,7 @@ export default function WhoAmIPage() {
                 <div className="mt-auto">
                   <div className="flex gap-x-2 gap-y-1 text-xs text-purple-400 font-mono mb-2">
                     <span>from</span>
-                    <span>HUMANS</span>
+                    <span>DARWIN</span>
                     <span>import</span>
                     <span>EVOLUTIONARY_PSYCHOLOGY</span>
                   </div>
