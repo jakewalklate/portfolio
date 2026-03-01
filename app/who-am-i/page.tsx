@@ -71,7 +71,7 @@ export default function WhoAmIPage() {
             Who Am I?
           </h1>
           <h2 className="text-2xl text-zinc-400/80 font-medium mb-2">
-            Redbull Enthusiast
+            A Redbull Enthusiast
           </h2>
           <p className="text-zinc-700"><MapPin className="inline -mt-[3px]" size={16} /> Sydney, Australia (Current Time: <Time />)</p>
         </div>
