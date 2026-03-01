@@ -1547,7 +1547,7 @@ export default function WhoAmIPage() {
                 <div className="w-4 h-4 rounded-full bg-linear-to-r from-green-500 to-emerald-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
                 <div>
                   <div className="text-white font-medium group-hover:text-green-400 transition-colors">Genetics & Neurology</div>
-                  <div className="text-zinc-500 text-sm">15% — Biology, Biotech, Physiology</div>
+                  <div className="text-zinc-500 text-sm">15% — Biology, Psychology, Physiology</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 group">
