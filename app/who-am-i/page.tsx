@@ -1554,7 +1554,7 @@ export default function WhoAmIPage() {
                 <div className="w-4 h-4 rounded-full bg-linear-to-r from-purple-500 to-violet-500 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
                 <div>
                   <div className="text-white font-medium group-hover:text-purple-400 transition-colors">Sociology, Philosophy & History</div>
-                  <div className="text-zinc-500 text-sm">15% — Mind, Culture, Ideas, Evolution</div>
+                  <div className="text-zinc-500 text-sm">15% — Culture, Ideas, Religion</div>
                 </div>
               </div>
             </div>
