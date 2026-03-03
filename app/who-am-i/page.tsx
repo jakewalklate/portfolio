@@ -646,7 +646,7 @@ export default function WhoAmIPage() {
             Gaming Hall of Fame
           </h3>
           <p className="text-zinc-400 text-sm -mt-4">
-            Find me on <a href="https://steamcommunity.com/id/nuem/" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Steam</a>.
+            Find me on <a href="https://steamcommunity.com/id/nuem/" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Steam</a>!
           </p>
           <div className="grid grid-cols-3 gap-4 sm:gap-6">
             {[
