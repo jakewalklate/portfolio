@@ -59,7 +59,8 @@ const albums = [
   { title: 'Look at Me: The Album', artist: 'XXXTentaction', cover: '/xxxtentaction.jpg' },
   { title: 'LONG.LIVE.A$AP', artist: 'A$AP Rocky', cover: '/longliveasap.JPG' },
   { title: 'Good Kid, M.A.A.D City', artist: 'Kendrick Lamar', cover: '/KendrickGKMC.jpg' },
-  { title: 'Never mind the Bollocks, Here\'s the Sex Pistols', artist: 'Sex Pistols', cover: '/sex-pistols.png' }
+  { title: 'Never mind the Bollocks, Here\'s the Sex Pistols', artist: 'Sex Pistols', cover: '/sex-pistols.png' },
+  { title: 'Meteora', artist: 'Linkin Park', cover: '/cd-linkin-park-meteora_0.jpeg' }
 ].sort(() => Math.random() - 0.5);
 
 export default function WhoAmIPage() {
