@@ -315,7 +315,7 @@ export default function WorkPage() {
           </div>
         </div>
 
-        <div className="space-y-8 pt-12 border-t border-white/10">
+        {/* <div className="space-y-8 pt-12 border-t border-white/10">
           <h2 className="text-3xl font-bold tracking-tight text-white">
             Work Experience
           </h2>
@@ -527,7 +527,7 @@ export default function WorkPage() {
               </ul>
             </div>
           </a>
-        </div>
+        </div> */}
 
 
         <div className="space-y-8 pt-12 border-t border-white/10">
