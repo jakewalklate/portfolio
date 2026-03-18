@@ -220,11 +220,19 @@ export default function WhoAmIPage() {
             </p>
             <br />
             <p>
-              At 11, I was running a self-hosted Runescape private server in Java, I learnt from a textbook provided to me by my aunt's friend Clint who was a C# programmer. By 13, I was writing IRC bots. At 14, I hardware jailbroke a PS3 and created one of the most downloaded multiplayer patches for Modern Warfare 2, receiving 12 pages of forum feedback from players around the world.
+              At 11, I was running a self-hosted Runescape private server in Java, I learnt from a textbook provided to me by my aunt's friend Clint who was a C# programmer.
             </p>
             <br />
             <p>
-              By 16, I had rack-mounted Xeon servers running virtualized Linux clusters in my bedroom, hand-configured firewalls, and was hosting community game servers for the Source Engine, Minecraft and Grand Theft Auto.
+              By 13, I was writing IRC bots and making money by jailbreaking students iPhones at school.
+            </p>
+            <br />
+            <p>
+              At 14, I hardware jailbroke a PS3 and created one of the most downloaded multiplayer patches for Modern Warfare 2, receiving 12 pages of forum feedback from players around the world.
+            </p>
+            <br />
+            <p>
+              For my 16th birthday I bought rack-mounted Xeon servers from eBay and started running virtualized Linux clusters in my bedroom, hand-configured firewalls, and was hosting community game servers for the Source Engine, Minecraft and Grand Theft Auto.
             </p>
             <br />
             <p>
