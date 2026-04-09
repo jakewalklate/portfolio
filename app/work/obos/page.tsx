@@ -38,7 +38,7 @@ export default function OBOSPage() {
             OpenBio Operating System
           </h1>
           <p className="text-xl text-zinc-400 leading-relaxed max-w-3xl">
-            A master architecture and implementation guide for a "Biological Operating System" that bridges the gap between physical lab inventory, digital experimental notes, and computational analysis.
+            An architecture that bridges the gap between physical lab inventory, digital experimental notes, and computational analysis.
           </p>
         </header>
 
