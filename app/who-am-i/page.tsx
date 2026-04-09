@@ -1877,7 +1877,7 @@ export default function WhoAmIPage() {
           <CompletedClasses />
         </div>
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Certifications
           </h3>
@@ -1885,7 +1885,7 @@ export default function WhoAmIPage() {
             Professional certifications and online courses I have completed.
           </p>
           <Certifications />
-        </div>
+        </div> */}
 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
