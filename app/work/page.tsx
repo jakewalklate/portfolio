@@ -228,7 +228,7 @@ export default function WorkPage() {
             ))}
           </div>
         </div>
-
+        {/* 
         <div className="space-y-4 mb-6">
           <h3 className="text-2xl font-bold text-stone-300">Showcase</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -313,7 +313,7 @@ export default function WorkPage() {
               );
             })}
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="space-y-8 pt-12 border-t border-white/10">
           <h2 className="text-3xl font-bold tracking-tight text-white">
