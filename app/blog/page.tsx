@@ -14,6 +14,7 @@ interface Article {
   date: string;
   summary?: string;
   readingTime: number;
+  enabled: boolean;
 }
 
 function getReadingTime(content: string): number {
@@ -36,6 +37,7 @@ const getArticles = unstable_cache(
         slug: file.replace(/\.mdx$/, ""),
         title: data.title || "Untitled",
         date: data.date || "",
+        enabled: data.enabled || false,
         summary: data.summary,
         readingTime: getReadingTime(content),
       };
@@ -94,42 +96,46 @@ export default async function Blog() {
           {articles.length === 0 ? (
             <p className="text-zinc-500 italic">No articles yet.</p>
           ) : (
-            articles.map((article) => (
-              <Link
-                key={article.slug}
-                href={`/blog/${article.slug}`}
-                className="group block p-5 md:-mx-5 rounded-xl bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors"
-              >
-                <article className="space-y-2">
-                  <h3 className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors">
-                    {article.title}
-                  </h3>
+            articles.map((article) => {
+              if (article.enabled) {
+                return (
+                  <Link
+                    key={article.slug}
+                    href={`/blog/${article.slug}`}
+                    className="group block p-5 md:-mx-5 rounded-xl bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors"
+                  >
+                    <article className="space-y-2">
+                      <h3 className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors">
+                        {article.title}
+                      </h3>
 
-                  {article.summary && (
-                    <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">
-                      {article.summary}
-                    </p>
-                  )}
+                      {article.summary && (
+                        <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">
+                          {article.summary}
+                        </p>
+                      )}
 
-                  <div className="flex items-center gap-4 text-xs text-zinc-600">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar size={12} />
-                      <time dateTime={article.date}>
-                        {new Date(article.date).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        })}
-                      </time>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Clock size={12} />
-                      <span>{article.readingTime} min read</span>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            ))
+                      <div className="flex items-center gap-4 text-xs text-zinc-600">
+                        <div className="flex items-center gap-1.5">
+                          <Calendar size={12} />
+                          <time dateTime={article.date}>
+                            {new Date(article.date).toLocaleDateString("en-US", {
+                              year: "numeric",
+                              month: "short",
+                              day: "numeric",
+                            })}
+                          </time>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <Clock size={12} />
+                          <span>{article.readingTime} min read</span>
+                        </div>
+                      </div>
+                    </article>
+                  </Link>);
+              }
+            }
+            )
           )}
         </div>
       </section>
