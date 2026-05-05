@@ -131,6 +131,49 @@ export default function WorkPage() {
     }
   ];
 
+  const projects_trimmed = [
+    {
+      title: "Alternipedia",
+      description: "An open, collaborative encyclopedia designed to emphasize exploring multiple viewpoints on complex topics.",
+      tags: ["React", "Next.js", "Wikipedia", "Vercel", "Tailwind"],
+      link: "/work/alternipedia",
+      img: "/alternipedia.png",
+      linkType: "internal"
+    },
+    {
+      title: "Medicamina",
+      description: "A precision medicine platform for personalized treatment recommendations and disease prediction.",
+      tags: ["Flutter", "Precision Medicine", "Data Analytics", "Azure Cloud", "Material Design"],
+      link: "/work/medicamina",
+      img: "/medicamina.png",
+      linkType: "internal"
+    },
+    {
+      title: "Coreable",
+      description: "Tools to expertly measure and map soft skills.",
+      tags: ["React", "GraphQL", "Google Cloud", "Bootstrap"],
+      link: "/work/coreable",
+      img: "/coreable.png",
+      linkType: "internal"
+    },
+    {
+      title: "Zesty",
+      description: "A safe platform for adult industry workers to accept payments and report abusive clients.",
+      tags: ["Next.js", "Payment Processing", "Escrow", "Google Cloud", "Tailwind"],
+      link: "/work/zesty",
+      img: "/zesty.png",
+      linkType: "internal"
+    },
+    {
+      title: "sa2.gg",
+      description: "A gaming community with a forum, chat, and server.",
+      tags: ["Gaming", "Node.js", "MongoDB", "Bootstrap"],
+      link: "/work/sa2gg",
+      img: "/sa2gg.png",
+      linkType: "internal"
+    },
+  ];
+
   const contracted_freelance = [
     {
       title: 'Investible Games',
@@ -228,11 +271,10 @@ export default function WorkPage() {
             ))}
           </div>
         </div>
-        {/* 
         <div className="space-y-4 mb-6">
-          <h3 className="text-2xl font-bold text-stone-300">Showcase</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, index) => {
+          <h3 className="text-2xl font-bold text-stone-300">Web apps</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projects_trimmed.map((project, index) => {
               const cardContent = (
                 <>
                   <div className="aspect-video w-full bg-zinc-800/50 rounded-xl mb-6 overflow-hidden relative">
@@ -272,7 +314,7 @@ export default function WorkPage() {
           </div>
         </div>
 
-        <div className="space-y-4 mb-6">
+        {/* <div className="space-y-4 mb-6">
           <h3 className="text-2xl font-bold text-stone-300">Contracted Freelance</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contracted_freelance.map((project, index) => {
