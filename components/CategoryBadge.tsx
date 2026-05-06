@@ -16,7 +16,7 @@ export default function CategoryBadge({ category }: CategoryBadgeProps) {
   const colors = categoryColors[category.toLowerCase()] || categoryColors.personal;
   
   return (
-    <span className={`inline-block px-2.5 py-1 rounded-md text-xs font-medium ${colors.bg} ${colors.text} border border-current border-opacity-30`}>
+    <span className={`inline-block px-2.5 py-1 rounded-md text-xs font-medium ${colors.bg} ${colors.text} border border-current border-opacity-30 opacity-60`}>
       {category}
     </span>
   );
