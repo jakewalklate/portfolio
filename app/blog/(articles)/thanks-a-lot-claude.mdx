@@ -1,0 +1,256 @@
+---
+title: "Thanks a lot Claude"
+date: "2026-05-06"
+summary: "How I recovered my 3D printer from a hard brick."
+enabled: true
+---
+
+My wife bought me an Anycubic Kobra S1.
+
+It's a great printer, but suddenly the operating system stopped working.
+
+I emailed support, and they ignored me.
+
+I searched forums and asked for help, and found out Anycubic are notorious for having bad customer support.
+
+So, I decided to hack it.
+
+I asked Claude where I should start, and we gained SSH access into the printer.
+
+We created a shell script to save the output logs of the process that was freezing on startup using `dmesg`..
+
+`dmesg > /tmp/dmesg_before.log && cd /userdata/app/gk && ./K3SysUi > /tmp/k3sysui.log 2>&1 & sleep 20 && dmesg > /tmp/dmesg_after.log`
+
+After it ran out of memory the linux Out Of Memory (OOM) killer would stop the main system UI process: `K3SysUi`.
+
+```
+[   73.465200] 344 total pagecache pages
+[   73.465204] 65536 pages RAM
+[   73.465209] 0 pages HighMem/MovableOnly
+[   73.465214] 11066 pages reserved
+[   73.465218] 8704 pages cma reserved
+[   73.465223] Tasks state (memory values in pages):
+[   73.465229] [  pid  ]   uid  tgid total_vm      rss pgtables_bytes swapents oom_score_adj name
+[   73.465278] [     75]     0    75      400      106     6144        0         -1000 udevd
+[   73.465294] [    612]     0   612      252       15     6144        0             0 dropbear
+[   73.465302] [    682]     0   682   141762     1451    49152        0             0 gklib
+[   73.465311] [    706]     0   706   135970      801    26624        0             0 gkapi
+[   73.465320] [    707]     0   707    71579    44390   239616        0             0 K3SysUi
+[   73.465329] [    732]     0   732     8673     1522    38912        0             0 gkcam
+[   73.465338] [    953]     0   953      234       39     6144        0             0 rtk_hciattach
+[   73.465348] [    967]     0   967      324       30     6144        0             0 wpa_supplicant
+[   73.465359] [   1228]     0  1228      309       15     6144        0             0 udhcpc
+[   73.465368] [   1231]     0  1231      309       15     6144        0             0 udhcpc
+[   73.465376] [   1354]     0  1354      400      106     6144        0             0 udevd
+[   73.465385] [   1374]     0  1374      249       14     6144        0             0 sh
+[   73.465393] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),task=K3SysUi,pid=707,uid=0
+[   73.465430] Out of memory: Killed process 707 (K3SysUi) total-vm:286316kB, anon-rss:176060kB, file-rss:1500kB, shmem-rss:0kB, UID:0 pgtables:234kB oom_score_adj:0
+```
+
+I decided to try to downgrade to try to fix it.
+
+I downgraded the OS from 2.7.0.0 to 2.6.0.0, but the issue persisted.
+
+We thought it might be a hardware fault, so we checked all of the chips RAM for faults using `memtest`.
+
+```
+memtester 100m 1 > /tmp/memtest.log 2>&1 &
+echo "memtester started, PID: $!"
+tail -f /tmp/memtest.log
+```
+
+The output reported no errors..
+
+```
+memtester version 4.3.0 (32-bit)
+Copyright (C) 2001-2012 Charles Cazabon.
+Licensed under the GNU General Public License version 2 (only).
+
+pagesize is 4096
+pagesizemask is 0xfffff000
+want 100MB (104857600 bytes)
+got  100MB (104857600 bytes), trying mlock ...locked.
+Loop 1/1:
+  Stuck Address       : ok         
+  Random Value        : ok
+  Compare XOR         : ok
+  Compare SUB         : ok
+  Compare MUL         : ok
+  Compare DIV         : ok
+  Compare OR          : ok
+  Compare AND         : ok
+  Sequential Increment: ok
+  Solid Bits          : ok         
+  Block Sequential    : ok         
+  Checkerboard        : ok         
+  Bit Spread          : ok         
+  Bit Flip            : ok         
+  Walking Ones        : ok         
+  Walking Zeroes      : ok         
+  8-bit Writes        : ok
+  16-bit Writes       : ok
+```
+
+We created a script to analyse the memory usage further.
+
+```
+cat >> /useremain/rinkhals/start-rinkhals.sh << 'EOF'
+for i in $(seq 1 60); do
+    echo "$(date): gklib=$(cat /proc/$(ps | grep gklib | grep -v grep | awk '{print $1}')/status | grep VmRSS)" >> /useremain/mem_trace.log
+    echo "$(date): K3SysUi=$(cat /proc/$(ps | grep K3SysUi | grep -v grep | awk '{print $1}')/status | grep VmRSS)" >> /useremain/mem_trace.log
+    sleep 1
+done &
+EOF
+```
+
+The results were shocking, we figured the process K3SysUi was running the memory high after about 5 seconds.
+
+```
+Wed Apr 22 11:02:32 CST 2026: gklib=VmRSS:	   15300 kB
+Wed Apr 22 11:02:32 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:33 CST 2026: gklib=VmRSS:	   15524 kB
+Wed Apr 22 11:02:33 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:34 CST 2026: gklib=VmRSS:	   15548 kB
+Wed Apr 22 11:02:34 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:35 CST 2026: gklib=VmRSS:	   15596 kB
+Wed Apr 22 11:02:35 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:36 CST 2026: gklib=VmRSS:	   15648 kB
+Wed Apr 22 11:02:36 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:37 CST 2026: gklib=VmRSS:	   15656 kB
+Wed Apr 22 11:02:37 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:39 CST 2026: gklib=VmRSS:	   15656 kB
+Wed Apr 22 11:02:39 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:40 CST 2026: gklib=VmRSS:	   15656 kB
+Wed Apr 22 11:02:40 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:41 CST 2026: gklib=VmRSS:	   15660 kB
+Wed Apr 22 11:02:41 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:43 CST 2026: gklib=VmRSS:	   15660 kB
+Wed Apr 22 11:02:43 CST 2026: K3SysUi=VmRSS:	   68760 kB
+Wed Apr 22 11:02:44 CST 2026: gklib=VmRSS:	   15664 kB
+Wed Apr 22 11:02:44 CST 2026: K3SysUi=VmRSS:	   96048 kB
+Wed Apr 22 11:02:45 CST 2026: gklib=VmRSS:	   15668 kB
+Wed Apr 22 11:02:45 CST 2026: K3SysUi=VmRSS:	  122532 kB
+Wed Apr 22 11:02:46 CST 2026: gklib=VmRSS:	   15800 kB
+Wed Apr 22 11:02:46 CST 2026: K3SysUi=VmRSS:	  149380 kB
+Wed Apr 22 11:02:48 CST 2026: gklib=VmRSS:	    8120 kB
+Wed Apr 22 11:02:48 CST 2026: K3SysUi=VmRSS:	  161816 kB
+Wed Apr 22 11:03:02 CST 2026: gklib=VmRSS:	   13112 kB
+Wed Apr 22 11:03:02 CST 2026: K3SysUi=
+```
+
+The process in a matter of 16 seconds went from 55MB to 161MB of memory usage, then crashed.
+
+Then Claude had an idea, perhaps it's the network connectivity, it wrote a script to modify the startup sequence and disabled networking but then also inserted a script with an infinite loop, and everythign broke and the printer refused to exit the loop, it's a single core machine and the loop process was hogging it all.
+
+Now what? My printer UI doesn't work, and it has no network connectivity, how the hell do I ssh into the printer now?
+
+At this point, Claude started hallucinating and gave up, it apologised to me for bricking the printer and it had no answers.
+
+I searched GitHub for a firmware backup to see what scripts were available for me, perhaps a USB peripheral could help me.
+
+I went to the discord community who were modifying the firmware and asked them for help, they told me I could enter MASKROM mode.
+
+MASKROM is the last line of defence against being bricked.
+
+By the grace of god the engineers at Rockchip created a mode to bypass the BIOS and receive instructions directly from USB.
+
+The developers on discord had created scripts to fix this problem, but they didn't seem to even remember they had done it. I asked for help and they were clueless, then I searched the chat and found they had already discussed this exact issue.
+
+Pretty standard I guess, just a days work for them, they probably do a hundred things per day.
+
+I downloaded their [Rockchip backup restore wizard](https://github.com/Kobra-S1/rockchip_backup_restore_wizard) and was able to extract the eMMC contents, then from within a Linux Mint PC USB BOOT I was able to repair by hand all of the broken contents of the printer, and fix the scripts.
+
+I overwrote the mount drives by plugging in a UART USB cable and holding the SW1 button on the circuit board to enable the wizard to function, the rockchip ARM CPU follows a very specific disk reading protocol. First it looks at the env partition, then the uboot partition and then loads the kernel. This was all fine, my issue was within the app partition and user partition where we had a broken binary.
+
+The printer was back to life, but the firmware was still broken?
+
+We went back to inspecting the kernel logs and found something interesting:
+
+```
+[2026-04-23 07:36:07.912] [gkui] [info] parseNetlinkMessage if_indextoname if_name:  eth0
+[2026-04-23 07:36:07.998] [gkui] [info] isEthernetCablePluggedIn: offline eth0
+[2026-04-23 07:36:08.093] [gkui] [info] parseNetlinkMessage if_indextoname if_name:  eth0
+[2026-04-23 07:36:08.178] [gkui] [info] isEthernetCablePluggedIn: offline eth0
+[2026-04-23 07:36:08.338] [gkui] [info] Standrad Mode
+[2026-04-23 07:36:09.582] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:11.153] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:12.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:14.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:15.715] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:17.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:18.715] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:20.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:21.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:23.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:24.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:26.216] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:27.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:29.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:30.238] [gkui] [info] JsonRpc Snd: {"id":2001,"method":"Cloud/WifiConnected","params":{"rssi":-72}}
+[2026-04-23 07:36:30.719] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:32.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:33.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:35.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:36.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:38.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:39.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:41.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:42.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:44.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:45.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:47.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:48.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:50.215] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:51.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:53.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:54.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:56.215] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:57.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:59.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:00.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:02.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:03.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:04.604] [gkui] [info] JsonRpc Rcv: {"id":0,"method":"process_status_update","params":{"eventtime":0,"response":"","status":{"custom_status":{"device_cloud_user":{"action":"bind","iconpath":"/useremain/.cache/api/icon.png","nickname":"svnty"}}}}}
+[2026-04-23 07:37:05.712] [gkui] [info] JsonRpc Rcv: {"id":0,"method":"process_status_update","params":{"eventtime":0,"response":"","status":{"custom_status":{"device_cloud_user":{"action":"bind","iconpath":"/useremain/.cache/api/icon.png","nickname":"svnty"}}}}}
+[2026-04-23 07:37:09.500] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+```
+
+After the network driver inits the network interface eth0, suddenly the printer starts spamming the cloud API and _essentialy DoSing itself_.
+
+I disabled networking, and with a fresh firmware partition the printer worked fine, offline at least.
+
+So I went searching the anycubic API to find out what was wrong.
+
+I found I was getting invalid responses from their API.
+
+The reason was... my address.... Yes.. I live in an apartment, so my address is X/Y Street.
+
+The slash wasn't escaped and was killing the API response, causing my printer to freeze and kill its own process.
+
+I went into the anycubic settings and removed all my information, essentially wiping my account, and it works.
+
+I have a functioning 3D printer again.
+
+I wrote a bug report and emailed Jaycar to tell them what had happened.
+
+But I wasn't done.
+
+I had just learnt the printer is just a linux box with a small touch screen UI, with WiFi and a USB port.
+
+So..
+
+It was time to run DOOM.
+
+The classic 1990's shooter built by the genius programmer John Carmack.
+
+I downloaded fbDoom (Framebuffer doom) as using the framebuffer was the simplest way to communicate with the peripheral touch screen.
+
+**And it worked.**
+
+Surprisingly even my USB game pad was recognised, but theres no driver for it.
+
+Fbdoom looks for input from the virtual terminal, and my gamepad sends raw HEX codes to the /dev/input/event which the kernel doesn't recognise.
+
+So, until I have a driver the input doesn't work, but I think we can decode the hex and pipe it to the virtual terminal, but for now I have other things to do.
+
+**Thank you to Anycubic and the Rinkhals community.**
