@@ -61,7 +61,7 @@ export default async function Blog() {
       {/* Book Promotion Card */}
       <div className="border-b border-white/10 pb-10">
         <Link
-          href="/book"
+          href="/book/the-pharmacology-of-silence"
           className="group relative flex gap-6 rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/80 border border-white/5 hover:border-white/10 p-5 transition-all"
         >
           <div className="relative shrink-0 h-28 w-20 my-auto -rotate-1 group-hover:rotate-0 transition-transform duration-500 overflow-hidden rounded-lg shadow-lg border border-white/10">
