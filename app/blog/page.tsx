@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import { Calendar, Clock } from "lucide-react";
 import BookText from "./book-text";
+import CategoryBadge from "@/components/CategoryBadge";
 import { unstable_cache } from "next/cache";
 
 export const dynamic = 'force-dynamic';
@@ -15,6 +16,7 @@ interface Article {
   summary?: string;
   readingTime: number;
   enabled: boolean;
+  category?: string;
 }
 
 function getReadingTime(content: string): number {
@@ -39,6 +41,7 @@ const getArticles = unstable_cache(
         date: data.date || "",
         enabled: data.enabled || false,
         summary: data.summary,
+        category: data.category || "General",
         readingTime: getReadingTime(content),
       };
     });
@@ -102,9 +105,12 @@ export default async function Blog() {
                   <Link
                     key={article.slug}
                     href={`/blog/${article.slug}`}
-                    className="group block p-5 md:-mx-5 rounded-xl bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors"
+                    className="group block p-5 md:-mx-5 rounded-xl bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors relative"
                   >
-                    <article className="space-y-2">
+                    <div className="absolute top-5 right-5">
+                      <CategoryBadge category={article.category || "General"} />
+                    </div>
+                    <article className="space-y-2 pr-24">
                       <h3 className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors">
                         {article.title}
                       </h3>
