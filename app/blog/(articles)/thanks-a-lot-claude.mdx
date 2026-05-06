@@ -251,6 +251,6 @@ Surprisingly even my USB game pad was recognised, but theres no driver for it.
 
 Fbdoom looks for input from the virtual terminal, and my gamepad sends raw HEX codes to the /dev/input/event which the kernel doesn't recognise.
 
-So, until I have a driver the input doesn't work, but I think we can decode the hex and pipe it to the virtual terminal, but for now I have other things to do.
+So, until I have a driver the input doesn't work, but I think we can write a simple daemon that decodes the hex and pipe it to the virtual terminal, but for now I have other things to do.
 
 **Thank you to Anycubic and the Rinkhals community.**
