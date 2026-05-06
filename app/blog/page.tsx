@@ -107,13 +107,15 @@ export default async function Blog() {
                     href={`/blog/${article.slug}`}
                     className="group block p-5 md:-mx-5 rounded-xl bg-zinc-900/50 hover:bg-zinc-900/80 transition-colors relative"
                   >
-                    <div className="absolute top-5 right-5">
-                      <CategoryBadge category={article.category || "General"} />
-                    </div>
-                    <article className="space-y-2 pr-24">
-                      <h3 className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors">
+                    <article className="space-y-2">
+                      <div className="flex">
+                      <h3 className="flex-1 text-lg font-medium text-white group-hover:text-blue-400 transition-colors">
                         {article.title}
                       </h3>
+                        <div className="ml-auto">
+                          <CategoryBadge category={article.category || "General"} />
+                        </div>
+                      </div>
 
                       {article.summary && (
                         <p className="text-zinc-400 text-sm leading-relaxed line-clamp-2">
