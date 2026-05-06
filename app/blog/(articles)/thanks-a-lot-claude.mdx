@@ -215,7 +215,7 @@ We went back to inspecting the kernel logs and found something interesting:
 [2026-04-23 07:37:09.500] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
 ```
 
-After the network driver inits the network interface eth0, suddenly the printer starts spamming the cloud API and _essentialy DoSing itself_.
+After the network driver inits the network interface eth0, suddenly the printer starts spamming the cloud API and _essentially DoSing itself_.
 
 I disabled networking, and with a fresh firmware partition the printer worked fine, offline at least.
 
@@ -244,6 +244,8 @@ It was time to run DOOM.
 The classic 1990's shooter built by the genius programmer John Carmack.
 
 I downloaded fbDoom (Framebuffer doom) as using the framebuffer was the simplest way to communicate with the peripheral touch screen.
+
+I compiled it using Docker and targetted the arm7 architecture.
 
 **And it worked.**
 
