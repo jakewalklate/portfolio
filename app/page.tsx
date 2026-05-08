@@ -19,18 +19,18 @@ export default function Home() {
           Available for project discussion
         </div>
 
-        <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.15)] -mt-1">
+        <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.15)] -mt-1 mb-1.5">
           <span className="opacity-80">Jake Spencer Walklate</span>
         </h1>
 
-        <div className="space-y-4">
+        <div className="space-y-2">
           <h2 className="text-2xl sm:text-3xl font-medium text-zinc-400">
             Life and Machine Specialist, Convergence & Ethics 
           </h2>
           <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed mx-auto sm:mx-0">
-            Merging biological systems with engineering principles.
-            Also known online as <span className="text-white font-semibold">svnty</span>.<br />
-            <i className="opacity-50 mt-1">Building the future of biotech and digital experiences.</i>
+            {/* Merging biological systems with engineering principles.
+            Also known online as <span className="text-white font-semibold">svnty</span>.<br /> */}
+            <i className="opacity-50">Building the future of biotech and digital experiences.</i>
           </p>
         </div>
       </section>
