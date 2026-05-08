@@ -127,12 +127,11 @@ export default function WhoAmIPage() {
                 <h4 className="text-lg font-medium text-white">University of Technology Sydney</h4>
                 <div className="text-zinc-400 inline">Bachelor of Engineering (Honours)</div>
                 <ul className="list-disc ml-6 mb-2">
-                  <li className="text-zinc-500 text-sm">Majoring in Biomedical & Mechatronic Engineering</li>
-                  <li className="text-zinc-500 text-sm">Sub-major in Data Analytics & Machine Learning</li>
+                  <li className="text-zinc-500 text-sm">Majoring in Artificial Intelligence, Mechatronics & Biomedical Engineering</li>
                 </ul>
                 <div className="text-zinc-400">Bachelor of Medical Science</div>
                 <ul className="list-disc ml-6">
-                  <li className="text-zinc-500 text-sm">Majoring in Molecular Medicine</li>
+                  <li className="text-zinc-500 text-sm">Majoring in Molecular Pathology & Precision Medicine</li>
                 </ul>
               </div>
               <div className="text-zinc-500 font-mono text-xs w-fit px-2 py-1 border rounded-full border-white/20 sm:border-0 sm:p-0 sm:w-auto sm:min-w-[120px] sm:text-left sm:text-sm">
