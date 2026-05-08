@@ -25,12 +25,12 @@ export default function Home() {
 
         <div className="space-y-4">
           <h2 className="text-2xl sm:text-3xl font-medium text-zinc-400">
-            Biotech & Software Engineer
+            Life-machine Convergence Specialist 
           </h2>
           <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed mx-auto sm:mx-0">
             Merging biological systems with engineering principles.
             Also known online as <span className="text-white font-semibold">svnty</span>.<br />
-            <i className="opacity-50">Building the future of biotech and digital experiences.</i>
+            <i className="opacity-50 mt-1">Building the future of biotech and digital experiences.</i>
           </p>
         </div>
       </section>
