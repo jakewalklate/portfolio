@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Jake Spencer Walklate",
   },
   description:
-    "Life and Machine Specialist, Convergence & Ethics Advocate, Biotech Engineer & Creative. Merging biological systems with engineering principles to drive innovation at the intersection of life and technology.",
+    "Life and Technology Specialist, Convergence & Ethics Advocate, Biotech Engineer & Creative. Merging biological systems with engineering principles to drive innovation at the intersection of life and technology.",
   keywords: [
     // Personal branding
     "Jake Spencer Walklate",
@@ -40,6 +40,8 @@ export const metadata: Metadata = {
     "Full Stack Developer",
     "Biotechnology Specialist",
     "Life-machine convergence specialist",
+    "Life-technology specialist",
+    "Technology Ethics Advocate",
 
     // Biotech & Biology
     "Synthetic Biology",
