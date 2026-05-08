@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Jake Spencer Walklate [svnty]",
     short_name: "svnty",
-    description: "Biotech Engineer & Creative Portfolio",
+    description: "Human and Machine Specialist, Convergence & Ethics",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",
