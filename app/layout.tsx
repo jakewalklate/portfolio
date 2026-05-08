@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     "Creative Developer",
     "Full Stack Developer",
     "Biotechnology Specialist",
+    "Life-machine convergence specialist",
 
     // Biotech & Biology
     "Synthetic Biology",
