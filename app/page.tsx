@@ -74,9 +74,9 @@ export default function Home() {
       {/* 3. METHODS */}
       <section className="w-full py-12 border-b border-zinc-800/50 space-y-8">
         <div className="flex flex-col gap-8 justify-between items-start">
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest">3. Methods</h2>
-            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
+            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group w-full">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">Engineering Principles</h3>
               <p className="text-zinc-400 leading-relaxed">
                 Applying rigorous software design patterns and engineering principles to solve complex problems across domains.
@@ -96,13 +96,12 @@ export default function Home() {
       {/* 4. RESULTS */}
       <section className="w-full py-12 border-b border-zinc-800/50 space-y-8">
         <div className="flex flex-col gap-8 justify-between items-start">
-          <div className="space-y-4">
+          <div className="space-y-4 w-full">
             <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest">4. Results</h2>
-            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group">
-              <h3 className="text-xl font-semibold mb-4 text-zinc-100">Applied Synthetic Biotech</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Demonstrating the efficacy of these engineering methods in the field of synthetic biology.
-                Optimizing genetic constructs and biological systems to deliver tangible, sustainable outcomes.
+            <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group w-full">
+              <h3 className="text-xl font-semibold mb-4 text-zinc-100">Systems Science</h3>
+              <p className="text-zinc-400 leading-relaxed">  
+                Demonstration of the success <span className="text-zinc-300">ethical engineering decision making</span> as a unified framework for high-stakes systems manipulation.
               </p>
             </div>
           </div>
