@@ -101,7 +101,7 @@ export default function Home() {
             <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group w-full">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">Systems Science</h3>
               <p className="text-zinc-400 leading-relaxed">  
-                Demonstration of the success of ethical engineering decision making as a unified framework for high-stakes systems manipulation and design.
+                Demonstration of the outcome success of ethical engineering decision making as a unified framework for high-stakes systems manipulation and design.
               </p>
             </div>
           </div>
