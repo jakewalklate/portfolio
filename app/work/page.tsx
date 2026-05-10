@@ -271,7 +271,8 @@ export default function WorkPage() {
             ))}
           </div>
         </div>
-        <div className="space-y-4 mb-6">
+
+        {/* <div className="space-y-4 mb-6">
           <h3 className="text-2xl font-bold text-stone-300">Web apps</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects_trimmed.map((project, index) => {
@@ -312,7 +313,7 @@ export default function WorkPage() {
               );
             })}
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="space-y-4 mb-6">
           <h3 className="text-2xl font-bold text-stone-300">Contracted Freelance</h3>
