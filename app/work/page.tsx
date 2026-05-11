@@ -574,7 +574,7 @@ export default function WorkPage() {
 
 
         <div className="space-y-8 pt-6 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-amber-400 transition-colors duration-200">
+          {/* <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-amber-400 transition-colors duration-200">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold text-white">
                 Resume
@@ -593,7 +593,7 @@ export default function WorkPage() {
               </svg>
               Download
             </a>
-          </div>
+          </div> */}
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-sky-400 transition-colors duration-200">
             <div className="space-y-2">
