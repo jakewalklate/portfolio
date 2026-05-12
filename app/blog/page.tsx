@@ -80,7 +80,7 @@ export default async function Blog() {
               The Pharmacology of Silence
             </h3>
             <p className="text-sm text-zinc-500 line-clamp-4">
-              A memoir of my experience of being diagnosed as mentally ill and locked inside a maximum security prison on the outskirts of Sydney's west.
+              A memoir of my experience of being misdiagnosed as mentally ill and locked inside a maximum security prison on the outskirts of Sydney's west due to medical malpractice.
             </p>
           </div>
         </Link>
