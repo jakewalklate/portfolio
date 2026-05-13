@@ -280,7 +280,8 @@ export default function WhoAmIPage() {
               { title: "Notes From Underground", author: "Fyodor Dostoevsky", note: "A dark portrait of a man who clings to despair as proof of his freedom.", cover: "/notes.jpg" },
               { title: 'Civilisation and Its Discontents', author: 'Dr Sigmund Freud', note: 'The fundamental tensions between civilization and the individual.', cover: '/civilisation.jpg' },
               { title: 'The Concise Human Body Book', author: 'DK', note: 'An illustrated guide to the human body\'s structure, function and disorders.', cover: '/body.jpg' },
-              { title: 'The Design of the Unix Operating System', author: 'Maurice Bach', note: 'The primary guide to the design of the Unix operating system.', cover: '/unix.jpeg' },
+              { title: 'The Design of the Unix Operating System', author: 'Maurice Bach', note: 'The primary guide to Unix.', cover: '/unix.jpeg' },
+              { title: 'The Camp of the Saints', author: 'Jean Raspail', note: 'An apocalyptic novel about mass immigration and Europes collapse.', cover: '/camp.jpg' },
             ].map((book, i) => (
               <div key={i} className="group flex gap-4 p-4 rounded-xl bg-zinc-900/30 border border-white/5 hover:border-white/10 transition-colors">
                 <div className="shrink-0 w-16 h-24 bg-zinc-800 rounded overflow-hidden shadow-sm relative">
