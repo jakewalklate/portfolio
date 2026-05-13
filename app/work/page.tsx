@@ -7,7 +7,7 @@ export default function WorkPage() {
     {
       title: 'OpenBio Operating System (OBOS)',
       description: 'An open-source software ecosystem for biological research and development.',
-      tags: ["Rust", "WebAssembly", "React", "PostgresQL"],
+      tags: ["Rust", "WebAssembly", "React", "PostgreSQL"],
       link: '/work/obos',
       img: '/openbio-os.png',
       linkType: 'internal'
@@ -91,7 +91,7 @@ export default function WorkPage() {
     },
     {
       title: "Mendelian genetics simulator",
-      description: "A simple rust engine to to simulate genetic inheritence of same-sex attraction.",
+      description: "A simple rust engine to simulate genetic inheritence of same-sex attraction.",
       tags: ["Rust", "Genetics", "Bioinformatics"],
       link: "https://github.com/svnty/homosexuality-simulator",
       img: "/gene-simulator.png",
@@ -129,49 +129,6 @@ export default function WorkPage() {
       img: "/sister.png",
       linkType: "internal"
     }
-  ];
-
-  const projects_trimmed = [
-    {
-      title: "Alternipedia",
-      description: "An open, collaborative encyclopedia designed to emphasize exploring multiple viewpoints on complex topics.",
-      tags: ["React", "Next.js", "Wikipedia", "Vercel", "Tailwind"],
-      link: "/work/alternipedia",
-      img: "/alternipedia.png",
-      linkType: "internal"
-    },
-    {
-      title: "Medicamina",
-      description: "A precision medicine platform for personalized treatment recommendations and disease prediction.",
-      tags: ["Flutter", "Precision Medicine", "Data Analytics", "Azure Cloud", "Material Design"],
-      link: "/work/medicamina",
-      img: "/medicamina.png",
-      linkType: "internal"
-    },
-    {
-      title: "Coreable",
-      description: "Tools to expertly measure and map soft skills.",
-      tags: ["React", "GraphQL", "Google Cloud", "Bootstrap"],
-      link: "/work/coreable",
-      img: "/coreable.png",
-      linkType: "internal"
-    },
-    {
-      title: "Zesty",
-      description: "A safe platform for adult industry workers to accept payments and report abusive clients.",
-      tags: ["Next.js", "Payment Processing", "Escrow", "Google Cloud", "Tailwind"],
-      link: "/work/zesty",
-      img: "/zesty.png",
-      linkType: "internal"
-    },
-    {
-      title: "sa2.gg",
-      description: "A gaming community with a forum, chat, and server.",
-      tags: ["Gaming", "Node.js", "MongoDB", "Bootstrap"],
-      link: "/work/sa2gg",
-      img: "/sa2gg.png",
-      linkType: "internal"
-    },
   ];
 
   const contracted_freelance = [
