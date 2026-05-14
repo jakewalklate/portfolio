@@ -597,6 +597,13 @@ export default function WhoAmIPage() {
                 </div>
               ))}
             </div>
+
+            <div className="aspect-video w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/5 bg-zinc-900 group relative">
+              <Image src="/selfies/akachan.png" alt="Life moment" fill sizes="(max-width: 768px) 100vw, 768px" priority className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 object-[center_25%]" />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white text-sm font-mono">2026</span>
+              </div>
+            </div>
           </div>
         </div>
 
