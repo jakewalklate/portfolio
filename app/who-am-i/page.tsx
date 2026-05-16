@@ -1084,6 +1084,34 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        <div className="space-y-8 w-full">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Heroes
+          </h3>   
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            {[
+              { title: "Bam Margera", subtitle: "Skateboarder & Film Maker", cover: "/bam_m.png" },
+              { title: "Dr Zoz Brooks", subtitle: "Computer Hacker & Engineer", cover: "/zoz.png" },
+            ].map((item, i) => (
+              <div key={i} className="group flex flex-col gap-3">
+                <div className="aspect-[6/4] w-full bg-zinc-900 rounded-xl overflow-hidden border border-white/5 hover:border-white/20 transition-colors relative flex items-center justify-center">
+                  {item.cover ? (
+                    <Image src={item.cover} alt={item.title} fill sizes="33vw" className="grayscale object-fill opacity-80 group-hover:opacity-100 transition-opacity bg-zinc-900" />
+                  ) : (
+                    <div className="text-center p-2">
+                      <span className="text-zinc-500 font-medium text-sm">{item.title}</span>
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <h4 className="text-white font-medium group-hover:text-rose-400 transition-colors truncate">{item.title}</h4>
+                  <div className="text-zinc-500 text-sm line-clamp-4">{item.subtitle}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             User Manual
@@ -1428,7 +1456,7 @@ export default function WhoAmIPage() {
 
         <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
-            Sporting Idols
+            Favourite Sport Films
           </h3>
           <div className="grid grid-cols-3 gap-4 sm:gap-6">
             {[
