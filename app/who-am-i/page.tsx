@@ -1869,11 +1869,15 @@ export default function WhoAmIPage() {
                 <span className="text-yellow-500 font-bold shrink-0">[WARN]</span>
                 <span className="text-zinc-300">"A man without hope is a man without fear" — Frank Miller</span>
               </div>
-
               <div className="flex gap-3">
                 <span className="text-zinc-600 shrink-0 text-xs my-0.5">[1882]</span>
-                <span className="text-emerald-300 font-bold shrink-0">[DEBUG]</span>
+                <span className="text-fuchsia-400 font-bold shrink-0">[DEBUG]</span>
                 <span className="text-zinc-300">"What are mankinds truths ultimately? Merely his irrefutable errors" — Friedrich Nietzsche</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-zinc-600 shrink-0 text-xs my-0.5">[1882]</span>
+                <span className="text-green-400 font-bold shrink-0">[SUCCESS]</span>
+                <span className="text-zinc-300">"He who has a why can bear any how" — Friedrich Nietzsche</span>
               </div>
             </div>
           </div>
