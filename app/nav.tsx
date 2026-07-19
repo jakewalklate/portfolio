@@ -9,7 +9,7 @@ export default function DynamicNav() {
   return (
     <nav className="flex gap-6 text-sm font-medium text-zinc-400">
       <Link href="/who-am-i" className={`${segment === "who-am-i" ? 'text-white' : ''} hover:text-white transition-colors mx-1 active:scale-[0.98]`}>Who Am I?</Link>
-      <Link href="/work" className={`${segment === 'work' ? 'text-white' : ''} hover:text-white transition-colors mx-1 active:scale-[0.98]`}>Projects</Link>
+      {/* <Link href="/work" className={`${segment === 'work' ? 'text-white' : ''} hover:text-white transition-colors mx-1 active:scale-[0.98]`}>Projects</Link> */}
       <Link href="/blog" className={`${segment === 'blog' ? 'text-white' : ''} hover:text-white transition-colors mx-1 active:scale-[0.98]`}>Blog</Link>
     </nav>
   );
