@@ -141,14 +141,14 @@ export default async function RootLayout({
       >
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
-          <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
             <Link href="/" className="hidden md:flex items-center font-bold text-xl tracking-tighter px-3 py-1 -ml-3 rounded-full hover:bg-white/10 transition-all active:scale-[0.98]"><ChevronLeft className="inline -mr-1" /><span className="-mt-0.5 tracking-normal">svnty</span>&nbsp;/<ChevronRight className="inline -ml-1" /></Link>
             <Link href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></Link>
             <DynamicNav />
             <a
               id="contact"
               href="mailto:jake@svnty.is-a.dev"
-              className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors active:scale-95"
+              className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-300 hover:opacity-95 transition-colors active:scale-95"
             >
               <span className="hidden md:block">Get in touch</span>
               <span className="block md:hidden"><Mail /></span>
