@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { ChevronLeft, ChevronRight, Code, Dna, Home, Mail } from "lucide-react";
 import Link from "next/link";
 import DynamicNav from "./nav";
+import ButtonStyle from '@/app/app.module.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -148,10 +149,10 @@ export default async function RootLayout({
             <a
               id="contact"
               href="mailto:jake@svnty.is-a.dev"
-              className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-300 hover:opacity-95 transition-colors active:scale-95"
+              className={`${ButtonStyle.button} px-4 py-2 text-sm font-semibold rounded-full hover:opacity-70! transition-colors hover:scale-[0.975]!`}
             >
               <span className="hidden md:block">Get in touch</span>
-              <span className="block md:hidden"><Mail /></span>
+              <span className="block md:hidden"><Mail size={16} /></span>
             </a>
           </div>
         </header>
