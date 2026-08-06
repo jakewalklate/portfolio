@@ -1,0 +1,67 @@
+---
+title: "Printing engineering polymers"
+summary: "The challenges of building a heated enclosure for an Anycubic Kobra S1 to print high temperature plastics."
+date: "2026-08-06"
+category: "Tech"
+enabled: true
+---
+
+It all started with a sale and a dream. To print carbon fiber infused nylon at home... for $25.
+
+That was obviously unrealistic, and I knew from the beginning, but I was determined to learn.
+
+-------
+
+Someone randomly gave me 5 rolls of ABS filament, that was nice of them, I assume they couldn't get it to work.
+
+I tried to print with it, but once the temperature changed from day to night the plastic would crack and fail.
+
+ABS requires stable and high temperatures to not warp, so my goal was to print the ABS, then move onto PPA-CF.
+
+I looked around at designs online for chamber heaters, some were really clean, but all required manual configuration. I wanted something that operated for the user like it came from the factory.
+
+My friend Stephen Grady is a retired engineer from CSIRO. He gifted me an ESP32-S3 super mini. 
+
+The ESP32-S3 has 2.4Ghz WiFi capabilities, and the Anycubic Kobra S1 also has WiFi, so I knew they could communicate.
+
+I started with a 5V relay (CAT.NO: XC4419). I bought a 50 Watt PTC element heater off ebay, and a Keyes Temperature Detector Sensor With Module (CAT.NO: XC4653) from JayCar. 
+
+I created a HTTP end point on the ESP32 which took a single variable as a query parameter to set the target temperature, if the temperature sensor ever rose above that temperature the relay switched the heater off.
+
+Next, I put a script on the printer to check if there was an active file being printed, if it was in ABS or another material which requires constant temperatures the printer would POST to the HTTP end point and start the heater.
+
+This was simple enough, it kept the temperatures comfortably at 30 degrees, but it's not hot enough, ABS ideally wants 60 degrees.
+
+I added bubble foil and aluminium tape to double insulate the internal layers, _then to my wifes great joy_ I bought another 50W ebay heater and put it in parallel with the other one.
+
+Now it reached 50 degrees stable.
+
+That's probably enough for me, so I started printing.
+
+...**ERROR**...
+
+Oh dear, I ran into a problem I didn't foresee, something known as heat creep. 
+
+Heat creep is... when the heat creeps... into places you don't want it. This was causing parts which should have been solid into liquids.
+
+Easy fix, I'll just put a fan there and blow air onto it to cool it down.. but the whole printer was now 50 degrees, the air had to come from outside.
+
+I ran some air lines from outside the printer into the chamber to blow air onto the motherboard and heat-break.
+
+But I've never taken a fluid mechanics course, or a thermodynamics course, _I'm not a mechanical engineer_.
+
+The blower fan I bought didn't have enough pressure to push the air through the tube, so I had to buy a CPAP.
+
+A CPAP (or continuous positive air pressure) fan is essentially a blower designed for high RPM so it can maintain pressure.
+
+The CPAP is extremely loud, so I printed a muffler for it and added an air filter and it brought the noise down to just above normal printing sound, if not somewhat more annoying.
+
+The CPAP worked perfectly, heat creep was gone, the chamber was hot, printing was perfect.
+
+So I added the CPAP to another 5V relay and stuck it to the ESP32, the CPAP using the same temperature sensor switches on automatically if the chamber is above 30 degrees.
+
+------
+
+I made it sound easy, but this took me all of my spare time for the better part of 5 weeks, <small><i>and cost a total of $400, mistakes included</i></small>. If I didn't make any mistakes the bill of materials would have totalled to $200.
+
+Which isn't bad to double the strength of materials printed.
