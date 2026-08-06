@@ -187,10 +187,10 @@ export default function Home() {
                   Who Am I?
                 </Link>
                 <Link
-                  href="/work"
+                  href="/blog"
                   className="flex-1 px-8 py-3 bg-zinc-900 text-white font-semibold rounded-full border border-zinc-800 hover:bg-zinc-800 transition-all active:scale-95 text-center"
                 >
-                  View Portfolio
+                  View Blog
                 </Link>
               </div>
             </div>
