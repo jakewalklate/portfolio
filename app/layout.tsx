@@ -138,7 +138,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased! min-h-screen! bg-black! text-white! selection:bg-slate-500`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased! min-h-screen! bg-[#070707]! text-white! selection:bg-slate-500`}
       >
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
