@@ -1,0 +1,72 @@
+---
+title: "Building a Neural Network"
+date: "2026-08-11"
+summary: "The hello world of deep learning in python."
+category: "Tech"
+enabled: true
+---
+
+It seems like building a neural network from scratch with no libraries is the new hello world.
+
+Every video on youtube has become "First year comp-sci student building a neural network with no libraries while blind-folded in under 2 hours in C".
+
+So I thought I should share my experience of building one.
+
+In this project I chose Python as my tool of choice, due to time constraints.
+
+_________
+
+I started by defining an input shape, the input vector was a a 5x5 grid of black or white pixels.
+
+The black pixels would represent a hand drawn base10 digit.
+
+I chose a fully connected dense multi-layer perceptron network.
+
+Since I don't know how to apply the chain rule on a RELU activation function, I used the bipolar activation function.
+
+First I defined the linear calcuation for the perceptron
+
+`v=wx`
+
+Then the acitvation function to make it non-linear
+
+`z=(1-e^-v)/(1+e^-v)`
+
+It follows as such, the derivative is of the activation function is
+
+`dz/dv=(1/2)(1-z^2)`
+
+This is useful for the application of updating the weights to train the network.
+
+_________
+
+The change of the weights during network training is defined as follows,
+
+`w*=w+∆w`
+
+where delta w is part of the general learning rule
+
+`∆w=ηLx`
+
+The learning constant eta was defined arbitrarily as
+
+`η=0.1`
+
+The loss function is the mean squared difference
+
+`L=(1/2)(d-z)^2`
+
+To find how much the loss would move if I changed the weights I can apply the chain rule to the loss function with respect to the weights.
+
+`dL/dw = dL/dz * dz/dv * dv/dw`
+
+Our loss function and it's derivative are describing how incorrect our networks output is peforming.
+
+`dL/dw=(d-z)(1/2)(1-z^2)`
+________
+
+After finding the output layers calculated guess **z**, I backpropogated, by using the loss derivative.
+
+`∆w=η(∑dL/dW * w)zx`.
+
+I added a momentum to speed up finding the local minimum of the derivative.
