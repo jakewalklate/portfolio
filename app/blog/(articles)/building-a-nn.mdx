@@ -24,11 +24,11 @@ I chose a fully connected dense multi-layer perceptron network.
 
 Since I don't know how to apply the chain rule on a RELU activation function, I used the bipolar activation function.
 
-First I defined the linear calcuation for the perceptron
+First I defined the linear calculaton for the perceptron
 
 `v=wx`
 
-Then the acitvation function to make it non-linear
+Then the activation function to make it non-linear
 
 `z=(1-e^-v)/(1+e^-v)`
 
@@ -60,9 +60,9 @@ To find how much the loss would move if I changed the weights I can apply the ch
 
 `dL/dw = dL/dz * dz/dv * dv/dw`
 
-Our loss function and it's derivative are describing how incorrect our networks output is peforming.
+Our loss function and its derivative are describing how incorrect our networks output is peforming.
 
-`dL/dw=(d-z)(1/2)(1-z^2)`
+`dL/dw=(z-d)(1/2)(1-z^2)`
 ________
 
 After finding the output layers calculated guess **z**, I backpropogated, by using the loss derivative.
