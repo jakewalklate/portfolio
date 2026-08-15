@@ -57,7 +57,7 @@ const mdxComponents = {
   ),
   blockquote: (props: React.BlockquoteHTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
-      className="border-l-4 border-blue-500/50 pl-6 py-2 my-8 bg-zinc-900/30 rounded-r-xl italic text-zinc-400 text-lg [&>p:last-child]:mb-0"
+      className="border-l-4 border-blue-500/50 pl-4 pr-4 py-2 my-8 bg-zinc-900/30 rounded-r-xl italic text-zinc-400 text-lg [&>p:last-child]:mb-0"
       {...props}
     />
   ),
