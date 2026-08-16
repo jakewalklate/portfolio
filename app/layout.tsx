@@ -161,7 +161,7 @@ export default async function RootLayout({
 
         {children}
 
-        <footer className="w-full border-t border-white/10 bg-black py-10">
+        <footer className="w-full border-t border-white/10 bg-black py-10 h-[101px]">
           <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-zinc-500 text-sm">
               © {new Date().getFullYear()} Jake Spencer Walklate. All rights reserved.
