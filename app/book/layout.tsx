@@ -117,7 +117,7 @@ export const metadata: Metadata = {
   },
   category: "memoir",
   other: {
-    "book:author": "Jake Spencer Walklate",
+    "book:author": "Jake Walklate",
     "book:tag": "mental health, psychiatric abuse, medical malpractice, memoir",
     "article:published_time": "2025-12-12",
     "article:section": "Mental Health",

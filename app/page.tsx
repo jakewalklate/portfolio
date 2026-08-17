@@ -20,7 +20,7 @@ export default function Home() {
         </div>
 
         <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white drop-shadow-[0_0_35px_rgba(255,255,255,0.15)] -mt-1 mb-1.5">
-          <span className="opacity-80">Jake Spencer Walklate</span>
+          <span className="opacity-80">Jake Walklate</span>
         </h1>
 
         <div className="space-y-2">

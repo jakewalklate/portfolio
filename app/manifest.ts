@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Jake Spencer Walklate [svnty]",
+    name: "Jake Walklate [svnty]",
     short_name: "svnty",
     description: "Life-Technology Specialist, Convergence & Ethics",
     start_url: "/",

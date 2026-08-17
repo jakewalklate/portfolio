@@ -20,14 +20,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://svnty.is-a.dev"),
   title: {
-    default: "Jake Spencer Walklate [svnty]",
-    template: "%s | Jake Spencer Walklate",
+    default: "Jake Walklate [svnty]",
+    template: "%s | Jake Walklate",
   },
   description:
     "Life-Technology Specialist, Convergence & Ethics Advocate, Biotech Engineer & Creative. Merging biological systems with engineering principles to drive innovation at the intersection of life and technology.",
   keywords: [
     // Personal branding
-    "Jake Spencer Walklate",
     "Jake Walklate",
     "svnty",
     "svnty_dev",
@@ -90,28 +89,28 @@ export const metadata: Metadata = {
     "STEM",
     "Biotechnology",
   ],
-  authors: [{ name: "Jake Spencer Walklate", url: "https://svnty.is-a.dev" }, { name: "Jake Walklate", url: "https://svnty.is-a.dev" }],
-  creator: "Jake Spencer Walklate",
+  authors: [{ name: "Jake Walklate", url: "https://svnty.is-a.dev" }, { name: "Jake Walklate", url: "https://svnty.is-a.dev" }],
+  creator: "Jake Walklate",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://svnty.is-a.dev",
-    title: "Jake Spencer Walklate [svnty]",
+    title: "Jake Walklate [svnty]",
     description:
       "Biotech Engineer & Creative. Merging biological systems with engineering principles.",
-    siteName: "Jake Spencer Walklate",
+    siteName: "Jake Walklate",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jake Spencer Walklate [svnty]",
+        alt: "Jake Walklate [svnty]",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jake Spencer Walklate [svnty]",
+    title: "Jake Walklate [svnty]",
     description:
       "Biotech Engineer & Creative. Merging biological systems with engineering principles.",
     creator: "@svnty_dev",
@@ -164,7 +163,7 @@ export default async function RootLayout({
         <footer className="w-full border-t border-white/10 bg-black py-10 h-[101px]">
           <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-zinc-500 text-sm">
-              © {new Date().getFullYear()} Jake Spencer Walklate. All rights reserved.
+              © {new Date().getFullYear()} Jake Walklate. All rights reserved.
             </p>
           </div>
         </footer>
