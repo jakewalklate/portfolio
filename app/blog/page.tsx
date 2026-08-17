@@ -66,7 +66,7 @@ export default async function Blog() {
         >
           <div className="relative shrink-0 h-28 w-20 my-auto -rotate-1 group-hover:rotate-0 transition-transform duration-500 overflow-hidden rounded-lg shadow-lg border border-white/10">
             <img
-              src="/5x8-compressed.jpg"
+              src="/5x8-compressed.png"
               alt="The Pharmacology of Silence"
               className="h-full w-full object-cover"
             />
