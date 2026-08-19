@@ -1627,7 +1627,7 @@ export default function WhoAmIPage() {
               { title: 'Andrew Fraser', subtitle: 'Professor of Law', cover: '/andrewfraser.jpeg' },
               { title: 'Edward Dutton', subtitle: 'Professor of Evolutionary Psychology', cover: '/edwarddutton.jpg' },
               { title: 'Spencer Walklate', subtitle: 'My Grandfather (Constable, soldier, footballer)', cover: '/spencerwalklate.jpg' },
-              { title: 'Jiang Xueqin', subtitle: 'Professor of Psychohistory', cover: '/jianxueqin.jpg' },
+              { title: 'Gabe Newell', subtitle: 'Co-Founder of Valve', cover: '/gabe-newell.jpg' },
               { title: 'Alan Watts', subtitle: 'Professor of Philosophy', cover: '/Alan_Watts.png' },
               { title: 'Ken Thompson', subtitle: 'Co-Founder of Unix & C', cover: '/thompson.jpg' },
               { title: 'J. Phillippe Rushton', subtitle: 'Professor of Psychology', cover: '/jphillipperushton.jpeg' },
