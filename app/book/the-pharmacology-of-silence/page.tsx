@@ -22,7 +22,7 @@ export default function BookPage() {
 
           <div className="prose prose-invert prose-zinc">
             <p className="text-zinc-400 leading-relaxed">
-              Through my story, I delve into the harrowing experience of being misdiagnosed as mentally ill and confined within a maximum-security prison. This work critically examines the intersection of personal trauma and systemic indifference, inviting readers to question the true nature of institutional assumptions.
+              Through my story, I delve into the experience of being misdiagnosed as mentally ill and confined within a maximum-security prison, labelled a threat to the entire Sydney community. <br /><br />This work invites you to critically examine the intersection of personal trauma and story, and systemic indifference, inviting readers to question the true nature of institutional assumptions.
             </p>
           </div>
 
