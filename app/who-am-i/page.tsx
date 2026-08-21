@@ -81,15 +81,14 @@ export default function WhoAmIPage() {
         <div className="prose prose-invert prose-zinc max-w-none -mt-6">
           <p className="text-lg text-zinc-400 leading-relaxed">
             I am a multidisciplinary engineer operating at the intersection of biological systems and digital technology.
-            My work focuses on leveraging engineering principles to solve complex problems in synthetic biology and healthcare.
+            My work focuses on leveraging engineering principles to solve complex problems in healthcare and tech devices.
           </p>
           <p className="text-lg text-zinc-400 leading-relaxed mt-4">
             With a background in both life sciences and computer science, I bridge the gap between laboratory experimentation and computational analysis.
-            I build tools that accelerate research, optimize workflows, and visualize complex data.
           </p>
         </div>
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Skills & Expertise
           </h3>
@@ -115,7 +114,7 @@ export default function WhoAmIPage() {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
@@ -142,7 +141,7 @@ export default function WhoAmIPage() {
             <div className="flex flex-col sm:flex-row justify-between gap-2">
               <div>
                 <h4 className="text-lg font-medium text-white">TAFE NSW</h4>
-                <div className="text-zinc-400">4x Certificates in Information Technology</div>
+                <div className="text-zinc-400">Certificates in Information Technology</div>
                 <ul className="list-disc ml-6">
                   <li className="text-sm text-zinc-500">
                     Specializing in Web Development, Database Design, and Network Security.
@@ -154,7 +153,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between gap-2">
+            {/* <div className="flex flex-col sm:flex-row justify-between gap-2">
               <div>
                 <h4 className="text-lg font-medium text-white">Lachlan Macquarie Institute</h4>
                 <div className="text-zinc-400">Residential Intensive</div>
@@ -167,7 +166,7 @@ export default function WhoAmIPage() {
               <div className="text-zinc-500 font-mono text-xs w-fit px-2 py-1 border rounded-full border-white/20 sm:border-0 sm:p-0 sm:w-auto sm:min-w-[120px] sm:text-left sm:text-sm">
                 Short Course
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -205,7 +204,7 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Background
           </h3>
@@ -246,7 +245,7 @@ export default function WhoAmIPage() {
               I didn't always have support. There was pressure to send me to manual labour discipline camps—but I held onto the belief that I belonged in engineering.
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
@@ -267,7 +266,7 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Bookshelf
           </h3>
@@ -295,9 +294,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             On Weekends
           </h3>
@@ -330,9 +329,9 @@ export default function WhoAmIPage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Personal Interests
           </h3>
@@ -396,7 +395,7 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
@@ -419,7 +418,7 @@ export default function WhoAmIPage() {
                 <div className="space-y-1">
                   {[
                     { name: "next.js", pid: "3000", mem: "128M", sleeping: false },
-                    { name: "tRPC", pid: "4000", mem: "64M", sleeping: false },
+                    { name: "ESP32", pid: "4000", mem: "64M", sleeping: false },
                     { name: "supabase (postgresql)", pid: "5432", mem: "256M", sleeping: false },
                     { name: "tailwindcss", pid: "8080", mem: "32M", sleeping: false },
                     { name: "apple-silicon", pid: "0001", mem: "∞", sleeping: false },
@@ -459,7 +458,7 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Don't Like
           </h3>
@@ -471,9 +470,9 @@ export default function WhoAmIPage() {
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Crowded elevators</li>
             <li><X className="text-red-400 inline me-1.5 shrink-0" />Writing raw SQL migrations</li>
           </ul>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite TV Series
           </h3>
@@ -502,9 +501,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Core Values & Philosophy
           </h3>
@@ -557,9 +556,9 @@ export default function WhoAmIPage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Photo Album
           </h3>
@@ -605,9 +604,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Current Toolbox
           </h3>
@@ -656,9 +655,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Gaming Hall of Fame
           </h3>
@@ -691,9 +690,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Worldview & Goals
           </h3>
@@ -707,9 +706,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Long-Term Roadmap
           </h3>
@@ -765,9 +764,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Growth Kanban
           </h3>
@@ -816,9 +815,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             My Development Loop
           </h3>
@@ -848,9 +847,9 @@ export default function WhoAmIPage() {
               "I'll just make one small change.." — Me, every night
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Endgame
           </h3>
@@ -912,9 +911,9 @@ export default function WhoAmIPage() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Honest Admissions
           </h3>
@@ -949,9 +948,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-6 w-full">
+        {/* <div className="space-y-6 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Straight Edge
           </h3>
@@ -976,8 +975,8 @@ export default function WhoAmIPage() {
               </p>
             </div>
           </div>
-        </div>
-
+        </div> */}
+{/* 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Editor Preferences
@@ -1019,9 +1018,9 @@ export default function WhoAmIPage() {
           <div className="mx-3 bg-zinc-800 -mt-6 text-zinc-300 text-xs px-2 py-1 rounded border border-white/10 md:hidden group-hover:opacity-100  transition-opacity whitespace-nowrap pointer-events-none z-10">
             Two space indentation
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Enjoyment vs Stressors
           </h3>
@@ -1082,9 +1081,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Heroes
           </h3>   
@@ -1110,9 +1109,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             User Manual
           </h3>
@@ -1165,9 +1164,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Problems
           </h3>
@@ -1220,9 +1219,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             The Motivation
           </h3>
@@ -1240,9 +1239,9 @@ export default function WhoAmIPage() {
               So I chose this path. Out of fear and sympathy. Because for me, the anxiety of not helping other people is the only thing scarier than the work itself.
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             How I Waste Time
           </h3>
@@ -1305,9 +1304,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Wardrobe
           </h3>
@@ -1336,9 +1335,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 w-full">
+        {/* <div className="space-y-8 w-full">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Peaceful Sanctuary
           </h3>
@@ -1365,10 +1364,9 @@ export default function WhoAmIPage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
-
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             What Brings Me Happiness
           </h3>
@@ -1452,9 +1450,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Sport Films
           </h3>
@@ -1481,9 +1479,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8 max-w-3xl">
+        {/* <div className="space-y-8 max-w-3xl">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Personal Quirks
           </h3>
@@ -1524,8 +1522,8 @@ export default function WhoAmIPage() {
               </p>
             </div>
           </div>
-        </div>
-
+        </div> */}
+{/* 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             How I Split My Attention
@@ -1607,9 +1605,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Intellectual Influences
           </h3>
@@ -1651,9 +1649,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Biggest Regrets
           </h3>
@@ -1690,9 +1688,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Love That Others Hate
           </h3>
@@ -1721,9 +1719,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             What I Wish I Would Do More
           </h3>
@@ -1800,9 +1798,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Alternate Universe
           </h3>
@@ -1846,9 +1844,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-2">
             Thought Log
           </h3>
@@ -1881,9 +1879,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Actors
           </h3>
@@ -1910,9 +1908,9 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Completed Classes
           </h3>
@@ -1920,7 +1918,7 @@ export default function WhoAmIPage() {
             A list of units I have completed as part of my studies.
           </p>
           <CompletedClasses />
-        </div>
+        </div> */}
 
         {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
@@ -1931,7 +1929,7 @@ export default function WhoAmIPage() {
           </p>
           <Certifications />
         </div> */}
-
+{/* 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Comedian
@@ -1969,9 +1967,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Personality Profile
           </h3>
@@ -1980,7 +1978,6 @@ export default function WhoAmIPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            {/* Primary Stats Column */}
             <div className="md:col-span-7 space-y-6">
               <div className="bg-zinc-900/40 border border-white/5 rounded-2xl p-6 backdrop-blur-sm">
                 <div className="space-y-5">
@@ -2018,11 +2015,8 @@ export default function WhoAmIPage() {
             </div>
 
 
-            {/* Archetypes Column */}
             <div className="md:col-span-5 space-y-6 my-auto">
-              {/* Role Card */}
               <div className="bg-zinc-900/40 border border-emerald-500/20 rounded-2xl p-6 relative overflow-hidden group">
-                {/* <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all duration-500 group-hover:bg-emerald-500/20" /> */}
                 <div className="relative z-10">
                   <div className="text-emerald-500 text-xs font-bold uppercase tracking-widest mb-2">Role</div>
                   <h4 className="text-xl font-bold text-white mb-2">Diplomat</h4>
@@ -2032,9 +2026,7 @@ export default function WhoAmIPage() {
                 </div>
               </div>
 
-              {/* Strategy Card */}
               <div className="bg-zinc-900/40 border border-purple-500/20 rounded-2xl p-6 relative overflow-hidden group">
-                {/* <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl -ml-16 -mb-16 transition-all duration-500 group-hover:bg-purple-500/20" /> */}
                 <div className="relative z-10">
                   <div className="text-purple-500 text-xs font-bold uppercase tracking-widest mb-2">Strategy</div>
                   <h4 className="text-xl font-bold text-white mb-2">People Mastery</h4>
@@ -2045,9 +2037,9 @@ export default function WhoAmIPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="space-y-8">
+        {/* <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Politicians
           </h3>
@@ -2073,7 +2065,7 @@ export default function WhoAmIPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
 
         {/* Motivational Drivers (AskMarlee) */}
