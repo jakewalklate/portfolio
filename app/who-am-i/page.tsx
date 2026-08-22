@@ -61,7 +61,8 @@ const albums = [
   { title: 'Good Kid, M.A.A.D City', artist: 'Kendrick Lamar', cover: '/KendrickGKMC.jpg' },
   { title: 'Never mind the Bollocks, Here\'s the Sex Pistols', artist: 'Sex Pistols', cover: '/sex-pistols.png' },
   { title: 'Meteora', artist: 'Linkin Park', cover: '/cd-linkin-park-meteora_0.jpeg' },
-  { title: 'NPR Music Tiny Desk Concert', artist: 'Rakim', cover: '/rakim-tinydesk.jpeg' }
+  { title: 'NPR Music Tiny Desk Concert', artist: 'Rakim', cover: '/rakim-tinydesk.jpeg' },
+  { title: 'Lonley Souljaz', artist: 'Cult Shotta & DON!', cover: '/lonley-souljaz.jpg'}
 ].sort(() => Math.random() - 0.5);
 
 export default function WhoAmIPage() {

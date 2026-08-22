@@ -4,7 +4,7 @@ export default function BookPage() {
     <main className="flex flex-col items-center pt-32 pb-20 px-6 min-h-[calc(100vh-101px)]">
       <section className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="relative aspect-[2/3] w-full max-w-sm mx-auto bg-zinc-900 rounded-r-2xl rounded-l-sm border-r-4 border-zinc-800 shadow-2xl flex items-center justify-center group overflow-hidden">
-          <img src="/5x8-compressed.png" alt="Book Cover" className="absolute object-contain ml-4 rounded-tr-2xl rounded-br-2xl h-[99%]" />
+          <img src="/5x8-compressed.png" alt="Book Cover" className="absolute object-center ml-4 rounded-tr-2xl rounded-br-2xl h-[99%]" />
           {/* Spine effect */}
           <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-zinc-800 to-zinc-900 border-r border-black/50"></div>
         </div>
@@ -16,7 +16,7 @@ export default function BookPage() {
               The Pharmacology of Silence
             </h1>
             <p className="text-lg text-zinc-400 leading-relaxed">
-              A memoir of my experience of being misdiagnosed as mentally ill and locked inside a maximum security prison in 2022 due to medical malpractice.
+              A memoir of my experience of medical and legal malpractice in 2022.
             </p>
           </div>
 
