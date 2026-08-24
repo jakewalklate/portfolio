@@ -418,8 +418,8 @@ export default function WhoAmIPage() {
 
                 <div className="space-y-1">
                   {[
-                    { name: "next.js", pid: "3000", mem: "128M", sleeping: false },
-                    { name: "ESP32", pid: "4000", mem: "64M", sleeping: false },
+                    { name: "next.js (w/ napi-rust)", pid: "3000", mem: "128M", sleeping: false },
+                    { name: "esp32 (c++)", pid: "4000", mem: "64M", sleeping: false },
                     { name: "supabase (postgresql)", pid: "5432", mem: "256M", sleeping: false },
                     { name: "tailwindcss", pid: "8080", mem: "32M", sleeping: false },
                     { name: "apple-silicon", pid: "0001", mem: "∞", sleeping: false },

@@ -12,7 +12,7 @@ export default function BookPage() {
         {/* Content */}
         <div className="space-y-8 text-center md:text-left">
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white font-serif">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white font-serif text-center">
               The Pharmacology of Silence
             </h1>
             <p className="text-lg text-zinc-400 leading-relaxed">
