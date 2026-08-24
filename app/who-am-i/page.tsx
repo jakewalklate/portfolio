@@ -85,7 +85,7 @@ export default function WhoAmIPage() {
             My work focuses on leveraging engineering principles to solve complex problems in healthcare and tech devices.
           </p>
           <p className="text-lg text-zinc-400 leading-relaxed mt-4">
-            With a background in both life sciences and computer science, I bridge the gap between laboratory experimentation, computational modeling, and hardware development.
+            With a background in both life sciences and computer engineering, I bridge the gap between laboratory experimentation, computational modeling, and hardware development.
           </p>
         </div>
 
