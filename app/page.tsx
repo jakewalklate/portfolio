@@ -25,7 +25,7 @@ export default function Home() {
 
         <div className="space-y-2">
           <h2 className="text-2xl sm:text-3xl font-medium text-zinc-400">
-            Life-Technology Specialist
+            Life & Technology Specialist
           </h2>
           <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed mx-auto sm:mx-0">
             {/* Merging biological systems with engineering principles.
