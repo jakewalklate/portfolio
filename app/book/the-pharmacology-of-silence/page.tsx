@@ -16,7 +16,7 @@ export default function BookPage() {
               The Pharmacology of Silence (2024)
             </h1>
             <p className="text-lg text-[#b5b5b5] leading-relaxed">
-              A memoir of my experience of being misdiagnosed as mentally ill and locked inside a maximum security prison in 2022 due to medical malpractice - and eventually vindicated.
+              A memoir of my experience of being misdiagnosed as mentally ill and locked inside a maximum security prison in 2022 due to medical malpractice - and later vindicated.
             </p>
           </div>
 
