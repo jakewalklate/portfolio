@@ -7,7 +7,7 @@ import { Info, Leaf, Microscope, Telescope, Users } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center pt-32 pb-20 px-6 relative max-w-5xl mx-auto w-full">
+    <main className="flex flex-col items-center justify-center pt-24 pb-20 px-6 relative max-w-5xl mx-auto w-full">
       {/* 1. ABSTRACT */}
       <section className="w-full space-y-8 text-center sm:text-left py-12 border-b border-zinc-800/50">
         <h2 className="text-left! text-xs font-mono text-zinc-500 uppercase tracking-widest mb-6">1. Abstract</h2>
@@ -77,7 +77,7 @@ export default function Home() {
           <div className="space-y-4 w-full">
             <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest">3. Methods</h2>
             <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group w-full">
-              <h3 className="text-xl font-semibold mb-4 text-zinc-100">Engineering Principles</h3>
+              <h3 className="text-xl font-semibold mb-4 text-zinc-100">First Principles & Technology</h3>
               <p className="text-zinc-400 leading-relaxed">
                 Applying rigorous design patterns and engineering principles to solve complex problems across domains.
                 Whether architecting digital systems or designing biological recombinants, I leverage technology to create robust, scalable solutions.
@@ -99,9 +99,9 @@ export default function Home() {
           <div className="space-y-4 w-full">
             <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-widest">4. Results</h2>
             <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group w-full">
-              <h3 className="text-xl font-semibold mb-4 text-zinc-100">Systems Science</h3>
+              <h3 className="text-xl font-semibold mb-4 text-zinc-100">Stable Systems Science</h3>
               <p className="text-zinc-400 leading-relaxed">  
-                Ethical decision-making as a foundation for designing high-stakes systems.
+                Synergistic interactions between biological and digital systems and their embedded environments, and ethical decision-making foundations for designing high-stakes systems and cybernetic environments. The results are a set of principles and methods for building stable systems that can be applied to any domain.
               </p>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li className="flex items-start gap-4 group">
                   <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-blue-400 transition-colors" />
-                  <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The problem is intellectually rigorous.</span>
+                  <span className="text-zinc-400 group-hover:text-zinc-300 transition-colors">The problem is uniquely rigorous.</span>
                 </li>
                 <li className="flex items-start gap-4 group">
                   <div className="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-500 group-hover:bg-green-400 transition-colors" />
