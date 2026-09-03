@@ -145,7 +145,7 @@ export default async function RootLayout({
             <DynamicNav />
             <a
               id="contact"
-              href="mailto:jake@svnty.is-a.dev"
+              href="mailto:jakew@jakewalklate.is-a.dev"
               className={`${ButtonStyle.button} px-4 py-2 text-sm font-semibold rounded-full hover:opacity-70! transition-colors hover:scale-[0.975]!`}
             >
               <span className="hidden md:block">Get in touch</span>
