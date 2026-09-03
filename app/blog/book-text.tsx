@@ -14,6 +14,6 @@ export default function BookText() {
   }
 
   return (
-    <span className={`text-xs font-mono ${getColor()} uppercase tracking-wider`}>Downloadable book</span>
+    <span className={`text-xs font-mono ${getColor()} uppercase tracking-wider`}>Free Downloadable book</span>
   );
 }
