@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://svnty.is-a.dev/sitemap.xml",
+    sitemap: "https://jakewalklate.is-a.dev/sitemap.xml",
   };
 }

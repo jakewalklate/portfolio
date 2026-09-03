@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://svnty.is-a.dev"),
+  metadataBase: new URL("https://jakewalklate.is-a.dev"),
   title: {
     default: "Jake Walklate",
     template: "%s | Jake Walklate",
@@ -87,12 +87,12 @@ export const metadata: Metadata = {
     "STEM",
     "Biotechnology",
   ],
-  authors: [{ name: "Jake Walklate", url: "https://svnty.is-a.dev" }, { name: "Jake Walklate", url: "https://svnty.is-a.dev" }],
+  authors: [{ name: "Jake Walklate", url: "https://jakewalklate.is-a.dev" }, { name: "Jake Walklate", url: "https://jakewalklate.is-a.dev" }],
   creator: "Jake Walklate",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://svnty.is-a.dev",
+    url: "https://jakewalklate.is-a.dev",
     title: "Jake Walklate",
     description:
       "Biotech Engineer & Creative. Merging biological systems with engineering principles.",
