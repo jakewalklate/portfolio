@@ -99,7 +99,7 @@ export default function Home() {
             <div className="p-8 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group w-full">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">Stable Systems Science</h3>
               <p className="text-zinc-400 leading-relaxed">  
-                Synergistic interactions between biological and digital systems and their embedded environments, and ethical decision-making foundations for designing high-stakes systems and cybernetic environments. The results are a set of principles and methods for building stable systems that can be applied to any domain.
+                Synergistic interactions between biological and digital systems and their embedded environments, and ethical decision-making foundations for designing high-stakes systems and cybernetic environments. The results are a set of principles and methods for building stable systems that can be applied to any challenge.
               </p>
             </div>
           </div>
