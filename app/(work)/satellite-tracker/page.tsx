@@ -166,7 +166,7 @@ export default function SatelliteTrackerPage() {
               ✓ Completed
             </span>
             <a
-              href="https://github.com/svnty/ISS-arduino-tracker"
+              href="https://github.com/jakewalklate/ISS-arduino-tracker"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"

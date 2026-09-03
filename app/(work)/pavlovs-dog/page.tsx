@@ -102,7 +102,7 @@ export default function PavlovsDogPage() {
             ✓ Finished
           </span>
           <a
-            href="https://github.com/svnty/portfolio/tree/main/pavlov_brain"
+            href="https://github.com/jakewalklate/portfolio/tree/main/pavlov_brain"
             target="_blank"
             className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
           >

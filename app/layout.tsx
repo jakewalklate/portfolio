@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://svnty.is-a.dev"),
   title: {
-    default: "Jake Walklate [svnty]",
+    default: "Jake Walklate",
     template: "%s | Jake Walklate",
   },
   description:
@@ -28,8 +28,6 @@ export const metadata: Metadata = {
   keywords: [
     // Personal branding
     "Jake Walklate",
-    "svnty",
-    "svnty_dev",
 
     // Professional titles
     "Biotech Engineer",
@@ -95,7 +93,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://svnty.is-a.dev",
-    title: "Jake Walklate [svnty]",
+    title: "Jake Walklate",
     description:
       "Biotech Engineer & Creative. Merging biological systems with engineering principles.",
     siteName: "Jake Walklate",
@@ -104,16 +102,16 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jake Walklate [svnty]",
+        alt: "Jake Walklate",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jake Walklate [svnty]",
+    title: "Jake Walklate",
     description:
       "Biotech Engineer & Creative. Merging biological systems with engineering principles.",
-    creator: "@svnty_dev",
+    creator: "@jakewalklate",
     images: ["/og-image.png"],
   },
   robots: {
@@ -142,7 +140,7 @@ export default async function RootLayout({
         {/* Navigation / Header */}
         <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
           <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-            <Link href="/" className="hidden md:flex items-center font-bold text-xl tracking-tighter px-3 py-1 -ml-3 rounded-full bg-white/[0.035] hover:bg-white/10 transition-all active:scale-[0.98]"><ChevronLeft className="inline -mr-1" /><span className="-mt-0.5 tracking-normal">svnty</span>&nbsp;/<ChevronRight className="inline -ml-1" /></Link>
+            <Link href="/" className="hidden md:flex items-center font-bold text-xl tracking-tighter px-3 py-1 -ml-3 rounded-full bg-white/[0.035] hover:bg-white/10 transition-all active:scale-[0.98]"><ChevronLeft className="inline -mr-1" /><span className="-mt-0.5 tracking-normal">jakewalklate</span>&nbsp;/<ChevronRight className="inline -ml-1" /></Link>
             <Link href="/" className="md:hidden font-bold text-xl tracking-tighter"><Code /></Link>
             <DynamicNav />
             <a

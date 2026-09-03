@@ -189,7 +189,7 @@ export default function BloodCellMLPPage() {
               ✓ Completed
             </span>
             <a
-              href="http://github.com/svnty/blood-cell-classification"
+              href="http://github.com/jakewalklate/blood-cell-classification"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"

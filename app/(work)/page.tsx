@@ -93,7 +93,7 @@ export default function WorkPage() {
       title: "Mendelian genetics simulator",
       description: "A simple rust engine to simulate genetic inheritence of same-sex attraction.",
       tags: ["Rust", "Genetics", "Bioinformatics"],
-      link: "https://github.com/svnty/homosexuality-simulator",
+      link: "https://github.com/jakewalklate/homosexuality-simulator",
       img: "/gene-simulator.png",
       linkType: "external"
     },
