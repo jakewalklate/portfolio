@@ -1,7 +1,7 @@
 
 export default function BookPage() {
   return(
-    <main className="flex flex-col items-center pt-28 pb-16 px-6 min-h-[calc(100vh-101px)]">
+    <main className="flex flex-col items-center pt-28 pb-16 px-6 min-h-[calc(100vh-81px)]">
       <section className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="relative aspect-[2/3] w-full max-w-sm mx-auto bg-zinc-900 rounded-r-2xl rounded-l-sm border-r-4 border-zinc-800 shadow-2xl flex items-center justify-center group overflow-hidden">
           <img src="/5x8-compressed.png" alt="Book Cover" className="absolute object-center ml-4 rounded-tr-2xl rounded-br-2xl h-[99%]" />
