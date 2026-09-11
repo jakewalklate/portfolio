@@ -459,6 +459,19 @@ export default function WhoAmIPage() {
           </div>
         </div>
 
+        {/* <div className="space-y-8">
+          <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
+            Resume
+          </h3>
+          <div className="relative w-full aspect-[8.5/11] overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950 shadow-lg">
+            <embed
+              src="/resume.pdf"
+              type="application/pdf"
+              className="absolute inset-0 h-full w-full"
+            />
+          </div>
+        </div> */}
+
         {/* <div className="space-y-6">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Things I Don't Like
