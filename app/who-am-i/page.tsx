@@ -39,7 +39,7 @@ const albums = [
   { title: "Feel Something", artist: "Movements", cover: "/feelsomething.jpeg" },
   { title: "Best Buds", artist: "Mom Jeans", cover: "/bestbuds.jpg" },
   { title: "Grown Man Biz", artist: "Scotty Hinds", cover: "/scottyhinds.jpg" },
-  { title: 'Flowers and You', artist: 'Touché Amoré', cover: '/flowersandyou.jpg' },
+  { title: 'Stage Four', artist: 'Touché Amoré', cover: '/flowersandyou.jpg' },
   { title: "Divination", artist: "In Hearts Wake", cover: "/inheartswake.jpg" },
   { title: 'Singularity', artist: 'Northlane', cover: '/singularity.jpeg' },
   { title: 'Between the Richness ', artist: 'Fiddlehead', cover: '/Betweentherichness.jpg' },
