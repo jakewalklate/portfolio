@@ -32,15 +32,15 @@ export default function BookPage() {
                 className="w-full lg:w-auto text-center px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all active:scale-95">
                 Free Download
               </a>
-              <a href="/excerpt.pdf"
+              <a target="_blank" rel="noopener noreferrer" href="/excerpt.pdf"
                 className="w-full lg:w-auto text-center px-8 py-3 bg-transparent border border-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95 opacity-50">
                 Read Excerpt
               </a>
             </div>
-            <div className="flex flex-col lg:mx-8 hidden">
-              <a download href="/help.pdf"
+            <div className="flex flex-col lg:mx-8">
+              <a target="_blank" rel="noopener noreferrer" href="/police_check.pdf"
                 className="w-full! px-8 text-center py-3 bg-transparent border border-zinc-700 text-white font-semibold rounded-full hover:bg-zinc-800 transition-all active:scale-95">
-                Where can victims find meaning?
+                My Police Check
               </a>
             </div>
           </div>
