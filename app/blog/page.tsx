@@ -80,7 +80,7 @@ export default async function Blog() {
               The Pharmacology of Silence
             </h3>
             <p className="text-sm text-zinc-500 line-clamp-4">
-              A memoir of my experience of being misdiagnosed as mentally ill and locked inside a maximum security prison in Sydney's west.
+              A memoir of my experience of being misdiagnosed as mentally ill and locked inside a maximum security prison in Sydney's west, later to be apologised to by a judge and acquitted of all charges. This book is a reflection on the human condition, the nature of truth, and the power of silence.
             </p>
           </div>
         </Link>
