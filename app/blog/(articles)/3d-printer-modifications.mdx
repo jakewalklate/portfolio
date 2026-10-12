@@ -38,21 +38,21 @@ I made a few things here and there, nothing really significant, and it was painf
 
 In 2023, I found a cheap Wanhao i3 mini 3D printer listed on Facebook marketplace. They were selling these at Aldi Australia and people started reselling them really cheap.
 
-The printer was fine, but suffered from the same problems the Ender 3 had, but things had developed within the community. Prusa had made waves with their realiability and automatic adjustments for the print bed's height differences. Instead of manually conmfiguring it every print you set it to something good enough and software would auto-correct the printer.
+The printer was fine, but suffered from the same problems the Ender 3 had, but things had developed within the community. Prusa had made waves with their reliability and automatic adjustments for the print bed's height differences. Instead of manually configuring it every print you set it to something good enough and software would auto-correct the printer.
 
 People had ported the idea of auto-bed levelling to other printers, so I decided to do the same thing. I bought a BL-Touch sensor and got to work.
 
 The first thing you need to do is replace the motherboard, since the default board has no header pins available for peripherals you needed to work around that. One way to do that is to flash the firmware on the motherboard to become just a USB passthrough and control it via a Raspberry Pi. So I flashed the firmware on the printer and installed Klipper and Mainsail onto my raspberry pi. 
 
-I then printed a bed extension so I could have a larger area to print on. I bought some steel rods from a hardware store and polished them, then put the new bed ontop of the extended print area with a new GT2 pulley and configured the software.
+I then printed a bed extension so I could have a larger area to print on. I bought some steel rods from a hardware store and polished them, then put the new bed on top of the extended print area with a new GT2 pulley and configured the software.
 
 <center><img src="/printer-upgrade/n4.png" width="60%"/></center>
 
 <br />
 
-It looked like a frankenstein, but it was functional and printed parts without burning the house down. But I quickly became frustrated with how slow it was, mainly due to the construction of it, if it accelerated too quickly the frame shook and the print became unstable.
+It looked like a Frankenstein, but it was functional and printed parts without burning the house down. But I quickly became frustrated with how slow it was, mainly due to the construction of it, if it accelerated too quickly the frame shook and the print became unstable.
 
-This was quite a significant modification. It involved soldering, running new wires through the printer, flashing firmware, writing linux config files but gave me wireless control of the printer via a LAN connected web UI and webcam monitoring.
+This was quite a significant modification. It involved soldering, running new wires through the printer, flashing firmware, writing Linux config files but gave me wireless control of the printer via a LAN connected web UI and webcam monitoring.
 
 But after spending hours modifying the printer, I scrapped it and took the motors out of it, kept everything that was useful and threw the rest in the recycling.
 
@@ -195,9 +195,9 @@ Wed Apr 22 11:03:02 CST 2026: gklib=VmRSS:	   13112 kB
 Wed Apr 22 11:03:02 CST 2026: K3SysUi=
 ```
 
-The process in a matter of 16 seconds went from 55MB to 161MB of memory usage, then the linux kernel panicked and killed the process becuase the rockchip SoC was out of RAM.
+The process in a matter of 16 seconds went from 55MB to 161MB of memory usage, then the Linux kernel panicked and killed the process because the Rockchip SoC was out of RAM.
 
-Then Claude had an idea, perhaps it's the network connectivity, it wrote a script to modify the startup sequence and disabled networking but then also inserted a script with an infinite loop to monitor it without sleeping. I ran it without checking and everythign broke and the printer refused to exit the loop, it's a single core machine and the loop process was hogging it all.
+Then Claude had an idea, perhaps it's the network connectivity, it wrote a script to modify the startup sequence and disabled networking but then also inserted a script with an infinite loop to monitor it without sleeping. I ran it without checking and everything broke and the printer refused to exit the loop, it's a single core machine and the loop process was hogging it all.
 
 Now what? My printer UI doesn't work, and we disabled network connectivity, how the hell do I ssh into the printer now?
 
@@ -215,7 +215,7 @@ Pretty standard I guess, just a days work for them, they probably do a hundred t
 
 I downloaded their [Rockchip backup restore wizard](https://github.com/Kobra-S1/rockchip_backup_restore_wizard) and was able to extract the eMMC contents, then from within a Linux Mint PC USB BOOT I was able to repair by hand all of the broken contents of the memory segments and remove the scripts Claude had added.
 
-I overwrote the mount drives by plugging in a UART USB cable and holding the SW1 button on the circuit board to enable the wizard to function, the rockchip ARM CPU follows a very specific disk reading protocol. First it looks at the env partition, then the uboot partition and then loads the kernel. This was all fine, my issue was within the app partition and user partition where we had a broken binary.
+I overwrote the mount drives by plugging in a UART USB cable and holding the SW1 button on the circuit board to enable the wizard to function, the Rockchip ARM CPU follows a very specific disk reading protocol. First it looks at the env partition, then the uboot partition and then loads the kernel. This was all fine, my issue was within the app partition and user partition where we had a broken binary.
 
 The printer was back to life, but the firmware was still broken?
 
@@ -278,7 +278,7 @@ So I went searching the Anycubic API to find out what was wrong. I hypothesises 
 
 The reason was... my address.... Yes.. I live in an apartment, so my address is X/Y Street.
 
-The slash wasn't escaped and was killing the API response, causing my printer to freeze by creating an infinite loop and writing memoory and result in it's own process being killed.
+The slash wasn't escaped and was killing the API response, causing my printer to freeze by creating an infinite loop and writing memory and result in it's own process being killed.
 
 I went into the Anycubic settings and removed all my information, essentially wiping my account, and it works.
 
@@ -288,7 +288,7 @@ I wrote a bug report and emailed Jaycar to tell them what had happened.
 
 _But I wasn't done._
 
-I had just learnt the printer is just a linux box with a small touch screen UI, with WiFi and a USB port.
+I had just learnt the printer is just a Linux box with a small touch screen UI, with WiFi and a USB port.
 
 So..
 
@@ -298,7 +298,7 @@ The classic 1990's shooter built by the genius programmer John Carmack.
 
 I downloaded fbDoom (Framebuffer doom) as using the framebuffer was the simplest way to communicate with the peripheral touch screen, this is how the normal touchscreen works, it's not a sophisticated machine.
 
-I compiled it using Docker and targetted the arm7 architecture.
+I compiled it using Docker and targeted the arm7 architecture.
 
 And it worked.
 
@@ -312,9 +312,9 @@ Fbdoom looks for input from the virtual terminal, and my gamepad sends raw HEX c
 
 So, until I have a driver the input doesn't work, but I think we can write a simple daemon that decodes the hex and pipe it to the virtual terminal, but for now I have other things to do.
 
-After my progress, I had learnt a lot about Rinkhals, it's an awesome hack, but the problem with Rinkahls is installing it disables some of the printers default cloud functionality – nothing we couldn't fix, I just wondered why they the original developers had stoppped working on it.
+After my progress, I had learnt a lot about Rinkhals, it's an awesome hack, but the problem with Rinkahls is installing it disables some of the printers default cloud functionality – nothing we couldn't fix, I just wondered why they the original developers had stopped working on it.
 
-I went snooping aronud the printers files and found the original programs: GkCam, GkApi, and K3SysUi.
+I went snooping around the printers files and found the original programs: GkCam, GkApi, and K3SysUi.
 
 I pulled them off the printer and opened them up in Ghidra. Rinkhals overwrites some of these files when it installs itself to give itself more functionality, these applications don't have easy APIs.
 
@@ -2197,3 +2197,11 @@ if __name__ == "__main__":
       ```
     </details>
 </details>
+
+<br />
+
+The results have been some really quality ABS prints, for example, this 10 inch server rack I 3D printed from multiple colours, it hosts a windows pc, a network switch, and my home assistance board that runs my smart-home network automations and MQTT/Local Tuya connectivity.
+
+<center><img src="/printer-upgrade/lab.jpeg" alt="An image of a perf board with an ESP32 and a 5V relay" width="60%"/></center>
+
+<br />
