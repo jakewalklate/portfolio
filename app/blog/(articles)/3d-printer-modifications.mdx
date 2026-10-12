@@ -1,0 +1,2199 @@
+---
+title: "3D printer modifications"
+date: "2026-5-6"
+summary: "Modifications I've made to the printers I've owned"
+category: "Tech"
+enabled: true
+---
+
+I bought my first 3D printer in August 2020. I had heard about them from watching tech YouTubers, but never seen or used one in person.
+
+At the time, the Ender Pro 3 was considered the be all end all of printers, it was the only one you could buy that worked basically.
+
+It fit in my small apartment in Chippendale, surprisingly. 
+
+<center><img src="/printer-upgrade/n1.jpg" width="100%"/></center>
+
+<br />
+
+My first modification was a holder to put the scraper in, so you could remove prints from the bed.
+
+<center><img src="/printer-upgrade/0.jpeg" width="100%"/></center>
+
+<br />
+
+Honestly, using the printer was a terrible experience, it took forever to level the bed and get a stable print, they didn't turn out well, supports weren't great yet (tree supports weren't around yet), so I never used it much.
+
+I made a few things here and there, nothing really significant, and it was painful so I sold it. My favourite thing I made was this small power station for my USB powered soldering iron.
+
+<center><img src="/printer-upgrade/n2.jpg" width="40%"/></center>
+
+<br />
+
+<center><img src="/printer-upgrade/n3.jpg" width="40%"/></center>
+
+<br />
+
+-------
+
+In 2023, I found a cheap Wanhao i3 mini 3D printer listed on Facebook marketplace. They were selling these at Aldi Australia and people started reselling them really cheap.
+
+The printer was fine, but suffered from the same problems the Ender 3 had, but things had developed within the community. Prusa had made waves with their realiability and automatic adjustments for the print bed's height differences. Instead of manually conmfiguring it every print you set it to something good enough and software would auto-correct the printer.
+
+People had ported the idea of auto-bed levelling to other printers, so I decided to do the same thing. I bought a BL-Touch sensor and got to work.
+
+The first thing you need to do is replace the motherboard, since the default board has no header pins available for peripherals you needed to work around that. One way to do that is to flash the firmware on the motherboard to become just a USB passthrough and control it via a Raspberry Pi. So I flashed the firmware on the printer and installed Klipper and Mainsail onto my raspberry pi. 
+
+I then printed a bed extension so I could have a larger area to print on. I bought some steel rods from a hardware store and polished them, then put the new bed ontop of the extended print area with a new GT2 pulley and configured the software.
+
+<center><img src="/printer-upgrade/n4.png" width="60%"/></center>
+
+<br />
+
+It looked like a frankenstein, but it was functional and printed parts without burning the house down. But I quickly became frustrated with how slow it was, mainly due to the construction of it, if it accelerated too quickly the frame shook and the print became unstable.
+
+This was quite a significant modification. It involved soldering, running new wires through the printer, flashing firmware, writing linux config files but gave me wireless control of the printer via a LAN connected web UI and webcam monitoring.
+
+But after spending hours modifying the printer, I scrapped it and took the motors out of it, kept everything that was useful and threw the rest in the recycling.
+
+-------
+
+In 2025 my wife offered to buy me another 3D printer. Bambu Labs had hit the scene and revolutionised the printing world, they were now extremely reliable, looked good, were quite and user friendly. You no longer had to be an obsessed hacker to own one.
+
+I went to Jaycar looking for a cheap alternative and was suggested the Anycubic Kobra S1. I bought it and took it home and was amazed that it printed such high quality parts.
+
+Anycubic had copied Bambu Lab's formula, but done it well. The hardware is exceptional, and they weren't a newcomer, they had been also making printers similar to the Ender 3 pro, what would be called _clones_ in printing.
+
+One of the coolest projects (in my opinion) that I printed was the [International Space Station orbit tracker](International Space Station orbit tracker) which you can read about on this website by following the link.
+
+I used it for about a hundred or so printing hours, but then suddenly started getting bugs. The operating system would freeze, become unrecoverable and I couldn't use the printer at all.
+
+I emailed Anycubic's support, and they ignored me. I searched forums and asked for help, and found out Anycubic are notorious for having bad customer support. And I couldn't find anyone else who had the same issue as me.
+
+Someone asked me "did you install Rinkhals by any chance?". I googled Rinkhals and decided I didn't know what it was so I moved on.
+
+I asked Claude where I should start, Claude suggested Rinkhals might actually be able to help, so I installed it and we gained SSH access into the printer.
+
+Together Claude and I created a shell script to save the output logs of the process that was freezing on startup using `dmesg`.
+
+`dmesg > /tmp/dmesg_before.log && cd /userdata/app/gk && ./K3SysUi > /tmp/k3sysui.log 2>&1 & sleep 20 && dmesg > /tmp/dmesg_after.log`
+
+A process was hogging the ram, after the printer ran out of memory the Linux Out Of Memory (OOM) daemon would stop the main system UI process: `K3SysUi` which prevented me from using the printer.
+
+```
+[   73.465200] 344 total pagecache pages
+[   73.465204] 65536 pages RAM
+[   73.465209] 0 pages HighMem/MovableOnly
+[   73.465214] 11066 pages reserved
+[   73.465218] 8704 pages cma reserved
+[   73.465223] Tasks state (memory values in pages):
+[   73.465229] [  pid  ]   uid  tgid total_vm      rss pgtables_bytes swapents oom_score_adj name
+[   73.465278] [     75]     0    75      400      106     6144        0         -1000 udevd
+[   73.465294] [    612]     0   612      252       15     6144        0             0 dropbear
+[   73.465302] [    682]     0   682   141762     1451    49152        0             0 gklib
+[   73.465311] [    706]     0   706   135970      801    26624        0             0 gkapi
+[   73.465320] [    707]     0   707    71579    44390   239616        0             0 K3SysUi
+[   73.465329] [    732]     0   732     8673     1522    38912        0             0 gkcam
+[   73.465338] [    953]     0   953      234       39     6144        0             0 rtk_hciattach
+[   73.465348] [    967]     0   967      324       30     6144        0             0 wpa_supplicant
+[   73.465359] [   1228]     0  1228      309       15     6144        0             0 udhcpc
+[   73.465368] [   1231]     0  1231      309       15     6144        0             0 udhcpc
+[   73.465376] [   1354]     0  1354      400      106     6144        0             0 udevd
+[   73.465385] [   1374]     0  1374      249       14     6144        0             0 sh
+[   73.465393] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),task=K3SysUi,pid=707,uid=0
+[   73.465430] Out of memory: Killed process 707 (K3SysUi) total-vm:286316kB, anon-rss:176060kB, file-rss:1500kB, shmem-rss:0kB, UID:0 pgtables:234kB oom_score_adj:0
+```
+
+I decided to try to downgrade the firmware to try to fix it, the printer worked and suddenly stopped working, maybe it was an untested feature they had pushed.
+
+I downgraded the OS from 2.7.0.0 to 2.6.0.0, but the issue persisted.
+
+We thought it might be a hardware fault, so we checked all of the chips RAM for faults using `memtest` to rule out a motherboard failure.
+
+```
+memtester 100m 1 > /tmp/memtest.log 2>&1 &
+echo "memtester started, PID: $!"
+tail -f /tmp/memtest.log
+```
+
+The output reported no errors.
+
+```
+memtester version 4.3.0 (32-bit)
+Copyright (C) 2001-2012 Charles Cazabon.
+Licensed under the GNU General Public License version 2 (only).
+
+pagesize is 4096
+pagesizemask is 0xfffff000
+want 100MB (104857600 bytes)
+got  100MB (104857600 bytes), trying mlock ...locked.
+Loop 1/1:
+  Stuck Address       : ok         
+  Random Value        : ok
+  Compare XOR         : ok
+  Compare SUB         : ok
+  Compare MUL         : ok
+  Compare DIV         : ok
+  Compare OR          : ok
+  Compare AND         : ok
+  Sequential Increment: ok
+  Solid Bits          : ok         
+  Block Sequential    : ok         
+  Checkerboard        : ok         
+  Bit Spread          : ok         
+  Bit Flip            : ok         
+  Walking Ones        : ok         
+  Walking Zeroes      : ok         
+  8-bit Writes        : ok
+  16-bit Writes       : ok
+```
+
+We created a script to analyse the memory usage further.
+
+```
+cat >> /useremain/rinkhals/start-rinkhals.sh << 'EOF'
+for i in $(seq 1 60); do
+    echo "$(date): gklib=$(cat /proc/$(ps | grep gklib | grep -v grep | awk '{print $1}')/status | grep VmRSS)" >> /useremain/mem_trace.log
+    echo "$(date): K3SysUi=$(cat /proc/$(ps | grep K3SysUi | grep -v grep | awk '{print $1}')/status | grep VmRSS)" >> /useremain/mem_trace.log
+    sleep 1
+done &
+EOF
+```
+
+The results were shocking, we figured the process K3SysUi was running the memory high after about 5 seconds after bootup.
+
+```
+Wed Apr 22 11:02:32 CST 2026: gklib=VmRSS:	   15300 kB
+Wed Apr 22 11:02:32 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:33 CST 2026: gklib=VmRSS:	   15524 kB
+Wed Apr 22 11:02:33 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:34 CST 2026: gklib=VmRSS:	   15548 kB
+Wed Apr 22 11:02:34 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:35 CST 2026: gklib=VmRSS:	   15596 kB
+Wed Apr 22 11:02:35 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:36 CST 2026: gklib=VmRSS:	   15648 kB
+Wed Apr 22 11:02:36 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:37 CST 2026: gklib=VmRSS:	   15656 kB
+Wed Apr 22 11:02:37 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:39 CST 2026: gklib=VmRSS:	   15656 kB
+Wed Apr 22 11:02:39 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:40 CST 2026: gklib=VmRSS:	   15656 kB
+Wed Apr 22 11:02:40 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:41 CST 2026: gklib=VmRSS:	   15660 kB
+Wed Apr 22 11:02:41 CST 2026: K3SysUi=VmRSS:	   55432 kB
+Wed Apr 22 11:02:43 CST 2026: gklib=VmRSS:	   15660 kB
+Wed Apr 22 11:02:43 CST 2026: K3SysUi=VmRSS:	   68760 kB
+Wed Apr 22 11:02:44 CST 2026: gklib=VmRSS:	   15664 kB
+Wed Apr 22 11:02:44 CST 2026: K3SysUi=VmRSS:	   96048 kB
+Wed Apr 22 11:02:45 CST 2026: gklib=VmRSS:	   15668 kB
+Wed Apr 22 11:02:45 CST 2026: K3SysUi=VmRSS:	  122532 kB
+Wed Apr 22 11:02:46 CST 2026: gklib=VmRSS:	   15800 kB
+Wed Apr 22 11:02:46 CST 2026: K3SysUi=VmRSS:	  149380 kB
+Wed Apr 22 11:02:48 CST 2026: gklib=VmRSS:	    8120 kB
+Wed Apr 22 11:02:48 CST 2026: K3SysUi=VmRSS:	  161816 kB
+Wed Apr 22 11:03:02 CST 2026: gklib=VmRSS:	   13112 kB
+Wed Apr 22 11:03:02 CST 2026: K3SysUi=
+```
+
+The process in a matter of 16 seconds went from 55MB to 161MB of memory usage, then the linux kernel panicked and killed the process becuase the rockchip SoC was out of RAM.
+
+Then Claude had an idea, perhaps it's the network connectivity, it wrote a script to modify the startup sequence and disabled networking but then also inserted a script with an infinite loop to monitor it without sleeping. I ran it without checking and everythign broke and the printer refused to exit the loop, it's a single core machine and the loop process was hogging it all.
+
+Now what? My printer UI doesn't work, and we disabled network connectivity, how the hell do I ssh into the printer now?
+
+At this point, Claude started hallucinating and gave up, it apologised to me for bricking the printer and it had no answers. It told me things that don't exist, methods it was lying about, trying to be helpful but it was at the end of it's knowledge.
+
+I searched GitHub for a firmware backup to see what scripts were available for me, perhaps a USB peripheral could help me.
+
+I went to the Rinkhals discord community and asked them for help, they told me I could enter MASKROM mode.
+
+MASKROM is the last line of defence against being bricked. By the grace of god the engineers at Rockchip created a mode to bypass the BIOS and receive instructions directly from USB, and Anycubic had made it available on my motherboard.
+
+The developers on discord had created scripts to dump the NAND flash, but they didn't seem to even remember they had done it. I asked for help and they were clueless, then I searched the chat and found they had already discussed modifying the memory via UART and header pins.
+
+Pretty standard I guess, just a days work for them, they probably do a hundred things per day.
+
+I downloaded their [Rockchip backup restore wizard](https://github.com/Kobra-S1/rockchip_backup_restore_wizard) and was able to extract the eMMC contents, then from within a Linux Mint PC USB BOOT I was able to repair by hand all of the broken contents of the memory segments and remove the scripts Claude had added.
+
+I overwrote the mount drives by plugging in a UART USB cable and holding the SW1 button on the circuit board to enable the wizard to function, the rockchip ARM CPU follows a very specific disk reading protocol. First it looks at the env partition, then the uboot partition and then loads the kernel. This was all fine, my issue was within the app partition and user partition where we had a broken binary.
+
+The printer was back to life, but the firmware was still broken?
+
+We went back to inspecting the kernel logs and found something interesting:
+
+```
+[2026-04-23 07:36:07.912] [gkui] [info] parseNetlinkMessage if_indextoname if_name:  eth0
+[2026-04-23 07:36:07.998] [gkui] [info] isEthernetCablePluggedIn: offline eth0
+[2026-04-23 07:36:08.093] [gkui] [info] parseNetlinkMessage if_indextoname if_name:  eth0
+[2026-04-23 07:36:08.178] [gkui] [info] isEthernetCablePluggedIn: offline eth0
+[2026-04-23 07:36:08.338] [gkui] [info] Standrad Mode
+[2026-04-23 07:36:09.582] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:11.153] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:12.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:14.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:15.715] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:17.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:18.715] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:20.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:21.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:23.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:24.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:26.216] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:27.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:29.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:30.238] [gkui] [info] JsonRpc Snd: {"id":2001,"method":"Cloud/WifiConnected","params":{"rssi":-72}}
+[2026-04-23 07:36:30.719] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:32.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:33.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:35.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:36.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:38.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:39.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:41.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:42.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:44.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:45.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:47.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:48.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:50.215] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:51.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:53.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:54.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:56.215] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:57.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:36:59.213] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:00.713] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:02.214] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:03.714] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+[2026-04-23 07:37:04.604] [gkui] [info] JsonRpc Rcv: {"id":0,"method":"process_status_update","params":{"eventtime":0,"response":"","status":{"custom_status":{"device_cloud_user":{"action":"bind","iconpath":"/useremain/.cache/api/icon.png","nickname":"jakewalklate"}}}}}
+[2026-04-23 07:37:05.712] [gkui] [info] JsonRpc Rcv: {"id":0,"method":"process_status_update","params":{"eventtime":0,"response":"","status":{"custom_status":{"device_cloud_user":{"action":"bind","iconpath":"/useremain/.cache/api/icon.png","nickname":"jakewalklate"}}}}}
+[2026-04-23 07:37:09.500] [gkui] [info] JsonRpc Snd: {"id":39,"method":"Query/K3cInfo","params":{}}
+```
+
+After the network driver inits the network interface eth0, suddenly the printer starts spamming the cloud API and _essentially DoSing itself_.
+
+I disabled networking, and with a fresh firmware partition the printer worked fine, offline at least.
+
+So I went searching the Anycubic API to find out what was wrong. I hypothesises what might be causing this response from the API that is crashing my printer.
+
+The reason was... my address.... Yes.. I live in an apartment, so my address is X/Y Street.
+
+The slash wasn't escaped and was killing the API response, causing my printer to freeze by creating an infinite loop and writing memoory and result in it's own process being killed.
+
+I went into the Anycubic settings and removed all my information, essentially wiping my account, and it works.
+
+I have a functioning 3D printer again.
+
+I wrote a bug report and emailed Jaycar to tell them what had happened.
+
+_But I wasn't done._
+
+I had just learnt the printer is just a linux box with a small touch screen UI, with WiFi and a USB port.
+
+So..
+
+**It was time to run DOOM.**
+
+The classic 1990's shooter built by the genius programmer John Carmack.
+
+I downloaded fbDoom (Framebuffer doom) as using the framebuffer was the simplest way to communicate with the peripheral touch screen, this is how the normal touchscreen works, it's not a sophisticated machine.
+
+I compiled it using Docker and targetted the arm7 architecture.
+
+And it worked.
+
+<center><img src="/printer-upgrade/n5.png" width="70%"/></center>
+
+<br />
+
+Surprisingly even my USB game pad was recognised when I plugged it in, but theres no driver for it.
+
+Fbdoom looks for input from the virtual terminal, and my gamepad sends raw HEX codes to the /dev/input/event which the kernel doesn't recognise without a driver.
+
+So, until I have a driver the input doesn't work, but I think we can write a simple daemon that decodes the hex and pipe it to the virtual terminal, but for now I have other things to do.
+
+After my progress, I had learnt a lot about Rinkhals, it's an awesome hack, but the problem with Rinkahls is installing it disables some of the printers default cloud functionality – nothing we couldn't fix, I just wondered why they the original developers had stoppped working on it.
+
+I went snooping aronud the printers files and found the original programs: GkCam, GkApi, and K3SysUi.
+
+I pulled them off the printer and opened them up in Ghidra. Rinkhals overwrites some of these files when it installs itself to give itself more functionality, these applications don't have easy APIs.
+
+I found that Anycubic use the cloud provider called Agora, a popular Chinese host. There was already a package called _cloud2lan-bridge_ that attempted to fix the cloud problems by relaying MQTT commands, but stopped at that.
+
+I created a program in c called _agora_pusher_. Agora pusher took the logic from GkCam and GkApi and re-wrote it in a small piece of software that pushed video streams to the Agora servers after decoding it from the hardware accelerators.
+
+On top of that I integrated a watchdog to kill and start the process automatically, to not flood someones internet connection with useless streams.
+
+<details>
+
+<summary>Agora_pusher.c</summary>
+
+```
+#include <dlfcn.h>
+#include <errno.h>
+#include <signal.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/time.h>
+#include <unistd.h>
+
+#include "./agora_rtc_api_interop_rinkhals.h"
+
+// Microsecond-accurate diagnostic log helper
+void log_time(const char *label) {
+  struct timeval tv;
+  gettimeofday(&tv, NULL);
+  fprintf(stderr, "[TIME_%ld.%06ld] [agora_pusher] %s\n", (long)tv.tv_sec,
+          (long)tv.tv_usec, label);
+}
+
+// SDK Interface Callbacks
+void on_join_success(connection_id_t conn_id, uint32_t uid, int elapsed_ms) {
+  (void)conn_id;
+  (void)uid;
+  (void)elapsed_ms;
+  extern volatile sig_atomic_t g_join_ready;
+  g_join_ready = 1;
+  log_time("[CALLBACK] on_join_channel_success event fired cleanly.");
+}
+
+void on_conn_lost(connection_id_t conn_id) {
+  (void)conn_id;
+  extern volatile sig_atomic_t g_join_ready;
+  g_join_ready = 0;
+  log_time("[CALLBACK] on_connection_lost event fired.");
+}
+
+void on_rejoin(connection_id_t conn_id, uint32_t uid, int elapsed_ms) {
+  (void)conn_id;
+  (void)uid;
+  (void)elapsed_ms;
+  extern volatile sig_atomic_t g_join_ready;
+  g_join_ready = 1;
+  log_time("[CALLBACK] on_rejoin_channel_success event fired.");
+}
+
+void on_error(connection_id_t conn_id, int err, const char *msg) {
+  (void)conn_id;
+  fprintf(stderr, "[CALLBACK] on_error fired. Code: %d, Message: %s\n", err,
+          msg ? msg : "NULL");
+}
+
+void on_reconnect(connection_id_t conn_id) {
+  (void)conn_id;
+  log_time("[CALLBACK] on_reconnecting event fired.");
+}
+
+void on_user_offline(connection_id_t conn_id, uint32_t uid, int reason) {
+  (void)conn_id;
+  fprintf(stderr,
+          "[CALLBACK] on_user_offline event fired (uid=%u, reason=%d). Exiting "
+          "pipeline.\n",
+          uid, reason);
+  exit(0);
+}
+
+typedef struct {
+  void (*on_error)(connection_id_t conn_id, int err,
+                   const char *msg); // Index 0 (offset 0)
+  void (*on_join_channel_success)(connection_id_t conn_id, uint32_t uid,
+                                  int elapsed_ms);     // Index 1 (offset 4)
+  void (*on_reconnecting)(connection_id_t conn_id);    // Index 2 (offset 8)
+  void (*on_connection_lost)(connection_id_t conn_id); // Index 3 (offset 12)
+  void (*on_rejoin_channel_success)(connection_id_t conn_id, uint32_t uid,
+                                    int elapsed_ms); // Index 4 (offset 16)
+  void *pad1[3];                                     // Indices 5, 6, 7
+  void (*on_user_offline)(connection_id_t conn_id, uint32_t uid,
+                          int reason); // Index 8 (offset 32)
+  void *pad2[17];                      // Indices 9-25
+} custom_event_handler_t;
+
+typedef struct {
+  void *pMb;          // Offset 0
+  uint32_t u32Len;    // Offset 4
+  uint64_t u64PTS;    // Offset 8
+  uint32_t bFrameEnd; // Offset 16
+  uint32_t DataType;  // Offset 20
+  uint32_t u32Offset; // Offset 24
+} my_venc_pack_t;
+
+typedef struct {
+  my_venc_pack_t *pstPack;
+  uint32_t u32PackCount;
+  uint32_t u32Seq;
+} my_venc_stream_t;
+
+typedef void *(*RK_MPI_MB_Handle2VirAddr_t)(void *pMb);
+typedef int (*RK_MPI_VENC_GetStream_t)(int s32Chn, void *pstStream,
+                                       int s32MilliSec);
+typedef int (*RK_MPI_VENC_ReleaseStream_t)(int s32Chn, void *pstStream);
+
+static int is_key_frame(const uint8_t *data, size_t size) {
+  if (size < 5)
+    return 0;
+  size_t offset = 0;
+  if (data[0] == 0x00 && data[1] == 0x00) {
+    if (data[2] == 0x01) {
+      offset = 3;
+    } else if (data[2] == 0x00 && data[3] == 0x01) {
+      offset = 4;
+    }
+  }
+  if (offset > 0 && offset < size) {
+    uint8_t nalu_type = data[offset] & 0x1f;
+    if (nalu_type == 5 || nalu_type == 7 || nalu_type == 8) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+// 204-byte binary-compatible structure matching gkcam's layout
+typedef struct __attribute__((packed)) {
+  uint8_t auto_subscribe_audio;       // 0
+  uint8_t auto_subscribe_video;       // 1
+  uint8_t enable_audio_jitter_buffer; // 2 (aj)
+  uint8_t enable_audio_mixer;         // 3 (am)
+  uint32_t audio_codec_type;          // 4
+  uint32_t pcm_sample_rate;           // 8
+  uint32_t pcm_channel_num;           // 12
+  uint32_t audio_duration;            // 16
+  uint8_t pad_20[8];                  // 20-27
+  uint8_t enable_aut_encryption;      // 28 (enable)
+  uint8_t pad_29[3];                  // 29-31
+  uint32_t encryption_mode;           // 32 (mode)
+  char encryption_key[129];           // 36-164 (key)
+  uint8_t encryption_salt[32];        // 165-196 (salt)
+  uint8_t pad_197[3];                 // 197-199
+  uint8_t field_200;                  // 200 (enable_rdt)
+  uint8_t field_201;                  // 201 (lan_acce)
+  uint8_t pad_202[2];                 // 202-203
+} custom_channel_options_t;
+
+// Self-contained Base64 Decoder
+static int base64_decode(const char *in, size_t in_len, uint8_t *out,
+                         size_t out_max, size_t *out_len) {
+  size_t i = 0, j = 0;
+  uint32_t val = 0;
+  int valb = -8;
+  for (i = 0; i < in_len; i++) {
+    char c = in[i];
+    if (c == '=')
+      break;
+    int d = -1;
+    if (c >= 'A' && c <= 'Z')
+      d = c - 'A';
+    else if (c >= 'a' && c <= 'z')
+      d = c - 'a' + 26;
+    else if (c >= '0' && c <= '9')
+      d = c - '0' + 52;
+    else if (c == '+')
+      d = 62;
+    else if (c == '/')
+      d = 63;
+    if (d != -1) {
+      val = (val << 6) | d;
+      valb += 6;
+      if (valb >= 0) {
+        if (j >= out_max)
+          return -1;
+        out[j++] = (val >> valb) & 0xFF;
+        valb -= 8;
+      }
+    }
+  }
+  *out_len = j;
+  return 0;
+}
+
+// Maps encryption mode strings to integers used by libagora-rtc-sdk
+static uint32_t get_encryption_mode_value(const char *mode_str) {
+  if (!mode_str)
+    return 8; // Default to AES_256_GCM2
+  if (strcmp(mode_str, "AES_128_XTS") == 0)
+    return 1;
+  if (strcmp(mode_str, "AES_128_ECB") == 0)
+    return 2;
+  if (strcmp(mode_str, "AES_256_XTS") == 0)
+    return 3;
+  if (strcmp(mode_str, "SM4_128_ECB") == 0)
+    return 4;
+  if (strcmp(mode_str, "AES_128_GCM") == 0)
+    return 5;
+  if (strcmp(mode_str, "AES_256_GCM") == 0)
+    return 6;
+  if (strcmp(mode_str, "AES_128_GCM2") == 0)
+    return 7;
+  if (strcmp(mode_str, "AES_256_GCM2") == 0)
+    return 8;
+
+  char *endptr;
+  unsigned long val = strtoul(mode_str, &endptr, 10);
+  if (*endptr == '\0') {
+    return (uint32_t)val;
+  }
+  return 0;
+}
+
+typedef int (*agora_rtc_init_t)(const char *app_id,
+                                const agora_rtc_event_handler_t *event_handler,
+                                const void *option);
+typedef const char *(*agora_rtc_err_2_str_t)(int err);
+typedef int (*agora_rtc_create_connection_t)(connection_id_t *conn_id);
+typedef int (*agora_rtc_leave_channel_t)(connection_id_t conn_id);
+
+// Verified 5-parameter public SDK footprint accepting custom options layout
+typedef int (*agora_rtc_join_channel_t)(connection_id_t conn_id,
+                                        const char *channel, uint32_t uid,
+                                        const char *token, void *options);
+typedef int (*agora_rtc_send_video_data_t)(connection_id_t conn_id,
+                                           const void *data_ptr,
+                                           size_t data_len,
+                                           video_frame_info_t *info_ptr);
+
+static uint8_t h264_ring[2 * 1024 * 1024];
+static size_t h264_ring_len = 0;
+static uint8_t send_bundle[2 * 1024 * 1024];
+static uint8_t cached_sps[512];
+static size_t cached_sps_len = 0;
+static uint8_t cached_pps[256];
+static size_t cached_pps_len = 0;
+volatile sig_atomic_t g_join_ready = 0;
+
+static int find_start_code(const uint8_t *data, size_t size, size_t *code_len) {
+  if (size < 3) {
+    return -1;
+  }
+
+  for (size_t index = 0; index + 3 < size; ++index) {
+    if (data[index] == 0x00 && data[index + 1] == 0x00) {
+      if (data[index + 2] == 0x01) {
+        if (code_len) {
+          *code_len = 3;
+        }
+        return (int)index;
+      }
+      if (index + 3 < size && data[index + 2] == 0x00 &&
+          data[index + 3] == 0x01) {
+        if (code_len) {
+          *code_len = 4;
+        }
+        return (int)index;
+      }
+    }
+  }
+
+  return -1;
+}
+
+// Explicitly sized raw options buffer to match 0x7C copy length safely
+int main(int argc, char *argv[]) {
+  log_time("Program start");
+  if (argc < 6) {
+    fprintf(stderr,
+            "[ERROR] Usage: %s <appid> <channel> <token> <license> <uid> "
+            "[venc_channel] [enc_mode] [enc_key] [enc_salt]\n",
+            argv[0]);
+    return 1;
+  }
+
+  const char *appid = argv[1];
+  const char *channel = argv[2];
+  const char *token = argv[3];
+  const char *license = argv[4];
+  uint32_t uid = (uint32_t)strtoul(argv[5], NULL, 10);
+  int venc_channel = -1;
+  if (argc >= 7) {
+    venc_channel = (int)strtol(argv[6], NULL, 10);
+  }
+
+  const char *enc_mode = NULL;
+  const char *enc_key = NULL;
+  const char *enc_salt = NULL;
+  if (argc >= 10) {
+    enc_mode = argv[7];
+    enc_key = argv[8];
+    enc_salt = argv[9];
+  }
+
+  if (enc_mode && strlen(enc_mode) == 0)
+    enc_mode = NULL;
+  if (enc_key && strlen(enc_key) == 0)
+    enc_key = NULL;
+  if (enc_salt && strlen(enc_salt) == 0)
+    enc_salt = NULL;
+
+  printf("[ARGS] appid='%s'\n", appid);
+  printf("[ARGS] channel='%s'\n", channel);
+  printf("[ARGS] token='%s'\n", token);
+  printf("[ARGS] license='%s'\n", license);
+  printf("[ARGS] uid=%u\n", uid);
+  printf("[ARGS] venc_channel=%d\n", venc_channel);
+  printf("[ARGS] enc_mode='%s'\n", enc_mode ? enc_mode : "NULL");
+  printf("[ARGS] enc_key='%s'\n", enc_key ? enc_key : "NULL");
+  printf("[ARGS] enc_salt='%s'\n", enc_salt ? enc_salt : "NULL");
+
+  log_time("Loading libagora-rtc-sdk.so");
+  void *lib = dlopen("/ac_lib/lib/third_lib/libagora-rtc-sdk.so",
+                     RTLD_NOW | RTLD_GLOBAL);
+  if (!lib) {
+    fprintf(stderr, "[ERROR] dlopen failed: %s\n", dlerror());
+    return 1;
+  }
+
+  agora_rtc_init_t fn_init = dlsym(lib, "agora_rtc_init");
+  agora_rtc_err_2_str_t fn_err_str = dlsym(lib, "agora_rtc_err_2_str");
+  agora_rtc_create_connection_t fn_create_conn =
+      dlsym(lib, "agora_rtc_create_connection");
+  agora_rtc_join_channel_t fn_join = dlsym(lib, "agora_rtc_join_channel");
+  agora_rtc_leave_channel_t fn_leave = dlsym(lib, "agora_rtc_leave_channel");
+  agora_rtc_send_video_data_t fn_send_video =
+      dlsym(lib, "agora_rtc_send_video_data");
+
+  if (!fn_init || !fn_create_conn || !fn_join || !fn_send_video) {
+    fprintf(stderr, "[ERROR] Critical symbols could not be resolved.\n");
+    dlclose(lib);
+    return 1;
+  }
+
+  // Set up cleanly cleared event handler mapping aligning with actual SDK
+  // structure offsets
+  custom_event_handler_t handler;
+  memset(&handler, 0, sizeof(handler));
+  handler.on_error = on_error;
+  handler.on_join_channel_success = on_join_success;
+  handler.on_reconnecting = on_reconnect;
+  handler.on_connection_lost = on_conn_lost;
+  handler.on_rejoin_channel_success = on_rejoin;
+  handler.on_user_offline = on_user_offline;
+  uint32_t area_code = 0xFFFFFFFF; // Default to AREA_CODE_GLOB
+  const char *area_env = getenv("AGORA_AREA_CODE");
+  if (area_env) {
+    area_code = (uint32_t)strtoul(area_env, NULL, 0);
+    printf("[INIT] Area code set from environment: 0x%08X\n", area_code);
+  }
+
+  uint8_t service_options[0x7c];
+  memset(service_options, 0, sizeof(service_options));
+  *(uint32_t *)service_options = area_code;
+
+  bool enable_sdk_log = false;
+  if (enable_sdk_log) {
+    service_options[68] = 0; // service_options[log_disable] = true
+    service_options[69] = 0; // log_disable_desensitize = true
+    *(uint32_t *)(service_options + 72) = 8; // log_level = RTC_LOG_DEBUG
+    *(const char **)(service_options + 76) = "/tmp"; // log_path = NULL
+  } else {
+    service_options[68] = 1;                 // log_disable = true
+    service_options[69] = 1;                 // log_disable_desensitize = true
+    *(uint32_t *)(service_options + 72) = 0; // log_level = RTC_LOG_DEFAULT
+    *(const char **)(service_options + 76) = "/tmp"; // log_path = NULL
+  }
+
+  snprintf((char *)(service_options + 0x58), 0x21, "%s", license);
+
+  log_time("Calling agora_rtc_init");
+  int init_ret = fn_init(appid, (const agora_rtc_event_handler_t *)&handler,
+                         service_options);
+  printf("[INIT] %d (%s)\n", init_ret,
+         fn_err_str ? fn_err_str(init_ret) : "unknown");
+  if (init_ret < 0) {
+    dlclose(lib);
+    return 1;
+  }
+
+  connection_id_t conn_id = 0;
+  int conn_ret = fn_create_conn(&conn_id);
+  printf("[CONN] %d conn_id=%u\n", conn_ret, conn_id);
+  if (conn_ret < 0) {
+    dlclose(lib);
+    return 1;
+  }
+
+  // Setup binary-compatible join options if encryption args are passed
+  custom_channel_options_t options;
+  custom_channel_options_t *options_ptr = NULL;
+
+  if (enc_mode || enc_key || enc_salt) {
+    memset(&options, 0, sizeof(options));
+    options.auto_subscribe_audio = 0;
+    options.auto_subscribe_video = 0;
+    options.enable_audio_jitter_buffer = 0; // aj = 0
+    options.enable_audio_mixer = 1; // am = 1 (matching local_e9 in gkcam)
+    options.audio_codec_type = 0;
+    options.pcm_sample_rate = 0;
+    options.pcm_channel_num = 0;
+    options.audio_duration = 0;
+    options.enable_aut_encryption = 1;
+
+    options.encryption_mode = get_encryption_mode_value(enc_mode);
+    if (enc_key) {
+      strncpy(options.encryption_key, enc_key,
+              sizeof(options.encryption_key) - 1);
+    }
+    if (enc_salt) {
+      size_t decoded_len = 0;
+      if (base64_decode(enc_salt, strlen(enc_salt), options.encryption_salt,
+                        sizeof(options.encryption_salt), &decoded_len) == 0) {
+        printf("[INIT] Successfully decoded %zu salt bytes\n", decoded_len);
+      } else {
+        fprintf(stderr, "[WARNING] Failed to decode base64 salt\n");
+      }
+    }
+    options.field_200 = 1; // enable_rdt = 1
+    options.field_201 = 0; // lan_acce = 0
+
+    options_ptr = &options;
+  }
+
+  log_time("Joining channel");
+  int join_ret = fn_join(conn_id, channel, uid, token, options_ptr);
+  printf("[JOIN] %d (%s)\n", join_ret,
+         fn_err_str ? fn_err_str(join_ret) : "unknown");
+
+  if (join_ret < 0) {
+    dlclose(lib);
+    return 1;
+  }
+
+  int wait_loops = 0;
+  while (!g_join_ready && wait_loops < 500) {
+    usleep(10000);
+    ++wait_loops;
+  }
+  if (!g_join_ready) {
+    fprintf(stderr, "[ERROR] channel join callback did not arrive in time\n");
+    if (fn_leave) {
+      fn_leave(conn_id);
+    }
+    dlclose(lib);
+    return 1;
+  }
+
+  uint32_t total_frames = 0;
+
+  // Check if we can and should use direct Rockchip VENC mode
+  void *mpp_lib = NULL;
+  RK_MPI_VENC_GetStream_t fn_venc_get_stream = NULL;
+  RK_MPI_VENC_ReleaseStream_t fn_venc_release_stream = NULL;
+  RK_MPI_MB_Handle2VirAddr_t fn_mb_handle2viraddr = NULL;
+
+  if (venc_channel >= 0) {
+    const char *mpp_libs[] = {"librkmedia.so",
+                              "librockchip_mpp.so",
+                              "/usr/lib/librkmedia.so",
+                              "/usr/lib/librockchip_mpp.so",
+                              "/oem/usr/lib/librkmedia.so",
+                              "/oem/usr/lib/librockchip_mpp.so",
+                              "/ac_lib/lib/third_lib/librkmedia.so",
+                              "/ac_lib/lib/third_lib/librockchip_mpp.so"};
+    for (size_t i = 0; i < sizeof(mpp_libs) / sizeof(mpp_libs[0]); i++) {
+      mpp_lib = dlopen(mpp_libs[i], RTLD_NOW | RTLD_GLOBAL);
+      if (mpp_lib) {
+        printf("[INIT] Successfully loaded MPP library: %s\n", mpp_libs[i]);
+        fn_venc_get_stream =
+            (RK_MPI_VENC_GetStream_t)dlsym(mpp_lib, "RK_MPI_VENC_GetStream");
+        fn_venc_release_stream = (RK_MPI_VENC_ReleaseStream_t)dlsym(
+            mpp_lib, "RK_MPI_VENC_ReleaseStream");
+        fn_mb_handle2viraddr = (RK_MPI_MB_Handle2VirAddr_t)dlsym(
+            mpp_lib, "RK_MPI_MB_Handle2VirAddr");
+        if (fn_venc_get_stream && fn_venc_release_stream &&
+            fn_mb_handle2viraddr) {
+          break;
+        }
+        dlclose(mpp_lib);
+        mpp_lib = NULL;
+      }
+    }
+    if (!mpp_lib) {
+      fprintf(stderr, "[WARNING] Direct VENC mode failed to load MPP/rkmedia "
+                      "libraries. Falling back to STDIN.\n");
+      venc_channel = -1;
+    }
+  }
+
+  if (venc_channel >= 0 && fn_venc_get_stream && fn_venc_release_stream &&
+      fn_mb_handle2viraddr) {
+    log_time("Entering Rockchip VENC channel loop");
+    my_venc_stream_t stream;
+    my_venc_pack_t pack_array[10];
+    memset(&stream, 0, sizeof(stream));
+    stream.pstPack = pack_array;
+    stream.u32PackCount = 10;
+
+    while (1) {
+      int ret = fn_venc_get_stream(venc_channel, &stream, 10);
+      if (ret == 0) {
+        if (stream.u32PackCount > 0 && stream.pstPack != NULL) {
+          for (uint32_t i = 0; i < stream.u32PackCount; i++) {
+            void *vir_addr = fn_mb_handle2viraddr(stream.pstPack[i].pMb);
+            uint32_t len = stream.pstPack[i].u32Len;
+            if (vir_addr != NULL && len > 0) {
+              total_frames++;
+              int is_key = is_key_frame((const uint8_t *)vir_addr, len);
+
+              video_frame_info_t video_frame_info;
+              memset(&video_frame_info, 0, sizeof(video_frame_info));
+              video_frame_info.data_type = VIDEO_DATA_TYPE_H264;
+              video_frame_info.stream_type = VIDEO_STREAM_HIGH;
+              video_frame_info.frame_rate = 0; // Use real timestamp
+              video_frame_info.frame_type =
+                  is_key ? VIDEO_FRAME_KEY : VIDEO_FRAME_DELTA;
+
+              int send_ret =
+                  fn_send_video(conn_id, vir_addr, len, &video_frame_info);
+              if (total_frames % 20 == 1 || send_ret < 0) {
+                fprintf(stderr,
+                        "[agora_pusher] VENC Transaction -> ID: %u, Bytes "
+                        "shipped: %u, Result: %d (%s), Key: %d\n",
+                        total_frames, len, send_ret,
+                        fn_err_str ? fn_err_str(send_ret) : "unknown", is_key);
+              }
+            }
+          }
+        }
+        fn_venc_release_stream(venc_channel, &stream);
+      } else {
+        usleep(10000);
+      }
+    }
+  } else {
+    log_time("Entering H.264 Annex-B STDIN send loop");
+
+    uint8_t read_tmp[4096];
+    ssize_t n;
+
+    while ((n = read(STDIN_FILENO, read_tmp, sizeof(read_tmp))) > 0) {
+      if (h264_ring_len + (size_t)n > sizeof(h264_ring)) {
+        h264_ring_len = 0;
+      }
+      memcpy(h264_ring + h264_ring_len, read_tmp, (size_t)n);
+      h264_ring_len += (size_t)n;
+
+      while (1) {
+        if (h264_ring_len < 3) {
+          break;
+        }
+
+        size_t start_code_len = 0;
+        int sync_idx =
+            find_start_code(h264_ring, h264_ring_len, &start_code_len);
+        if (sync_idx < 0) {
+          h264_ring_len = 0;
+          break;
+        }
+        if (sync_idx > 0) {
+          memmove(h264_ring, h264_ring + sync_idx,
+                  h264_ring_len - (size_t)sync_idx);
+          h264_ring_len -= (size_t)sync_idx;
+          continue;
+        }
+
+        size_t next_frame_idx = 0;
+        size_t next_start_code_len = 0;
+        int next_sync_idx = find_start_code(h264_ring + start_code_len,
+                                            h264_ring_len - start_code_len,
+                                            &next_start_code_len);
+        if (next_sync_idx >= 0) {
+          next_frame_idx = start_code_len + (size_t)next_sync_idx;
+        }
+
+        if (next_frame_idx == 0) {
+          break;
+        }
+
+        uint8_t nalu_type = h264_ring[start_code_len] & 0x1f;
+
+        if (nalu_type == 7) {
+          if (next_frame_idx <= sizeof(cached_sps)) {
+            memcpy(cached_sps, h264_ring, next_frame_idx);
+            cached_sps_len = next_frame_idx;
+          }
+        } else if (nalu_type == 8) {
+          if (next_frame_idx <= sizeof(cached_pps)) {
+            memcpy(cached_pps, h264_ring, next_frame_idx);
+            cached_pps_len = next_frame_idx;
+          }
+        }
+
+        // If this is a VCL NALU (slice), we send the frame (with SPS/PPS
+        // prepended for keyframes)
+        if (nalu_type >= 1 && nalu_type <= 5) {
+          size_t send_len = 0;
+          if (nalu_type == 5) {
+            // Prepend cached SPS and PPS to keyframe
+            if (cached_sps_len > 0 && cached_pps_len > 0) {
+              if (send_len + cached_sps_len + cached_pps_len <
+                  sizeof(send_bundle)) {
+                memcpy(send_bundle + send_len, cached_sps, cached_sps_len);
+                send_len += cached_sps_len;
+                memcpy(send_bundle + send_len, cached_pps, cached_pps_len);
+                send_len += cached_pps_len;
+              }
+            }
+          }
+
+          if (send_len + next_frame_idx < sizeof(send_bundle)) {
+            memcpy(send_bundle + send_len, h264_ring, next_frame_idx);
+            send_len += next_frame_idx;
+
+            video_frame_info_t video_frame_info;
+            memset(&video_frame_info, 0, sizeof(video_frame_info));
+            video_frame_info.data_type = VIDEO_DATA_TYPE_H264;
+            video_frame_info.stream_type = VIDEO_STREAM_HIGH;
+            video_frame_info.frame_rate = 0; // Use real timestamp
+            video_frame_info.frame_type =
+                (nalu_type == 5) ? VIDEO_FRAME_KEY : VIDEO_FRAME_DELTA;
+
+            total_frames++;
+            int send_ret = fn_send_video(conn_id, send_bundle, send_len,
+                                         &video_frame_info);
+            if (total_frames % 20 == 1 || send_ret < 0) {
+              fprintf(stderr,
+                      "[agora_pusher] Packet Transaction -> ID: %u, Bytes "
+                      "shipped: %zu, Result: %d (%s), VCL NALU: %u, Key: %d\n",
+                      total_frames, send_len, send_ret,
+                      fn_err_str ? fn_err_str(send_ret) : "unknown", nalu_type,
+                      (nalu_type == 5));
+            }
+          }
+        }
+
+        memmove(h264_ring, h264_ring + next_frame_idx,
+                h264_ring_len - next_frame_idx);
+        h264_ring_len -= next_frame_idx;
+      }
+    }
+  }
+
+  log_time("Tearing down bridge pipeline components.");
+  if (mpp_lib) {
+    dlclose(mpp_lib);
+  }
+  if (fn_leave) {
+    fn_leave(conn_id);
+  }
+  dlclose(lib);
+  return 0;
+}
+```
+</details>
+
+<br />
+
+I'm still working on the code, the memory addressing isn't perfect (it's a hack without correct byte spacing) but it works.
+
+Then, I had a dream...
+
+A dream To print carbon fiber infused nylon at home on my printer... for $25.
+
+That was obviously unrealistic, and I knew from the beginning, but I was determined to learn.
+
+Someone randomly gave me 5 rolls of ABS filament for free, that was nice of them, I assume they couldn't get it to work. I think they had an Ender 3 pro but couldn't maintain the temperatures ABS needed.
+
+I tried to print with it, but once the temperature changed from day to night the plastic would crack and fail, I didn't have this problem with ASA, but ABS is notoriously difficult.
+
+ABS requires stable and high temperatures to not warp, so my goal was to print the ABS, then move onto PPA-CF (nylon carbon fiber).
+
+I looked around at designs online for chamber heaters, some were really clean, but all required manual configuration, such as setting the temp, monitoring it, turning it off, I wanted something that operated for the user (me) like it came from the factory.
+
+This is where my friend Stephen Grady who is a retired engineer from CSIRO briefly steps into the picture and provides me with something useful. He gifted me an ESP32-S3 super mini.
+
+<center><img src="/printer-upgrade/1.jpeg" alt="An image of a perf board with an ESP32 and a 5V relay" width="60%"/></center>
+
+<br />
+
+The ESP32-S3 has 2.4Ghz WiFi capabilities, and the Anycubic Kobra S1 also has WiFi, so I knew they could communicate.
+
+<center><img src="/printer-upgrade/2.jpeg" alt="An image of a perf board with an ESP32 and a 5V relay" width="60%"/></center>
+
+I started with a 5V relay (CAT.NO: XC4419). I bought a 50 Watt PTC element heater off ebay, and a Keyes Temperature Detector Sensor With Module (CAT.NO: XC4653) from JayCar. 
+
+<center><img src="/printer-upgrade/3.jpeg" alt="The two parallel 50 Watt PTC element heaters" width="60%"/></center>
+
+<br />
+
+I created a HTTP end point on the ESP32 which took a single variable as a query parameter to set the target temperature, if the temperature sensor ever rose above that temperature the relay switched the heater off.
+
+<img src="/printer-upgrade/4.jpeg" alt="An image of a perf board with an ESP32 and a 5V relay" width="60%"/>
+
+<br />
+
+Next, I put a script on the printer to check if there was an active file being printed, if it was in ABS or another material which requires constant temperatures the printer would POST to the HTTP end point on the ESP32 and start the heater.
+
+This was simple enough, it kept the temperatures comfortably at 30 degrees, but it's not hot enough, ABS ideally wants 60 degrees.
+
+I added bubble foil and aluminium tape to double insulate the internal layers, _then to my wifes great joy_ I bought another 50W ebay heater and put it in parallel with the other one.
+
+Now it reached 50 degrees stable.
+
+That's probably enough for me, so I started printing.
+
+...**ERROR**...
+
+Oh dear, I ran into a problem I didn't foresee, something known as heat creep. 
+
+Heat creep is... when the heat creeps... into places you don't want it. This was causing parts which should have been solid into liquids.
+
+Easy fix, I'll just put a fan there and blow air onto it to cool it down.. but the whole printer was now 50 degrees, the air had to come from outside.
+
+I ran some air lines from outside the printer into the chamber to blow air onto the motherboard and heat-break using a model I made in Fusion 360.
+
+<center><img src="/printer-upgrade/6.jpg" alt="An air splitter modelled in Fusion 360" width="60%"/></center>
+
+<br />
+
+But I've never taken a fluid mechanics course, or a thermodynamics course, _I'm not a mechanical engineer_.
+
+The blower fan I bought didn't have enough pressure to push the air through the tube, so I had to buy a CPAP.
+
+A CPAP (or continuous positive air pressure) fan is essentially a blower designed for high RPM so it can maintain pressure.
+
+The CPAP is extremely loud, so I printed a muffler for it and added an air filter and it brought the noise down to just above normal printing sound, if not somewhat more annoying.
+
+The CPAP worked perfectly, heat creep was gone, the chamber was hot, printing was perfect.
+
+<center><img src="/printer-upgrade/5.jpg" alt="An image of a CPAP with a muffler" width="60%"/></center>
+
+<br />
+
+So I added the CPAP to another 5V relay and stuck it to the ESP32, the CPAP using the same temperature sensor switches on automatically if the chamber is above 30 degrees.
+
+I made it sound easy, but this took me all of my spare time for the better part of 5 weeks, <small><i>and cost a total of $400, mistakes included</i></small>. If I didn't make any mistakes the bill of materials would have totalled to $200.
+
+Which isn't bad to double the strength of materials printed.
+
+<details>
+
+<summary>The ESP32 c++ code</summary>
+
+```
+#include <DallasTemperature.h>
+#include <ESPmDNS.h>
+#include <FastLED.h>
+#include <OneWire.h>
+#include <Preferences.h>
+#include <WiFi.h>
+
+#define NUM_LEDS 1
+#define DATA_PIN 48
+#define HEATBREAK_COOLER_OUTPUT 5
+#define RELAY_OUTPUT 6
+#define ONE_WIRE_BUS 7
+
+// WiFi provisioning
+#define AP_SSID "anycubic-test-esp"
+#define WIFI_CONNECT_TIMEOUT_MS 15000
+#define MDNS_HOSTNAME "chamber-heater"
+
+CRGB leds[NUM_LEDS];
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+WiFiServer httpEndPoint(80);
+Preferences prefs;
+
+float currentTemperature = 0.0;
+float targetTemperature = 0.0;
+unsigned long printTime = 0;
+unsigned long checkTempInterval = 500;
+unsigned long lastCheckTemp = 0;
+bool wifiConnected = false;
+bool MANUAL_HEATBREAK_OVERRIDE = false;
+
+// WiFi reconnection
+unsigned long lastWifiCheck = 0;
+const unsigned long WIFI_CHECK_INTERVAL_MS = 10000; // check every 10s
+
+// URL-decode a string (handles %XX and + for space)
+String urlDecode(const String &input) {
+  String decoded = "";
+  for (unsigned int i = 0; i < input.length(); i++) {
+    char c = input.charAt(i);
+    if (c == '%' && i + 2 < input.length()) {
+      String hex = input.substring(i + 1, i + 3);
+      decoded += (char)strtol(hex.c_str(), NULL, 16);
+      i += 2;
+    } else if (c == '+') {
+      decoded += ' ';
+    } else {
+      decoded += c;
+    }
+  }
+  return decoded;
+}
+
+// Extract a query parameter value from the raw HTTP request
+String extractParam(const String &request, const String &paramName) {
+  String searchKey = paramName + "=";
+  int startIdx = request.indexOf(searchKey);
+  if (startIdx == -1)
+    return "";
+
+  startIdx += searchKey.length();
+  int endIdx = request.length();
+  int spaceIdx = request.indexOf(" ", startIdx);
+  int ampIdx = request.indexOf("&", startIdx);
+  int newlineIdx = request.indexOf("\r", startIdx);
+
+  if (spaceIdx != -1 && spaceIdx < endIdx)
+    endIdx = spaceIdx;
+  if (ampIdx != -1 && ampIdx < endIdx)
+    endIdx = ampIdx;
+  if (newlineIdx != -1 && newlineIdx < endIdx)
+    endIdx = newlineIdx;
+
+  String value = request.substring(startIdx, endIdx);
+  value.trim();
+  return urlDecode(value);
+}
+
+// Save WiFi credentials to persistent storage
+void saveWiFiCredentials(const String &ssid, const String &password) {
+  prefs.begin("wifi", false);
+  prefs.putString("ssid", ssid);
+  prefs.putString("password", password);
+  prefs.end();
+  Serial.println("Credentials saved to flash");
+}
+
+// Load WiFi credentials from persistent storage
+bool loadWiFiCredentials(String &ssid, String &password) {
+  prefs.begin("wifi", true);
+  ssid = prefs.getString("ssid", "");
+  password = prefs.getString("password", "");
+  prefs.end();
+  return ssid.length() > 0;
+}
+
+// Attempt to connect to WiFi with stored credentials
+bool tryConnect() {
+  String ssid, password;
+  if (!loadWiFiCredentials(ssid, password)) {
+    Serial.println("No stored credentials");
+    return false;
+  }
+
+  Serial.printf("Connecting to '%s'...\n", ssid.c_str());
+  leds[0] = CRGB::Blue;
+  FastLED.show();
+
+  WiFi.mode(WIFI_STA);
+  WiFi.setHostname("test-esp");
+  WiFi.begin(ssid.c_str(), password.c_str());
+
+  unsigned long start = millis();
+  while (WiFi.status() != WL_CONNECTED &&
+         millis() - start < WIFI_CONNECT_TIMEOUT_MS) {
+    delay(250);
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.printf("Connected! IP: %s\n", WiFi.localIP().toString().c_str());
+    return true;
+  }
+
+  Serial.println("Connection failed");
+  WiFi.disconnect();
+  return false;
+}
+
+// Start the AP for provisioning
+void startAP() {
+  Serial.println("Starting AP for provisioning...");
+  leds[0] = CRGB::Yellow;
+  FastLED.show();
+
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP(AP_SSID); // open AP, no password
+  delay(100);
+
+  Serial.printf("AP '%s' started. IP: %s\n", AP_SSID,
+                WiFi.softAPIP().toString().c_str());
+}
+
+// Handle the /wifi provisioning endpoint
+// Returns true if credentials were received and a reboot is needed
+bool handleWiFiEndpoint(WiFiClient &client, const String &request) {
+  String newSSID = extractParam(request, "ssid");
+  String newPassword = extractParam(request, "password");
+
+  if (newSSID.length() == 0) {
+    client.println("HTTP/1.1 400 Bad Request");
+    client.println("Content-Type: text/plain");
+    client.println("Connection: close");
+    client.println();
+    client.println("Missing 'ssid' parameter");
+    return false;
+  }
+
+  saveWiFiCredentials(newSSID, newPassword);
+
+  client.println("HTTP/1.1 200 OK");
+  client.println("Content-Type: text/plain");
+  client.println("Connection: close");
+  client.println();
+  client.printf("Credentials accepted for '%s'. Rebooting...\n",
+                newSSID.c_str());
+  client.flush();
+  delay(100);
+  client.stop();
+
+  Serial.printf("Received credentials for '%s'. Rebooting in 1s...\n",
+                newSSID.c_str());
+  leds[0] = CRGB::Purple;
+  FastLED.show();
+  delay(1000);
+  ESP.restart();
+
+  return true; // never reached, but keeps compiler happy
+}
+
+// Handle the status / control endpoint (original functionality)
+void handleStatusEndpoint(WiFiClient &client, const String &request) {
+  // Parse target temperature
+  String targetStr = extractParam(request, "target");
+  if (targetStr.length() > 0) {
+    targetTemperature = targetStr.toFloat();
+  }
+
+  // Parse timer
+  String timerStr = extractParam(request, "timer");
+  if (timerStr.length() > 0) {
+    unsigned long timerSec = (unsigned long)timerStr.toInt();
+    if (timerSec > 0) {      
+      printTime = millis() + (timerSec * 1000UL) + (30UL * 60UL * 1000UL);
+    } else {
+      printTime = 0;
+    }
+  }
+
+  String blowerStr = extractParam(request, "blower");
+  if (blowerStr.length() > 0) {
+    long blowerIsActivated = blowerStr.toInt();
+    if (blowerIsActivated == 0) {
+      MANUAL_HEATBREAK_OVERRIDE = false;
+    } else if (blowerIsActivated == 1) {
+      MANUAL_HEATBREAK_OVERRIDE = true;
+    }
+  }
+
+  // Send the response
+  client.println("HTTP/1.1 200 OK");
+  client.println("Content-Type: text/plain");
+  client.println("Connection: close");
+  client.println();
+  client.print("Time Remaining: ");
+  if (printTime > 0 && millis() < printTime) {
+    client.print((printTime - millis()) / 1000UL);
+  } else {
+    client.print("0");
+  }
+  client.println(" S");
+  client.print("Current Temp: ");
+  client.print(currentTemperature);
+  client.println(" C");
+  client.print("Target Temp: ");
+  client.print(targetTemperature);
+  client.println(" C");
+  client.print("Relay: "); // we return an estimate of the relays state based on
+                           // target temp, the actual state is irrelevant
+  if (digitalRead(RELAY_OUTPUT) == HIGH) {
+    client.println("ON");
+  } else {
+    client.println("OFF");
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  while (!Serial && millis() < 4000) {
+    delay(10);
+  }
+
+  pinMode(RELAY_OUTPUT, OUTPUT);
+  pinMode(HEATBREAK_COOLER_OUTPUT, OUTPUT);
+  digitalWrite(RELAY_OUTPUT, LOW); // relay off at start
+  digitalWrite(HEATBREAK_COOLER_OUTPUT, LOW);
+  sensors.begin();
+  sensors.setWaitForConversion(false);
+  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
+  FastLED.clear();
+
+  // Try connecting with stored credentials
+  wifiConnected = tryConnect();
+
+  if (!wifiConnected) {
+    // No credentials or connection failed — start AP for provisioning
+    startAP();
+  } else {
+    WiFi.setAutoReconnect(true);
+    // Start mDNS on successful connection
+    if (!MDNS.begin(MDNS_HOSTNAME)) {
+      Serial.println("mDNS setup failed");
+    }
+  }
+
+  // Start HTTP server in both modes (STA for normal use, AP for provisioning)
+  httpEndPoint.begin();
+
+  if (wifiConnected) {
+    leds[0] = CRGB::Green;
+  }
+  FastLED.show();
+}
+
+void loop() {
+  // WiFi reconnection check (only in STA mode)
+  if (wifiConnected && millis() - lastWifiCheck >= WIFI_CHECK_INTERVAL_MS) {
+    lastWifiCheck = millis();
+    if (WiFi.status() != WL_CONNECTED) {
+      Serial.println("WiFi lost — attempting reconnect...");
+      leds[0] = CRGB::Blue;
+      FastLED.show();
+      WiFi.reconnect();
+    } else {
+      // Connection restored (or was never lost)
+      if (leds[0] != CRGB::Green) {
+        Serial.printf("WiFi reconnected. IP: %s\n",
+                      WiFi.localIP().toString().c_str());
+        leds[0] = CRGB::Green;
+        FastLED.show();
+        // Re-init mDNS after reconnection
+        MDNS.end();
+        if (!MDNS.begin(MDNS_HOSTNAME)) {
+          Serial.println("mDNS re-init failed");
+          leds[0] = CRGB::Red;
+          FastLED.show();
+        }
+      }
+    }
+  }
+
+  // Print timer expiry
+  if (printTime > 0 && millis() >= printTime) {
+    targetTemperature = 0.0;
+    printTime = 0;
+  }
+
+
+  // Temperature polling
+  if ((unsigned long)(millis() - lastCheckTemp) > checkTempInterval) {
+    sensors.requestTemperatures();
+    float rawTemp = sensors.getTempCByIndex(0);
+
+    // Filter out OneWire fault codes (-127 and 85 are standard DS18B20 error codes)
+    if (rawTemp > -50.0 && rawTemp < 125.0 && rawTemp != 85.0) {
+      currentTemperature = rawTemp;
+    } else {
+      Serial.println("Warning: DS18B20 read error ignored!");
+    }
+    lastCheckTemp = millis();
+  }
+
+  // Relay control
+  if (targetTemperature < 40) {
+    digitalWrite(RELAY_OUTPUT, LOW);
+  } else {
+    if (printTime > 0) {
+      if (currentTemperature <= (targetTemperature - 2.5)) {
+        digitalWrite(RELAY_OUTPUT, HIGH);
+      } else if (currentTemperature >= (targetTemperature + 2.5)) {
+        digitalWrite(RELAY_OUTPUT, LOW);
+      }
+    } else {
+      digitalWrite(RELAY_OUTPUT, LOW);
+    }
+  }
+  
+  if (MANUAL_HEATBREAK_OVERRIDE) {
+    digitalWrite(HEATBREAK_COOLER_OUTPUT, HIGH);
+  } else if (currentTemperature >= 30.0) {
+    digitalWrite(HEATBREAK_COOLER_OUTPUT, HIGH);
+  } else if (currentTemperature < 27.0) {
+    digitalWrite(HEATBREAK_COOLER_OUTPUT, LOW);
+  }
+
+  // HTTP request handling
+  WiFiClient client = httpEndPoint.available();
+  if (client) {
+    String fullRequest = "";
+    unsigned long timeout = millis();
+
+    // Read full request (headers + body)
+    while (client.connected() && millis() - timeout < 500) {
+      while (client.available()) {
+        char c = client.read();
+        fullRequest += c;
+        timeout = millis();
+      }
+    }
+
+    // Route: /wifi endpoint for provisioning
+    if (fullRequest.startsWith("GET /wifi")) {
+      handleWiFiEndpoint(client, fullRequest);
+      return; // ESP will reboot, never reaches here
+    }
+
+    // Route: everything else is the status/control endpoint (original
+    // behaviour)
+    handleStatusEndpoint(client, fullRequest);
+
+    delay(10);
+    client.stop();
+  }
+}
+```
+</details>
+
+<br />
+
+<details>
+  <summary>The printer code</summary>
+
+  There are multiple modules that work together.
+
+  <details>
+    <summary>&nbsp;&nbsp;&nbsp;&nbsp;_chamber-mdns_</summary>
+    ```
+    #!/usr/bin/env python3
+import socket
+import struct
+import time
+import logging
+
+MDNS_ADDR = "224.0.0.251"
+MDNS_PORT = 5353
+CACHE_FILE = "/tmp/chamber_heater_ip"
+PERSISTENT_CACHE = "/userdata/chamber_heater_ip"
+TARGET = "chamber-heater.local"
+REFRESH_INTERVAL = 60
+QUERY_TIMEOUT = 5.0
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+log = logging.getLogger("mdns_resolve")
+
+def encode_dns_name(name):
+    parts = name.encode("ascii").split(b".")
+    result = b""
+    for part in parts:
+        result += struct.pack("B", len(part)) + part
+    result += b"\x00"
+    return result
+
+def parse_dns_name(data, offset):
+    labels = []
+    original_offset = None
+    while offset < len(data):
+        length = data[offset]
+        if length == 0:
+            offset += 1
+            break
+        if (length & 0xC0) == 0xC0:
+            if original_offset is None:
+                original_offset = offset + 2
+            pointer = struct.unpack("!H", data[offset:offset+2])[0] & 0x3FFF
+            offset = pointer
+            continue
+        offset += 1
+        labels.append(data[offset:offset+length].decode("ascii", errors="replace"))
+        offset += length
+    return ".".join(labels), (original_offset if original_offset is not None else offset)
+
+def build_query(name):
+    header = struct.pack("!HHHHHH", 0, 0, 1, 0, 0, 0)
+    encoded = encode_dns_name(name)
+    question = encoded + struct.pack("!HH", 1, 0x8001)
+    return header + question
+
+def parse_response(data, target):
+    if len(data) < 12:
+        return None
+    flags = struct.unpack("!H", data[2:4])[0]
+    if not (flags & 0x8000):
+        return None
+    ancount = struct.unpack("!H", data[6:8])[0]
+    if ancount == 0:
+        return None
+    offset = 12
+    qdcount = struct.unpack("!H", data[4:6])[0]
+    for _ in range(qdcount):
+        if offset >= len(data):
+            return None
+        _, offset = parse_dns_name(data, offset)
+        offset += 4
+    for _ in range(ancount):
+        if offset >= len(data):
+            return None
+        name, offset = parse_dns_name(data, offset)
+        if offset + 10 > len(data):
+            return None
+        rtype, rclass, ttl, rdlen = struct.unpack("!HHIH", data[offset:offset+10])
+        offset += 10
+        if (name.lower() == target.lower() and rtype == 1 and (rclass & 0x7FFF) == 1 and rdlen == 4):
+            return socket.inet_ntoa(data[offset:offset+4])
+        offset += rdlen
+    return None
+
+def resolve_once(target):
+    query = build_query(target)
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+    sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 255)
+    sock.settimeout(QUERY_TIMEOUT)
+    try:
+        sock.sendto(query, (MDNS_ADDR, MDNS_PORT))
+        deadline = time.monotonic() + QUERY_TIMEOUT
+        while time.monotonic() < deadline:
+            try:
+                data, _ = sock.recvfrom(1500)
+                ip = parse_response(data, target)
+                if ip:
+                    return ip
+            except socket.timeout:
+                break
+    finally:
+        sock.close()
+    return None
+
+def write_cache(ip):
+    for path in [CACHE_FILE, PERSISTENT_CACHE]:
+        try:
+            with open(path, "w") as f:
+                f.write(ip)
+        except Exception as e:
+            log.warning("Could not write cache %s: %s", path, e)
+    log.info("Resolved %s -> %s", TARGET, ip)
+
+def read_cache():
+    for path in [CACHE_FILE, PERSISTENT_CACHE]:
+        try:
+            with open(path) as f:
+                ip = f.read().strip()
+                if ip:
+                    return ip
+        except Exception:
+            continue
+    return None
+
+def main():
+    log.info("Starting mDNS resolver for %s", TARGET)
+    last_success = None
+    while True:
+        ip = resolve_once(TARGET)
+        if ip:
+            if ip != last_success:
+                write_cache(ip)
+                last_success = ip
+        else:
+            if last_success is None and read_cache() is None:
+                log.warning("No cached IP available for %s", TARGET)
+        time.sleep(REFRESH_INTERVAL)
+
+if __name__ == "__main__":
+    main()
+    ```
+    </details>
+
+    <details>
+    <summary>&nbsp;&nbsp;&nbsp;&nbsp;_chamber-controller_</summary>
+    ```
+   #!/usr/bin/env python3
+import os
+import re
+import sys
+import time
+import json
+import urllib.request
+import urllib.error
+from datetime import datetime
+
+PIDFILE = "/tmp/chamber_spy.pid"
+RUNTIME_CACHE = "/tmp/chamber_heater_ip"
+PERSISTENT_CACHE = "/userdata/chamber_heater_ip"
+GCODES_BASE = "/userdata/app/gk/printer_data/gcodes"
+DEBUG_LOG = "/tmp/chamber_debug.log"
+
+def log_debug(message):
+    try:
+        timestamp = datetime.now().strftime('[%Y-%m-%d %H:%M:%S]')
+        with open(DEBUG_LOG, "a") as f:
+            f.write(f"{timestamp} {message}\n")
+    except Exception as e:
+        print(f"Error writing to log: {e}", file=sys.stderr)
+
+def get_valid_ip():
+    for cache_path in [RUNTIME_CACHE, PERSISTENT_CACHE]:
+        if os.path.exists(cache_path):
+            try:
+                with open(cache_path, "r") as f:
+                    ip = f.read().strip()
+                if ip and ip != "0.0.0.0":
+                    return ip
+            except Exception:
+                pass
+    return None
+
+def parse_gcode_file(filename):
+    full_path = os.path.join(GCODES_BASE, filename)
+    if not os.path.isfile(full_path):
+        log_debug(f"[DEBUG_ERR] File not found on disk: [{full_path}]")
+        return None, None
+
+    raw_target = 0
+    total_estimate = 1800
+
+    try:
+        # Read the first 128KB for M141
+        with open(full_path, "rb") as f:
+            read_size = min(os.path.getsize(full_path), 131072)
+            first_chunk = f.read(read_size).decode("utf-8", errors="ignore")
+
+            for line in first_chunk.splitlines():
+                if "M141" in line:
+                    match = re.search(r'M141.*?S(\d+)', line)
+                    if match:
+                        raw_target = int(match.group(1))
+                        break
+
+        # Read last 128KB of the file for the print time estimate
+        try:
+            with open(full_path, "rb") as f:
+                f.seek(0, os.SEEK_END)
+                size = f.tell()
+                read_size = min(size, 131072)
+                f.seek(-read_size, os.SEEK_END)
+                last_chunk = f.read(read_size).decode("utf-8", errors="ignore")
+                
+                time_match = re.search(r'estimated printing time \(normal mode\)\s*=\s*(.*)', last_chunk, re.IGNORECASE)
+                if time_match:
+                    time_str = time_match.group(1).strip()
+                    h = re.search(r'(\d+)h', time_str)
+                    m = re.search(r'(\d+)m', time_str)
+                    s_match = re.search(r'(\d+)s', time_str)
+                    total_estimate = (int(h.group(1)) * 3600 if h else 0) + \
+                                     (int(m.group(1)) * 60 if m else 0) + \
+                                     (int(s_match.group(1)) if s_match else 0)
+        except Exception as e:
+            log_debug(f"[DEBUG_ERR] Error parsing end of gcode file: {e}")
+
+    except Exception as e:
+        log_debug(f"[DEBUG_ERR] Error reading gcode file: {e}")
+
+    return raw_target, total_estimate
+
+def run_monitor_loop():
+    log_debug("[DEBUG_MAIN] Loop engine started. Polling interval: 5s")
+    last_file = ""
+
+    while True:
+        try:
+            req = urllib.request.Request("http://localhost:7125/printer/objects/query?print_stats")
+            with urllib.request.urlopen(req, timeout=3) as response:
+                stats_blob = json.loads(response.read().decode("utf-8"))
+            
+            print_stats = stats_blob.get('result', {}).get('status', {}).get('print_stats', {})
+            state = print_stats.get('state', '')
+            current_file = print_stats.get('filename', '')
+            duration = int(float(print_stats.get('print_duration', 0.0)))
+        except Exception as e:
+            time.sleep(5)
+            continue
+
+        if state in ["printing", "paused"]:
+            if current_file:
+                raw_target, total_estimate = parse_gcode_file(current_file)
+                if raw_target is not None:
+                    active_ip = get_valid_ip()
+                    if active_ip:
+                        try:
+                            esp_url = f"http://{active_ip}/"
+                            esp_req = urllib.request.Request(esp_url)
+                            with urllib.request.urlopen(esp_req, timeout=3) as resp:
+                                esp32_status = resp.read().decode("utf-8", errors="ignore")
+                            
+                            match = re.search(r'Target Temp:\s*([\d.]+)', esp32_status)
+                            if match:
+                                live_hardware_target = int(float(match.group(1)))
+                            else:
+                                live_hardware_target = -1
+                                log_debug(f"[DEBUG_WARN] Could not parse Target Temp from ESP32 response")
+
+                            time_remaining = total_estimate - duration
+                            log_debug(f"[DEBUG_LOOP] Polled State: [{state}] | Required: [{raw_target}] | ESP32 Target: [{live_hardware_target}] | GCode Estimate: [{total_estimate}] | Remaining: [{time_remaining}] | Elapsed: [{duration}]")
+
+                            if time_remaining < 500:
+                                raw_target = 0
+
+                            if raw_target != live_hardware_target:
+                                last_file = current_file
+                                log_debug(f"[DEBUG_PATH] Mismatch detected! Correcting hardware target to [{raw_target}]")
+                                
+                                if raw_target < 40:
+                                    target_url = f"http://{active_ip}/?target=0&timer=0"
+                                else:
+                                    target_url = f"http://{active_ip}/?target={raw_target}&timer={time_remaining}"
+                                
+                                try:
+                                    with urllib.request.urlopen(target_url, timeout=4) as _:
+                                        pass
+                                    log_debug("[DEBUG_CURL_RESULT] Correction status: [0]")
+                                except Exception as curl_err:
+                                    log_debug(f"[DEBUG_CURL_RESULT] Correction failed: {curl_err}")
+                        except Exception as esp_err:
+                            log_debug(f"[DEBUG_ERR] Failed to communicate with ESP32 at {active_ip}: {esp_err}")
+                    else:
+                        log_debug("[DEBUG_ERR] Dynamic IP lookup returned empty.")
+        elif state in ["standby", "cancelled", "complete"]:
+            if last_file:
+                log_debug("[DEBUG_SHUTDOWN] Print ended. Disabling heater relays.")
+                last_file = ""
+                active_ip = get_valid_ip()
+                if active_ip:
+                    try:
+                        shutdown_url = f"http://{active_ip}/?target=0"
+                        with urllib.request.urlopen(shutdown_url, timeout=4) as _:
+                            pass
+                    except Exception as shutdown_err:
+                        log_debug(f"[DEBUG_ERR] Failed to send shutdown command to ESP32: {shutdown_err}")
+
+        time.sleep(5)
+
+if __name__ == "__main__":
+    run_monitor_loop()
+    ```
+    </details>
+
+    <details>
+      <summary>&nbsp;&nbsp;&nbsp;&nbsp;_esp32-connector_</summary>
+
+      ```
+      #!/usr/bin/env python3
+"""
+ESP32 WiFi Auto-Connector
+
+Scans for the ESP32 chamber heater's fallback AP ('test-esp') and, when found,
+sends the printer's WiFi credentials to the ESP32 so it can join the home network.
+Reads credentials from /userdata/wifi_cfg/passwd_history.cfg.
+
+This eliminates the need to manually connect a phone to configure the ESP32.
+"""
+import os
+import sys
+import json
+import time
+import subprocess
+import urllib.request
+import urllib.parse
+import urllib.error
+import socket
+from datetime import datetime
+
+# --- Configuration ---
+ESP32_AP_SSID = "anycubic-test-esp"
+ESP32_AP_IP = "192.168.4.1"
+ESP32_WIFI_ENDPOINT = "/wifi"
+PASSWD_HISTORY = "/userdata/wifi_cfg/passwd_history.cfg"
+WPA_INTERFACE = "wlan0"
+SCAN_INTERVAL = 30       # seconds between scans when ESP32 not detected
+PROVISION_COOLDOWN = 120  # seconds to wait after a provisioning attempt
+DEBUG_LOG = "/tmp/esp32_connector.log"
+MAX_LOG_SIZE = 512 * 1024  # 512KB, rotate when exceeded
+
+# --- Logging ---
+def log(message):
+    try:
+        timestamp = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
+        line = f"{timestamp} {message}\n"
+        # Rotate log if too large
+        if os.path.exists(DEBUG_LOG):
+            try:
+                if os.path.getsize(DEBUG_LOG) > MAX_LOG_SIZE:
+                    os.rename(DEBUG_LOG, DEBUG_LOG + ".old")
+            except OSError:
+                pass
+        with open(DEBUG_LOG, "a") as f:
+            f.write(line)
+    except Exception:
+        pass
+
+## --- Display (fb_draw) ---
+try:
+    import fb_draw
+    _fb_available = True
+except ImportError:
+    _fb_available = False
+
+def display(message, color="green", save=True, timeout=None):
+    """
+    Show a status message on the printer's LCD using fb_draw.
+    Gracefully does nothing if fb_draw fails or isn't available.
+    """
+    if not _fb_available:
+        return
+
+    color_map = {
+        "cyan": (0, 255, 255),
+        "yellow": (255, 255, 0),
+        "red": (255, 0, 0),
+        "green": (0, 255, 0),
+    }
+    rgb = color_map.get(color, (255, 255, 255))
+    
+    fb_draw.fb_show(message, color=rgb)
+    
+    if timeout is not None:
+        # Note: the original fb_status did auto-hide, but here we just leave it
+        # on the screen for 'timeout' seconds since our python script runs synchronously.
+        # Actually, since this is called during blocking steps, we shouldn't sleep here unless
+        # it's just a message. Wait, the caller handles sleep for success/fail messages.
+        pass
+
+def display_hide():
+    """Restore the original screen content."""
+    if _fb_available:
+        fb_draw.fb_hide()
+
+# --- WiFi scanning ---
+def scan_for_ssid(target_ssid):
+    """
+    Scan for a specific SSID using available WiFi tools.
+    Returns True if the target SSID is visible, False otherwise.
+    """
+    # Try wpa_cli first (most common on embedded Linux)
+    try:
+        subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "scan"],
+            capture_output=True, timeout=10
+        )
+        # Wait for scan to complete
+        time.sleep(3)
+        result = subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "scan_results"],
+            capture_output=True, text=True, timeout=10
+        )
+        if result.returncode == 0:
+            for line in result.stdout.splitlines():
+                # wpa_cli scan_results format: bssid / freq / signal / flags / ssid
+                parts = line.split("\t")
+                if len(parts) >= 5 and parts[4].strip() == target_ssid:
+                    log(f"[SCAN] Found '{target_ssid}' via wpa_cli (signal: {parts[2]})")
+                    return True
+            return False
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+
+    # Fallback: try iwlist
+    try:
+        result = subprocess.run(
+            ["iwlist", WPA_INTERFACE, "scan"],
+            capture_output=True, text=True, timeout=15
+        )
+        if result.returncode == 0 and target_ssid in result.stdout:
+            log(f"[SCAN] Found '{target_ssid}' via iwlist")
+            return True
+        return False
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+
+    # Fallback: try iw
+    try:
+        result = subprocess.run(
+            ["iw", "dev", WPA_INTERFACE, "scan"],
+            capture_output=True, text=True, timeout=15
+        )
+        if result.returncode == 0 and target_ssid in result.stdout:
+            log(f"[SCAN] Found '{target_ssid}' via iw")
+            return True
+        return False
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+
+    log("[SCAN] No WiFi scan tools available (tried wpa_cli, iwlist, iw)")
+    return False
+
+# --- Credential loading ---
+def load_printer_credentials():
+    """
+    Load WiFi credentials from the printer's password history file.
+    Returns (ssid, password) of the currently connected network, or the first entry.
+    """
+    if not os.path.exists(PASSWD_HISTORY):
+        log(f"[CREDS] Password history not found: {PASSWD_HISTORY}")
+        return None, None
+
+    try:
+        with open(PASSWD_HISTORY, "r") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        log(f"[CREDS] Failed to parse {PASSWD_HISTORY}: {e}")
+        return None, None
+
+    wifi_list = data.get("wifi", [])
+    if not wifi_list:
+        log("[CREDS] No WiFi entries in password history")
+        return None, None
+
+    # Try to find the currently connected SSID
+    current_ssid = get_current_ssid()
+    if current_ssid:
+        for entry in wifi_list:
+            if entry.get("ssid") == current_ssid:
+                log(f"[CREDS] Matched current SSID: '{current_ssid}'")
+                return entry["ssid"], entry.get("passwd", "")
+
+    # Fallback: use the first entry
+    entry = wifi_list[0]
+    log(f"[CREDS] Using first entry: '{entry.get('ssid', '?')}'")
+    return entry.get("ssid", ""), entry.get("passwd", "")
+
+
+def get_current_ssid():
+    """Get the SSID the printer is currently connected to."""
+    try:
+        result = subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "status"],
+            capture_output=True, text=True, timeout=5
+        )
+        if result.returncode == 0:
+            for line in result.stdout.splitlines():
+                if line.startswith("ssid="):
+                    return line.split("=", 1)[1].strip()
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        pass
+
+    # Fallback: try iwconfig
+    try:
+        result = subprocess.run(
+            ["iwconfig", WPA_INTERFACE],
+            capture_output=True, text=True, timeout=5
+        )
+        if result.returncode == 0:
+            for line in result.stdout.splitlines():
+                if "ESSID:" in line:
+                    # Extract ESSID:"NetworkName"
+                    start = line.index('ESSID:"') + 7
+                    end = line.index('"', start)
+                    return line[start:end]
+    except (FileNotFoundError, subprocess.TimeoutExpired, ValueError):
+        pass
+
+    return None
+
+# --- Network switching ---
+def save_current_network():
+    """Save info about the current network so we can reconnect later."""
+    ssid = get_current_ssid()
+    if ssid:
+        log(f"[NET] Saved current network: '{ssid}'")
+    return ssid
+
+
+def connect_to_ap(ssid):
+    """
+    Connect the printer to the ESP32's open AP using wpa_cli.
+    Returns True on success.
+    """
+    log(f"[NET] Connecting to AP '{ssid}'...")
+
+    try:
+        # Add a temporary network
+        result = subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "add_network"],
+            capture_output=True, text=True, timeout=5
+        )
+        network_id = result.stdout.strip().splitlines()[-1]
+
+        # Set SSID
+        subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "set_network", network_id, "ssid", f'"{ssid}"'],
+            capture_output=True, timeout=5
+        )
+
+        # Set key_mgmt to NONE (open AP)
+        subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "set_network", network_id, "key_mgmt", "NONE"],
+            capture_output=True, timeout=5
+        )
+
+        # Select this network (disconnects from current)
+        subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "select_network", network_id],
+            capture_output=True, timeout=5
+        )
+
+        # Wait for connection
+        for attempt in range(15):
+            time.sleep(1)
+            status = subprocess.run(
+                ["wpa_cli", "-i", WPA_INTERFACE, "status"],
+                capture_output=True, text=True, timeout=5
+            )
+            for line in status.stdout.splitlines():
+                if line.startswith("wpa_state=") and "COMPLETED" in line:
+                    log(f"[NET] Connected to AP '{ssid}' (attempt {attempt + 1})")
+                    # Force a static IP so we can route to 192.168.4.1 instantly without killing system DHCP
+                    log(f"[NET] Setting static IP 192.168.4.2...")
+                    subprocess.run(["ifconfig", WPA_INTERFACE, "192.168.4.2", "netmask", "255.255.255.0", "up"], capture_output=True)
+                    time.sleep(1)
+                    return True
+
+        log(f"[NET] Failed to connect to AP '{ssid}' after 15 attempts")
+        return False
+
+    except (FileNotFoundError, subprocess.TimeoutExpired) as e:
+        log(f"[NET] wpa_cli error connecting to AP: {e}")
+        return False
+
+
+def reconnect_home_network():
+    """
+    Reconnect to the home WiFi by telling wpa_supplicant to reconfigure.
+    This reloads the original wpa_supplicant.conf networks.
+    """
+    log("[NET] Reconnecting to home network...")
+    try:
+        # Reconfigure reloads wpa_supplicant.conf and reconnects to known networks
+        subprocess.run(
+            ["wpa_cli", "-i", WPA_INTERFACE, "reconfigure"],
+            capture_output=True, timeout=10
+        )
+        # Wait for reconnection
+        for attempt in range(20):
+            time.sleep(1)
+            status = subprocess.run(
+                ["wpa_cli", "-i", WPA_INTERFACE, "status"],
+                capture_output=True, text=True, timeout=5
+            )
+            for line in status.stdout.splitlines():
+                if line.startswith("wpa_state=") and "COMPLETED" in line:
+                    ssid = get_current_ssid()
+                    log(f"[NET] Reconnected to home network '{ssid}' (attempt {attempt + 1})")
+                    log(f"[NET] Clearing static IP, relying on system DHCP...")
+                    subprocess.run(["ifconfig", WPA_INTERFACE, "0.0.0.0"], capture_output=True)
+                    time.sleep(2)
+                    return True
+
+        log("[NET] Failed to reconnect to home network after 20 attempts")
+        return False
+
+    except (FileNotFoundError, subprocess.TimeoutExpired) as e:
+        log(f"[NET] wpa_cli error reconnecting: {e}")
+        return False
+
+# --- ESP32 provisioning ---
+def send_credentials_to_esp32(wifi_ssid, wifi_password):
+    """
+    Send WiFi credentials to the ESP32 via its /wifi HTTP endpoint.
+    The ESP32 should be reachable at 192.168.4.1 when we're connected to its AP.
+    """
+    params = urllib.parse.urlencode({
+        "ssid": wifi_ssid,
+        "password": wifi_password
+    })
+    url = f"http://{ESP32_AP_IP}{ESP32_WIFI_ENDPOINT}?{params}"
+
+    log(f"[PROV] Sending credentials to ESP32: ssid='{wifi_ssid}'")
+
+    try:
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=10) as response:
+            body = response.read().decode("utf-8", errors="ignore")
+            log(f"[PROV] ESP32 response: {body.strip()}")
+            return True
+    except urllib.error.URLError as e:
+        log(f"[PROV] HTTP error sending credentials: {e}")
+        return False
+    except socket.timeout:
+        log("[PROV] Timeout sending credentials to ESP32")
+        return False
+    except Exception as e:
+        log(f"[PROV] Unexpected error: {e}")
+        return False
+
+# --- Main provisioning flow ---
+def provision_esp32():
+    """
+    Full provisioning sequence:
+    1. Read WiFi creds from printer's password history
+    2. Save current network state
+    3. Connect to ESP32's AP
+    4. Send credentials
+    5. Reconnect to home network
+    """
+    log("[PROV] === Starting provisioning sequence ===")
+    display("Chamber Heater\nESP32 detected...", color="cyan")
+
+    # Step 1: Load credentials
+    wifi_ssid, wifi_password = load_printer_credentials()
+    if not wifi_ssid:
+        log("[PROV] No credentials available. Aborting.")
+        display("Chamber Heater\nNo WiFi credentials found", color="red", timeout=5)
+        return False
+
+    # Step 2: Save current network
+    home_ssid = save_current_network()
+
+    # Step 3: Connect to ESP32 AP
+    display(f"Chamber Heater\nConnecting to ESP32...", color="yellow")
+    if not connect_to_ap(ESP32_AP_SSID):
+        log("[PROV] Could not connect to ESP32 AP. Reconnecting to home...")
+        display("Chamber Heater\nConnection failed", color="red", timeout=5)
+        reconnect_home_network()
+        return False
+
+    # Step 4: Send credentials
+    display(f"Chamber Heater\nSending credentials...", color="yellow")
+    success = send_credentials_to_esp32(wifi_ssid, wifi_password)
+
+    # Step 5: Reconnect to home network (always, regardless of success)
+    display(f"Chamber Heater\nReconnecting...", color="yellow")
+    time.sleep(2)  # Brief pause to let ESP32 process
+    reconnect_home_network()
+
+    if success:
+        log("[PROV] === Provisioning complete! ESP32 will reboot and join the network ===")
+        display("Chamber Heater\nProvisioning complete!", color="green", timeout=8)
+    else:
+        log("[PROV] === Provisioning failed. Will retry on next scan ===")
+        display("Chamber Heater\nProvisioning failed", color="red", timeout=8)
+
+    # Restore the original screen after the timeout message clears
+    time.sleep(9)
+    display_hide()
+
+    return success
+
+# --- Main loop ---
+def main():
+    log("[MAIN] ESP32 WiFi Connector started")
+    log(f"[MAIN] Scanning for '{ESP32_AP_SSID}' every {SCAN_INTERVAL}s")
+    if _fb_available:
+        log("[MAIN] fb_draw available for UI overlays")
+    else:
+        log("[MAIN] fb_draw not available — display messages disabled")
+
+    while True:
+        try:
+            if scan_for_ssid(ESP32_AP_SSID):
+                log(f"[MAIN] ESP32 AP '{ESP32_AP_SSID}' detected! Starting provisioning...")
+                provision_esp32()
+                # Cooldown after provisioning attempt (give ESP32 time to reboot)
+                log(f"[MAIN] Cooling down for {PROVISION_COOLDOWN}s...")
+                time.sleep(PROVISION_COOLDOWN)
+            else:
+                # ESP32 is either connected to WiFi or not powered on — all good
+                time.sleep(SCAN_INTERVAL)
+
+        except Exception as e:
+            log(f"[MAIN] Unexpected error in main loop: {e}")
+            display_hide()  # Ensure screen is restored on error
+            time.sleep(SCAN_INTERVAL)
+
+
+if __name__ == "__main__":
+    main()
+      ```
+    </details>
+</details>
