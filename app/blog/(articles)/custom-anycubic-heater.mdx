@@ -78,3 +78,387 @@ I made it sound easy, but this took me all of my spare time for the better part 
 
 Which isn't bad to double the strength of materials printed.
 
+------
+
+<details>
+
+<summary>The ESP32 c++ code</summary>
+
+```
+#include <DallasTemperature.h>
+#include <ESPmDNS.h>
+#include <FastLED.h>
+#include <OneWire.h>
+#include <Preferences.h>
+#include <WiFi.h>
+
+#define NUM_LEDS 1
+#define DATA_PIN 48
+#define HEATBREAK_COOLER_OUTPUT 5
+#define RELAY_OUTPUT 6
+#define ONE_WIRE_BUS 7
+
+// WiFi provisioning
+#define AP_SSID "anycubic-test-esp"
+#define WIFI_CONNECT_TIMEOUT_MS 15000
+#define MDNS_HOSTNAME "chamber-heater"
+
+CRGB leds[NUM_LEDS];
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+WiFiServer httpEndPoint(80);
+Preferences prefs;
+
+float currentTemperature = 0.0;
+float targetTemperature = 0.0;
+unsigned long printTime = 0;
+unsigned long checkTempInterval = 500;
+unsigned long lastCheckTemp = 0;
+bool wifiConnected = false;
+bool MANUAL_HEATBREAK_OVERRIDE = false;
+
+// WiFi reconnection
+unsigned long lastWifiCheck = 0;
+const unsigned long WIFI_CHECK_INTERVAL_MS = 10000; // check every 10s
+
+// URL-decode a string (handles %XX and + for space)
+String urlDecode(const String &input) {
+  String decoded = "";
+  for (unsigned int i = 0; i < input.length(); i++) {
+    char c = input.charAt(i);
+    if (c == '%' && i + 2 < input.length()) {
+      String hex = input.substring(i + 1, i + 3);
+      decoded += (char)strtol(hex.c_str(), NULL, 16);
+      i += 2;
+    } else if (c == '+') {
+      decoded += ' ';
+    } else {
+      decoded += c;
+    }
+  }
+  return decoded;
+}
+
+// Extract a query parameter value from the raw HTTP request
+String extractParam(const String &request, const String &paramName) {
+  String searchKey = paramName + "=";
+  int startIdx = request.indexOf(searchKey);
+  if (startIdx == -1)
+    return "";
+
+  startIdx += searchKey.length();
+  int endIdx = request.length();
+  int spaceIdx = request.indexOf(" ", startIdx);
+  int ampIdx = request.indexOf("&", startIdx);
+  int newlineIdx = request.indexOf("\r", startIdx);
+
+  if (spaceIdx != -1 && spaceIdx < endIdx)
+    endIdx = spaceIdx;
+  if (ampIdx != -1 && ampIdx < endIdx)
+    endIdx = ampIdx;
+  if (newlineIdx != -1 && newlineIdx < endIdx)
+    endIdx = newlineIdx;
+
+  String value = request.substring(startIdx, endIdx);
+  value.trim();
+  return urlDecode(value);
+}
+
+// Save WiFi credentials to persistent storage
+void saveWiFiCredentials(const String &ssid, const String &password) {
+  prefs.begin("wifi", false);
+  prefs.putString("ssid", ssid);
+  prefs.putString("password", password);
+  prefs.end();
+  Serial.println("Credentials saved to flash");
+}
+
+// Load WiFi credentials from persistent storage
+bool loadWiFiCredentials(String &ssid, String &password) {
+  prefs.begin("wifi", true);
+  ssid = prefs.getString("ssid", "");
+  password = prefs.getString("password", "");
+  prefs.end();
+  return ssid.length() > 0;
+}
+
+// Attempt to connect to WiFi with stored credentials
+bool tryConnect() {
+  String ssid, password;
+  if (!loadWiFiCredentials(ssid, password)) {
+    Serial.println("No stored credentials");
+    return false;
+  }
+
+  Serial.printf("Connecting to '%s'...\n", ssid.c_str());
+  leds[0] = CRGB::Blue;
+  FastLED.show();
+
+  WiFi.mode(WIFI_STA);
+  WiFi.setHostname("test-esp");
+  WiFi.begin(ssid.c_str(), password.c_str());
+
+  unsigned long start = millis();
+  while (WiFi.status() != WL_CONNECTED &&
+         millis() - start < WIFI_CONNECT_TIMEOUT_MS) {
+    delay(250);
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.printf("Connected! IP: %s\n", WiFi.localIP().toString().c_str());
+    return true;
+  }
+
+  Serial.println("Connection failed");
+  WiFi.disconnect();
+  return false;
+}
+
+// Start the AP for provisioning
+void startAP() {
+  Serial.println("Starting AP for provisioning...");
+  leds[0] = CRGB::Yellow;
+  FastLED.show();
+
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP(AP_SSID); // open AP, no password
+  delay(100);
+
+  Serial.printf("AP '%s' started. IP: %s\n", AP_SSID,
+                WiFi.softAPIP().toString().c_str());
+}
+
+// Handle the /wifi provisioning endpoint
+// Returns true if credentials were received and a reboot is needed
+bool handleWiFiEndpoint(WiFiClient &client, const String &request) {
+  String newSSID = extractParam(request, "ssid");
+  String newPassword = extractParam(request, "password");
+
+  if (newSSID.length() == 0) {
+    client.println("HTTP/1.1 400 Bad Request");
+    client.println("Content-Type: text/plain");
+    client.println("Connection: close");
+    client.println();
+    client.println("Missing 'ssid' parameter");
+    return false;
+  }
+
+  saveWiFiCredentials(newSSID, newPassword);
+
+  client.println("HTTP/1.1 200 OK");
+  client.println("Content-Type: text/plain");
+  client.println("Connection: close");
+  client.println();
+  client.printf("Credentials accepted for '%s'. Rebooting...\n",
+                newSSID.c_str());
+  client.flush();
+  delay(100);
+  client.stop();
+
+  Serial.printf("Received credentials for '%s'. Rebooting in 1s...\n",
+                newSSID.c_str());
+  leds[0] = CRGB::Purple;
+  FastLED.show();
+  delay(1000);
+  ESP.restart();
+
+  return true; // never reached, but keeps compiler happy
+}
+
+// Handle the status / control endpoint (original functionality)
+void handleStatusEndpoint(WiFiClient &client, const String &request) {
+  // Parse target temperature
+  String targetStr = extractParam(request, "target");
+  if (targetStr.length() > 0) {
+    targetTemperature = targetStr.toFloat();
+  }
+
+  // Parse timer
+  String timerStr = extractParam(request, "timer");
+  if (timerStr.length() > 0) {
+    unsigned long timerSec = (unsigned long)timerStr.toInt();
+    if (timerSec > 0) {      
+      printTime = millis() + (timerSec * 1000UL) + (30UL * 60UL * 1000UL);
+    } else {
+      printTime = 0;
+    }
+  }
+
+  String blowerStr = extractParam(request, "blower");
+  if (blowerStr.length() > 0) {
+    long blowerIsActivated = blowerStr.toInt();
+    if (blowerIsActivated == 0) {
+      MANUAL_HEATBREAK_OVERRIDE = false;
+    } else if (blowerIsActivated == 1) {
+      MANUAL_HEATBREAK_OVERRIDE = true;
+    }
+  }
+
+  // Send the response
+  client.println("HTTP/1.1 200 OK");
+  client.println("Content-Type: text/plain");
+  client.println("Connection: close");
+  client.println();
+  client.print("Time Remaining: ");
+  if (printTime > 0 && millis() < printTime) {
+    client.print((printTime - millis()) / 1000UL);
+  } else {
+    client.print("0");
+  }
+  client.println(" S");
+  client.print("Current Temp: ");
+  client.print(currentTemperature);
+  client.println(" C");
+  client.print("Target Temp: ");
+  client.print(targetTemperature);
+  client.println(" C");
+  client.print("Relay: "); // we return an estimate of the relays state based on
+                           // target temp, the actual state is irrelevant
+  if (digitalRead(RELAY_OUTPUT) == HIGH) {
+    client.println("ON");
+  } else {
+    client.println("OFF");
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  while (!Serial && millis() < 4000) {
+    delay(10);
+  }
+
+  pinMode(RELAY_OUTPUT, OUTPUT);
+  pinMode(HEATBREAK_COOLER_OUTPUT, OUTPUT);
+  digitalWrite(RELAY_OUTPUT, LOW); // relay off at start
+  digitalWrite(HEATBREAK_COOLER_OUTPUT, LOW);
+  sensors.begin();
+  sensors.setWaitForConversion(false);
+  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
+  FastLED.clear();
+
+  // Try connecting with stored credentials
+  wifiConnected = tryConnect();
+
+  if (!wifiConnected) {
+    // No credentials or connection failed — start AP for provisioning
+    startAP();
+  } else {
+    WiFi.setAutoReconnect(true);
+    // Start mDNS on successful connection
+    if (!MDNS.begin(MDNS_HOSTNAME)) {
+      Serial.println("mDNS setup failed");
+    }
+  }
+
+  // Start HTTP server in both modes (STA for normal use, AP for provisioning)
+  httpEndPoint.begin();
+
+  if (wifiConnected) {
+    leds[0] = CRGB::Green;
+  }
+  FastLED.show();
+}
+
+void loop() {
+  // WiFi reconnection check (only in STA mode)
+  if (wifiConnected && millis() - lastWifiCheck >= WIFI_CHECK_INTERVAL_MS) {
+    lastWifiCheck = millis();
+    if (WiFi.status() != WL_CONNECTED) {
+      Serial.println("WiFi lost — attempting reconnect...");
+      leds[0] = CRGB::Blue;
+      FastLED.show();
+      WiFi.reconnect();
+    } else {
+      // Connection restored (or was never lost)
+      if (leds[0] != CRGB::Green) {
+        Serial.printf("WiFi reconnected. IP: %s\n",
+                      WiFi.localIP().toString().c_str());
+        leds[0] = CRGB::Green;
+        FastLED.show();
+        // Re-init mDNS after reconnection
+        MDNS.end();
+        if (!MDNS.begin(MDNS_HOSTNAME)) {
+          Serial.println("mDNS re-init failed");
+          leds[0] = CRGB::Red;
+          FastLED.show();
+        }
+      }
+    }
+  }
+
+  // Print timer expiry
+  if (printTime > 0 && millis() >= printTime) {
+    targetTemperature = 0.0;
+    printTime = 0;
+  }
+
+
+  // Temperature polling
+  if ((unsigned long)(millis() - lastCheckTemp) > checkTempInterval) {
+    sensors.requestTemperatures();
+    float rawTemp = sensors.getTempCByIndex(0);
+
+    // Filter out OneWire fault codes (-127 and 85 are standard DS18B20 error codes)
+    if (rawTemp > -50.0 && rawTemp < 125.0 && rawTemp != 85.0) {
+      currentTemperature = rawTemp;
+    } else {
+      Serial.println("Warning: DS18B20 read error ignored!");
+    }
+    lastCheckTemp = millis();
+  }
+
+  // Relay control
+  if (targetTemperature < 40) {
+    digitalWrite(RELAY_OUTPUT, LOW);
+  } else {
+    if (printTime > 0) {
+      if (currentTemperature <= (targetTemperature - 2.5)) {
+        digitalWrite(RELAY_OUTPUT, HIGH);
+      } else if (currentTemperature >= (targetTemperature + 2.5)) {
+        digitalWrite(RELAY_OUTPUT, LOW);
+      }
+    } else {
+      digitalWrite(RELAY_OUTPUT, LOW);
+    }
+  }
+  
+  if (MANUAL_HEATBREAK_OVERRIDE) {
+    digitalWrite(HEATBREAK_COOLER_OUTPUT, HIGH);
+  } else if (currentTemperature >= 30.0) {
+    digitalWrite(HEATBREAK_COOLER_OUTPUT, HIGH);
+  } else if (currentTemperature < 27.0) {
+    digitalWrite(HEATBREAK_COOLER_OUTPUT, LOW);
+  }
+
+  // HTTP request handling
+  WiFiClient client = httpEndPoint.available();
+  if (client) {
+    String fullRequest = "";
+    unsigned long timeout = millis();
+
+    // Read full request (headers + body)
+    while (client.connected() && millis() - timeout < 500) {
+      while (client.available()) {
+        char c = client.read();
+        fullRequest += c;
+        timeout = millis();
+      }
+    }
+
+    // Route: /wifi endpoint for provisioning
+    if (fullRequest.startsWith("GET /wifi")) {
+      handleWiFiEndpoint(client, fullRequest);
+      return; // ESP will reboot, never reaches here
+    }
+
+    // Route: everything else is the status/control endpoint (original
+    // behaviour)
+    handleStatusEndpoint(client, fullRequest);
+
+    delay(10);
+    client.stop();
+  }
+}
+```
+</details>
