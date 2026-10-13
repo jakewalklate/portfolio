@@ -79,7 +79,7 @@ export default async function Blog() {
             <h3 className="font-serif text-xl text-white group-hover:text-zinc-200 transition-colors">
               The Pharmacology of Silence
             </h3>
-            <p className="text-sm text-zinc-500 line-clamp-4">
+            <p className="text-sm text-zinc-500 line-clamp-6">
               A memoir of my experience of being misdiagnosed as mentally ill and locked inside a maximum security prison in Sydney's west, later to be apologised to by a judge and acquitted of all charges. This book is a reflection on the human condition, the nature of truth, and the power of silence.
             </p>
           </div>
