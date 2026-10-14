@@ -128,7 +128,7 @@ export default function WhoAmIPage() {
                 <h4 className="text-lg font-medium text-white">University of Technology Sydney</h4>
                 <div className="text-zinc-400 inline">Bachelor of Engineering (Honours)</div>
                 <ul className="list-disc ml-6 mb-2">
-                  <li className="text-zinc-500 text-sm">Majoring in Artificial Intelligence, Mechatronics & Biomedical Engineering</li>
+                  <li className="text-zinc-500 text-sm">Majoring in Computer Systems and Artificial Intelligence</li>
                 </ul>
                 <div className="text-zinc-400">Bachelor of Medical Science</div>
                 <ul className="list-disc ml-6">
