@@ -63,7 +63,7 @@ const albums = [
   { title: 'Never mind the Bollocks, Here\'s the Sex Pistols', artist: 'Sex Pistols', cover: '/sex-pistols.png' },
   { title: 'Meteora', artist: 'Linkin Park', cover: '/cd-linkin-park-meteora_0.jpeg' },
   { title: 'NPR Music Tiny Desk Concert', artist: 'Rakim', cover: '/rakim-tinydesk.jpeg' },
-  { title: 'Lonley Souljaz', artist: 'Cult Shotta & DON!', cover: '/lonley-souljaz.jpg'}
+  { title: 'Lonley Souljaz', artist: 'Cult Shotta & DON!', cover: '/lonley-souljaz.jpg' }
 ].sort(() => Math.random() - 0.5);
 
 export default function WhoAmIPage() {
@@ -154,6 +154,24 @@ export default function WhoAmIPage() {
                 Trade School
               </div>
             </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 group">
+              <div className="flex flex-col gap-4">
+                <img
+                  src="/tafeProgramming.png"
+                  alt="TAFE NSW Programming Certificate"
+                  className="w-full h-auto rounded-lg border border-white/10 opacity-70 hover:opacity-85 transition-opacity duration-300"
+                />
+              </div>
+              <div className="flex flex-col gap-4">
+                <img
+                  src="/tafeCyberSecurity.png"
+                  alt="TAFE NSW Cyber Security Certificate"
+                  className="w-full h-auto rounded-lg border border-white/10 opacity-70 hover:opacity-85 transition-opacity duration-300"
+                />
+              </div>
+            </div>
+
 
             {/* <div className="flex flex-col sm:flex-row justify-between gap-2">
               <div>
@@ -991,7 +1009,7 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div> */}
-{/* 
+        {/* 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Editor Preferences
@@ -1538,7 +1556,7 @@ export default function WhoAmIPage() {
             </div>
           </div>
         </div> */}
-{/* 
+        {/* 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             How I Split My Attention
@@ -1944,7 +1962,7 @@ export default function WhoAmIPage() {
           </p>
           <Certifications />
         </div> */}
-{/* 
+        {/* 
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-white border-b border-white/10 pb-4">
             Favourite Comedian
