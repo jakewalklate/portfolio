@@ -59,7 +59,7 @@ export default async function Blog() {
   return (
     <div className="space-y-12">
       {/* Book Promotion Card */}
-      <div className="border-b border-white/10 pb-10">
+      {/* <div className="border-b border-white/10 pb-10">
         <Link
           href="/book/the-pharmacology-of-silence"
           className="group relative flex gap-6 rounded-2xl bg-zinc-900/50 hover:bg-zinc-900/80 border border-white/5 hover:border-white/10 p-5 transition-all"
@@ -84,7 +84,7 @@ export default async function Blog() {
             </p>
           </div>
         </Link>
-      </div>
+      </div> */}
 
       {/* Articles Section */}
       <section className="space-y-8">
